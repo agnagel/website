@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Case for Congress</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --beige:       #F0EAE0;
+      --cream:       #FAF7F2;
+      --white:       #FFFFFF;
+      --brown-pale:  #C9AD8A;
+      --brown:       #7A5230;
+      --brown-dark:  #2C1810;
+      --navy:        #1B2A4A;
+      --navy-mid:    #2D4070;
+      --red:         #8B1A1A;
+      --red-bright:  #B22222;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: var(--beige);
+      font-family: 'Lora', Georgia, serif;
+      color: var(--brown-dark);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* ── Deck ── */
+    #deck { position: relative; width: 100vw; height: 100vh; }
+
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 64px 80px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.55s ease;
+    }
+    .slide.active { opacity: 1; pointer-events: all; }
+
+    .slide-inner { max-width: 860px; width: 100%; }
+
+    /* ── Title slide ── */
+    .slide.title-slide { background: var(--navy); }
+    .slide.title-slide .bg-num { color: rgba(255,255,255,0.04); }
+    .slide.title-slide .slide-label { color: rgba(255,255,255,0.35); }
+    .slide.title-slide .slide-header {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      color: var(--white);
+      border-color: var(--red-bright);
+      margin-bottom: 20px;
+      padding-bottom: 24px;
+    }
+    .title-author {
+      font-family: 'Lora', serif;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      opacity: 0;
+      transition: opacity 0.6s ease 0.5s;
+    }
+    .slide.active .title-author { opacity: 1; }
+
+    /* ── Slide label ── */
+    .slide-label {
+      font-family: 'Lora', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brown-pale);
+      margin-bottom: 14px;
+      opacity: 0;
+      transition: opacity 0.5s ease 0.3s;
+    }
+    .slide.active .slide-label { opacity: 1; }
+
+    /* ── Header ── */
+    .slide-header {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.1;
+      padding-bottom: 18px;
+      margin-bottom: 36px;
+      border-bottom: 3px solid var(--red);
+      opacity: 0;
+      transform: translateY(-18px);
+      transition: opacity 0.55s ease 0.1s, transform 0.55s ease 0.1s;
+    }
+    .slide.active .slide-header { opacity: 1; transform: translateY(0); }
+
+    /* ── Bullet list ── */
+    .bullets { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .bullets.rebuild-list { gap: 10px; }
+
+    /* Base bullet */
+    .bullet {
+      display: flex; align-items: flex-start; gap: 14px;
+      opacity: 0;
+    }
+
+    /* ── Animation types ── */
+    .bullet.type-default {
+      transform: translateY(22px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .bullet.type-default.visible { opacity: 1; transform: translateY(0); }
+
+    .bullet.type-sub {
+      margin-left: 36px;
+      transform: translateX(-20px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .bullet.type-sub.visible { opacity: 1; transform: translateX(0); }
+
+    .bullet.type-rebuild {
+      transform: translateX(-28px);
+      transition: opacity 0.38s ease, transform 0.38s ease;
+      background: var(--white);
+      border-left: 4px solid var(--navy);
+      padding: 10px 14px;
+      border-radius: 2px;
+      gap: 0;
+    }
+    .bullet.type-rebuild.visible { opacity: 1; transform: translateX(0); }
+
+    .bullet.type-dramatic {
+      transform: scale(0.96) translateY(8px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .bullet.type-dramatic.visible { opacity: 1; transform: scale(1) translateY(0); }
+
+    .bullet.type-final {
+      transform: scale(0.95) translateY(10px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .bullet.type-final.visible { opacity: 1; transform: scale(1) translateY(0); }
+
+    /* ── Markers ── */
+    .marker {
+      flex-shrink: 0;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      margin-top: 10px;
+    }
+    .type-sub .marker {
+      width: 6px; height: 6px;
+      border-radius: 1px;
+      background: var(--navy-mid);
+      transform: rotate(45deg);
+      margin-top: 11px;
+    }
+
+    /* ── Text variants ── */
+    .bullet-text {
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+      line-height: 1.65;
+      color: var(--brown-dark);
+    }
+    .type-sub .bullet-text {
+      color: var(--navy-mid);
+      font-size: clamp(1.05rem, 1.9vw, 1.3rem);
+    }
+    .type-rebuild .bullet-text {
+      font-size: clamp(1rem, 1.7vw, 1.2rem);
+      line-height: 1.55;
+    }
+    .rebuild-role {
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .type-dramatic .bullet-text {
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      color: var(--brown);
+    }
+    .type-final .bullet-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: clamp(1.35rem, 2.7vw, 1.9rem);
+      color: var(--navy);
+    }
+    .citation {
+      font-size: 0.78em;
+      color: var(--brown-pale);
+      font-style: italic;
+    }
+
+    /* ── Progress bar ── */
+    #progress {
+      position: fixed; bottom: 0; left: 0;
+      height: 3px; background: var(--red);
+      transition: width 0.4s ease;
+      z-index: 100;
+    }
+
+    /* ── Footer UI ── */
+    #slide-counter, #nav-hint {
+      position: fixed; bottom: 20px;
+      font-family: 'Lora', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--brown-pale);
+      z-index: 100;
+    }
+    #slide-counter { left: 28px; }
+    #nav-hint { right: 28px; transition: opacity 0.4s ease; }
+
+    /* ── Background decoration ── */
+    .bg-num {
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 28vw; font-weight: 900;
+      color: rgba(93, 61, 30, 0.04);
+      right: -3vw; bottom: -6vw;
+      line-height: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="deck"></div>
+<div id="progress"></div>
+<div id="slide-counter"></div>
+<div id="nav-hint">click or → to advance</div>
+
+<script>
+const SLIDES = [
+  {
+    title: "The Case for Congress",
+    isTitleSlide: true,
+    bullets: []
+  },
+  {
+    title: "The stakes",
+    bullets: [
+      { type: "default", html: "AI can shape elections, run infrastructure, and move opinion at scale." },
+      { type: "default", html: "That power sits inside a few labs and the executive agencies buying from them." },
+      { type: "default", html: "Civilization-scale calls are being made unilaterally — democracy isn't in the room." },
+    ]
+  },
+  {
+    title: "Elections are only the first step",
+    bullets: [
+      { type: "default", html: "Elections get reps into Congress...but what then?" },
+      { type: "default", html: "One in eight members is leaving this cycle, the second-highest exit in a century. <span class='citation'>[NPR, 2026]</span>" },
+      { type: "default", html: "413 members retired between 2011 and 2026 — lobbyists inherit the institutional memory. <span class='citation'>[Ballotpedia, 2026]</span>" },
+    ]
+  },
+  {
+    title: "How the U.S. government was designed to work",
+    bullets: [
+      { type: "default", html: "Three branches, each built to check the other two." },
+      { type: "default", html: "Today only the executive moves at modern speed, and it moves unchallenged." },
+      { type: "default", html: "Congress is the only body designed to force public deliberation before big decisions." },
+      { type: "sub",     html: "A weak Congress can't subpoena AI labs or block executive overreach." },
+      { type: "sub",     html: "A strong Congress forces powerful actors to negotiate with 535 reps, not one President." },
+    ]
+  },
+  {
+    title: "What Congress does currently",
+    bullets: [
+      { type: "default", html: "Up to 32% of enacted laws are ceremonial — post offices, coins, observances. <span class='citation'>[Pew, 2021]</span>" },
+      { type: "default", html: "Comms staff balloon while legislative staff shrink — messaging eats the work." },
+      { type: "default", html: "Substantive lawmaking is measurably declining." },
+    ]
+  },
+  {
+    title: "How Congress got so weak",
+    bullets: [
+      { type: "default", html: "The Office of Technology Assessment was defunded in 1995 — Congress's 200-person tech brain trust. <span class='citation'>[Roll Call, 2019]</span>" },
+      { type: "default", html: "That era also cut committee staff and froze the Congressional Research Service. <span class='citation'>[Drutman et al., Congress Overwhelmed, 2020]</span>" },
+      { type: "default", html: "Staff salaries have been flat for over a decade as DC's cost of living climbed." },
+    ]
+  },
+  {
+    title: "The problems",
+    bullets: [
+      { type: "default", html: "Congress has lost practical authority to constrain the executive." },
+      { type: "default", html: "Filibuster and other procedural sclerosis make decision-making nearly impossible." },
+      { type: "default", html: "Committee staffs are dwarfed by executive and K Street counterparts." },
+    ]
+  },
+  {
+    title: "The root causes",
+    bullets: [
+      { type: "default", html: "Congress is a low-trust institution. Collaboration even for mutual gain is hard." },
+      { type: "default", html: "Members vote to defund Congress to score small-government cred." },
+      { type: "sub",     html: "Small government only works if all three branches are small." },
+      { type: "default", html: "Hiring optimizes for politics and law, ignoring ops, management, and tech." },
+      { type: "default", html: "The think tank world is obsessed with policy intellectualism and blind to plumbing." },
+    ]
+  },
+  {
+    title: "How we rebuild",
+    isRebuild: true,
+    bullets: [
+      { type: "rebuild", role: "If you're a student",            rest: "Educate yourself. Read <em>Congress Overwhelmed</em> and <em>Why Congress</em>. Follow POPVOX and First Branch Forecast." },
+      { type: "rebuild", role: "If you're in policy", rest: "Get yourself on the Hill and secretly care about the institution." },
+      { type: "rebuild", role: "If you're a nonprofit founder", rest: "Launch a technical fellowship program for committees and support agencies." },
+      { type: "rebuild", role: "If you're a coder",              rest: "Pitch yourself as a technical fellow directly or join a civic tech meetup to offer outside support." },
+      { type: "rebuild", role: "If you're a funder",             rest: "Back organizations such as the POPVOX Foundation, Foundation for American Innovation, Demand Progress, R Street, RCI, CMF, AGI, and more." },
+      { type: "rebuild", role: "If you're a lobbyist",           rest: "Lobby Congress to invest in itself." },
+      { type: "rebuild", role: "If you're in comms",             rest: "Build a grassroots campaign with good social media." },
+      { type: "rebuild", role: "If you're rich and aimless",     rest: "Buy a house near the Hill, turn it into a modernization coworking space." },
+    ]
+  },
+  {
+    title: "Democracy has come back from worse",
+    bullets: [
+      { type: "dramatic", html: "We've survived a civil war that killed more Americans than every other war combined." },
+      { type: "dramatic", html: "We've survived bare-knuckle violence at the polls." },
+      { type: "final",    html: "The institution has been rebuilt before; now it's our turn." },
+    ]
+  },
+];
+
+// ── Build DOM ──────────────────────────────────────────────────────────────
+function buildDeck() {
+  const deck = document.getElementById('deck');
+  SLIDES.forEach((slide, si) => {
+    const el = document.createElement('div');
+    el.className = 'slide' + (si === 0 ? ' active' : '') + (slide.isTitleSlide ? ' title-slide' : '');
+    el.dataset.idx = si;
+
+    const bgNum = document.createElement('div');
+    bgNum.className = 'bg-num';
+    bgNum.textContent = si;
+    el.appendChild(bgNum);
+
+    const inner = document.createElement('div');
+    inner.className = 'slide-inner';
+
+    const label = document.createElement('div');
+    label.className = 'slide-label';
+    label.textContent = slide.isTitleSlide ? '' : `Slide ${si} of ${SLIDES.length - 1}`;
+    inner.appendChild(label);
+
+    const h1 = document.createElement('h1');
+    h1.className = 'slide-header';
+    h1.textContent = slide.title;
+    inner.appendChild(h1);
+
+    const ul = document.createElement('ul');
+    ul.className = 'bullets' + (slide.isRebuild ? ' rebuild-list' : '');
+
+    slide.bullets.forEach((b, bi) => {
+      const li = document.createElement('li');
+      li.className = `bullet type-${b.type}`;
+      li.dataset.bi = bi;
+
+      if (b.type === 'rebuild') {
+        const span = document.createElement('span');
+        span.className = 'bullet-text';
+        span.innerHTML = `<span class="rebuild-role">${b.role}:</span> ${b.rest}`;
+        li.appendChild(span);
+      } else {
+        const marker = document.createElement('div');
+        marker.className = 'marker';
+        li.appendChild(marker);
+        const span = document.createElement('span');
+        span.className = 'bullet-text';
+        span.innerHTML = b.html;
+        li.appendChild(span);
+      }
+
+      ul.appendChild(li);
+    });
+
+    if (slide.isTitleSlide) {
+      const author = document.createElement('div');
+      author.className = 'title-author';
+      author.textContent = 'Ashley Nagel';
+      inner.appendChild(author);
+    }
+
+    inner.appendChild(ul);
+    el.appendChild(inner);
+    deck.appendChild(el);
+  });
+}
+
+// ── State ──────────────────────────────────────────────────────────────────
+let cur = 0;
+let step = 0;
+
+function slideEl(idx) { return document.querySelector(`.slide[data-idx="${idx}"]`); }
+function bulletEls(idx) { return [...slideEl(idx).querySelectorAll('.bullet')]; }
+function maxStep(idx) { return SLIDES[idx].bullets.length; }
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function render() {
+  let total = 0, done = 0;
+  SLIDES.forEach((s, i) => {
+    const steps = s.bullets.length + 1;
+    total += steps;
+    if (i < cur) done += steps;
+    else if (i === cur) done += step + 1;
+  });
+  document.getElementById('progress').style.width = (done / total * 100) + '%';
+
+  const atEnd = cur === SLIDES.length - 1 && step === maxStep(cur);
+  document.getElementById('nav-hint').style.opacity = atEnd ? '0' : '1';
+
+  const label = cur === 0 ? '' : `${cur} / ${SLIDES.length - 1}`;
+  document.getElementById('slide-counter').textContent = label;
+
+  bulletEls(cur).forEach((el, i) => {
+    el.classList.toggle('visible', i < step);
+  });
+}
+
+// ── Navigation ─────────────────────────────────────────────────────────────
+function advance() {
+  if (step < maxStep(cur)) {
+    step++;
+    render();
+  } else if (cur < SLIDES.length - 1) {
+    slideEl(cur).classList.remove('active');
+    cur++;
+    step = 0;
+    slideEl(cur).classList.add('active');
+    render();
+  }
+}
+
+function retreat() {
+  if (step > 0) {
+    step--;
+    render();
+  } else if (cur > 0) {
+    slideEl(cur).classList.remove('active');
+    cur--;
+    step = maxStep(cur);
+    slideEl(cur).classList.add('active');
+    render();
+  }
+}
+
+document.addEventListener('click', advance);
+document.addEventListener('keydown', e => {
+  if ([' ', 'ArrowRight', 'ArrowDown'].includes(e.key)) { e.preventDefault(); advance(); }
+  if (['ArrowLeft', 'ArrowUp'].includes(e.key)) { e.preventDefault(); retreat(); }
+});
+
+buildDeck();
+render();
+</script>
+</body>
+</html>
