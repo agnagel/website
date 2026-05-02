@@ -162,16 +162,16 @@
 
     /* ── Text variants ── */
     .bullet-text {
-      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+      font-size: clamp(1.4rem, 2.7vw, 1.8rem);
       line-height: 1.65;
       color: var(--brown-dark);
     }
     .type-sub .bullet-text {
       color: var(--navy-mid);
-      font-size: clamp(1.05rem, 1.9vw, 1.3rem);
+      font-size: clamp(1.25rem, 2.3vw, 1.6rem);
     }
     .type-rebuild .bullet-text {
-      font-size: clamp(1rem, 1.7vw, 1.2rem);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
       line-height: 1.55;
     }
     .rebuild-role {
@@ -180,14 +180,14 @@
     }
     .type-dramatic .bullet-text {
       font-style: italic;
-      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      font-size: clamp(1.5rem, 2.7vw, 1.9rem);
       color: var(--brown);
     }
     .type-final .bullet-text {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-style: normal;
-      font-size: clamp(1.35rem, 2.7vw, 1.9rem);
+      font-size: clamp(1.65rem, 3.2vw, 2.3rem);
       color: var(--navy);
     }
     .citation {
@@ -195,6 +195,12 @@
       color: var(--brown-pale);
       font-style: italic;
     }
+    .citation a {
+      color: var(--brown-pale);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .citation a:hover { color: var(--brown); }
 
     /* ── Progress bar ── */
     #progress {
@@ -208,13 +214,91 @@
     #slide-counter, #nav-hint {
       position: fixed; bottom: 20px;
       font-family: 'Lora', serif;
-      font-size: 0.72rem;
+      font-size: 0.88rem;
       letter-spacing: 0.12em;
       color: var(--brown-pale);
       z-index: 100;
     }
     #slide-counter { left: 28px; }
     #nav-hint { right: 28px; transition: opacity 0.4s ease; }
+
+    /* ── Slide image panel ── */
+    .slide-inner.has-image {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 48px;
+      max-width: 1100px;
+    }
+    .slide-content { flex: 1; min-width: 0; }
+    .slide-image-panel {
+      flex-shrink: 0;
+      width: clamp(180px, 22vw, 280px);
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
+    }
+    .slide.active .slide-image-panel {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .slide-image-panel img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Slide nav dots ── */
+    #slide-nav {
+      position: fixed;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+    .nav-dot {
+      position: relative;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--brown-pale);
+      opacity: 0.35;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s, background 0.2s;
+      flex-shrink: 0;
+    }
+    .nav-dot:hover { opacity: 0.8; transform: scale(1.5); }
+    .nav-dot.active { background: var(--red); opacity: 0.8; transform: scale(1.4); }
+    .nav-dot .dot-label {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      font-family: 'Lora', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--brown-dark);
+      background: var(--cream);
+      padding: 3px 8px;
+      border-radius: 3px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s;
+    }
+    .nav-dot:hover .dot-label { opacity: 1; }
+
+    /* ── Links ── */
+    .bullet-text a {
+      color: var(--red);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+    .bullet-text a:hover { color: var(--red-bright); }
 
     /* ── Background decoration ── */
     .bg-num {
@@ -234,6 +318,7 @@
 <div id="progress"></div>
 <div id="slide-counter"></div>
 <div id="nav-hint">click or → to advance</div>
+<div id="slide-nav"></div>
 
 <script>
 const SLIDES = [
@@ -253,43 +338,45 @@ const SLIDES = [
   {
     title: "Elections are only the first step",
     bullets: [
-      { type: "default", html: "Elections get reps into Congress...but what then?" },
-      { type: "default", html: "One in eight members is leaving this cycle, the second-highest exit in a century. <span class='citation'>[NPR, 2026]</span>" },
-      { type: "default", html: "413 members retired between 2011 and 2026 — lobbyists inherit the institutional memory. <span class='citation'>[Ballotpedia, 2026]</span>" },
+      { type: "default", html: "Elections get reps into Congress — <a href='https://www.youtube.com/shorts/lOnx8rCEcfY' target='_blank' rel='noopener'>but then what?</a>" },
+      { type: "default", html: "One in eight members is leaving this cycle, the second-highest exit in a century. <span class='citation'>[<a href='https://www.npr.org/nx-s1-5647318' target='_blank' rel='noopener'>NPR, 2026</a>]</span>" },
+      { type: "default", html: "413 members retired between 2011 and 2026 — lobbyists inherit the institutional memory. <span class='citation'>[<a href='https://ballotpedia.org/Congressional_retirements_by_month,_2011-2026' target='_blank' rel='noopener'>Ballotpedia, 2026</a>]</span>" },
     ]
   },
   {
     title: "How the U.S. government was designed to work",
+    image: "branches.png",
     bullets: [
       { type: "default", html: "Three branches, each built to check the other two." },
       { type: "default", html: "Today only the executive moves at modern speed, and it moves unchallenged." },
-      { type: "default", html: "Congress is the only body designed to force public deliberation before big decisions." },
-      { type: "sub",     html: "A weak Congress can't subpoena AI labs or block executive overreach." },
-      { type: "sub",     html: "A strong Congress forces powerful actors to negotiate with 535 reps, not one President." },
+      { type: "default", html: "A weak Congress can't subpoena AI labs or block executive overreach." },
+      { type: "default", html: "A strong Congress forces powerful actors to negotiate with 535 reps, not one President." },
     ]
   },
   {
-    title: "What Congress does currently",
+    title: "Congress is weak",
     bullets: [
-      { type: "default", html: "Up to 32% of enacted laws are ceremonial — post offices, coins, observances. <span class='citation'>[Pew, 2021]</span>" },
-      { type: "default", html: "Comms staff balloon while legislative staff shrink — messaging eats the work." },
-      { type: "default", html: "Substantive lawmaking is measurably declining." },
-    ]
-  },
-  {
-    title: "How Congress got so weak",
-    bullets: [
-      { type: "default", html: "The Office of Technology Assessment was defunded in 1995 — Congress's 200-person tech brain trust. <span class='citation'>[Roll Call, 2019]</span>" },
-      { type: "default", html: "That era also cut committee staff and froze the Congressional Research Service. <span class='citation'>[Drutman et al., Congress Overwhelmed, 2020]</span>" },
+	{ type: "default", html: "<a href='https://usafacts.org/articles/agency-spending/' target='_blank' rel='noopener'>Take a look at the Congressional (and judicial) budgets in comparison to the executive branch.</a>" },
+      { type: "default", html: "The Office of Technology Assessment was defunded in 1995 — Congress's 200-person tech brain trust. <span class='citation'>[<a href='https://rollcall.com/2019/02/22/you-have-48-hours-to-become-a-tech-expert-if-only-this-office-could-help/' target='_blank' rel='noopener'>Roll Call, 2019</a>]</span>" },
+      { type: "default", html: "That era also cut committee staff and froze the Congressional Research Service. <span class='citation'>[<a href='https://press.uchicago.edu/ucp/books/book/chicago/C/bo50700299.html' target='_blank' rel='noopener'>Drutman et al., Congress Overwhelmed, 2020</a>]</span>" },
       { type: "default", html: "Staff salaries have been flat for over a decade as DC's cost of living climbed." },
+    ]
+  },
+  {
+    title: "Congress is wasting its time",
+    bullets: [
+      { type: "default", html: "Substantive lawmaking is measurably declining." },
+      { type: "default", html: "Up to 32% of enacted laws are ceremonial — post offices, coins, observances. <span class='citation'>[<a href='https://www.pewresearch.org/fact-tank/2021/08/13/congress-is-off-to-a-slow-start-in-2021-much-as-it-has-been-in-previous-years/' target='_blank' rel='noopener'>Pew, 2021</a>]</span>" },
+      { type: "default", html: "Comms staff balloon while legislative staff shrink — messaging eats the work." },
     ]
   },
   {
     title: "The problems",
     bullets: [
-      { type: "default", html: "Congress has lost practical authority to constrain the executive." },
+      { type: "default", html: "Congress has already relegated much of its authority to the executive." },
       { type: "default", html: "Filibuster and other procedural sclerosis make decision-making nearly impossible." },
       { type: "default", html: "Committee staffs are dwarfed by executive and K Street counterparts." },
+      { type: "default", html: "Re-electability trumps all other incentives." },
     ]
   },
   {
@@ -299,18 +386,18 @@ const SLIDES = [
       { type: "default", html: "Members vote to defund Congress to score small-government cred." },
       { type: "sub",     html: "Small government only works if all three branches are small." },
       { type: "default", html: "Hiring optimizes for politics and law, ignoring ops, management, and tech." },
-      { type: "default", html: "The think tank world is obsessed with policy intellectualism and blind to plumbing." },
+      { type: "default", html: "The think tank world is obsessed with policy intellectualism and ignores its plumbing." },
     ]
   },
   {
     title: "How we rebuild",
     isRebuild: true,
     bullets: [
-      { type: "rebuild", role: "If you're a student",            rest: "Educate yourself. Read <em>Congress Overwhelmed</em> and <em>Why Congress</em>. Follow POPVOX and First Branch Forecast." },
+      { type: "rebuild", role: "If you're a student",            rest: "Educate yourself. Read <a href='https://press.uchicago.edu/ucp/books/book/chicago/C/bo50700299.html' target='_blank' rel='noopener'><em>Congress Overwhelmed</em></a> and <a href='https://www.aei.org/research-products/book/why-congress/' target='_blank' rel='noopener'><em>Why Congress</em></a>. Follow <a href='https://www.popvox.org/home' target='_blank' rel='noopener'>POPVOX</a> and <a href='https://firstbranchforecast.com/' target='_blank' rel='noopener'>First Branch Forecast</a>." },
       { type: "rebuild", role: "If you're in policy", rest: "Get yourself on the Hill and secretly care about the institution." },
       { type: "rebuild", role: "If you're a nonprofit founder", rest: "Launch a technical fellowship program for committees and support agencies." },
       { type: "rebuild", role: "If you're a coder",              rest: "Pitch yourself as a technical fellow directly or join a civic tech meetup to offer outside support." },
-      { type: "rebuild", role: "If you're a funder",             rest: "Back organizations such as the POPVOX Foundation, Foundation for American Innovation, Demand Progress, R Street, RCI, CMF, AGI, and more." },
+      { type: "rebuild", role: "If you're a funder",             rest: "Back organizations such as <a href='https://www.popvox.org/home' target='_blank' rel='noopener'>POPVOX Foundation</a>, <a href='https://www.thefai.org' target='_blank' rel='noopener'>Foundation for American Innovation</a>, <a href='https://demandprogress.org/' target='_blank' rel='noopener'>Demand Progress</a>, <a href='https://www.rstreet.org' target='_blank' rel='noopener'>R Street</a>, <a href='https://www.rebuildcongress.org/' target='_blank' rel='noopener'>RCI</a>, <a href='https://www.congressfoundation.org' target='_blank' rel='noopener'>CMF</a>, <a href='https://americalabs.org/' target='_blank' rel='noopener'>AGI</a>, and more." },
       { type: "rebuild", role: "If you're a lobbyist",           rest: "Lobby Congress to invest in itself." },
       { type: "rebuild", role: "If you're in comms",             rest: "Build a grassroots campaign with good social media." },
       { type: "rebuild", role: "If you're rich and aimless",     rest: "Buy a house near the Hill, turn it into a modernization coworking space." },
@@ -340,25 +427,30 @@ function buildDeck() {
     el.appendChild(bgNum);
 
     const inner = document.createElement('div');
-    inner.className = 'slide-inner';
+    inner.className = 'slide-inner' + (slide.image ? ' has-image' : '');
+
+    // If image, wrap text content in a column div
+    const content = slide.image ? document.createElement('div') : inner;
+    if (slide.image) content.className = 'slide-content';
 
     const label = document.createElement('div');
     label.className = 'slide-label';
     label.textContent = slide.isTitleSlide ? '' : `Slide ${si} of ${SLIDES.length - 1}`;
-    inner.appendChild(label);
+    content.appendChild(label);
 
     const h1 = document.createElement('h1');
     h1.className = 'slide-header';
     h1.textContent = slide.title;
-    inner.appendChild(h1);
+    content.appendChild(h1);
 
     const ul = document.createElement('ul');
     ul.className = 'bullets' + (slide.isRebuild ? ' rebuild-list' : '');
 
     slide.bullets.forEach((b, bi) => {
       const li = document.createElement('li');
-      li.className = `bullet type-${b.type}`;
       li.dataset.bi = bi;
+
+      li.className = `bullet type-${b.type}`;
 
       if (b.type === 'rebuild') {
         const span = document.createElement('span');
@@ -382,12 +474,46 @@ function buildDeck() {
       const author = document.createElement('div');
       author.className = 'title-author';
       author.textContent = 'Ashley Nagel';
-      inner.appendChild(author);
+      content.appendChild(author);
     }
 
-    inner.appendChild(ul);
+    content.appendChild(ul);
+
+    if (slide.image) {
+      inner.appendChild(content);
+      const imgPanel = document.createElement('div');
+      imgPanel.className = 'slide-image-panel';
+      const img = document.createElement('img');
+      img.src = slide.image;
+      img.alt = '';
+      imgPanel.appendChild(img);
+      inner.appendChild(imgPanel);
+    }
+
     el.appendChild(inner);
     deck.appendChild(el);
+  });
+}
+
+// ── Nav dots ──────────────────────────────────────────────────────────────
+function buildNav() {
+  const nav = document.getElementById('slide-nav');
+  SLIDES.forEach((slide, si) => {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot' + (si === 0 ? ' active' : '');
+    dot.dataset.idx = si;
+    const label = document.createElement('span');
+    label.className = 'dot-label';
+    label.textContent = si === 0 ? 'Title' : slide.title;
+    dot.appendChild(label);
+    dot.addEventListener('click', e => { e.stopPropagation(); jumpTo(si); });
+    nav.appendChild(dot);
+  });
+}
+
+function updateNav() {
+  document.querySelectorAll('.nav-dot').forEach(d => {
+    d.classList.toggle('active', +d.dataset.idx === cur);
   });
 }
 
@@ -396,7 +522,7 @@ let cur = 0;
 let step = 0;
 
 function slideEl(idx) { return document.querySelector(`.slide[data-idx="${idx}"]`); }
-function bulletEls(idx) { return [...slideEl(idx).querySelectorAll('.bullet')]; }
+function bulletEls(idx) { return [...slideEl(idx).querySelectorAll('.bullets .bullet')]; }
 function maxStep(idx) { return SLIDES[idx].bullets.length; }
 
 // ── Render ─────────────────────────────────────────────────────────────────
@@ -419,6 +545,16 @@ function render() {
   bulletEls(cur).forEach((el, i) => {
     el.classList.toggle('visible', i < step);
   });
+  updateNav();
+}
+
+function jumpTo(idx) {
+  if (idx === cur) return;
+  slideEl(cur).classList.remove('active');
+  cur = idx;
+  step = 0;
+  slideEl(cur).classList.add('active');
+  render();
 }
 
 // ── Navigation ─────────────────────────────────────────────────────────────
@@ -451,10 +587,11 @@ function retreat() {
 document.addEventListener('click', advance);
 document.addEventListener('keydown', e => {
   if ([' ', 'ArrowRight', 'ArrowDown'].includes(e.key)) { e.preventDefault(); advance(); }
-  if (['ArrowLeft', 'ArrowUp'].includes(e.key)) { e.preventDefault(); retreat(); }
+  if (['ArrowLeft', 'ArrowUp', 'Escape'].includes(e.key)) { e.preventDefault(); retreat(); }
 });
 
 buildDeck();
+buildNav();
 render();
 </script>
 </body>
