@@ -291,6 +291,26 @@
     }
     .nav-dot:hover .dot-label { opacity: 1; }
 
+    /* ── Full-page image overlay ── */
+    #image-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.88);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      cursor: pointer;
+    }
+    #image-overlay.visible { opacity: 1; pointer-events: all; }
+    #image-overlay img {
+      max-width: 94vw;
+      max-height: 90vh;
+      width: auto; height: auto;
+      display: block;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+    }
+
     /* ── Links ── */
     .bullet-text a {
       color: var(--red);
@@ -319,6 +339,7 @@
 <div id="slide-counter"></div>
 <div id="nav-hint">click or → to advance</div>
 <div id="slide-nav"></div>
+<div id="image-overlay"><img src="" alt=""></div>
 
 <script>
 const SLIDES = [
@@ -348,45 +369,44 @@ const SLIDES = [
     image: "branches.png",
     bullets: [
       { type: "default", html: "Three branches, each built to check the other two." },
-      { type: "default", html: "Today only the executive moves at modern speed, and it moves unchallenged." },
-      { type: "default", html: "A weak Congress can't subpoena AI labs or block executive overreach." },
+      { type: "default", html: "Congress is Article I of the Constitution — first, longest, and most detailed — with the president (Article II) merely executing the laws." },
       { type: "default", html: "A strong Congress forces powerful actors to negotiate with 535 reps, not one President." },
     ]
   },
   {
     title: "Congress is weak",
     bullets: [
-	{ type: "default", html: "<a href='https://usafacts.org/articles/agency-spending/' target='_blank' rel='noopener'>Take a look at the Congressional (and judicial) budgets in comparison to the executive branch.</a>" },
-      { type: "default", html: "The Office of Technology Assessment was defunded in 1995 — Congress's 200-person tech brain trust. <span class='citation'>[<a href='https://rollcall.com/2019/02/22/you-have-48-hours-to-become-a-tech-expert-if-only-this-office-could-help/' target='_blank' rel='noopener'>Roll Call, 2019</a>]</span>" },
-      { type: "default", html: "That era also cut committee staff and froze the Congressional Research Service. <span class='citation'>[<a href='https://press.uchicago.edu/ucp/books/book/chicago/C/bo50700299.html' target='_blank' rel='noopener'>Drutman et al., Congress Overwhelmed, 2020</a>]</span>" },
-      { type: "default", html: "Staff salaries have been flat for over a decade as DC's cost of living climbed." },
+        { type: "default", html: "The current administration ignored Congress on TikTok, tariffs, and Iran strikes without real consequence." },
+	{ type: "default", html: "<a href='https://usafacts.org/articles/agency-spending/' target='_blank' rel='noopener'>The Congressional (and judicial) budget is minuscule in comparison to the executive.</a>" },
+        { type: "default", html: "The Office of Technology Assessment was completely defunded in 1995. <span class='citation'>[<a href='https://rollcall.com/2019/02/22/you-have-48-hours-to-become-a-tech-expert-if-only-this-office-could-help/' target='_blank' rel='noopener'>Roll Call, 2019</a>]</span>" },
     ]
   },
   {
     title: "Congress is wasting its time",
+    overlayAfterStep: 1, overlayImage: "laws_passed.png",
     bullets: [
       { type: "default", html: "Substantive lawmaking is measurably declining." },
       { type: "default", html: "Up to 32% of enacted laws are ceremonial — post offices, coins, observances. <span class='citation'>[<a href='https://www.pewresearch.org/fact-tank/2021/08/13/congress-is-off-to-a-slow-start-in-2021-much-as-it-has-been-in-previous-years/' target='_blank' rel='noopener'>Pew, 2021</a>]</span>" },
-      { type: "default", html: "Comms staff balloon while legislative staff shrink — messaging eats the work." },
+      { type: "default", html: "Comms staff balloon while legislative staff shrink — messaging is everything." },
     ]
   },
   {
     title: "The problems",
     bullets: [
       { type: "default", html: "Congress has already relegated much of its authority to the executive." },
-      { type: "default", html: "Filibuster and other procedural sclerosis make decision-making nearly impossible." },
-      { type: "default", html: "Committee staffs are dwarfed by executive and K Street counterparts." },
-      { type: "default", html: "Re-electability trumps all other incentives." },
+      { type: "default", html: "Filibuster and other procedural blockages make decision-making nearly impossible." },
+      { type: "default", html: "Legislative staff are dwarfed by executive and K Street counterparts." },
     ]
   },
   {
     title: "The root causes",
     bullets: [
-      { type: "default", html: "Congress is a low-trust institution. Collaboration even for mutual gain is hard." },
-      { type: "default", html: "Members vote to defund Congress to score small-government cred." },
+      { type: "default", html: "Re-electability trumps all other incentives." },
+      { type: "sub", 	 html: "Members vote to defund Congress to score small-government cred." },
       { type: "sub",     html: "Small government only works if all three branches are small." },
-      { type: "default", html: "Hiring optimizes for politics and law, ignoring ops, management, and tech." },
-      { type: "default", html: "The think tank world is obsessed with policy intellectualism and ignores its plumbing." },
+      { type: "default", html: "Congress is a low-trust institution. Collaboration even for mutual gain is hard." },
+      { type: "sub", html: "House and Senate leadership are not incentivized to empower other members or committees." },
+      { type: "default", html: "Hiring perpetually optimizes for politics and law, ignoring ops, management, and tech talent" },
     ]
   },
   {
@@ -404,7 +424,7 @@ const SLIDES = [
     ]
   },
   {
-    title: "Democracy has come back from worse",
+    title: "There is hope for Democracy",
     bullets: [
       { type: "dramatic", html: "We've survived a civil war that killed more Americans than every other war combined." },
       { type: "dramatic", html: "We've survived bare-knuckle violence at the polls." },
@@ -517,6 +537,21 @@ function updateNav() {
   });
 }
 
+// ── Overlay ────────────────────────────────────────────────────────────────
+let overlayVisible = false;
+const overlayEl = document.getElementById('image-overlay');
+const overlayImg = overlayEl.querySelector('img');
+
+function showOverlay(src) {
+  overlayImg.src = src;
+  overlayEl.classList.add('visible');
+  overlayVisible = true;
+}
+function hideOverlay() {
+  overlayEl.classList.remove('visible');
+  overlayVisible = false;
+}
+
 // ── State ──────────────────────────────────────────────────────────────────
 let cur = 0;
 let step = 0;
@@ -550,6 +585,7 @@ function render() {
 
 function jumpTo(idx) {
   if (idx === cur) return;
+  if (overlayVisible) { overlayEl.classList.remove('visible'); overlayVisible = false; }
   slideEl(cur).classList.remove('active');
   cur = idx;
   step = 0;
@@ -559,6 +595,17 @@ function jumpTo(idx) {
 
 // ── Navigation ─────────────────────────────────────────────────────────────
 function advance() {
+  if (overlayVisible) {
+    hideOverlay();
+    step++;
+    render();
+    return;
+  }
+  const s = SLIDES[cur];
+  if (s.overlayAfterStep !== undefined && step === s.overlayAfterStep) {
+    showOverlay(s.overlayImage);
+    return;
+  }
   if (step < maxStep(cur)) {
     step++;
     render();
@@ -572,6 +619,7 @@ function advance() {
 }
 
 function retreat() {
+  if (overlayVisible) { hideOverlay(); return; }
   if (step > 0) {
     step--;
     render();
