@@ -1,0 +1,273 @@
+/* ==========================================================================
+   Congressional Technology & Innovation — Design Tokens
+   Warm parchment palette · serif typography · classical civic posture
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Color: raw scales ---------- */
+
+  /* Vellum / parchment (warm neutrals — page surface) */
+  --vellum-50:  #FBF7EE;
+  --vellum-100: #F4ECDC;   /* default page background */
+  --vellum-200: #ECE0C8;
+  --vellum-300: #DECDA8;
+  --vellum-400: #C5B084;
+
+  /* Ink (warm dark neutrals — text, rules) */
+  --ink-100: #B5A793;      /* hairlines on vellum */
+  --ink-200: #8A7A66;
+  --ink-300: #5E4F3E;
+  --ink-400: #3A2E22;      /* body text */
+  --ink-500: #1F1812;      /* headlines */
+  --ink-600: #14100A;      /* archive black */
+
+  /* Federal Red — emphasis, hover links, seal marks */
+  --red-100: #F2D9D9;
+  --red-300: #C45757;
+  --red-500: #9E2A2B;      /* canonical Federal Red */
+  --red-700: #6E1A1B;
+
+  /* Federal Blue — deep navy, hero surfaces, primary buttons */
+  --blue-100: #D6DEEC;
+  --blue-300: #4A6491;
+  --blue-500: #1B365D;     /* canonical Federal Blue */
+  --blue-700: #0E1F38;
+
+  /* Brass / Gilt — single accent for marks and dividers */
+  --brass-300: #C8A663;
+  --brass-500: #A8843F;
+  --brass-700: #7A5E26;
+
+  /* ---------- Color: semantic ---------- */
+  --bg:           var(--vellum-100);   /* default page */
+  --bg-elevated:  var(--vellum-50);    /* cards, popovers */
+  --bg-sunken:    var(--vellum-200);   /* table stripes, code blocks */
+  --bg-inverse:   var(--blue-500);     /* hero, footer */
+
+  --fg:           var(--ink-500);      /* primary text */
+  --fg-muted:     var(--ink-300);      /* secondary text */
+  --fg-subtle:    var(--ink-200);      /* metadata, captions */
+  --fg-inverse:   var(--vellum-50);    /* text on bg-inverse */
+
+  --rule:         var(--ink-100);      /* hairlines */
+  --rule-strong:  var(--ink-200);
+  --rule-accent:  var(--brass-500);    /* doubled rules at section breaks */
+
+  --accent:       var(--red-500);      /* link hover, emphasis */
+  --accent-bg:    var(--red-100);
+  --primary:      var(--blue-500);     /* primary buttons, focus */
+  --primary-fg:   var(--vellum-50);
+
+  --success:      #4A6B3F;
+  --warning:      #B07D2A;
+  --danger:       var(--red-500);
+
+  /* ---------- Type ---------- */
+  --font-display: 'Libre Caslon Text', 'Caslon', 'Garamond', Georgia, serif;
+  --font-body:    'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-ui:      'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-md:   16px;
+  --text-lg:   18px;
+  --text-xl:   22px;
+  --text-2xl:  28px;
+  --text-3xl:  36px;
+  --text-4xl:  48px;
+  --text-5xl:  64px;
+
+  --leading-tight: 1.15;
+  --leading-snug:  1.35;
+  --leading-body:  1.6;
+  --leading-loose: 1.8;
+
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-caps:   0.12em;   /* small-caps eyebrow labels */
+
+  /* ---------- Spacing (8pt grid) ---------- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  80px;
+  --space-10: 96px;
+  --space-11: 128px;
+  --space-12: 160px;
+
+  /* ---------- Radius ---------- */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-pill: 999px;   /* filter chips only */
+
+  /* ---------- Shadow (used sparingly) ---------- */
+  --shadow-1: 0 1px 2px rgba(31, 24, 18, 0.08), 0 1px 1px rgba(31, 24, 18, 0.04);
+  --shadow-2: 0 4px 12px rgba(31, 24, 18, 0.10), 0 2px 4px rgba(31, 24, 18, 0.06);
+  --shadow-modal: 0 24px 64px rgba(20, 16, 10, 0.22);
+
+  /* ---------- Motion ---------- */
+  --ease-civic:  cubic-bezier(0.2, 0.0, 0.0, 1.0);
+  --duration-fast: 160ms;
+  --duration-base: 220ms;
+  --duration-slow: 320ms;
+
+  /* ---------- Layout ---------- */
+  --measure-prose: 72ch;
+  --measure-app:   1200px;
+  --rule-double:   3px double var(--rule-strong);
+}
+
+/* ==========================================================================
+   Semantic element styles — applied via .ds class so the tokens
+   can be lifted in isolation without resetting host pages.
+   ========================================================================== */
+
+.ds {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  font-feature-settings: "kern", "liga", "onum";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ds h1, .ds h2, .ds h3, .ds h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  color: var(--ink-500);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+.ds h1 { font-size: var(--text-5xl); }
+.ds h2 { font-size: var(--text-3xl); }
+.ds h3 { font-size: var(--text-2xl); }
+.ds h4 { font-size: var(--text-xl); }
+
+.ds .eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.ds p {
+  margin: 0 0 var(--space-4) 0;
+  max-width: var(--measure-prose);
+}
+
+.ds a {
+  color: var(--ink-500);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast) var(--ease-civic),
+              text-decoration-thickness var(--duration-fast) var(--ease-civic);
+}
+.ds a:hover {
+  color: var(--accent);
+  text-decoration-thickness: 2px;
+}
+
+.ds code, .ds .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-sunken);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-500);
+}
+
+.ds .ui {
+  font-family: var(--font-ui);
+}
+
+.ds hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: var(--space-6) 0;
+}
+.ds hr.double {
+  border: 0;
+  border-top: var(--rule-double);
+  margin: var(--space-7) 0;
+}
+
+.ds .btn {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-civic),
+              border-color var(--duration-fast) var(--ease-civic),
+              color var(--duration-fast) var(--ease-civic);
+}
+.ds .btn-primary {
+  background: var(--primary);
+  color: var(--primary-fg);
+}
+.ds .btn-primary:hover { background: var(--blue-700); }
+.ds .btn-primary:active { background: #08152A; }
+
+.ds .btn-secondary {
+  background: var(--bg-elevated);
+  color: var(--ink-500);
+  border-color: var(--rule-strong);
+}
+.ds .btn-secondary:hover { background: var(--vellum-200); }
+
+.ds .btn-ghost {
+  background: transparent;
+  color: var(--ink-500);
+}
+.ds .btn-ghost:hover { background: var(--vellum-200); }
+
+.ds .card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.ds .input {
+  font-family: var(--font-ui);
+  font-size: var(--text-md);
+  padding: 10px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink-500);
+  width: 100%;
+}
+.ds .input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: var(--primary);
+}
+
+.ds *:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}

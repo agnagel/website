@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>U.S. Federal Appropriations Process — Walkthrough</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body {
+    margin: 0; padding: 0;
+    overflow: hidden;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    background: var(--vellum-100);
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0; opacity: 0.035;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.09  0 0 0 0 0.05  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  #page-header {
+    flex-shrink: 0;
+    background: var(--vellum-50);
+    border-bottom: 1px solid #D8C9A8;
+    padding: 10px 24px 0;
+    position: relative; z-index: 10;
+  }
+  #diagram-meta-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D8C9A8;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #8A7A66;
+  }
+  #diagram-meta-bar .meta-right { color: #B5A793; }
+  #mini-legend {
+    display: flex; flex-wrap: wrap; gap: 8px 28px;
+    padding: 10px 0;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11.5px; color: #8A7A66;
+  }
+  #mini-legend .leg-item { display: flex; align-items: center; gap: 8px; }
+  #mini-legend svg { flex-shrink: 0; }
+  svg.flow {
+    display: block;
+    width: 100%; flex: 1; min-height: 0;
+    cursor: pointer;
+  }
+  svg.flow text { font-family: var(--font-ui); }
+  .canvas-bg { fill: var(--vellum-50); }
+  .col-bg { fill: #FBF5E6; stroke: #D8C9A8; stroke-width: 1; }
+  .phase-rule-outer { stroke: #8A7A66; stroke-width: 1.5; fill: none; }
+  .phase-rule-inner { stroke: #A8843F; stroke-width: 1; fill: none; }
+  .h-title { font-family: 'Libre Caslon Text', Georgia, serif; font-size: 30px; font-weight: 400; fill: #1F1812; }
+  .h-sub   { font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-size: 14px; fill: #5E4F3E; }
+  .col-label { font-family: 'Libre Caslon Text', Georgia, serif; font-size: 16px; font-weight: 700; fill: #1F1812; letter-spacing: 0.02em; }
+  .col-sub { font-family: 'Inter Tight', sans-serif; font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; fill: #8A7A66; }
+  .phase-label { font-family: 'Libre Caslon Text', Georgia, serif; font-size: 17px; font-weight: 700; fill: #1F1812; letter-spacing: 0.005em; }
+  .phase-numeral { font-family: 'Libre Caslon Text', Georgia, serif; font-style: italic; font-weight: 400; font-size: 19px; fill: #A8843F; }
+  .ts { font-family: 'Inter Tight', sans-serif; font-size: 11.5px; fill: #5E4F3E; }
+  .th { font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 600; fill: #1F1812; }
+  .gray-ts { fill: #8A7A66; }
+  .blue-fill   { fill: #E5EAF2; stroke: #1B365D; }
+  .blue-th     { fill: #0E1F38; }
+  .blue-ts     { fill: #1B365D; }
+  .purple-fill { fill: #E8E4DD; stroke: #5E4F3E; }
+  .purple-th   { fill: #1F1812; }
+  .purple-ts   { fill: #3A2E22; }
+  .teal-fill   { fill: #DEE6E2; stroke: #3F5F58; }
+  .teal-th     { fill: #1E3A33; }
+  .teal-ts     { fill: #3F5F58; }
+  .yellow-fill { fill: #F4ECDC; stroke: #A8843F; }
+  .yellow-th   { fill: #1F1812; }
+  .yellow-ts   { fill: #5E4F3E; }
+  .pink-fill   { fill: #ECE0C8; stroke: #7A5E26; }
+  .pink-th     { fill: #1F1812; }
+  .pink-ts     { fill: #5E4F3E; }
+  .coral-fill  { fill: #DDE2EC; stroke: #1B365D; }
+  .coral-th    { fill: #0E1F38; }
+  .coral-ts    { fill: #1B365D; }
+  .amber-fill  { fill: #F4E5C2; stroke: #7A5E26; }
+  .amber-th    { fill: #4A3614; }
+  .amber-ts    { fill: #7A5E26; }
+  .red-fill    { fill: #F2D9D9; stroke: #9E2A2B; }
+  .red-th      { fill: #6E1A1B; }
+  .red-ts      { fill: #9E2A2B; }
+  .green-fill  { fill: #DEE6D8; stroke: #4A6B3F; }
+  .green-th    { fill: #2C4126; }
+  .green-ts    { fill: #4A6B3F; }
+  .gray-fill   { fill: #ECE6D8; stroke: #8A7A66; }
+  .gray-th     { fill: #1F1812; }
+  .strike-out  { fill: #F6EFE8; stroke: #9E2A2B; stroke-dasharray: 3 3; }
+  .path-bg { fill: #F4ECDC; stroke: #B5A793; stroke-width: 1; }
+  .path-label { font-family: 'Libre Caslon Text', Georgia, serif; font-style: italic; font-size: 13px; font-weight: 700; fill: #1F1812; }
+  @keyframes march-forward { to { stroke-dashoffset: -16; } }
+  @keyframes march-fail    { to { stroke-dashoffset: -16; } }
+  .arr { stroke: #5E4F3E; stroke-width: 1.4; fill: none; }
+  .arr-cross { stroke: #A8843F; stroke-width: 1.4; stroke-dasharray: 5 3; stroke-dashoffset: 0; fill: none; opacity: 1; animation: march-forward 400ms linear infinite; }
+  .arr-feedback { stroke: #A8843F; stroke-width: 1.4; stroke-dasharray: 5 3; stroke-dashoffset: 0; fill: none; animation: march-forward 600ms linear infinite; }
+  .arr-fail { stroke: #9E2A2B; stroke-width: 1.4; stroke-dasharray: 6 3; stroke-dashoffset: 0; fill: none; animation: march-fail 500ms linear infinite; }
+  .arr-audit { stroke: #A8843F; stroke-width: 1.4; stroke-dasharray: 5 3; stroke-dashoffset: 0; fill: none; animation: march-forward 600ms linear infinite; }
+  svg.flow g:has(rect) { transition: filter 160ms cubic-bezier(0.2,0,0,1); cursor: default; }
+  svg.flow g:has(rect):hover { filter: drop-shadow(0 4px 12px rgba(31,24,18,.14)) drop-shadow(0 2px 4px rgba(31,24,18,.08)); }
+  svg.flow g:has(rect) text, svg.flow g:has(rect) tspan { pointer-events: none; }
+
+  /* ---- UI overlay ---- */
+  #slide-dots {
+    position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 8px; z-index: 20; pointer-events: none;
+  }
+  .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #D8C9A8;
+    transition: background 300ms, transform 300ms;
+  }
+  .dot.active  { background: #A8843F; transform: scale(1.4); }
+  .dot.visited { background: #8A7A66; }
+
+  #slide-ui {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    z-index: 20; text-align: center; pointer-events: none;
+    background: rgba(251,245,230,0.96);
+    border: 2px solid #8A7A66;
+    box-shadow: 0 2px 0 0 #A8843F, 0 4px 24px rgba(31,24,18,0.18);
+    padding: 14px 36px 16px;
+    border-radius: 2px;
+    backdrop-filter: blur(6px);
+    min-width: 400px;
+  }
+  #slide-numeral {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    font-style: italic; font-size: 28px; color: #A8843F;
+    line-height: 1; margin-bottom: 4px;
+    min-height: 32px;
+  }
+  #slide-title {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    font-size: 22px; font-weight: 700; color: #1F1812;
+    margin-bottom: 10px;
+  }
+  #slide-meta {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #8A7A66;
+    display: flex; gap: 20px; justify-content: center; align-items: center;
+  }
+  #slide-hint { opacity: 0.75; }
+
+  .nav-btn {
+    position: fixed; top: 50%; transform: translateY(-50%);
+    z-index: 20;
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(251,245,230,0.88);
+    border: 1px solid #D8C9A8; border-radius: 2px;
+    font-family: 'Inter Tight', sans-serif; font-size: 18px;
+    color: #5E4F3E; cursor: pointer; opacity: 0.75;
+    transition: opacity 180ms;
+    backdrop-filter: blur(4px);
+  }
+  .nav-btn:hover { opacity: 1; }
+  #nav-prev { left: 16px; }
+  #nav-next { right: 16px; }
+  .nav-btn.hidden { visibility: hidden; }
+
+  /* Scroll mode — full-size browsable diagram */
+  html.scroll-mode,
+  body.scroll-mode {
+    overflow-y: auto;
+    height: auto;
+  }
+  body.scroll-mode svg.flow {
+    width: 100%;
+    flex: none;
+    height: auto;
+    cursor: default;
+  }
+  body.scroll-mode #slide-ui {
+    position: fixed; /* stays visible while scrolling */
+  }
+  body.scroll-mode .nav-btn {
+    position: fixed;
+    top: 50vh;
+  }
+</style>
+</head>
+<body>
+
+<div id="page-header">
+  <div id="diagram-meta-bar">
+    <span class="meta-left">§ Process Map &nbsp;·&nbsp; Fiscal Year Cycle</span>
+    <span class="meta-right">Plate I &nbsp;·&nbsp; vii sections</span>
+  </div>
+  <div id="mini-legend">
+    <div class="leg-item">
+      <svg width="36" height="12"><line x1="2" y1="6" x2="30" y2="6" stroke="#5E4F3E" stroke-width="1.4"/><polygon points="28,3 36,6 28,9" fill="#5E4F3E"/></svg>
+      <span>Solid — primary flow</span>
+    </div>
+    <div class="leg-item">
+      <svg width="36" height="12"><line x1="2" y1="6" x2="30" y2="6" stroke="#A8843F" stroke-width="1.4" stroke-dasharray="5 3"/><polygon points="28,3 36,6 28,9" fill="#A8843F"/></svg>
+      <span>Dashed — feedback, cross-input, oversight</span>
+    </div>
+    <div class="leg-item">
+      <svg width="36" height="12"><line x1="2" y1="6" x2="30" y2="6" stroke="#9E2A2B" stroke-width="1.4"/><polygon points="28,3 36,6 28,9" fill="#9E2A2B"/></svg>
+      <span>Red — failure / breach path</span>
+    </div>
+    <div class="leg-item">
+      <svg width="14" height="16" viewBox="0 0 24 28" overflow="visible">
+        <path d="M 3 2 L 3 26" stroke="#6E1A1B" stroke-width="1.5" fill="none"/>
+        <path d="M 3 3 L 20 3 L 16 9 L 20 15 L 3 15 Z" fill="#9E2A2B" stroke="#6E1A1B" stroke-width="0.8"/>
+      </svg>
+      <span>Amendment opportunity</span>
+    </div>
+  </div>
+</div>
+
+<div id="slide-dots"></div>
+
+<button id="nav-prev" class="nav-btn hidden" aria-label="Previous">&#8592;</button>
+<button id="nav-next" class="nav-btn" aria-label="Next">&#8594;</button>
+
+<div id="slide-ui">
+  <div id="slide-numeral"></div>
+  <div id="slide-title">The U.S. Federal Appropriations Process</div>
+  <div id="slide-meta">
+    <span id="slide-progress">overview · 7 sections</span>
+    <span id="slide-hint">click or → to advance &nbsp;·&nbsp; ← to go back</span>
+  </div>
+</div>
+
+<svg class="flow" id="main-svg" viewBox="0 0 1610 3840" preserveAspectRatio="xMidYMin meet"
+     xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-label="U.S. Federal Appropriations Process flow diagram">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 9 5 L 1 9 Z" fill="#5E4F3E" stroke="none"/>
+    </marker>
+    <marker id="arrow-fail" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 9 5 L 1 9 Z" fill="#9E2A2B" stroke="none"/>
+    </marker>
+    <marker id="arrow-feedback" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 9 5 L 1 9 Z" fill="#A8843F" stroke="none"/>
+    </marker>
+    <marker id="arrow-cross" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 9 5 L 1 9 Z" fill="#8A7A66" stroke="none"/>
+    </marker>
+    <marker id="arrow-audit" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 9 5 L 1 9 Z" fill="#1B365D" stroke="none"/>
+    </marker>
+    <symbol id="amend-flag" viewBox="0 0 24 28" overflow="visible">
+      <path d="M 3 2 L 3 26" stroke="#6E1A1B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <path d="M 3 3 L 20 3 L 16 9 L 20 15 L 3 15 Z" fill="#9E2A2B" stroke="#6E1A1B" stroke-width="0.8" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-whitehouse" viewBox="0 0 48 36">
+      <rect x="4" y="30" width="40" height="3" rx="0.5" fill="currentColor"/>
+      <rect x="8" y="27" width="32" height="3" rx="0.5" fill="currentColor"/>
+      <rect x="10" y="14" width="28" height="13" rx="0.5" fill="currentColor" opacity="0.15"/>
+      <line x1="13" y1="14" x2="13" y2="27" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="18" y1="14" x2="18" y2="27" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="23" y1="14" x2="23" y2="27" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="28" y1="14" x2="28" y2="27" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="33" y1="14" x2="33" y2="27" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="10" y="11" width="28" height="3" rx="0.5" fill="currentColor"/>
+      <path d="M 9 11 L 24 3 L 39 11 Z" fill="currentColor" opacity="0.5"/>
+      <rect x="1" y="19" width="9" height="8" rx="0.5" fill="currentColor" opacity="0.4"/>
+      <rect x="38" y="19" width="9" height="8" rx="0.5" fill="currentColor" opacity="0.4"/>
+    </symbol>
+    <symbol id="icon-capitol" viewBox="0 0 48 36">
+      <rect x="4" y="30" width="40" height="3" rx="0.5" fill="currentColor"/>
+      <rect x="7" y="27" width="34" height="3" rx="0.5" fill="currentColor"/>
+      <rect x="9" y="18" width="30" height="9" rx="0.5" fill="currentColor" opacity="0.15"/>
+      <line x1="13" y1="18" x2="13" y2="27" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="18" y1="18" x2="18" y2="27" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="24" y1="18" x2="24" y2="27" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="30" y1="18" x2="30" y2="27" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="35" y1="18" x2="35" y2="27" stroke="currentColor" stroke-width="1.2"/>
+      <rect x="9" y="15" width="30" height="3" rx="0.5" fill="currentColor"/>
+      <rect x="19" y="10" width="10" height="5" rx="0.5" fill="currentColor" opacity="0.6"/>
+      <path d="M 16 10 Q 16 2 24 1 Q 32 2 32 10 Z" fill="currentColor" opacity="0.7"/>
+      <rect x="22.5" y="0" width="3" height="3" rx="0.5" fill="currentColor"/>
+      <line x1="24" y1="0" x2="24" y2="-4" stroke="currentColor" stroke-width="1"/>
+    </symbol>
+  </defs>
+
+  <rect width="1610" height="3840" class="canvas-bg"/>
+
+  <!-- Congress supra-header -->
+  <text x="1160" y="50" text-anchor="middle" class="col-sub" style="font-size:13px; letter-spacing:0.32em; fill:#1F1812;">CONGRESS</text>
+  <line x1="760" y1="68" x2="1560" y2="68" stroke="#8A7A66" stroke-width="0.8"/>
+  <line x1="760" y1="68" x2="760" y2="82" stroke="#8A7A66" stroke-width="0.8"/>
+  <line x1="940" y1="68" x2="940" y2="76" stroke="#8A7A66" stroke-width="0.8"/>
+  <line x1="1380" y1="68" x2="1380" y2="76" stroke="#8A7A66" stroke-width="0.8"/>
+  <line x1="1560" y1="68" x2="1560" y2="82" stroke="#8A7A66" stroke-width="0.8"/>
+
+  <!-- Column rails -->
+  <rect x="20"   y="90" width="690" height="3730" rx="2" class="col-bg"/>
+  <rect x="730"  y="90" width="420" height="3730" rx="2" class="col-bg"/>
+  <rect x="1170" y="90" width="420" height="3730" rx="2" class="col-bg"/>
+
+  <!-- Column headers -->
+  <use href="#icon-whitehouse" x="386" y="92" width="48" height="36" color="#1B365D" opacity="0.55"/>
+  <text x="410" y="146" text-anchor="middle" class="col-label">Executive Branch</text>
+  <text x="410" y="162" text-anchor="middle" class="col-sub">Agencies · OMB · President</text>
+  <use href="#icon-capitol" x="916" y="92" width="48" height="36" color="#A8843F" opacity="0.55"/>
+  <text x="940" y="146" text-anchor="middle" class="col-label">House</text>
+  <text x="940" y="162" text-anchor="middle" class="col-sub">Members · Committees · Subcommittees</text>
+  <use href="#icon-capitol" x="1356" y="92" width="48" height="36" color="#7A5E26" opacity="0.55"/>
+  <text x="1380" y="146" text-anchor="middle" class="col-label">Senate</text>
+  <text x="1380" y="162" text-anchor="middle" class="col-sub">Members · Committees · Subcommittees</text>
+
+  <!-- ============ PHASE i ============ -->
+  <line x1="20" y1="202" x2="1590" y2="202" class="phase-rule-outer"/>
+  <line x1="20" y1="206" x2="1590" y2="206" class="phase-rule-inner"/>
+  <text x="30" y="228" class="phase-label"><tspan class="phase-numeral">i.</tspan>  Executive budget formulation <tspan class="ts" fill="#8A7A66" font-style="italic">(spring–winter)</tspan></text>
+  <g>
+    <rect x="220" y="230" width="380" height="56" rx="2" class="teal-fill" stroke-width="1"/>
+    <text x="410" y="254" text-anchor="middle" class="th teal-th">Federal Agencies</text>
+    <text x="410" y="272" text-anchor="middle" class="ts teal-ts">Submit funding requests</text>
+  </g>
+  <g>
+    <rect x="220" y="310" width="380" height="56" rx="2" class="purple-fill" stroke-width="1"/>
+    <text x="410" y="334" text-anchor="middle" class="th purple-th">OMB Review</text>
+    <text x="410" y="352" text-anchor="middle" class="ts purple-ts">Cuts, reconciles, passback</text>
+  </g>
+  <line x1="410" y1="286" x2="410" y2="308" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 220 338 L 200 338 L 200 252 L 220 252" class="arr-feedback" marker-end="url(#arrow-feedback)"/>
+  <text x="192" y="298" text-anchor="end" class="ts" fill="#A8843F">Passback</text>
+  <text x="192" y="313" text-anchor="end" class="ts" fill="#A8843F">(agencies appeal)</text>
+  <g>
+    <rect x="220" y="390" width="380" height="56" rx="2" class="blue-fill" stroke-width="1"/>
+    <text x="410" y="414" text-anchor="middle" class="th blue-th">Presidential Budget Request</text>
+    <text x="410" y="432" text-anchor="middle" class="ts blue-ts">Submitted to Congress (Feb)</text>
+  </g>
+  <line x1="410" y1="366" x2="410" y2="388" class="arr" marker-end="url(#arrow)"/>
+
+  <!-- ============ PHASE ii ============ -->
+  <line x1="20" y1="478" x2="1590" y2="478" class="phase-rule-outer"/>
+  <line x1="20" y1="482" x2="1590" y2="482" class="phase-rule-inner"/>
+  <text x="30" y="504" class="phase-label"><tspan class="phase-numeral">ii.</tspan>  Budget resolution &amp; allocation <tspan class="ts" fill="#8A7A66" font-style="italic">(Feb–May)</tspan></text>
+  <g>
+    <rect x="750" y="520" width="180" height="56" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="840" y="544" text-anchor="middle" class="th yellow-th">House Budget Cmte</text>
+    <text x="840" y="562" text-anchor="middle" class="ts yellow-ts">Drafts resolution</text>
+  </g>
+  <g>
+    <rect x="950" y="520" width="180" height="56" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="1040" y="544" text-anchor="middle" class="th yellow-th">House Floor Vote</text>
+    <text x="1040" y="562" text-anchor="middle" class="ts yellow-ts">Members vote</text>
+  </g>
+  <g>
+    <rect x="1190" y="520" width="180" height="56" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1280" y="544" text-anchor="middle" class="th pink-th">Senate Budget Cmte</text>
+    <text x="1280" y="562" text-anchor="middle" class="ts pink-ts">Drafts resolution</text>
+  </g>
+  <g>
+    <rect x="1390" y="520" width="180" height="56" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1480" y="544" text-anchor="middle" class="th pink-th">Senate Floor Vote</text>
+    <text x="1480" y="562" text-anchor="middle" class="ts pink-ts">Members vote</text>
+  </g>
+  <line x1="930" y1="548" x2="948" y2="548" class="arr" marker-end="url(#arrow)"/>
+  <line x1="1370" y1="548" x2="1388" y2="548" class="arr" marker-end="url(#arrow)"/>
+  <use href="#amend-flag" x="1116" y="505" width="14" height="16"/>
+  <use href="#amend-flag" x="1556" y="505" width="14" height="16"/>
+  <g>
+    <rect x="750" y="616" width="820" height="56" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="1160" y="640" text-anchor="middle" class="th coral-th">Concurrent Budget Resolution</text>
+    <text x="1160" y="658" text-anchor="middle" class="ts coral-ts">Sets 302(a) top-line — joint House &amp; Senate agreement</text>
+  </g>
+  <path d="M 1040 576 L 1040 600 L 1160 600 L 1160 614" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1480 576 L 1480 600 L 1160 600 L 1160 614" class="arr" marker-end="url(#arrow)"/>
+  <text x="750" y="688" class="ts" fill="#1B365D" font-style="italic">CBO scoring informs resolution</text>
+
+  <!-- ============ PHASE iii ============ -->
+  <line x1="20" y1="708" x2="1590" y2="708" class="phase-rule-outer"/>
+  <line x1="20" y1="712" x2="1590" y2="712" class="phase-rule-inner"/>
+  <text x="30" y="734" class="phase-label"><tspan class="phase-numeral">iii.</tspan>  Subcommittee and full committee actions <tspan class="ts" fill="#8A7A66" font-style="italic">(Feb–Sep)</tspan></text>
+  <g>
+    <rect x="750" y="750" width="380" height="56" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="940" y="774" text-anchor="middle" class="th yellow-th">House Approps Committee</text>
+    <text x="940" y="792" text-anchor="middle" class="ts yellow-ts">Divides 302(a) into 12 sub-allocations</text>
+  </g>
+  <g>
+    <rect x="1190" y="750" width="380" height="56" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1380" y="774" text-anchor="middle" class="th pink-th">Senate Approps Committee</text>
+    <text x="1380" y="792" text-anchor="middle" class="ts pink-ts">Divides 302(a) into 12 sub-allocations</text>
+  </g>
+  <path d="M 1160 672 L 1160 720 L 940 720 L 940 748" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1160 672 L 1160 720 L 1380 720 L 1380 748" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="950" y="832" width="180" height="62" rx="2" class="gray-fill" stroke-width="1"/>
+    <text x="1040" y="854" text-anchor="middle" class="th gray-th">External Inputs</text>
+    <text x="1040" y="870" text-anchor="middle" class="ts" font-size="10.5">Advocacy, constituents,</text>
+    <text x="1040" y="884" text-anchor="middle" class="ts" font-size="10.5">industry, state &amp; local</text>
+  </g>
+  <g>
+    <rect x="1390" y="832" width="180" height="62" rx="2" class="gray-fill" stroke-width="1"/>
+    <text x="1480" y="854" text-anchor="middle" class="th gray-th">External Inputs</text>
+    <text x="1480" y="870" text-anchor="middle" class="ts" font-size="10.5">Advocacy, constituents,</text>
+    <text x="1480" y="884" text-anchor="middle" class="ts" font-size="10.5">industry, state &amp; local</text>
+  </g>
+  <g>
+    <rect x="950" y="920" width="180" height="62" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="1040" y="940" text-anchor="middle" class="th yellow-th">House Member Offices</text>
+    <text x="1040" y="956" text-anchor="middle" class="ts yellow-ts">Programmatic priorities</text>
+    <text x="1040" y="970" text-anchor="middle" class="ts yellow-ts">Earmark / CDS requests</text>
+  </g>
+  <g>
+    <rect x="1390" y="920" width="180" height="62" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1480" y="940" text-anchor="middle" class="th pink-th">Senate Member Offices</text>
+    <text x="1480" y="956" text-anchor="middle" class="ts pink-ts">Programmatic priorities</text>
+    <text x="1480" y="970" text-anchor="middle" class="ts pink-ts">Earmark / CDS requests</text>
+  </g>
+  <g>
+    <rect x="750" y="1002" width="380" height="56" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="940" y="1026" text-anchor="middle" class="th yellow-th">12 House Subcommittee Markups</text>
+    <text x="940" y="1044" text-anchor="middle" class="ts yellow-ts">Drafts bill + report · CBO scores costs</text>
+  </g>
+  <use href="#amend-flag" x="1116" y="987" width="14" height="16"/>
+  <g>
+    <rect x="1190" y="1002" width="380" height="56" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1380" y="1026" text-anchor="middle" class="th pink-th">12 Senate Subcommittee Markups</text>
+    <text x="1380" y="1044" text-anchor="middle" class="ts pink-ts">Drafts bill + report · CBO scores costs</text>
+  </g>
+  <use href="#amend-flag" x="1556" y="987" width="14" height="16"/>
+  <path d="M 760 806 L 760 1000" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1200 806 L 1200 1000" class="arr" marker-end="url(#arrow)"/>
+  <line x1="1040" y1="894" x2="1040" y2="918" class="arr-cross" marker-end="url(#arrow-cross)"/>
+  <line x1="1480" y1="894" x2="1480" y2="918" class="arr-cross" marker-end="url(#arrow-cross)"/>
+  <line x1="1040" y1="982" x2="1040" y2="1000" class="arr" marker-end="url(#arrow)"/>
+  <line x1="1480" y1="982" x2="1480" y2="1000" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 600 418 L 730 418 L 750 520" class="arr-cross" marker-end="url(#arrow-cross)"/>
+  <path d="M 600 418 L 730 418 L 950 920" class="arr-cross" marker-end="url(#arrow-cross)"/>
+  <path d="M 600 418 L 730 418 L 1190 520" class="arr-cross" marker-end="url(#arrow-cross)"/>
+  <path d="M 600 418 L 730 418 L 1390 920" class="arr-cross" marker-end="url(#arrow-cross)"/>
+  <g>
+    <rect x="750" y="1120" width="380" height="56" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="940" y="1144" text-anchor="middle" class="th yellow-th">Full House Committee Markup</text>
+    <text x="940" y="1162" text-anchor="middle" class="ts yellow-ts">Amendments allowed</text>
+  </g>
+  <use href="#amend-flag" x="1116" y="1105" width="14" height="16"/>
+  <g>
+    <rect x="1190" y="1120" width="380" height="56" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1380" y="1144" text-anchor="middle" class="th pink-th">Full Senate Committee Markup</text>
+    <text x="1380" y="1162" text-anchor="middle" class="ts pink-ts">Amendments allowed</text>
+  </g>
+  <use href="#amend-flag" x="1556" y="1105" width="14" height="16"/>
+  <path d="M 940 1058 L 940 1118" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1380 1058 L 1380 1118" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="750" y="1200" width="380" height="56" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="940" y="1224" text-anchor="middle" class="th yellow-th">House Rules Committee</text>
+    <text x="940" y="1242" text-anchor="middle" class="ts yellow-ts">Sets amendment rules for floor</text>
+  </g>
+  <use href="#amend-flag" x="1116" y="1185" width="14" height="16"/>
+  <line x1="940" y1="1176" x2="940" y2="1198" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="750" y="1280" width="380" height="56" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="940" y="1304" text-anchor="middle" class="th yellow-th">House Floor Debate &amp; Vote</text>
+    <text x="940" y="1322" text-anchor="middle" class="ts yellow-ts">Floor amendments per rule</text>
+  </g>
+  <use href="#amend-flag" x="1116" y="1265" width="14" height="16"/>
+  <g>
+    <rect x="1190" y="1280" width="380" height="56" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1380" y="1304" text-anchor="middle" class="th pink-th">Senate Floor Debate &amp; Vote</text>
+    <text x="1380" y="1322" text-anchor="middle" class="ts pink-ts">Open amendment process</text>
+  </g>
+  <use href="#amend-flag" x="1556" y="1265" width="14" height="16"/>
+  <line x1="940" y1="1256" x2="940" y2="1278" class="arr" marker-end="url(#arrow)"/>
+  <line x1="1380" y1="1176" x2="1380" y2="1278" class="arr" marker-end="url(#arrow)"/>
+  <line x1="1130" y1="1308" x2="1188" y2="1308" class="arr" marker-end="url(#arrow)"/>
+
+  <!-- ============ PHASE iv ============ -->
+  <line x1="20" y1="1358" x2="1590" y2="1358" class="phase-rule-outer"/>
+  <line x1="20" y1="1362" x2="1590" y2="1362" class="phase-rule-inner"/>
+  <text x="30" y="1384" class="phase-label"><tspan class="phase-numeral">iv.</tspan>  Conference, packaging &amp; final passage <tspan class="ts" fill="#8A7A66" font-style="italic">(Sep–Dec)</tspan></text>
+  <g>
+    <rect x="750" y="1398" width="820" height="60" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="1160" y="1420" text-anchor="middle" class="th coral-th">Conference &amp; Leadership Negotiation</text>
+    <text x="1160" y="1436" text-anchor="middle" class="ts coral-ts">Resolves House–Senate differences AND decides packaging strategy</text>
+    <text x="1160" y="1450" text-anchor="middle" class="ts coral-ts">Outputs a joint report that overrides the House and Senate bills</text>
+  </g>
+  <path d="M 940 1336 L 940 1378 L 1160 1378 L 1160 1396" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1380 1336 L 1380 1378 L 1160 1378 L 1160 1396" class="arr" marker-end="url(#arrow)"/>
+  <text x="1160" y="1476" text-anchor="middle" class="ts" fill="#5E4F3E" font-style="italic">Negotiators choose ONE packaging strategy for the final product:</text>
+  <g>
+    <rect x="750" y="1508" width="190" height="100" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="845" y="1530" text-anchor="middle" class="th coral-th">12 Individual Bills</text>
+    <text x="845" y="1550" text-anchor="middle" class="ts coral-ts">Regular order</text>
+    <text x="845" y="1568" text-anchor="middle" class="ts coral-ts">Each bill conferenced</text>
+    <text x="845" y="1582" text-anchor="middle" class="ts coral-ts">and passed separately</text>
+    <text x="845" y="1600" text-anchor="middle" class="ts coral-ts" font-style="italic">rare in modern practice</text>
+  </g>
+  <use href="#amend-flag" x="926" y="1493" width="14" height="16"/>
+  <g>
+    <rect x="960" y="1508" width="190" height="100" rx="2" class="coral-fill" stroke-width="1" stroke-dasharray="10 3"/>
+    <text x="1055" y="1530" text-anchor="middle" class="th coral-th">Minibus</text>
+    <text x="1055" y="1550" text-anchor="middle" class="ts coral-ts">Subset of bills</text>
+    <text x="1055" y="1564" text-anchor="middle" class="ts coral-ts">bundled into one</text>
+    <text x="1055" y="1578" text-anchor="middle" class="ts coral-ts">vehicle</text>
+    <text x="1055" y="1598" text-anchor="middle" class="ts coral-ts" font-style="italic">common compromise</text>
+  </g>
+  <use href="#amend-flag" x="1136" y="1493" width="14" height="16"/>
+  <g>
+    <rect x="1170" y="1508" width="190" height="100" rx="2" class="coral-fill" stroke-width="1" stroke-dasharray="6 4"/>
+    <text x="1265" y="1530" text-anchor="middle" class="th coral-th">Omnibus</text>
+    <text x="1265" y="1550" text-anchor="middle" class="ts coral-ts">All 12 bills bundled</text>
+    <text x="1265" y="1564" text-anchor="middle" class="ts coral-ts">into one large vehicle</text>
+    <text x="1265" y="1584" text-anchor="middle" class="ts coral-ts" font-style="italic">most common modern</text>
+    <text x="1265" y="1598" text-anchor="middle" class="ts coral-ts" font-style="italic">end product</text>
+  </g>
+  <use href="#amend-flag" x="1346" y="1493" width="14" height="16"/>
+  <g>
+    <rect x="1380" y="1508" width="190" height="100" rx="2" class="amber-fill" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="1475" y="1530" text-anchor="middle" class="th amber-th">Continuing Resolution</text>
+    <text x="1475" y="1550" text-anchor="middle" class="ts amber-ts">Stopgap — extends</text>
+    <text x="1475" y="1564" text-anchor="middle" class="ts amber-ts">prior year's funding;</text>
+    <text x="1475" y="1578" text-anchor="middle" class="ts amber-ts">no new policy work</text>
+    <text x="1475" y="1598" text-anchor="middle" class="ts amber-ts" font-style="italic">used to buy time</text>
+  </g>
+  <use href="#amend-flag" x="1556" y="1493" width="14" height="16"/>
+  <path d="M 1160 1458 L 1160 1488 L 845 1488 L 845 1506" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1160 1488 L 1055 1488 L 1055 1506" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1160 1488 L 1265 1488 L 1265 1506" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1160 1488 L 1475 1488 L 1475 1506" class="arr" marker-end="url(#arrow)"/>
+  <line x1="845"  y1="1608" x2="845"  y2="1646" class="arr" marker-end="url(#arrow)"/>
+  <line x1="1055" y1="1608" x2="1055" y2="1646" class="arr" marker-end="url(#arrow)"/>
+  <line x1="1265" y1="1608" x2="1265" y2="1646" class="arr" marker-end="url(#arrow)"/>
+  <line x1="1475" y1="1608" x2="1475" y2="1646" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="750" y="1648" width="820" height="50" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="1160" y="1678" text-anchor="middle" class="th coral-th">Both Chambers Pass Identical Text on Whichever Package Was Chosen</text>
+  </g>
+  <g>
+    <rect x="220" y="1728" width="380" height="56" rx="2" class="blue-fill" stroke-width="1"/>
+    <text x="410" y="1752" text-anchor="middle" class="th blue-th">President: Sign or Veto</text>
+    <text x="410" y="1770" text-anchor="middle" class="ts blue-ts">Or pocket veto</text>
+  </g>
+  <path d="M 750 1698 L 410 1728" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="220" y="1808" width="180" height="50" rx="2" class="green-fill" stroke-width="1"/>
+    <text x="310" y="1838" text-anchor="middle" class="th green-th">Signed</text>
+  </g>
+  <g>
+    <rect x="420" y="1808" width="180" height="50" rx="2" class="red-fill" stroke-width="1"/>
+    <text x="510" y="1838" text-anchor="middle" class="th red-th">Vetoed</text>
+  </g>
+  <line x1="310" y1="1784" x2="310" y2="1808" class="arr" marker-end="url(#arrow)"/>
+  <line x1="510" y1="1784" x2="510" y2="1808" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 510 1858 L 940 1888" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="750" y="1888" width="380" height="56" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="940" y="1912" text-anchor="middle" class="th yellow-th">House Override Vote</text>
+    <text x="940" y="1930" text-anchor="middle" class="ts yellow-ts">2/3 majority required</text>
+  </g>
+  <g>
+    <rect x="1190" y="1888" width="380" height="56" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1380" y="1912" text-anchor="middle" class="th pink-th">Senate Override Vote</text>
+    <text x="1380" y="1930" text-anchor="middle" class="ts pink-ts">2/3 majority required</text>
+  </g>
+  <line x1="1130" y1="1916" x2="1188" y2="1916" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="750" y="1988" width="380" height="50" rx="2" class="green-fill" stroke-width="1"/>
+    <text x="940" y="2010" text-anchor="middle" class="th green-th">Override Succeeds</text>
+    <text x="940" y="2026" text-anchor="middle" class="ts green-ts">bill becomes law (despite the veto)</text>
+  </g>
+  <g>
+    <rect x="1190" y="1988" width="380" height="50" rx="2" class="red-fill" stroke-width="1"/>
+    <text x="1380" y="2010" text-anchor="middle" class="th red-th">Override Fails</text>
+    <text x="1380" y="2026" text-anchor="middle" class="ts red-ts">bill dies</text>
+  </g>
+  <path d="M 1380 1944 L 1380 1968 L 940 1968 L 940 1986" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 940 1944 L 940 1968 L 1380 1968 L 1380 1986" class="arr-fail" marker-end="url(#arrow-fail)"/>
+  <g>
+    <rect x="750" y="1728" width="820" height="80" rx="2" class="red-fill" stroke-width="1" stroke-dasharray="6 4"/>
+    <text x="1160" y="1758" text-anchor="middle" class="th red-th">Government Shutdown</text>
+    <text x="1160" y="1778" text-anchor="middle" class="ts red-ts">If NO package passes by Oct 1 (or CR expiration) → agencies furlough non-essential staff</text>
+    <text x="1160" y="1794" text-anchor="middle" class="ts red-ts" font-style="italic">Triggers political pressure to pass any package — Congress retries CR or omnibus</text>
+  </g>
+  <path d="M 1570 1428 L 1610 1428 L 1610 1768 L 1572 1768" class="arr-fail" marker-end="url(#arrow-fail)"/>
+  <path d="M 750 1768 L 690 1768 L 690 1428 L 748 1428" class="arr-feedback" marker-end="url(#arrow-feedback)"/>
+
+  <!-- ============ PHASE v ============ -->
+  <line x1="20" y1="2038" x2="1590" y2="2038" class="phase-rule-outer"/>
+  <line x1="20" y1="2042" x2="1590" y2="2042" class="phase-rule-inner"/>
+  <text x="30" y="2064" class="phase-label"><tspan class="phase-numeral">v.</tspan>  Post-enactment: sequestration check, then apportionment &amp; obligation</text>
+  <g>
+    <rect x="220" y="2100" width="380" height="80" rx="2" class="strike-out"/>
+    <text x="410" y="2124" text-anchor="middle" class="th" fill="#9E2A2B">OMB Sequestration Check</text>
+    <text x="410" y="2144" text-anchor="middle" class="ts" fill="#9E2A2B">If total enacted spending exceeds statutory caps (BCA, FRA, etc.):</text>
+    <text x="410" y="2160" text-anchor="middle" class="ts" fill="#9E2A2B">Congress caused the breach → OMB issues sequester order → automatic</text>
+    <text x="410" y="2174" text-anchor="middle" class="ts" fill="#9E2A2B">across-the-board cancellation of budget authority to return under cap</text>
+  </g>
+  <line x1="220" y1="2100" x2="600" y2="2180" stroke="#9E2A2B" stroke-width="1" opacity="0.5"/>
+  <line x1="600" y1="2100" x2="220" y2="2180" stroke="#9E2A2B" stroke-width="1" opacity="0.5"/>
+  <path d="M 310 1858 L 310 2080 L 410 2080 L 410 2098" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="220" y="2280" width="240" height="56" rx="2" class="purple-fill" stroke-width="1"/>
+    <text x="340" y="2304" text-anchor="middle" class="th purple-th">OMB Apportionment</text>
+    <text x="340" y="2322" text-anchor="middle" class="ts purple-ts">Quarterly or by activity</text>
+  </g>
+  <g>
+    <rect x="490" y="2280" width="200" height="56" rx="2" class="strike-out"/>
+    <text x="590" y="2304" text-anchor="middle" class="th" fill="#9E2A2B">Sequestration Cuts</text>
+    <text x="590" y="2322" text-anchor="middle" class="ts" fill="#9E2A2B">Reduced budget authority</text>
+  </g>
+  <line x1="490" y1="2280" x2="690" y2="2336" stroke="#9E2A2B" stroke-width="1" opacity="0.5"/>
+  <line x1="690" y1="2280" x2="490" y2="2336" stroke="#9E2A2B" stroke-width="1" opacity="0.5"/>
+  <path d="M 340 2180 L 340 2278" class="arr" marker-end="url(#arrow)"/>
+  <text x="352" y="2232" class="ts" fill="#5E4F3E">No breach</text>
+  <path d="M 510 2180 L 590 2278" class="arr-fail" marker-end="url(#arrow-fail)"/>
+  <text x="525" y="2232" class="ts" fill="#9E2A2B">If breach</text>
+  <path d="M 490 2308 L 462 2308" class="arr-fail" marker-end="url(#arrow-fail)"/>
+  <g>
+    <rect x="220" y="2360" width="380" height="56" rx="2" class="teal-fill" stroke-width="1"/>
+    <text x="410" y="2384" text-anchor="middle" class="th teal-th">Agency Obligates Funds</text>
+    <text x="410" y="2402" text-anchor="middle" class="ts teal-ts">Contracts, grants, payroll</text>
+  </g>
+  <path d="M 340 2336 L 340 2348 L 410 2348 L 410 2358" class="arr" marker-end="url(#arrow)" fill="none"/>
+  <g>
+    <rect x="220" y="2440" width="380" height="56" rx="2" class="green-fill" stroke-width="1"/>
+    <text x="410" y="2464" text-anchor="middle" class="th green-th">Outlays</text>
+    <text x="410" y="2482" text-anchor="middle" class="ts green-ts">Cash leaves Treasury</text>
+  </g>
+  <line x1="410" y1="2416" x2="410" y2="2438" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="750" y="2380" width="820" height="76" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="1160" y="2404" text-anchor="middle" class="th coral-th">GAO Audits Agency Execution (Legislative-Branch Oversight)</text>
+    <text x="1160" y="2422" text-anchor="middle" class="ts coral-ts">Reviews ICA compliance, ADA violations, improper payments;</text>
+    <text x="1160" y="2436" text-anchor="middle" class="ts coral-ts">issues legal opinions; reports findings to authorizing &amp; approps</text>
+    <text x="1160" y="2450" text-anchor="middle" class="ts coral-ts">committees in both chambers</text>
+  </g>
+  <path d="M 600 2388 L 748 2418" class="arr-audit" marker-end="url(#arrow-audit)"/>
+
+  <!-- ============ PHASE vi ============ -->
+  <line x1="20" y1="2528" x2="1590" y2="2528" class="phase-rule-outer"/>
+  <line x1="20" y1="2532" x2="1590" y2="2532" class="phase-rule-inner"/>
+  <text x="30" y="2554" class="phase-label"><tspan class="phase-numeral">vi.</tspan>  Impoundment <tspan class="ts" fill="#8A7A66" font-style="italic">(executive-initiated, governed by ICA of 1974)</tspan></text>
+  <text x="30" y="2580" class="ts" fill="#5E4F3E" font-style="italic">Three vertical paths below — each is a distinct way the executive can withhold funds. ICA requires release if Congress doesn't approve.</text>
+  <rect x="40" y="2600" width="1530" height="240" rx="2" class="path-bg"/>
+  <text x="55" y="2622" class="path-label">Path A — Deferral <tspan font-weight="400" fill="#5E4F3E">(temporary withholding)  ·  legally diminished post-Chadha (1983)</tspan></text>
+  <g>
+    <rect x="220" y="2640" width="380" height="60" rx="2" class="blue-fill" stroke-width="1"/>
+    <text x="410" y="2662" text-anchor="middle" class="th blue-th">President Files Deferral Message</text>
+    <text x="410" y="2678" text-anchor="middle" class="ts blue-ts">Temporary delay in spending</text>
+    <text x="410" y="2692" text-anchor="middle" class="ts blue-ts">Limited to current fiscal year</text>
+  </g>
+  <path d="M 220 2388 L 40 2388 L 40 2670 L 220 2670" class="arr-feedback" marker-end="url(#arrow-feedback)"/>
+  <g>
+    <rect x="750" y="2640" width="380" height="60" rx="2" class="strike-out"/>
+    <text x="940" y="2662" text-anchor="middle" class="th" fill="#9E2A2B">House one-chamber disapproval</text>
+    <text x="940" y="2678" text-anchor="middle" class="ts" fill="#9E2A2B">Original ICA mechanism —</text>
+    <text x="940" y="2692" text-anchor="middle" class="ts" fill="#9E2A2B">struck down by INS v. Chadha (1983)</text>
+  </g>
+  <line x1="760" y1="2645" x2="1120" y2="2695" stroke="#9E2A2B" stroke-width="1" opacity="0.5"/>
+  <line x1="1120" y1="2645" x2="760" y2="2695" stroke="#9E2A2B" stroke-width="1" opacity="0.5"/>
+  <g>
+    <rect x="1190" y="2640" width="380" height="60" rx="2" class="strike-out"/>
+    <text x="1380" y="2662" text-anchor="middle" class="th" fill="#9E2A2B">Senate one-chamber disapproval</text>
+    <text x="1380" y="2678" text-anchor="middle" class="ts" fill="#9E2A2B">Original ICA mechanism —</text>
+    <text x="1380" y="2692" text-anchor="middle" class="ts" fill="#9E2A2B">struck down by INS v. Chadha (1983)</text>
+  </g>
+  <line x1="1200" y1="2645" x2="1560" y2="2695" stroke="#9E2A2B" stroke-width="1" opacity="0.5"/>
+  <line x1="1560" y1="2645" x2="1200" y2="2695" stroke="#9E2A2B" stroke-width="1" opacity="0.5"/>
+  <g>
+    <rect x="750" y="2720" width="820" height="60" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="1160" y="2742" text-anchor="middle" class="th coral-th">Today: Force-Release Requires a Full Law</text>
+    <text x="1160" y="2758" text-anchor="middle" class="ts coral-ts">Both chambers pass + President signs (or veto override)</text>
+    <text x="1160" y="2772" text-anchor="middle" class="ts coral-ts">Or wait for end of FY (deferral expires automatically)</text>
+  </g>
+  <path d="M 600 2670 L 750 2720" class="arr-feedback" marker-end="url(#arrow-feedback)"/>
+  <g>
+    <rect x="750" y="2800" width="820" height="36" rx="2" class="green-fill" stroke-width="1"/>
+    <text x="1160" y="2823" text-anchor="middle" class="th green-th">Funds Released (by New Law or End of FY)</text>
+  </g>
+  <line x1="1160" y1="2780" x2="1160" y2="2800" class="arr" marker-end="url(#arrow)"/>
+  <rect x="40" y="2860" width="1530" height="320" rx="2" class="path-bg"/>
+  <text x="55" y="2882" class="path-label">Path B — Rescission request <tspan font-weight="400" fill="#5E4F3E">(permanent cancellation sought, 45-day clock)</tspan></text>
+  <g>
+    <rect x="220" y="2900" width="380" height="60" rx="2" class="blue-fill" stroke-width="1"/>
+    <text x="410" y="2922" text-anchor="middle" class="th blue-th">President Files Rescission Message</text>
+    <text x="410" y="2938" text-anchor="middle" class="ts blue-ts">Seeks permanent cancellation</text>
+    <text x="410" y="2952" text-anchor="middle" class="ts blue-ts">45-day clock starts (continuous session)</text>
+  </g>
+  <path d="M 220 2388 L 40 2388 L 40 2930 L 220 2930" class="arr-feedback" marker-end="url(#arrow-feedback)"/>
+  <g>
+    <rect x="750" y="2900" width="380" height="60" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="940" y="2922" text-anchor="middle" class="th yellow-th">House Considers Rescission Bill</text>
+    <text x="940" y="2938" text-anchor="middle" class="ts yellow-ts">Expedited procedures available</text>
+    <text x="940" y="2952" text-anchor="middle" class="ts yellow-ts">May modify or reject</text>
+  </g>
+  <g>
+    <rect x="1190" y="2900" width="380" height="60" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1380" y="2922" text-anchor="middle" class="th pink-th">Senate Considers Rescission Bill</text>
+    <text x="1380" y="2938" text-anchor="middle" class="ts pink-ts">No filibuster (rare ICA carve-out)</text>
+    <text x="1380" y="2952" text-anchor="middle" class="ts pink-ts">May modify or reject</text>
+  </g>
+  <path d="M 600 2930 L 750 2930" class="arr-feedback" marker-end="url(#arrow-feedback)"/>
+  <path d="M 600 2930 L 1190 2930" class="arr-feedback" marker-end="url(#arrow-feedback)"/>
+  <g>
+    <rect x="750" y="2980" width="820" height="40" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="1160" y="3005" text-anchor="middle" class="th coral-th">Both Chambers Must Pass Identical Bill Text</text>
+  </g>
+  <path d="M 940 2960 L 940 2978" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1380 2960 L 1380 2978" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="220" y="3040" width="380" height="50" rx="2" class="blue-fill" stroke-width="1"/>
+    <text x="410" y="3070" text-anchor="middle" class="th blue-th">President Signs Rescission Bill</text>
+  </g>
+  <path d="M 750 3000 L 600 2930" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="220" y="3120" width="180" height="50" rx="2" class="red-fill" stroke-width="1"/>
+    <text x="310" y="3150" text-anchor="middle" class="th red-th">Funds Cancelled</text>
+  </g>
+  <line x1="310" y1="3090" x2="310" y2="3120" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="420" y="3120" width="180" height="50" rx="2" class="green-fill" stroke-width="1"/>
+    <text x="510" y="3150" text-anchor="middle" class="th green-th">Funds Released</text>
+  </g>
+  <text x="510" y="3190" text-anchor="middle" class="ts" fill="#5E4F3E" font-style="italic">If 45 days pass without enactment</text>
+  <path d="M 1010 3020 L 410 3038" class="arr" marker-end="url(#arrow)"/>
+  <text x="700" y="3080" class="ts" fill="#5E4F3E" font-style="italic">If chambers fail to agree, modify, or President vetoes:</text>
+  <text x="700" y="3094" class="ts" fill="#5E4F3E" font-style="italic">funds release at end of 45-day clock</text>
+  <rect x="40" y="3200" width="1530" height="200" rx="2" class="path-bg"/>
+  <text x="55" y="3222" class="path-label">Path C — Illegal impoundment <tspan font-weight="400" fill="#5E4F3E">(no special message filed — violates ICA)</tspan></text>
+  <g>
+    <rect x="220" y="3240" width="380" height="60" rx="2" class="red-fill" stroke-width="1"/>
+    <text x="410" y="3262" text-anchor="middle" class="th red-th">Executive Withholds Without Filing</text>
+    <text x="410" y="3278" text-anchor="middle" class="ts red-ts">No special message — violates ICA</text>
+    <text x="410" y="3292" text-anchor="middle" class="ts red-ts">May or may not be public</text>
+  </g>
+  <path d="M 220 2388 L 40 2388 L 40 3270 L 220 3270" class="arr-feedback" marker-end="url(#arrow-feedback)"/>
+  <g>
+    <rect x="750" y="3240" width="820" height="60" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="1160" y="3262" text-anchor="middle" class="th coral-th">GAO Investigates &amp; Issues Legal Opinion (Spans Both Chambers)</text>
+    <text x="1160" y="3278" text-anchor="middle" class="ts coral-ts">May find ICA violation; may sue to compel release;</text>
+    <text x="1160" y="3292" text-anchor="middle" class="ts coral-ts">reports findings to congressional committees of jurisdiction</text>
+  </g>
+  <path d="M 600 3270 L 750 3270" class="arr-audit" marker-end="url(#arrow-audit)"/>
+  <g>
+    <rect x="750" y="3320" width="820" height="50" rx="2" class="green-fill" stroke-width="1"/>
+    <text x="1160" y="3350" text-anchor="middle" class="th green-th">Funds Released (Court-Ordered or Voluntary)</text>
+  </g>
+  <line x1="1160" y1="3300" x2="1160" y2="3320" class="arr" marker-end="url(#arrow)"/>
+
+  <!-- ============ PHASE vii ============ -->
+  <line x1="20" y1="3428" x2="1590" y2="3428" class="phase-rule-outer"/>
+  <line x1="20" y1="3432" x2="1590" y2="3432" class="phase-rule-inner"/>
+  <text x="30" y="3454" class="phase-label"><tspan class="phase-numeral">vii.</tspan>  Congressional rescission <tspan class="ts" fill="#8A7A66" font-style="italic">(separate path, Congress-initiated)</tspan></text>
+  <text x="30" y="3480" class="ts" fill="#5E4F3E" font-style="italic">Congress can also cancel funds on its own without any presidential request — typically used as a budget offset.</text>
+  <g>
+    <rect x="750" y="3500" width="380" height="60" rx="2" class="yellow-fill" stroke-width="1"/>
+    <text x="940" y="3522" text-anchor="middle" class="th yellow-th">House Initiates Rescission</text>
+    <text x="940" y="3538" text-anchor="middle" class="ts yellow-ts">In approps bill or standalone</text>
+    <text x="940" y="3552" text-anchor="middle" class="ts yellow-ts">Cancels prior budget authority</text>
+  </g>
+  <g>
+    <rect x="1190" y="3500" width="380" height="60" rx="2" class="pink-fill" stroke-width="1"/>
+    <text x="1380" y="3522" text-anchor="middle" class="th pink-th">Senate Initiates Rescission</text>
+    <text x="1380" y="3538" text-anchor="middle" class="ts pink-ts">In approps bill or standalone</text>
+    <text x="1380" y="3552" text-anchor="middle" class="ts pink-ts">Cancels prior budget authority</text>
+  </g>
+  <g>
+    <rect x="750" y="3600" width="820" height="50" rx="2" class="coral-fill" stroke-width="1"/>
+    <text x="1160" y="3630" text-anchor="middle" class="th coral-th">Both Chambers Pass — Sent to President for Signature</text>
+  </g>
+  <path d="M 940 3560 L 940 3598" class="arr" marker-end="url(#arrow)"/>
+  <path d="M 1380 3560 L 1380 3598" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="220" y="3690" width="380" height="50" rx="2" class="blue-fill" stroke-width="1"/>
+    <text x="410" y="3720" text-anchor="middle" class="th blue-th">President Signs Rescission into Law</text>
+  </g>
+  <path d="M 750 3625 L 410 3688" class="arr" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="220" y="3760" width="380" height="50" rx="2" class="red-fill" stroke-width="1"/>
+    <text x="410" y="3790" text-anchor="middle" class="th red-th">Funds Permanently Cancelled</text>
+  </g>
+  <line x1="410" y1="3740" x2="410" y2="3760" class="arr" marker-end="url(#arrow)"/>
+
+  <!-- ============ DIM OVERLAY (rendered last, on top) ============ -->
+  <g id="dim-overlay" pointer-events="none">
+    <rect id="dim-a" x="0" y="0" width="0" height="3840" fill="#FBF5E6" opacity="0"/>
+  </g>
+</svg>
+
+<script>
+  /* ---------- Slide definitions ----------
+     vb: [x, y, w, h] for SVG viewBox
+     dim: { x, w } — a single vertical band to overlay (full height)
+  */
+  const SLIDES = [
+    {
+      numeral: '',
+      label: 'The U.S. Federal Appropriations Process',
+      progress: 'overview · 7 sections',
+      vb: [0, 0, 1610, 3840],
+      dim: null,
+      scroll: true
+    },
+    {
+      numeral: 'i.',
+      label: 'Executive Budget Formulation',
+      progress: '1 of 7',
+      vb: [-10, 185, 730, 318],  // executive column only
+      dim: null
+    },
+    {
+      numeral: 'ii.',
+      label: 'Budget Resolution & Allocation',
+      progress: '2 of 7',
+      vb: [718, 460, 900, 274],  // congressional columns only
+      dim: null
+    },
+    {
+      numeral: 'iii.',
+      label: 'Subcommittee & Committee Actions',
+      progress: '3 of 7',
+      vb: [718, 690, 900, 690],  // congressional columns only
+      dim: null
+    },
+    {
+      numeral: 'iv.',
+      label: 'Conference, Packaging & Final Passage',
+      progress: '4 of 7',
+      vb: [0, 1340, 1610, 722],
+      dim: null
+    },
+    {
+      numeral: 'v.',
+      label: 'Post-Enactment: Sequestration & Apportionment',
+      progress: '5 of 7',
+      vb: [-10, 2020, 730, 534], // executive column only
+      dim: null
+    },
+    {
+      numeral: 'vi.',
+      label: 'Impoundment',
+      progress: '6 of 7',
+      vb: [0, 2510, 1610, 940],
+      dim: null
+    },
+    {
+      numeral: 'vii.',
+      label: 'Congressional Rescission',
+      progress: '7 of 7',
+      vb: [0, 3410, 1610, 452],
+      dim: null
+    }
+  ];
+
+  /* Extend viewBox height so slide-ui doesn't overlap content.
+     Uses xMidYMin meet (top-aligned), so free space accumulates at the bottom.
+     For height-constrained slides (content fills full viewport height), we push
+     h outward until the rendered content ends above the slide-ui. */
+  function getAdjustedVB(vb) {
+    const [x, y, w, h] = vb;
+    const ui  = document.getElementById('slide-ui');
+    const uiRect = ui.getBoundingClientRect();
+    const vW = window.innerWidth;
+    const vH = window.innerHeight;
+    /* Cap P at 35% of viewport so a mis-measured slide-ui never produces a
+       viewBox so tall that content shrinks to invisible. */
+    const P = Math.min((vH - uiRect.top) + 12, vH * 0.35);
+    const scale = Math.min(vW / w, vH / h);
+    const freeBottom = vH - h * scale;
+    if (freeBottom >= P) return vb;
+    const h1 = Math.ceil(h * vH / (vH - P));
+    return [x, y, w, h1];
+  }
+
+  const svg       = document.getElementById('main-svg');
+  const dimRect   = document.getElementById('dim-a');
+  const elNum     = document.getElementById('slide-numeral');
+  const elTitle   = document.getElementById('slide-title');
+  const elProg    = document.getElementById('slide-progress');
+  const dotsEl    = document.getElementById('slide-dots');
+  const btnPrev   = document.getElementById('nav-prev');
+  const btnNext   = document.getElementById('nav-next');
+
+  let current = 0;
+  let liveVB  = [0, 0, 1610, 3840];
+  let liveDimX = 0, liveDimW = 0, liveDimOp = 0;
+  let rafId = null;
+
+  /* Build dots */
+  SLIDES.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    dotsEl.appendChild(d);
+  });
+
+  function getDots() { return dotsEl.querySelectorAll('.dot'); }
+
+  function ease(t) { return t < 0.5 ? 2*t*t : -1 + (4 - 2*t)*t; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function applyFrame(vb, dimX, dimW, dimOp) {
+    svg.setAttribute('viewBox', vb.join(' '));
+    if (dimOp < 0.005) {
+      dimRect.setAttribute('opacity', '0');
+    } else {
+      dimRect.setAttribute('x', dimX);
+      dimRect.setAttribute('width', dimW);
+      dimRect.setAttribute('opacity', dimOp.toFixed(3));
+    }
+  }
+
+  function goTo(idx) {
+    if (idx === current) return;
+    if (rafId) cancelAnimationFrame(rafId);
+
+    const from = SLIDES[current];
+    const to   = SLIDES[idx];
+
+    const isZoomed = idx >= 1 && idx <= 7;
+    const targetVB = isZoomed ? getAdjustedVB([...to.vb]) : [...to.vb];
+
+    /* Leaving scroll mode: restore fixed layout and snap directly to target — no zoom-out animation */
+    if (from.scroll) {
+      /* Reset scroll position while overflow is still auto; once we apply
+         overflow:hidden the scrollTo call becomes a no-op in most browsers,
+         leaving a non-zero scrollTop that pushes all content off-screen. */
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      document.documentElement.classList.remove('scroll-mode');
+      document.body.classList.remove('scroll-mode');
+      liveVB = [...targetVB];
+      svg.setAttribute('viewBox', liveVB.join(' '));
+      dimRect.setAttribute('opacity', '0');
+      liveDimOp = 0;
+      current = idx;
+      updateUI(idx);
+      return;
+    }
+
+    const startVB    = [...liveVB];
+
+    const startDimX  = liveDimX;
+    const startDimW  = liveDimW;
+    const startDimOp = liveDimOp;
+    const targetDimX  = to.dim ? to.dim.x : 0;
+    const targetDimW  = to.dim ? to.dim.w : 0;
+    const targetDimOp = to.dim ? 0.82 : 0;
+
+    if (to.dim && from.dim && (to.dim.x !== from.dim.x)) {
+      dimRect.setAttribute('x', to.dim.x);
+      dimRect.setAttribute('width', to.dim.w);
+    }
+
+    current = idx;
+    updateUI(idx);
+
+    /* Skip viewBox animation when entering scroll mode — just switch layout immediately */
+    if (to.scroll) {
+      liveVB = [...targetVB];
+      svg.setAttribute('viewBox', targetVB.join(' '));
+      dimRect.setAttribute('opacity', '0');
+      document.documentElement.classList.add('scroll-mode');
+      document.body.classList.add('scroll-mode');
+      return;
+    }
+
+    const t0 = performance.now();
+    const DUR = 680;
+
+    function tick(now) {
+      const raw = Math.min((now - t0) / DUR, 1);
+      const e   = ease(raw);
+
+      liveVB    = startVB.map((v, i) => lerp(v, targetVB[i], e));
+      liveDimX  = to.dim ? to.dim.x : startDimX;
+      liveDimW  = to.dim ? to.dim.w : startDimW;
+      liveDimOp = lerp(startDimOp, targetDimOp, e);
+
+      applyFrame(liveVB, liveDimX, liveDimW, liveDimOp);
+
+      if (raw < 1) {
+        rafId = requestAnimationFrame(tick);
+      } else {
+        liveVB    = [...targetVB];
+        liveDimOp = targetDimOp;
+        rafId = null;
+        /* Entering scroll mode: switch layout after animation completes */
+        if (to.scroll) {
+          document.documentElement.classList.add('scroll-mode');
+          document.body.classList.add('scroll-mode');
+        }
+      }
+    }
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function updateUI(idx) {
+    const s = SLIDES[idx];
+    elNum.textContent   = s.numeral;
+    elTitle.textContent = s.label;
+    elProg.textContent  = s.progress;
+
+    getDots().forEach((d, i) => {
+      d.className = 'dot' +
+        (i === idx ? ' active' : (i < idx ? ' visited' : ''));
+    });
+
+    btnPrev.classList.remove('hidden');
+    btnNext.classList.remove('hidden');
+  }
+
+  function advance() {
+    goTo((current + 1) % SLIDES.length);
+  }
+  function retreat() {
+    goTo((current - 1 + SLIDES.length) % SLIDES.length);
+  }
+
+  /* Click anywhere on SVG to advance (disabled in scroll mode) */
+  svg.addEventListener('click', () => { if (!SLIDES[current].scroll) advance(); });
+
+  /* Keyboard */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); advance(); }
+    if (e.key === 'ArrowLeft')                   { e.preventDefault(); retreat(); }
+    if (e.key === 'Escape' || e.key === 'Home')  { e.preventDefault(); goTo(0); }
+  });
+
+  /* Button clicks */
+  btnPrev.addEventListener('click', e => { e.stopPropagation(); retreat(); });
+  btnNext.addEventListener('click', e => { e.stopPropagation(); advance(); });
+
+  /* Init UI */
+  document.documentElement.classList.add('scroll-mode');
+  document.body.classList.add('scroll-mode');
+  updateUI(0);
+</script>
+</body>
+</html>
