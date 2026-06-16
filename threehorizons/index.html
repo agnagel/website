@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A Congress for the 21st Century — Three Horizons</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #2e2114;
+    overflow-x: hidden;
+    background: #cfe0f0;
+  }
+
+  /* Scroll runway — long, so the ascent is slow and deliberate. */
+  .runway { height: 1000vh; position: relative; }
+
+  /* ---------- Fixed scene ---------- */
+  .scene { position: fixed; inset: 0; overflow: hidden; z-index: 0; }
+
+  /* Sky: light blue up high, warm beige toward the horizon. */
+  .sky {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to top,
+      #faf2e4 0%,
+      #f7eedf 12%,
+      #f0ebe0 28%,
+      #e4ecf3 48%,
+      #d6e4f3 72%,
+      #c6dcf2 100%
+    );
+  }
+
+  /* Warm haze near the horizon that strengthens as the Capitol rises. */
+  .haze {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(250,240,221,.6) 0%, rgba(250,240,221,0) 42%);
+    opacity: .5;
+  }
+
+  /* Soft sun glow low in the sky. */
+  .sun {
+    position: absolute; left: 70%; top: 30%;
+    width: 220px; height: 220px; margin: -110px 0 0 -110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff7e6 0%, #ffe9c2 44%, rgba(255,233,194,0) 72%);
+  }
+
+  /* ---------- Parallax layers ----------
+     Anchored to the bottom and sliced to cover the viewport. As you scroll
+     DOWN you rise UP: the rubble and city in the foreground sink away beneath
+     you, while the Capitol (behind them) climbs into view to meet you. */
+  .layer {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    will-change: transform;
+  }
+  .layer svg { width: 100%; height: 100%; display: block; }
+
+  /* ---------- Captions ---------- */
+  .content { position: relative; z-index: 5; }
+  .panel {
+    height: 200vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 0 24px;
+    opacity: 0; transform: translateY(40px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  /* First slide is centered in view the moment the page loads. */
+  .content .panel:first-child { height: 100vh; }
+  .panel.in { opacity: 1; transform: translateY(0); }
+
+  .card {
+    width: min(92vw, 880px);
+    padding: 42px 60px;
+    background: rgba(247, 238, 223, .82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 18px;
+    border: 1px solid rgba(120, 92, 58, .25);
+    box-shadow: 0 18px 50px rgba(70, 48, 24, .22);
+  }
+  .card .eyebrow {
+    font-size: .72rem; letter-spacing: .34em; text-transform: uppercase;
+    color: #8a6f50; margin-bottom: 14px; font-weight: 700;
+  }
+  .card h2 {
+    font-size: clamp(1.5rem, 3.6vw, 2.5rem); font-weight: 800;
+    line-height: 1.18; letter-spacing: -.01em; color: #2e2114;
+  }
+  .card p {
+    margin-top: 12px; font-size: clamp(1rem, 2.4vw, 1.25rem);
+    line-height: 1.6; color: #5a4632;
+  }
+  .card a {
+    color: #8a5a28; font-weight: 700;
+    text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    transition: color .2s ease;
+  }
+  .card a:hover { color: #5e3c18; }
+
+  /* Final call-to-action panel */
+  .card.cta h2 { font-size: clamp(1.4rem, 3.2vw, 2.1rem); }
+  .card.cta .links { margin-top: 22px; display: flex; flex-direction: column; gap: 16px; }
+  .card.cta .links p { margin: 0; }
+
+  /* Scroll hint */
+  .hint {
+    position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%);
+    z-index: 6; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase;
+    color: #5a4632; opacity: .9; transition: opacity .4s ease;
+    text-shadow: 0 1px 6px rgba(247,238,223,.8);
+  }
+  .hint .arrow { display: block; margin: 8px auto 0; animation: bob 1.6s ease-in-out infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0);} 50% { transform: translateY(6px);} }
+</style>
+</head>
+<body>
+
+  <!-- ===== Fixed scene ===== -->
+  <div class="scene" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="sun"></div>
+
+    <!-- LAYER 4 (back): The U.S. Capitol — the vision. Rises UP to meet you. -->
+    <div class="layer" data-from="48" data-to="0" data-ease="out">
+      <svg viewBox="0 0 1440 950" preserveAspectRatio="xMidYMax slice">
+        <g fill="#d8c49d">
+          <!-- terrace / steps -->
+          <polygon points="540,950 588,852 852,852 900,950"/>
+          <!-- long wings -->
+          <rect x="280" y="762" width="880" height="188"/>
+          <rect x="300" y="726" width="200" height="40"/>
+          <rect x="940" y="726" width="200" height="40"/>
+          <!-- central building block -->
+          <rect x="556" y="688" width="328" height="262"/>
+          <!-- portico pediment -->
+          <polygon points="596,688 720,636 844,688"/>
+          <!-- base beneath the dome -->
+          <rect x="628" y="556" width="184" height="138"/>
+          <!-- colonnade drum -->
+          <rect x="646" y="498" width="148" height="62"/>
+          <!-- dome -->
+          <path d="M648,503 C 648,378 792,378 792,503 Z"/>
+          <!-- cupola / tholos -->
+          <rect x="704" y="358" width="32" height="42"/>
+          <path d="M702,363 C 702,336 738,336 738,363 Z"/>
+          <!-- Statue of Freedom -->
+          <rect x="718" y="316" width="4" height="22"/>
+          <circle cx="720" cy="312" r="6"/>
+        </g>
+        <!-- subtle column shadows on the drum for a touch of depth -->
+        <g fill="#c4ad84">
+          <rect x="654" y="500" width="6" height="58"/>
+          <rect x="676" y="500" width="6" height="58"/>
+          <rect x="698" y="500" width="6" height="58"/>
+          <rect x="720" y="500" width="6" height="58"/>
+          <rect x="742" y="500" width="6" height="58"/>
+          <rect x="764" y="500" width="6" height="58"/>
+          <rect x="780" y="500" width="6" height="58"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- LAYER 3: Taller building silhouettes. Sink slowly. -->
+    <div class="layer" data-from="0" data-to="120" data-ease="linear">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice">
+        <g fill="#a98c64">
+          <rect x="0"    y="300" width="130" height="300"/>
+          <rect x="140"  y="226" width="96"  height="374"/>
+          <rect x="214"  y="200" width="10"  height="40"/>
+          <rect x="246"  y="320" width="118" height="280"/>
+          <rect x="372"  y="170" width="92"  height="430"/>
+          <rect x="412"  y="128" width="12"  height="48"/>
+          <rect x="474"  y="270" width="120" height="330"/>
+          <rect x="604"  y="210" width="100" height="390"/>
+          <rect x="714"  y="300" width="128" height="300"/>
+          <rect x="852"  y="180" width="98"  height="420"/>
+          <rect x="894"  y="138" width="12"  height="46"/>
+          <rect x="960"  y="262" width="120" height="338"/>
+          <rect x="1090" y="206" width="104" height="394"/>
+          <rect x="1204" y="312" width="120" height="288"/>
+          <rect x="1334" y="244" width="106" height="356"/>
+        </g>
+        <!-- faint windows -->
+        <g fill="#8c7150">
+          <rect x="164" y="252" width="48" height="10"/>
+          <rect x="164" y="280" width="48" height="10"/>
+          <rect x="392" y="200" width="52" height="10"/>
+          <rect x="392" y="232" width="52" height="10"/>
+          <rect x="628" y="240" width="52" height="10"/>
+          <rect x="628" y="272" width="52" height="10"/>
+          <rect x="876" y="210" width="50" height="10"/>
+          <rect x="876" y="242" width="50" height="10"/>
+          <rect x="1114" y="238" width="56" height="10"/>
+          <rect x="1114" y="270" width="56" height="10"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- LAYER 2: Shorter building silhouettes. Sink faster. -->
+    <div class="layer" data-from="0" data-to="146" data-ease="linear">
+      <svg viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
+        <g fill="#8a6f4c">
+          <rect x="0"    y="340" width="150" height="160"/>
+          <rect x="158"  y="300" width="120" height="200"/>
+          <rect x="286"  y="360" width="140" height="140"/>
+          <!-- water tower -->
+          <rect x="320"  y="318" width="40"  height="44"/>
+          <rect x="336"  y="300" width="8"   height="20"/>
+          <rect x="434"  y="290" width="130" height="210"/>
+          <polygon points="434,290 499,250 564,290"/>
+          <rect x="572"  y="350" width="150" height="150"/>
+          <rect x="730"  y="312" width="124" height="188"/>
+          <rect x="862"  y="362" width="146" height="138"/>
+          <rect x="1016" y="300" width="128" height="200"/>
+          <rect x="1062" y="276" width="36" height="28"/>
+          <rect x="1152" y="352" width="150" height="148"/>
+          <rect x="1310" y="316" width="130" height="184"/>
+        </g>
+        <g fill="#6e5839">
+          <rect x="186" y="324" width="64" height="10"/>
+          <rect x="186" y="350" width="64" height="10"/>
+          <rect x="460" y="316" width="78" height="10"/>
+          <rect x="460" y="344" width="78" height="10"/>
+          <rect x="758" y="336" width="68" height="10"/>
+          <rect x="758" y="362" width="68" height="10"/>
+          <rect x="1044" y="324" width="72" height="10"/>
+          <rect x="1044" y="352" width="72" height="10"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- LAYER 1 (front): Broken buildings in rubble. Sink away fastest. -->
+    <div class="layer" data-from="0" data-to="176" data-ease="linear">
+      <svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMax slice">
+        <!-- rubble mound running across the foreground -->
+        <path fill="#6b5439" d="M0,460 L0,372
+          C 130,338 230,366 350,352 C 470,338 548,378 668,356
+          C 800,332 902,372 1040,352 C 1182,332 1316,368 1440,348
+          L1440,460 Z"/>
+        <g fill="#6b5439">
+          <!-- broken tower, jagged collapsed top (left) -->
+          <polygon points="120,460 120,170 168,196 168,140 216,168 216,224 264,200 264,460"/>
+          <!-- leaning slab -->
+          <polygon points="330,460 352,236 392,242 378,460"/>
+          <!-- broken wall with a blown-out gap (center-left) -->
+          <polygon points="470,460 470,210 524,176 528,250 582,228 582,318 636,296 636,460
+                            596,460 596,360 540,360 540,460"/>
+          <!-- toppled chunk -->
+          <polygon points="700,460 716,330 792,322 800,460"/>
+          <!-- broken tower (center-right), stepped break -->
+          <polygon points="900,460 900,196 952,160 956,234 1006,214 1006,300 1056,280 1056,460"/>
+          <!-- low broken stub -->
+          <polygon points="1130,460 1146,320 1214,316 1224,460"/>
+          <!-- broken wall (right) -->
+          <polygon points="1280,460 1288,238 1338,206 1342,290 1396,266 1396,460"/>
+        </g>
+        <!-- exposed rebar / beams -->
+        <g stroke="#4d3c28" stroke-width="4" fill="none" opacity=".8">
+          <line x1="168" y1="140" x2="172" y2="108"/>
+          <line x1="216" y1="168" x2="226" y2="138"/>
+          <line x1="952" y1="160" x2="948" y2="126"/>
+          <line x1="1338" y1="206" x2="1346" y2="178"/>
+        </g>
+        <!-- scattered debris chunks on the mound -->
+        <g fill="#5c4830">
+          <polygon points="280,420 320,392 360,418"/>
+          <polygon points="640,418 686,388 730,416"/>
+          <polygon points="1060,418 1104,390 1150,416"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- warm haze on top of the scene, below the captions -->
+  <div class="scene" aria-hidden="true" style="z-index:1; pointer-events:none;">
+    <div class="haze" data-haze></div>
+  </div>
+
+  <!-- ===== Captions ===== -->
+  <div class="runway">
+    <div class="content">
+      <section class="panel" data-panel>
+        <div class="card">
+          <div class="eyebrow">Horizon One — The Present</div>
+          <h2>Congress is trying to govern the 21st century with institutions built for the 20th century.</h2>
+        </div>
+      </section>
+
+      <section class="panel" data-panel>
+        <div class="card">
+          <div class="eyebrow">Horizon Two — Stopgaps</div>
+          <h2>Many reforms have eased immediate pressures without creating the conditions for deeper transformation.</h2>
+        </div>
+      </section>
+
+      <section class="panel" data-panel>
+        <div class="card">
+          <div class="eyebrow">Horizon Two — The Transition</div>
+          <h2>Meeting today's challenges requires more than incremental improvement—it requires institutional transformation.</h2>
+        </div>
+      </section>
+
+      <section class="panel" data-panel>
+        <div class="card">
+          <div class="eyebrow">Horizon Three — The Vision</div>
+          <h2>We're building a roadmap toward a technology-enabled Congress capable of adapting the modern world's pace of change.</h2>
+        </div>
+      </section>
+
+      <section class="panel" data-panel>
+        <div class="card cta">
+          <h2>Join the work.</h2>
+          <div class="links">
+            <p><a href="https://www.eatingpolicy.com/p/a-three-horizons-framework-for-government" target="_blank" rel="noopener">Learn more about the Three Horizons framework</a></p>
+            <p>Have an idea? <a href="mailto:info@popvox.org">Contact POPVOX Foundation</a></p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="hint" data-hint>Scroll to rise<span class="arrow">↓</span></div>
+
+<script>
+  const layers = [...document.querySelectorAll('.layer')];
+  const haze   = document.querySelector('[data-haze]');
+  const hint   = document.querySelector('[data-hint]');
+  const panels = [...document.querySelectorAll('[data-panel]')];
+
+  let ticking = false;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  const easeIn  = p => p * p;
+
+  function update() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const y = window.scrollY;
+    const p = max > 0 ? Math.min(Math.max(y / max, 0), 1) : 0;
+    const vh = window.innerHeight / 100;
+
+    for (const layer of layers) {
+      const from = parseFloat(layer.dataset.from);
+      const to   = parseFloat(layer.dataset.to);
+      const mode = layer.dataset.ease;
+      const pe = mode === 'out' ? easeOut(p) : mode === 'in' ? easeIn(p) : p;
+      const ty = (from + (to - from) * pe) * vh;
+      layer.style.transform = `translate3d(0, ${ty}px, 0)`;
+    }
+
+    // Warm haze deepens as the Capitol climbs into view.
+    haze.style.opacity = 0.45 + Math.min(Math.max((p - 0.4) / 0.6, 0), 1) * 0.4;
+    hint.style.opacity = p > 0.04 ? 0 : 0.9;
+
+    ticking = false;
+  }
+
+  function onScroll() { if (!ticking) { requestAnimationFrame(update); ticking = true; } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', update);
+
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) e.target.classList.toggle('in', e.isIntersecting);
+  }, { threshold: 0.25 });
+  panels.forEach(p => io.observe(p));
+
+  update();
+</script>
+</body>
+</html>
