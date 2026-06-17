@@ -12,42 +12,59 @@
     font-family: "Helvetica Neue", Arial, sans-serif;
     color: #2e2114;
     overflow-x: hidden;
-    background: #cfe0f0;
+    background: #0a0e1c;
   }
 
-  /* Scroll runway — long, so the ascent is slow and deliberate. */
-  .runway { height: 1000vh; position: relative; }
+  /* Scroll runway — long, so the ascent is slow and deliberate.
+     Sized so that at maximum scroll the final slide rests centered in view
+     and there is nothing left to scroll past it. */
+  .runway { height: 800vh; position: relative; }
 
   /* ---------- Fixed scene ---------- */
   .scene { position: fixed; inset: 0; overflow: hidden; z-index: 0; }
 
-  /* Sky: light blue up high, warm beige toward the horizon. */
+  /* Sky: animated from night (top of page) to day (bottom) via JS.
+     The values here are the night starting state for first paint. */
   .sky {
     position: absolute; inset: 0;
     background: linear-gradient(
       to top,
-      #faf2e4 0%,
-      #f7eedf 12%,
-      #f0ebe0 28%,
-      #e4ecf3 48%,
-      #d6e4f3 72%,
-      #c6dcf2 100%
+      #2a3448 0%,
+      #242a40 12%,
+      #1c2038 28%,
+      #161a30 48%,
+      #101228 72%,
+      #0a0c1c 100%
     );
   }
 
-  /* Warm haze near the horizon that strengthens as the Capitol rises. */
+  /* Star field — fades out as night turns to day. */
+  .stars {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1.3px 1.3px at 30% 18%, rgba(255,255,255,.95), transparent),
+      radial-gradient(1px 1px at 68% 36%, rgba(255,255,255,.8), transparent),
+      radial-gradient(1.6px 1.6px at 48% 58%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1px 1px at 85% 24%, rgba(255,255,255,.85), transparent);
+    background-size: 220px 220px, 160px 160px, 320px 320px, 200px 200px;
+    background-position: 0 0, 50px 70px, 140px 30px, 90px 110px;
+    opacity: 1;
+  }
+
+  /* Warm haze near the horizon that strengthens as day breaks. */
   .haze {
     position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(250,240,221,.6) 0%, rgba(250,240,221,0) 42%);
-    opacity: .5;
+    opacity: 0;
   }
 
-  /* Soft sun glow low in the sky. */
+  /* The sun — rises from behind the horizon as you scroll. JS drives
+     its vertical position and color; these are the night start values. */
   .sun {
-    position: absolute; left: 70%; top: 30%;
-    width: 220px; height: 220px; margin: -110px 0 0 -110px;
+    position: absolute; left: 70%; top: 90%;
+    width: 240px; height: 240px; margin: -120px 0 0 -120px;
     border-radius: 50%;
-    background: radial-gradient(circle, #fff7e6 0%, #ffe9c2 44%, rgba(255,233,194,0) 72%);
+    background: radial-gradient(circle, #ff8a3d 0%, #ff7a2e 42%, rgba(255,122,46,0) 72%);
   }
 
   /* ---------- Parallax layers ----------
@@ -74,6 +91,8 @@
   }
   /* First slide is centered in view the moment the page loads. */
   .content .panel:first-child { height: 100vh; }
+  /* Last slide is half-height so the scroll ends with it centered. */
+  .content .panel:last-child { height: 100vh; }
   .panel.in { opacity: 1; transform: translateY(0); }
 
   .card {
@@ -115,56 +134,206 @@
   .hint {
     position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%);
     z-index: 6; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase;
-    color: #5a4632; opacity: .9; transition: opacity .4s ease;
-    text-shadow: 0 1px 6px rgba(247,238,223,.8);
+    color: #e8eef7; opacity: .9; transition: opacity .4s ease;
+    text-shadow: 0 1px 8px rgba(0,0,0,.5);
   }
   .hint .arrow { display: block; margin: 8px auto 0; animation: bob 1.6s ease-in-out infinite; }
   @keyframes bob { 0%,100% { transform: translateY(0);} 50% { transform: translateY(6px);} }
+
+  /* ---------- Digital-Capitol accents ---------- */
+  /* Cool light spilling from windows and column gaps as the building comes
+     online; each light blinks at its own rate via inline animation timing. */
+  .lights .blink { animation: blink 3s ease-in-out infinite; }
+  @keyframes blink {
+    0%   { opacity: 1; }
+    20%  { opacity: .2; }
+    34%  { opacity: .95; }
+    52%  { opacity: .12; }
+    70%  { opacity: 1; }
+    88%  { opacity: .3; }
+    100% { opacity: 1; }
+  }
+  /* Beacon rings expanding outward from the Statue of Freedom. */
+  .beacon-ring {
+    fill: none; stroke: #ffffff; stroke-width: 4.5;
+    transform-box: fill-box; transform-origin: center;
+    animation: beacon 5s ease-out infinite;
+  }
+  @keyframes beacon {
+    0%   { transform: scale(.10); opacity: 1; }
+    60%  { opacity: .6; }
+    100% { transform: scale(1); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lights .blink, .beacon-ring { animation: none; }
+  }
 </style>
 </head>
 <body>
 
   <!-- ===== Fixed scene ===== -->
   <div class="scene" aria-hidden="true">
-    <div class="sky"></div>
-    <div class="sun"></div>
+    <div class="sky" data-sky></div>
+    <div class="stars" data-stars></div>
+    <div class="sun" data-sun></div>
 
-    <!-- LAYER 4 (back): The U.S. Capitol — the vision. Rises UP to meet you. -->
-    <div class="layer" data-from="48" data-to="0" data-ease="out">
+    <!-- LAYER 4 (back): The U.S. Capitol — the vision. Rises UP to meet you.
+         Linear rise so it keeps climbing through to the end of the scroll
+         rather than arriving early and sitting static. -->
+    <div class="layer" data-from="48" data-to="0" data-ease="linear">
       <svg viewBox="0 0 1440 950" preserveAspectRatio="xMidYMax slice">
-        <g fill="#d8c49d">
+        <!-- main masonry (light stone) -->
+        <g fill="#ece2cc">
           <!-- terrace / steps -->
           <polygon points="540,950 588,852 852,852 900,950"/>
           <!-- long wings -->
           <rect x="280" y="762" width="880" height="188"/>
+          <!-- wing roof ledges -->
           <rect x="300" y="726" width="200" height="40"/>
           <rect x="940" y="726" width="200" height="40"/>
+          <!-- wing end pavilions -->
+          <rect x="280" y="742" width="70" height="208"/>
+          <rect x="1090" y="742" width="70" height="208"/>
           <!-- central building block -->
           <rect x="556" y="688" width="328" height="262"/>
           <!-- portico pediment -->
-          <polygon points="596,688 720,636 844,688"/>
-          <!-- base beneath the dome -->
-          <rect x="628" y="556" width="184" height="138"/>
-          <!-- colonnade drum -->
-          <rect x="646" y="498" width="148" height="62"/>
-          <!-- dome -->
-          <path d="M648,503 C 648,378 792,378 792,503 Z"/>
+          <polygon points="592,688 720,632 848,688"/>
+          <!-- base beneath the dome (wider) -->
+          <rect x="610" y="556" width="220" height="138"/>
+          <!-- peristyle drum (wider) -->
+          <rect x="628" y="496" width="184" height="64"/>
+          <!-- dome (wider, taller) -->
+          <path d="M628,500 C 628,372 812,372 812,500 Z"/>
           <!-- cupola / tholos -->
-          <rect x="704" y="358" width="32" height="42"/>
-          <path d="M702,363 C 702,336 738,336 738,363 Z"/>
+          <rect x="700" y="352" width="40" height="46"/>
+          <path d="M698,357 C 698,326 742,326 742,357 Z"/>
           <!-- Statue of Freedom -->
-          <rect x="718" y="316" width="4" height="22"/>
-          <circle cx="720" cy="312" r="6"/>
+          <rect x="718" y="306" width="4" height="24"/>
+          <circle cx="720" cy="302" r="7"/>
         </g>
-        <!-- subtle column shadows on the drum for a touch of depth -->
-        <g fill="#c4ad84">
-          <rect x="654" y="500" width="6" height="58"/>
-          <rect x="676" y="500" width="6" height="58"/>
-          <rect x="698" y="500" width="6" height="58"/>
-          <rect x="720" y="500" width="6" height="58"/>
-          <rect x="742" y="500" width="6" height="58"/>
-          <rect x="764" y="500" width="6" height="58"/>
-          <rect x="780" y="500" width="6" height="58"/>
+
+        <!-- darker stone accents: columns, window openings, step shadows -->
+        <g fill="#d3c19b">
+          <!-- portico columns on the central block -->
+          <rect x="588" y="694" width="12" height="68"/>
+          <rect x="620" y="694" width="12" height="68"/>
+          <rect x="652" y="694" width="12" height="68"/>
+          <rect x="684" y="694" width="12" height="68"/>
+          <rect x="716" y="694" width="12" height="68"/>
+          <rect x="748" y="694" width="12" height="68"/>
+          <rect x="780" y="694" width="12" height="68"/>
+          <rect x="812" y="694" width="12" height="68"/>
+          <rect x="840" y="694" width="12" height="68"/>
+          <!-- colonnade columns on the dome drum -->
+          <rect x="636" y="498" width="8" height="60"/>
+          <rect x="658" y="498" width="8" height="60"/>
+          <rect x="680" y="498" width="8" height="60"/>
+          <rect x="702" y="498" width="8" height="60"/>
+          <rect x="724" y="498" width="8" height="60"/>
+          <rect x="746" y="498" width="8" height="60"/>
+          <rect x="768" y="498" width="8" height="60"/>
+          <rect x="790" y="498" width="8" height="60"/>
+        </g>
+
+        <!-- window openings on the wings (darker recesses) -->
+        <g fill="#c2ae84">
+          <rect x="372" y="800" width="20" height="46"/>
+          <rect x="424" y="800" width="20" height="46"/>
+          <rect x="476" y="800" width="20" height="46"/>
+          <rect x="528" y="800" width="20" height="46"/>
+          <rect x="892" y="800" width="20" height="46"/>
+          <rect x="944" y="800" width="20" height="46"/>
+          <rect x="996" y="800" width="20" height="46"/>
+          <rect x="1048" y="800" width="20" height="46"/>
+          <!-- end pavilion windows -->
+          <rect x="300" y="800" width="22" height="50"/>
+          <rect x="1118" y="800" width="22" height="50"/>
+          <!-- central doorway under the portico -->
+          <rect x="700" y="800" width="40" height="150"/>
+        </g>
+
+        <!-- crisp highlights: step lines and pediment trim -->
+        <g stroke="#f4ecda" stroke-width="3" fill="none" opacity=".7">
+          <line x1="566" y1="884" x2="874" y2="884"/>
+          <line x1="556" y1="916" x2="884" y2="916"/>
+          <line x1="592" y1="688" x2="848" y2="688"/>
+          <line x1="610" y1="556" x2="830" y2="556"/>
+        </g>
+
+        <!-- dark window recesses in the gaps between the columns, so the
+             dark rectangles (not the lighter stone) are what light up -->
+        <g fill="#5f4d30">
+          <!-- between the portico columns -->
+          <rect x="600" y="700" width="20" height="56"/>
+          <rect x="632" y="700" width="20" height="56"/>
+          <rect x="664" y="700" width="20" height="56"/>
+          <rect x="696" y="700" width="20" height="56"/>
+          <rect x="728" y="700" width="20" height="56"/>
+          <rect x="760" y="700" width="20" height="56"/>
+          <rect x="792" y="700" width="20" height="56"/>
+          <rect x="824" y="700" width="16" height="56"/>
+          <!-- between the dome-drum columns -->
+          <rect x="644" y="502" width="14" height="52"/>
+          <rect x="666" y="502" width="14" height="52"/>
+          <rect x="688" y="502" width="14" height="52"/>
+          <rect x="710" y="502" width="14" height="52"/>
+          <rect x="732" y="502" width="14" height="52"/>
+          <rect x="754" y="502" width="14" height="52"/>
+          <rect x="776" y="502" width="14" height="52"/>
+        </g>
+
+        <!-- ===== Digital-Capitol accents (cool glow) ===== -->
+        <defs>
+          <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Lights that fade in as the Capitol rises (group opacity via JS),
+             then blink on and off independently at staggered rates (CSS). -->
+        <g class="lights" data-digital filter="url(#glow)" opacity="0" fill="#d3f1fb">
+          <!-- wing windows -->
+          <rect class="blink" x="372"  y="800" width="20" height="46"  style="animation-duration:6.0s; animation-delay:0s"/>
+          <rect class="blink" x="424"  y="800" width="20" height="46"  style="animation-duration:8.1s; animation-delay:1.4s"/>
+          <rect class="blink" x="476"  y="800" width="20" height="46"  style="animation-duration:5.0s; animation-delay:.6s"/>
+          <rect class="blink" x="528"  y="800" width="20" height="46"  style="animation-duration:9.2s; animation-delay:2.2s"/>
+          <rect class="blink" x="892"  y="800" width="20" height="46"  style="animation-duration:5.6s; animation-delay:.9s"/>
+          <rect class="blink" x="944"  y="800" width="20" height="46"  style="animation-duration:7.4s; animation-delay:2.8s"/>
+          <rect class="blink" x="996"  y="800" width="20" height="46"  style="animation-duration:4.6s; animation-delay:.4s"/>
+          <rect class="blink" x="1048" y="800" width="20" height="46"  style="animation-duration:8.6s; animation-delay:1.6s"/>
+          <!-- end pavilion windows -->
+          <rect class="blink" x="300"  y="800" width="22" height="50"  style="animation-duration:6.7s; animation-delay:2.0s"/>
+          <rect class="blink" x="1118" y="800" width="22" height="50"  style="animation-duration:5.8s; animation-delay:.7s"/>
+          <!-- central doorway -->
+          <rect class="blink" x="700"  y="800" width="40" height="150" style="animation-duration:9.8s; animation-delay:1.1s"/>
+
+          <!-- light glowing in the gaps between the portico columns -->
+          <rect class="blink" x="600" y="700" width="20" height="56" style="animation-duration:5.2s; animation-delay:.3s"/>
+          <rect class="blink" x="632" y="700" width="20" height="56" style="animation-duration:7.8s; animation-delay:1.8s"/>
+          <rect class="blink" x="664" y="700" width="20" height="56" style="animation-duration:4.8s; animation-delay:1.0s"/>
+          <rect class="blink" x="696" y="700" width="20" height="56" style="animation-duration:6.4s; animation-delay:2.5s"/>
+          <rect class="blink" x="728" y="700" width="20" height="56" style="animation-duration:8.4s; animation-delay:.5s"/>
+          <rect class="blink" x="760" y="700" width="20" height="56" style="animation-duration:5.4s; animation-delay:1.5s"/>
+          <rect class="blink" x="792" y="700" width="20" height="56" style="animation-duration:4.4s; animation-delay:3.0s"/>
+          <rect class="blink" x="824" y="700" width="16" height="56" style="animation-duration:7.0s; animation-delay:.8s"/>
+
+          <!-- light glowing in the gaps between the dome-drum columns -->
+          <rect class="blink" x="644" y="502" width="14" height="52" style="animation-duration:6.2s; animation-delay:1.2s"/>
+          <rect class="blink" x="666" y="502" width="14" height="52" style="animation-duration:4.9s; animation-delay:2.3s"/>
+          <rect class="blink" x="688" y="502" width="14" height="52" style="animation-duration:8.0s; animation-delay:.2s"/>
+          <rect class="blink" x="710" y="502" width="14" height="52" style="animation-duration:5.1s; animation-delay:1.4s"/>
+          <rect class="blink" x="732" y="502" width="14" height="52" style="animation-duration:6.6s; animation-delay:2.7s"/>
+          <rect class="blink" x="754" y="502" width="14" height="52" style="animation-duration:8.2s; animation-delay:.7s"/>
+          <rect class="blink" x="776" y="502" width="14" height="52" style="animation-duration:4.7s; animation-delay:1.7s"/>
+        </g>
+
+        <!-- pulsing beacon broadcasting from the Statue of Freedom -->
+        <g class="beacon" data-digital filter="url(#glow)" opacity="0">
+          <circle class="beacon-ring" cx="720" cy="296" r="90"/>
+          <circle class="beacon-ring" cx="720" cy="296" r="90" style="animation-delay:1.67s"/>
+          <circle class="beacon-ring" cx="720" cy="296" r="90" style="animation-delay:3.33s"/>
+          <circle cx="720" cy="297" r="6" fill="#ffffff"/>
         </g>
       </svg>
     </div>
@@ -176,17 +345,13 @@
           <rect x="0"    y="300" width="130" height="300"/>
           <rect x="140"  y="226" width="96"  height="374"/>
           <rect x="214"  y="200" width="10"  height="40"/>
-          <rect x="246"  y="320" width="118" height="280"/>
           <rect x="372"  y="170" width="92"  height="430"/>
           <rect x="412"  y="128" width="12"  height="48"/>
           <rect x="474"  y="270" width="120" height="330"/>
           <rect x="604"  y="210" width="100" height="390"/>
-          <rect x="714"  y="300" width="128" height="300"/>
           <rect x="852"  y="180" width="98"  height="420"/>
           <rect x="894"  y="138" width="12"  height="46"/>
           <rect x="960"  y="262" width="120" height="338"/>
-          <rect x="1090" y="206" width="104" height="394"/>
-          <rect x="1204" y="312" width="120" height="288"/>
           <rect x="1334" y="244" width="106" height="356"/>
         </g>
         <!-- faint windows -->
@@ -199,8 +364,128 @@
           <rect x="628" y="272" width="52" height="10"/>
           <rect x="876" y="210" width="50" height="10"/>
           <rect x="876" y="242" width="50" height="10"/>
-          <rect x="1114" y="238" width="56" height="10"/>
-          <rect x="1114" y="270" width="56" height="10"/>
+        </g>
+
+        <!-- colonnade ruins standing among the towers -->
+        <g fill="#a98c64">
+          <!-- temple ruin (center) -->
+          <rect x="706" y="582" width="144" height="18"/>
+          <rect x="712" y="570" width="132" height="14"/>
+          <rect x="706" y="300" width="104" height="18"/>
+          <rect x="716" y="318" width="16" height="252"/><rect x="712" y="312" width="24" height="8"/>
+          <rect x="744" y="318" width="16" height="252"/><rect x="740" y="312" width="24" height="8"/>
+          <rect x="772" y="318" width="16" height="252"/><rect x="768" y="312" width="24" height="8"/>
+          <polygon points="800,570 800,360 808,348 816,358 816,570"/>
+          <polygon points="824,570 824,402 832,392 840,400 840,570"/>
+          <!-- temple ruin (right) -->
+          <rect x="1198" y="584" width="134" height="16"/>
+          <rect x="1204" y="572" width="120" height="12"/>
+          <rect x="1230" y="312" width="100" height="18"/>
+          <polygon points="1202,572 1202,380 1210,368 1218,378 1222,572"/>
+          <rect x="1230" y="330" width="16" height="242"/><rect x="1226" y="324" width="24" height="8"/>
+          <rect x="1254" y="330" width="16" height="242"/><rect x="1250" y="324" width="24" height="8"/>
+          <rect x="1278" y="330" width="16" height="242"/><rect x="1274" y="324" width="24" height="8"/>
+          <rect x="1302" y="330" width="16" height="242"/><rect x="1298" y="324" width="24" height="8"/>
+        </g>
+        <!-- shaded right edges so the columns read as round -->
+        <g fill="#8c7150">
+          <rect x="727" y="318" width="5" height="252"/>
+          <rect x="755" y="318" width="5" height="252"/>
+          <rect x="783" y="318" width="5" height="252"/>
+          <rect x="1241" y="330" width="5" height="242"/>
+          <rect x="1265" y="330" width="5" height="242"/>
+          <rect x="1289" y="330" width="5" height="242"/>
+          <rect x="1313" y="330" width="5" height="242"/>
+        </g>
+
+        <!-- more colonnade ruins (left + under the crane) -->
+        <g fill="#a98c64">
+          <!-- temple ruin (left) -->
+          <rect x="240" y="582" width="134" height="18"/>
+          <rect x="246" y="570" width="118" height="14"/>
+          <rect x="240" y="300" width="90" height="18"/>
+          <rect x="248" y="318" width="16" height="252"/><rect x="244" y="312" width="24" height="8"/>
+          <rect x="272" y="318" width="16" height="252"/><rect x="268" y="312" width="24" height="8"/>
+          <rect x="296" y="318" width="16" height="252"/><rect x="292" y="312" width="24" height="8"/>
+          <polygon points="320,570 320,360 328,348 336,358 336,570"/>
+          <polygon points="344,570 344,402 352,392 360,400 360,570"/>
+          <!-- temple ruin (beneath the crane) -->
+          <rect x="1084" y="582" width="120" height="18"/>
+          <rect x="1090" y="570" width="104" height="14"/>
+          <rect x="1110" y="300" width="90" height="18"/>
+          <polygon points="1092,570 1092,380 1100,368 1108,378 1112,570"/>
+          <rect x="1114" y="318" width="16" height="252"/><rect x="1110" y="312" width="24" height="8"/>
+          <rect x="1136" y="318" width="16" height="252"/><rect x="1132" y="312" width="24" height="8"/>
+          <rect x="1158" y="318" width="16" height="252"/><rect x="1154" y="312" width="24" height="8"/>
+          <rect x="1180" y="318" width="16" height="252"/><rect x="1176" y="312" width="24" height="8"/>
+        </g>
+        <g fill="#8c7150">
+          <rect x="259" y="318" width="5" height="252"/>
+          <rect x="283" y="318" width="5" height="252"/>
+          <rect x="307" y="318" width="5" height="252"/>
+          <rect x="1125" y="318" width="5" height="252"/>
+          <rect x="1147" y="318" width="5" height="252"/>
+          <rect x="1169" y="318" width="5" height="252"/>
+          <rect x="1191" y="318" width="5" height="252"/>
+        </g>
+
+        <!-- scaffolding wrapping a building under reconstruction -->
+        <g stroke="#8c7150" stroke-width="3" fill="none" opacity=".9">
+          <!-- standards (vertical poles) -->
+          <line x1="856" y1="214" x2="856" y2="598"/>
+          <line x1="878" y1="214" x2="878" y2="598"/>
+          <line x1="900" y1="214" x2="900" y2="598"/>
+          <line x1="922" y1="214" x2="922" y2="598"/>
+          <line x1="944" y1="214" x2="944" y2="598"/>
+          <!-- ledgers (horizontal rails) -->
+          <line x1="852" y1="232" x2="950" y2="232"/>
+          <line x1="852" y1="290" x2="950" y2="290"/>
+          <line x1="852" y1="348" x2="950" y2="348"/>
+          <line x1="852" y1="406" x2="950" y2="406"/>
+          <line x1="852" y1="464" x2="950" y2="464"/>
+          <line x1="852" y1="522" x2="950" y2="522"/>
+          <line x1="852" y1="580" x2="950" y2="580"/>
+          <!-- diagonal braces -->
+          <line x1="856" y1="290" x2="878" y2="232"/>
+          <line x1="900" y1="406" x2="922" y2="348"/>
+          <line x1="922" y1="522" x2="944" y2="464"/>
+        </g>
+        <!-- scaffold boards (top + mid working platforms) -->
+        <g fill="#bfa67d">
+          <rect x="848" y="210" width="106" height="6"/>
+          <rect x="850" y="345" width="102" height="6"/>
+        </g>
+
+        <!-- tower crane rising over the rebuilding skyline -->
+        <g>
+          <!-- mast -->
+          <rect x="998" y="128" width="14" height="470" fill="#a98c64"/>
+          <g stroke="#8c7150" stroke-width="2" opacity=".8">
+            <line x1="998" y1="132" x2="1012" y2="162"/>
+            <line x1="1012" y1="132" x2="998" y2="162"/>
+            <line x1="998" y1="162" x2="1012" y2="192"/>
+            <line x1="1012" y1="162" x2="998" y2="192"/>
+            <line x1="998" y1="192" x2="1012" y2="222"/>
+            <line x1="1012" y1="192" x2="998" y2="222"/>
+            <line x1="998" y1="222" x2="1012" y2="252"/>
+            <line x1="1012" y1="222" x2="998" y2="252"/>
+          </g>
+          <!-- operator cab -->
+          <rect x="992" y="104" width="26" height="24" fill="#a98c64"/>
+          <!-- counter-jib + counterweight -->
+          <polygon fill="#a98c64" points="994,108 916,114 916,122 994,124"/>
+          <rect x="900" y="106" width="20" height="24" fill="#a98c64"/>
+          <!-- working jib (tapering arm) -->
+          <polygon fill="#a98c64" points="1018,106 1196,116 1196,120 1018,124"/>
+          <!-- apex A-frame + tie bars -->
+          <polygon fill="#a98c64" points="998,104 1012,104 1005,76"/>
+          <g stroke="#8c7150" stroke-width="2.5" opacity=".85">
+            <line x1="1005" y1="78" x2="1192" y2="117"/>
+            <line x1="1005" y1="78" x2="918" y2="116"/>
+          </g>
+          <!-- hoist cable + hook block -->
+          <line x1="1150" y1="118" x2="1150" y2="252" stroke="#8c7150" stroke-width="2" opacity=".9"/>
+          <rect x="1144" y="252" width="12" height="9" fill="#8c7150"/>
         </g>
       </svg>
     </div>
@@ -210,47 +495,103 @@
       <svg viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
         <g fill="#8a6f4c">
           <rect x="0"    y="340" width="150" height="160"/>
-          <rect x="158"  y="300" width="120" height="200"/>
-          <rect x="286"  y="360" width="140" height="140"/>
-          <!-- water tower -->
-          <rect x="320"  y="318" width="40"  height="44"/>
-          <rect x="336"  y="300" width="8"   height="20"/>
           <rect x="434"  y="290" width="130" height="210"/>
           <polygon points="434,290 499,250 564,290"/>
           <rect x="572"  y="350" width="150" height="150"/>
-          <rect x="730"  y="312" width="124" height="188"/>
           <rect x="862"  y="362" width="146" height="138"/>
           <rect x="1016" y="300" width="128" height="200"/>
           <rect x="1062" y="276" width="36" height="28"/>
-          <rect x="1152" y="352" width="150" height="148"/>
           <rect x="1310" y="316" width="130" height="184"/>
         </g>
         <g fill="#6e5839">
-          <rect x="186" y="324" width="64" height="10"/>
-          <rect x="186" y="350" width="64" height="10"/>
           <rect x="460" y="316" width="78" height="10"/>
           <rect x="460" y="344" width="78" height="10"/>
-          <rect x="758" y="336" width="68" height="10"/>
-          <rect x="758" y="362" width="68" height="10"/>
           <rect x="1044" y="324" width="72" height="10"/>
           <rect x="1044" y="352" width="72" height="10"/>
+        </g>
+
+        <!-- colonnade ruins standing among the buildings -->
+        <g fill="#8a6f4c">
+          <!-- temple ruin (left-center, replaces a low building) -->
+          <rect x="280" y="486" width="152" height="14"/>
+          <rect x="286" y="476" width="140" height="10"/>
+          <rect x="280" y="360" width="108" height="16"/>
+          <rect x="288" y="376" width="16" height="100"/><rect x="284" y="370" width="24" height="8"/>
+          <rect x="316" y="376" width="16" height="100"/><rect x="312" y="370" width="24" height="8"/>
+          <rect x="344" y="376" width="16" height="100"/><rect x="340" y="370" width="24" height="8"/>
+          <polygon points="372,476 372,402 380,392 388,400 388,476"/>
+          <polygon points="396,476 396,420 404,412 412,418 412,476"/>
+          <!-- temple ruin (right, replaces a low building) -->
+          <rect x="1146" y="486" width="162" height="14"/>
+          <rect x="1152" y="476" width="150" height="10"/>
+          <rect x="1150" y="352" width="108" height="16"/>
+          <rect x="1154" y="368" width="16" height="108"/><rect x="1150" y="362" width="24" height="8"/>
+          <rect x="1188" y="368" width="16" height="108"/><rect x="1184" y="362" width="24" height="8"/>
+          <rect x="1222" y="368" width="16" height="108"/><rect x="1218" y="362" width="24" height="8"/>
+          <polygon points="1256,476 1256,404 1264,394 1272,402 1272,476"/>
+          <polygon points="1286,476 1286,430 1294,422 1302,430 1302,476"/>
+        </g>
+        <!-- shaded right edges so the columns read as round -->
+        <g fill="#6e5839">
+          <rect x="299" y="376" width="5" height="100"/>
+          <rect x="327" y="376" width="5" height="100"/>
+          <rect x="355" y="376" width="5" height="100"/>
+          <rect x="1165" y="368" width="5" height="108"/>
+          <rect x="1199" y="368" width="5" height="108"/>
+          <rect x="1233" y="368" width="5" height="108"/>
+        </g>
+
+        <!-- more colonnade ruins (left + center) -->
+        <g fill="#8a6f4c">
+          <!-- temple ruin (left) -->
+          <rect x="152" y="486" width="132" height="14"/>
+          <rect x="158" y="476" width="120" height="10"/>
+          <rect x="152" y="360" width="90" height="16"/>
+          <rect x="160" y="376" width="16" height="100"/><rect x="156" y="370" width="24" height="8"/>
+          <rect x="186" y="376" width="16" height="100"/><rect x="182" y="370" width="24" height="8"/>
+          <rect x="212" y="376" width="16" height="100"/><rect x="208" y="370" width="24" height="8"/>
+          <polygon points="238,476 238,404 246,394 254,402 254,476"/>
+          <polygon points="264,476 264,422 272,414 280,420 280,476"/>
+          <!-- temple ruin (center) -->
+          <rect x="724" y="486" width="136" height="14"/>
+          <rect x="730" y="476" width="124" height="10"/>
+          <rect x="724" y="312" width="92" height="16"/>
+          <rect x="732" y="328" width="16" height="148"/><rect x="728" y="322" width="24" height="8"/>
+          <rect x="759" y="328" width="16" height="148"/><rect x="755" y="322" width="24" height="8"/>
+          <rect x="786" y="328" width="16" height="148"/><rect x="782" y="322" width="24" height="8"/>
+          <polygon points="813,476 813,392 821,382 829,390 829,476"/>
+          <polygon points="840,476 840,410 848,402 854,410 854,476"/>
+        </g>
+        <g fill="#6e5839">
+          <rect x="171" y="376" width="5" height="100"/>
+          <rect x="197" y="376" width="5" height="100"/>
+          <rect x="223" y="376" width="5" height="100"/>
+          <rect x="743" y="328" width="5" height="148"/>
+          <rect x="770" y="328" width="5" height="148"/>
+          <rect x="797" y="328" width="5" height="148"/>
         </g>
       </svg>
     </div>
 
-    <!-- LAYER 1 (front): Broken buildings in rubble. Sink away fastest. -->
+    <!-- LAYER 1 (front): Broken buildings in rubble. Sink away fastest.
+         Darkest, most detailed layer — the wreckage closest to the viewer. -->
     <div class="layer" data-from="0" data-to="176" data-ease="linear">
       <svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMax slice">
-        <!-- rubble mound running across the foreground -->
-        <path fill="#6b5439" d="M0,460 L0,372
+        <!-- rubble mound running across the foreground (dark base) -->
+        <path fill="#3a2c1d" d="M0,460 L0,372
           C 130,338 230,366 350,352 C 470,338 548,378 668,356
           C 800,332 902,372 1040,352 C 1182,332 1316,368 1440,348
           L1440,460 Z"/>
-        <g fill="#6b5439">
+        <!-- secondary mound ridge for depth -->
+        <path fill="#32261a" d="M0,460 L0,398
+          C 160,378 280,404 420,392 C 560,380 660,406 800,394
+          C 950,380 1080,408 1230,392 C 1330,382 1390,400 1440,392
+          L1440,460 Z"/>
+
+        <!-- main broken structures (dark) -->
+        <g fill="#3f3022">
           <!-- broken tower, jagged collapsed top (left) -->
           <polygon points="120,460 120,170 168,196 168,140 216,168 216,224 264,200 264,460"/>
-          <!-- leaning slab -->
-          <polygon points="330,460 352,236 392,242 378,460"/>
           <!-- broken wall with a blown-out gap (center-left) -->
           <polygon points="470,460 470,210 524,176 528,250 582,228 582,318 636,296 636,460
                             596,460 596,360 540,360 540,460"/>
@@ -258,23 +599,134 @@
           <polygon points="700,460 716,330 792,322 800,460"/>
           <!-- broken tower (center-right), stepped break -->
           <polygon points="900,460 900,196 952,160 956,234 1006,214 1006,300 1056,280 1056,460"/>
-          <!-- low broken stub -->
-          <polygon points="1130,460 1146,320 1214,316 1224,460"/>
           <!-- broken wall (right) -->
           <polygon points="1280,460 1288,238 1338,206 1342,290 1396,266 1396,460"/>
         </g>
-        <!-- exposed rebar / beams -->
-        <g stroke="#4d3c28" stroke-width="4" fill="none" opacity=".8">
-          <line x1="168" y1="140" x2="172" y2="108"/>
-          <line x1="216" y1="168" x2="226" y2="138"/>
-          <line x1="952" y1="160" x2="948" y2="126"/>
-          <line x1="1338" y1="206" x2="1346" y2="178"/>
+
+        <!-- shaded (darker) faces of the structures for volume -->
+        <g fill="#2c2014">
+          <polygon points="216,224 264,200 264,460 216,460"/>
+          <polygon points="582,318 636,296 636,460 582,460"/>
+          <polygon points="1006,300 1056,280 1056,460 1006,460"/>
+          <polygon points="1342,290 1396,266 1396,460 1342,460"/>
         </g>
-        <!-- scattered debris chunks on the mound -->
-        <g fill="#5c4830">
-          <polygon points="280,420 320,392 360,418"/>
-          <polygon points="640,418 686,388 730,416"/>
-          <polygon points="1060,418 1104,390 1150,416"/>
+
+        <!-- ===== Broken classical columns in the rubble ===== -->
+        <g>
+          <!-- standing snapped fluted column (left) -->
+          <rect x="322" y="446" width="58" height="16" fill="#3f3022"/>
+          <polygon fill="#3f3022" points="330,448 330,300 340,286 350,306 360,282 370,298 372,448"/>
+          <polygon fill="#2c2014" points="356,448 360,282 370,298 372,448"/>
+          <g stroke="#241a10" stroke-width="3" opacity=".7">
+            <line x1="339" y1="306" x2="339" y2="444"/>
+            <line x1="348" y1="306" x2="348" y2="444"/>
+            <line x1="357" y1="306" x2="357" y2="444"/>
+            <line x1="366" y1="306" x2="366" y2="444"/>
+          </g>
+
+          <!-- standing snapped fluted column (right) -->
+          <rect x="1142" y="448" width="56" height="14" fill="#3f3022"/>
+          <polygon fill="#3f3022" points="1150,450 1150,332 1160,316 1170,336 1180,312 1190,330 1192,450"/>
+          <polygon fill="#2c2014" points="1176,450 1180,312 1190,330 1192,450"/>
+          <g stroke="#241a10" stroke-width="3" opacity=".7">
+            <line x1="1159" y1="336" x2="1159" y2="446"/>
+            <line x1="1168" y1="336" x2="1168" y2="446"/>
+            <line x1="1177" y1="336" x2="1177" y2="446"/>
+          </g>
+
+          <!-- toppled column lying across the mound, broken into drums (center) -->
+          <g>
+            <!-- shaft drums -->
+            <rect x="560" y="414" width="48" height="30" rx="9" fill="#3f3022"/>
+            <rect x="614" y="416" width="46" height="30" rx="9" fill="#3f3022"/>
+            <rect x="666" y="418" width="46" height="30" rx="9" fill="#3f3022"/>
+            <!-- toppled capital block at the broken end -->
+            <rect x="718" y="410" width="34" height="42" rx="4" fill="#3f3022"/>
+            <!-- undersides / shadow -->
+            <g fill="#2c2014">
+              <rect x="560" y="434" width="48" height="10" rx="5"/>
+              <rect x="614" y="436" width="46" height="10" rx="5"/>
+              <rect x="666" y="438" width="46" height="10" rx="5"/>
+              <rect x="718" y="442" width="34" height="10" rx="3"/>
+            </g>
+            <!-- circular end-face of the snapped shaft -->
+            <ellipse cx="562" cy="429" rx="6" ry="15" fill="#1c140b"/>
+            <!-- seams between drums + length fluting -->
+            <g stroke="#1c140b" stroke-width="2.5" opacity=".75" fill="none">
+              <line x1="610" y1="416" x2="610" y2="444"/>
+              <line x1="662" y1="418" x2="662" y2="446"/>
+              <line x1="714" y1="412" x2="714" y2="450"/>
+              <line x1="566" y1="423" x2="710" y2="425"/>
+              <line x1="566" y1="431" x2="710" y2="433"/>
+            </g>
+          </g>
+
+          <!-- a lone column drum rolled clear (right of center) -->
+          <g>
+            <rect x="1018" y="420" width="40" height="28" rx="9" fill="#3f3022"/>
+            <ellipse cx="1020" cy="434" rx="6" ry="14" fill="#1c140b"/>
+            <line x1="1024" y1="429" x2="1056" y2="430" stroke="#1c140b" stroke-width="2.5" opacity=".7"/>
+            <rect x="1018" y="440" width="40" height="8" rx="4" fill="#2c2014"/>
+          </g>
+        </g>
+
+        <!-- broken-out window holes / cracks (pitch black) -->
+        <g fill="#1c140b">
+          <rect x="134" y="232" width="22" height="30"/>
+          <rect x="134" y="300" width="22" height="34"/>
+          <rect x="134" y="372" width="22" height="40"/>
+          <rect x="486" y="252" width="26" height="34"/>
+          <rect x="486" y="330" width="26" height="40"/>
+          <rect x="916" y="256" width="24" height="32"/>
+          <rect x="916" y="328" width="24" height="40"/>
+          <rect x="1298" y="300" width="22" height="36"/>
+          <rect x="1298" y="372" width="22" height="40"/>
+        </g>
+        <!-- jagged cracks running down the walls -->
+        <g stroke="#1c140b" stroke-width="3" fill="none" opacity=".75">
+          <polyline points="200,224 196,290 206,330 198,400"/>
+          <polyline points="552,260 560,320 548,380 556,440"/>
+          <polyline points="980,250 972,310 984,360 976,430"/>
+          <polyline points="1320,300 1330,350 1318,410"/>
+        </g>
+
+        <!-- exposed rebar / twisted beams -->
+        <g stroke="#241a10" stroke-width="4" fill="none" opacity=".9">
+          <line x1="168" y1="140" x2="172" y2="104"/>
+          <line x1="216" y1="168" x2="228" y2="134"/>
+          <line x1="524" y1="176" x2="520" y2="146"/>
+          <line x1="952" y1="160" x2="946" y2="120"/>
+          <line x1="1006" y1="214" x2="1016" y2="188"/>
+          <line x1="1338" y1="206" x2="1348" y2="174"/>
+          <path d="M352,236 q-14,-22 4,-40"/>
+          <path d="M716,330 q-12,-20 8,-34"/>
+        </g>
+
+        <!-- larger toppled slabs / concrete blocks on the mound -->
+        <g fill="#352819">
+          <polygon points="250,440 300,408 332,420 290,452"/>
+          <polygon points="430,448 470,420 500,438 462,458"/>
+          <polygon points="820,446 866,414 902,430 858,456"/>
+          <polygon points="1090,444 1140,414 1176,432 1128,456"/>
+        </g>
+        <!-- scattered debris chunks (mid tone) -->
+        <g fill="#2a2014">
+          <polygon points="180,452 214,430 244,450"/>
+          <polygon points="380,448 414,428 446,448"/>
+          <polygon points="640,446 686,416 730,444"/>
+          <polygon points="980,448 1014,428 1048,448"/>
+          <polygon points="1240,446 1276,424 1312,446"/>
+          <polygon points="1380,450 1408,432 1438,450"/>
+        </g>
+        <!-- small rubble specks -->
+        <g fill="#1f1710">
+          <circle cx="120" cy="448" r="5"/>
+          <circle cx="338" cy="452" r="4"/>
+          <circle cx="560" cy="450" r="5"/>
+          <circle cx="760" cy="452" r="4"/>
+          <circle cx="900" cy="450" r="5"/>
+          <circle cx="1140" cy="452" r="4"/>
+          <circle cx="1330" cy="450" r="5"/>
         </g>
       </svg>
     </div>
@@ -334,11 +786,41 @@
   const layers = [...document.querySelectorAll('.layer')];
   const haze   = document.querySelector('[data-haze]');
   const hint   = document.querySelector('[data-hint]');
+  const sky    = document.querySelector('[data-sky]');
+  const stars  = document.querySelector('[data-stars]');
+  const sun    = document.querySelector('[data-sun]');
+  const digital = [...document.querySelectorAll('[data-digital]')];
   const panels = [...document.querySelectorAll('[data-panel]')];
 
   let ticking = false;
   const easeOut = p => 1 - Math.pow(1 - p, 3);
   const easeIn  = p => p * p;
+
+  // ----- Night -> day colour transition -----
+  const SKY_POS    = [0, 12, 28, 48, 72, 100];
+  const SKY_NIGHT  = [[42,52,72],[36,42,64],[28,32,56],[22,26,48],[16,18,40],[10,12,28]];
+  const SKY_DAY    = [[250,242,228],[247,238,223],[240,235,224],[228,236,243],[214,228,243],[198,220,242]];
+  const SUN_NIGHT  = { core: [255,138,61], mid: [255,122,46] };
+  const SUN_DAY    = { core: [255,247,230], mid: [255,233,194] };
+
+  const lerp  = (a, b, t) => Math.round(a + (b - a) * t);
+  const mix   = (a, b, t) => `rgb(${lerp(a[0],b[0],t)},${lerp(a[1],b[1],t)},${lerp(a[2],b[2],t)})`;
+
+  function paintSky(t) {
+    const stops = SKY_POS.map((pos, i) => `${mix(SKY_NIGHT[i], SKY_DAY[i], t)} ${pos}%`);
+    sky.style.background = `linear-gradient(to top, ${stops.join(', ')})`;
+
+    // Sun rises from behind the horizon and warms into daylight.
+    sun.style.top = `${90 - 66 * t}%`;
+    const core = mix(SUN_NIGHT.core, SUN_DAY.core, t);
+    const mid  = mix(SUN_NIGHT.mid,  SUN_DAY.mid,  t);
+    const midRGB = mid.slice(4, -1);
+    sun.style.background =
+      `radial-gradient(circle, ${core} 0%, ${mid} 42%, rgba(${midRGB},0) 72%)`;
+
+    // Stars fade out early in the climb.
+    stars.style.opacity = Math.max(0, 1 - t / 0.45);
+  }
 
   function update() {
     const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -355,9 +837,18 @@
       layer.style.transform = `translate3d(0, ${ty}px, 0)`;
     }
 
-    // Warm haze deepens as the Capitol climbs into view.
-    haze.style.opacity = 0.45 + Math.min(Math.max((p - 0.4) / 0.6, 0), 1) * 0.4;
+    // Night gives way to day at an even pace, finishing with the ascent
+    // so the scene keeps changing right up to the final slide.
+    paintSky(p);
+
+    // Warm haze builds with the daylight rather than at night.
+    haze.style.opacity = Math.min(Math.max((p - 0.35) / 0.65, 0), 1) * 0.6;
     hint.style.opacity = p > 0.04 ? 0 : 0.9;
+
+    // The Capitol "comes online": window/column lights and the Statue
+    // beacon fade in as it rises into view (then blink on their own via CSS).
+    const dig = Math.min(Math.max((p - 0.5) / 0.32, 0), 1);
+    for (const g of digital) g.style.opacity = dig;
 
     ticking = false;
   }
