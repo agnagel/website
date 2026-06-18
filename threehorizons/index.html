@@ -4,6 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>A Congress for the 21st Century — Three Horizons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,600;0,800;1,500&display=swap" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -152,7 +155,7 @@
 
   /* Scroll hint */
   .hint {
-    position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%);
+    position: fixed; left: 50%; top: 26px; transform: translateX(-50%);
     z-index: 6; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase;
     color: #e8eef7; opacity: .9; transition: opacity .4s ease;
     text-shadow: 0 1px 8px rgba(0,0,0,.5);
@@ -191,70 +194,59 @@
   /* ---------- Top banner ---------- */
   .site-banner {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    bottom: 0; left: 0; right: 0;
     z-index: 1000;
-    background: rgba(247, 238, 223, .92);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(120, 92, 58, .25);
-    box-shadow: 0 8px 30px rgba(70, 48, 24, .18);
-    text-align: center;
-    padding: 14px 24px 15px;
-  }
-  .site-banner .banner-headline {
-    font-size: clamp(.72rem, 1.35vw, .92rem);
-    line-height: 1.4;
-    color: #5a4632;
-    margin: 0 auto 6px;
-    white-space: nowrap;
-  }
-  .site-banner .banner-headline strong {
-    font-weight: 800;
-    letter-spacing: -.01em;
-    color: #2e2114;
-    white-space: nowrap;
-  }
-  .site-banner .banner-credit {
-    font-size: clamp(.72rem, 1.3vw, .82rem);
-    font-style: italic;
-    letter-spacing: .02em;
-    color: #8a6f50;
-  }
-  .site-banner a {
-    color: #8a5a28;
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1.5px;
-    transition: color .2s ease;
-  }
-  .site-banner a:hover { color: #5e3c18; }
-  .site-banner .banner-logos {
-    margin-top: 11px;
+    background: #2c2014;
+    border-top: 1px solid rgba(0, 0, 0, .45);
+    box-shadow: 0 -8px 30px rgba(10, 18, 36, .35);
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 26px;
+    padding: 14px 24px 16px;
+  }
+  .site-banner .banner-text {
+    text-align: left;
+  }
+  .site-banner .banner-headline {
+    font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+    font-size: clamp(1.45rem, 3.2vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -.01em;
+    color: #FFFFFF;
+  }
+  .site-banner .banner-tagline {
+    font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+    font-size: clamp(.82rem, 1.5vw, 1.02rem);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: .005em;
+    color: #C9AD8A;
+    margin-top: 5px;
+  }
+  .site-banner .banner-logos {
+    display: flex;
+    align-items: center;
     gap: 14px;
-    flex-wrap: wrap;
+    flex-shrink: 0;
   }
   .site-banner .banner-logos a {
     display: inline-flex;
     align-items: center;
     transition: transform .2s ease;
   }
-  .site-banner .banner-logos a:hover { transform: translateY(-1px); }
+  .site-banner .banner-logos a:hover { transform: translateY(-2px) scale(1.03); }
   .site-banner .banner-logos img {
     display: block;
-    height: 30px;
+    height: 46px;
     width: auto;
   }
   @media (max-width: 600px) {
-    .site-banner .banner-logos { gap: 10px; margin-top: 9px; }
-    .site-banner .banner-logos img { height: 22px; }
-  }
-  @media (max-width: 600px) {
-    .site-banner { padding: 11px 16px 12px; }
-    .site-banner .banner-headline { margin-bottom: 5px; white-space: normal; }
+    .site-banner { padding: 11px 16px 12px; gap: 14px; }
+    .site-banner .banner-logos { gap: 9px; }
+    .site-banner .banner-logos img { height: 30px; }
+    .site-banner .banner-tagline { white-space: normal; }
   }
 </style>
 </head>
@@ -262,8 +254,6 @@
 
   <!-- ===== Top banner ===== -->
   <div class="site-banner">
-    <div class="banner-headline"><strong>The Horizon 3 Project</strong> &mdash; Raising expectations and hope for a new era of a strong, capable Congress.</div>
-    <div class="banner-credit">A <a href="https://www.popvox.org" target="_blank" rel="noopener">POPVOX Foundation</a> Initiative supported by <a href="https://recodingamerica.org" target="_blank" rel="noopener">Recoding America</a>.</div>
     <div class="banner-logos">
       <a href="https://www.popvox.org" target="_blank" rel="noopener" aria-label="POPVOX Foundation">
         <img src="images/popvox-foundation.png" alt="POPVOX Foundation" />
@@ -271,6 +261,10 @@
       <a href="https://recodingamerica.org" target="_blank" rel="noopener" aria-label="Recoding America Fund">
         <img src="images/recoding-america-fund.png" alt="Recoding America Fund" />
       </a>
+    </div>
+    <div class="banner-text">
+      <div class="banner-headline">The Horizon 3 Project</div>
+      <div class="banner-tagline"><em>Raising expectations and hope for a new era of a strong, capable Congress.</em></div>
     </div>
   </div>
 
@@ -937,6 +931,14 @@
   const sun    = document.querySelector('[data-sun]');
   const digital = [...document.querySelectorAll('[data-digital]')];
   const panels = [...document.querySelectorAll('[data-panel]')];
+  const banner   = document.querySelector('.site-banner');
+  const bannerHead = document.querySelector('.banner-headline');
+  const bannerTag  = document.querySelector('.banner-tagline');
+
+  // Banner tracks the scene: building brown (bottom) -> Capitol beige (top).
+  const BANNER_BG_START = [44,32,20],   BANNER_BG_END = [236,226,204];
+  const BANNER_HEAD_START = [255,255,255], BANNER_HEAD_END = [44,32,20];
+  const BANNER_TAG_START = [201,173,138],  BANNER_TAG_END = [108,84,58];
 
   let ticking = false;
   const easeOut = p => 1 - Math.pow(1 - p, 3);
@@ -997,6 +999,11 @@
     // Warm haze builds with the daylight rather than at night.
     haze.style.opacity = Math.min(Math.max((p - 0.35) / 0.65, 0), 1) * 0.6;
     hint.style.opacity = p > 0.04 ? 0 : 0.9;
+
+    // Banner fades from building brown to Capitol beige as you rise.
+    banner.style.background = mix(BANNER_BG_START, BANNER_BG_END, p);
+    bannerHead.style.color  = mix(BANNER_HEAD_START, BANNER_HEAD_END, p);
+    bannerTag.style.color   = mix(BANNER_TAG_START, BANNER_TAG_END, p);
 
     // The Capitol "comes online": window/column lights and the Statue
     // beacon fade in as it rises into view (then blink on their own via CSS).
