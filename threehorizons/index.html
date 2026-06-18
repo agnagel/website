@@ -146,7 +146,9 @@
   }
   .card.cta .collecting strong { color: #8a5a28; font-weight: 700; }
   .card.cta .links { margin-top: 22px; display: flex; flex-direction: column; gap: 16px; }
-  .card.cta .links p { margin: 0; }
+  .card.cta .links p {
+    margin: 0; font-size: clamp(1rem, 2.3vw, 1.2rem); line-height: 1.65;
+  }
 
   /* Scroll hint */
   .hint {
@@ -427,10 +429,13 @@
          Same viewBox + alignment as the Capitol so it overlays it and sits just
          in front of it. It stays nearly glued to the Capitol (48 -> 8 vs the
          Capitol's 48 -> 0) so the full cage keeps wrapping the building down to
-         the ground as it rises. Over the final stretch (after 60%) it
-         accelerates off the bottom so it is fully gone by the end (data-exit). -->
+         the ground as it rises. It lingers wrapping the Capitol, then only over
+         the last stretch (after 50%) slides off the bottom so it is fully gone
+         by the end (data-exit). The drop is kept small and spread across this
+         stretch so it descends gently, at a pace below the other parallax
+         layers rather than racing off. -->
     <div class="layer" data-from="48" data-to="8" data-ease="linear"
-         data-exit="85" data-exit-start="0.6">
+         data-exit="55" data-exit-start="0.5">
       <svg viewBox="0 0 1440 950" preserveAspectRatio="xMidYMax slice">
         <!-- poles / rails -->
         <g stroke="#9c8260" stroke-width="3.5" fill="none" opacity=".92" stroke-linecap="round">
@@ -877,25 +882,37 @@
       <section class="panel" data-panel>
         <div class="card even">
           <div class="eyebrow">Horizon One — The Status Quo</div>
-          <h2>Congress is trying to govern in the 21st century with processes rooted in the 19th century and technology dating back to the 20th century.</h2>
-          <p>The institution is falling behind and, unless its trajectory changes, risks becoming irrelevant.</p>
+          <h2 style="font-weight:400">Congress is trying to govern in the 21st century with processes rooted in the 19th century and technology dating back to the 20th century.</h2>
+          <p style="font-weight:700">The institution is falling behind and, unless its trajectory changes, risks becoming irrelevant.</p>
         </div>
       </section>
 
       <section class="panel" data-panel>
         <div class="card dense">
           <div class="eyebrow">Horizon Two — Transformation</div>
-          <h2>Over the last decade, Congressional modernization initiatives have eased immediate pressures created by Members and staff calling for updates to Congressional operations.</h2>
-          <p>Though progress has been made, Congress has not adopted conditions or processes to achieve lasting, transformational improvement.</p>
-          <p>Meeting today's challenges requires more than workarounds or one-off fixes. Congress is in need of institutional transformation.</p>
+          <h2 style="font-weight:400; color:#5a4632">Over the last decade, Congressional modernization initiatives have eased immediate pressures created by Members and staff calling for updates to Congressional operations.</h2>
+          <p>Though progress has been made, Congress has not adopted conditions or processes to achieve lasting, sustaining improvement.</p>
+          <p style="font-weight:700">Meeting today's challenges requires more than workarounds or one-off fixes. Congress is in need of institutional transformation.</p>
         </div>
       </section>
 
       <section class="panel" data-panel>
         <div class="card even">
           <div class="eyebrow">Horizon Three — The Vision</div>
-          <h2>We are building a roadmap toward an empowered Congress capable of adapting to the modern world's rapid pace of technological change.</h2>
-          <p>We are just getting started. We want you to be part of it.</p>
+          <h2 style="font-weight:400">We are building a roadmap toward an empowered Congress capable of adapting to the modern world's rapid pace of technological change.</h2>
+          <p style="font-weight:700">We are just getting started. We want you to be part of it.</p>
+        </div>
+      </section>
+
+      <section class="panel" data-panel>
+        <div class="card cta">
+          <div class="eyebrow">Join the Work</div>
+          <p class="collecting">We're collecting ideas around <strong>Congressional capacity</strong>, including <strong>structural</strong> and <strong>procedural reform</strong>, <strong>staffing</strong> and <strong>talent</strong>, <strong>technology</strong> and <strong>operations</strong>, and <strong>oversight</strong> and <strong>feedback loops</strong>.</p>
+          <div class="links">
+            <p><em>Have an idea?</em> <a href="mailto:info@popvox.org" style="font-style:italic">Contact us.</a></p>
+            <p>Learn more about the <a href="https://www.eatingpolicy.com/p/a-three-horizons-framework-for-government" target="_blank" rel="noopener">Three Horizons Framework for Government Reform.</a></p>
+            <p>Learn more about <a href="mailto:info@popvox.org">POPVOX Foundation.</a></p>
+          </div>
         </div>
       </section>
 
@@ -903,19 +920,7 @@
         <div class="card">
           <div class="eyebrow">More to Come</div>
           <h2>A Horizon 3 vision for Congress is rapidly approaching.</h2>
-          <p>Check back for updates Summer 2026.</p>
-        </div>
-      </section>
-
-      <section class="panel" data-panel>
-        <div class="card cta">
-          <div class="eyebrow">Join the Work</div>
-          <p class="collecting">We're collecting ideas around <strong>Congressional capacity</strong>, including <strong>structural and procedural reform</strong>, <strong>staffing and talent</strong>, <strong>technology and operations</strong>, and <strong>oversight and feedback loops</strong>.</p>
-          <div class="links">
-            <p>Learn more about the <a href="https://www.eatingpolicy.com/p/a-three-horizons-framework-for-government" target="_blank" rel="noopener">Three Horizons Framework for Government Reform.</a></p>
-            <p>Learn more about <a href="mailto:info@popvox.org">POPVOX Foundation.</a></p>
-            <p>Have an idea? <a href="mailto:info@popvox.org">Contact us.</a></p>
-          </div>
+          <p style="font-style:italic">Check back for updates Summer 2026.</p>
         </div>
       </section>
     </div>
