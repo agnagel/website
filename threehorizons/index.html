@@ -125,6 +125,19 @@
   }
   .card a:hover { color: #5e3c18; }
 
+  /* Uniform-text slides: headline and body set to one equal size.
+     .even — lighter slides; .dense — slides with more copy, sized down to fit. */
+  .card.even h2, .card.even p {
+    font-size: clamp(1.15rem, 2.3vw, 1.55rem);
+    line-height: 1.4; margin-top: 0;
+  }
+  .card.even p { margin-top: 16px; }
+  .card.dense h2, .card.dense p {
+    font-size: clamp(.95rem, 1.7vw, 1.18rem);
+    line-height: 1.5; margin-top: 0;
+  }
+  .card.dense p { margin-top: 14px; }
+
   /* Final call-to-action panel */
   .card.cta h2 { font-size: clamp(1.4rem, 3.2vw, 2.1rem); }
   .card.cta .collecting {
@@ -172,9 +185,92 @@
   @media (prefers-reduced-motion: reduce) {
     .lights .blink, .beacon-ring { animation: none; }
   }
+
+  /* ---------- Top banner ---------- */
+  .site-banner {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(247, 238, 223, .92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(120, 92, 58, .25);
+    box-shadow: 0 8px 30px rgba(70, 48, 24, .18);
+    text-align: center;
+    padding: 14px 24px 15px;
+  }
+  .site-banner .banner-headline {
+    font-size: clamp(.72rem, 1.35vw, .92rem);
+    line-height: 1.4;
+    color: #5a4632;
+    margin: 0 auto 6px;
+    white-space: nowrap;
+  }
+  .site-banner .banner-headline strong {
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: #2e2114;
+    white-space: nowrap;
+  }
+  .site-banner .banner-credit {
+    font-size: clamp(.72rem, 1.3vw, .82rem);
+    font-style: italic;
+    letter-spacing: .02em;
+    color: #8a6f50;
+  }
+  .site-banner a {
+    color: #8a5a28;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1.5px;
+    transition: color .2s ease;
+  }
+  .site-banner a:hover { color: #5e3c18; }
+  .site-banner .banner-logos {
+    margin-top: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .site-banner .banner-logos a {
+    display: inline-flex;
+    align-items: center;
+    transition: transform .2s ease;
+  }
+  .site-banner .banner-logos a:hover { transform: translateY(-1px); }
+  .site-banner .banner-logos img {
+    display: block;
+    height: 30px;
+    width: auto;
+  }
+  @media (max-width: 600px) {
+    .site-banner .banner-logos { gap: 10px; margin-top: 9px; }
+    .site-banner .banner-logos img { height: 22px; }
+  }
+  @media (max-width: 600px) {
+    .site-banner { padding: 11px 16px 12px; }
+    .site-banner .banner-headline { margin-bottom: 5px; white-space: normal; }
+  }
 </style>
 </head>
 <body>
+
+  <!-- ===== Top banner ===== -->
+  <div class="site-banner">
+    <div class="banner-headline"><strong>The Horizon 3 Project</strong> &mdash; Raising expectations and hope for a new era of a strong, capable Congress.</div>
+    <div class="banner-credit">A <a href="https://www.popvox.org" target="_blank" rel="noopener">POPVOX Foundation</a> Initiative supported by <a href="https://recodingamerica.org" target="_blank" rel="noopener">Recoding America</a>.</div>
+    <div class="banner-logos">
+      <a href="https://www.popvox.org" target="_blank" rel="noopener" aria-label="POPVOX Foundation">
+        <img src="images/popvox-foundation.png" alt="POPVOX Foundation" />
+      </a>
+      <a href="https://recodingamerica.org" target="_blank" rel="noopener" aria-label="Recoding America Fund">
+        <img src="images/recoding-america-fund.png" alt="Recoding America Fund" />
+      </a>
+    </div>
+  </div>
 
   <!-- ===== Fixed scene ===== -->
   <div class="scene" aria-hidden="true">
@@ -779,37 +875,42 @@
   <div class="runway">
     <div class="content">
       <section class="panel" data-panel>
-        <div class="card">
+        <div class="card even">
           <div class="eyebrow">Horizon One — The Status Quo</div>
-          <h2>Congress is trying to govern in the 21st century with institutions built for the 20th century.</h2>
+          <h2>Congress is trying to govern in the 21st century with processes rooted in the 19th century and technology dating back to the 20th century.</h2>
+          <p>The institution is falling behind and, unless its trajectory changes, risks becoming irrelevant.</p>
         </div>
       </section>
 
       <section class="panel" data-panel>
-        <div class="card">
-          <div class="eyebrow">Horizon Two — Workarounds</div>
-          <h2>Much recent work has functioned as workarounds, easing immediate pressures without creating the conditions for deeper transformation.</h2>
+        <div class="card dense">
+          <div class="eyebrow">Horizon Two — Transformation</div>
+          <h2>Over the last decade, Congressional modernization initiatives have eased immediate pressures created by Members and staff calling for updates to Congressional operations.</h2>
+          <p>Though progress has been made, Congress has not adopted conditions or processes to achieve lasting, transformational improvement.</p>
+          <p>Meeting today's challenges requires more than workarounds or one-off fixes. Congress is in need of institutional transformation.</p>
         </div>
       </section>
 
       <section class="panel" data-panel>
-        <div class="card">
-          <div class="eyebrow">Horizon Two — The Transformation</div>
-          <h2>Meeting today's challenges will require more than workarounds—it requires institutional transformation.</h2>
-        </div>
-      </section>
-
-      <section class="panel" data-panel>
-        <div class="card">
+        <div class="card even">
           <div class="eyebrow">Horizon Three — The Vision</div>
-          <h2>We're building a roadmap toward an empowered Congress capable of adapting to the modern world's rapid pace of technological change.</h2>
+          <h2>We are building a roadmap toward an empowered Congress capable of adapting to the modern world's rapid pace of technological change.</h2>
+          <p>We are just getting started. We want you to be part of it.</p>
+        </div>
+      </section>
+
+      <section class="panel" data-panel>
+        <div class="card">
+          <div class="eyebrow">More to Come</div>
+          <h2>A Horizon 3 vision for Congress is rapidly approaching.</h2>
+          <p>Check back for updates Summer 2026.</p>
         </div>
       </section>
 
       <section class="panel" data-panel>
         <div class="card cta">
+          <div class="eyebrow">Join the Work</div>
           <p class="collecting">We're collecting ideas around <strong>Congressional capacity</strong>, including <strong>structural and procedural reform</strong>, <strong>staffing and talent</strong>, <strong>technology and operations</strong>, and <strong>oversight and feedback loops</strong>.</p>
-          <h2>Join the work.</h2>
           <div class="links">
             <p>Learn more about the <a href="https://www.eatingpolicy.com/p/a-three-horizons-framework-for-government" target="_blank" rel="noopener">Three Horizons Framework for Government Reform.</a></p>
             <p>Learn more about <a href="mailto:info@popvox.org">POPVOX Foundation.</a></p>
