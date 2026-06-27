@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Horizons — Blueprint</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:100%; height:100%; overflow:hidden; }
+canvas { display:block; }
+
+/* CSS custom properties — lerped by JS each frame */
+:root {
+  --card-bg:    rgba(242,234,215,0.90);
+  --card-b:     rgba(130,105,70,0.40);
+  --card-bt:    rgba(110,82,48,0.68);
+  --card-text:  rgba(38,28,18,0.92);
+  --card-h2:    rgba(32,22,12,0.94);
+  --card-p:     rgba(58,42,28,0.82);
+  --card-ey:    rgba(118,88,52,0.78);
+  --card-eyb:   rgba(140,108,68,0.55);
+  --card-link:  rgba(100,68,32,0.88);
+  --card-hint:  rgba(118,92,58,0.52);
+  --card-bqb:   rgba(120,90,55,0.42);
+  --card-bqt:   rgba(58,42,28,0.78);
+  --card-blur:  8px;
+}
+
+.slide-card {
+  position:fixed; z-index:10;
+  left:50%; top:50%;
+  transform:translateX(-50%) translateY(-50%);
+  width:min(560px,88vw);
+  padding:2.0rem 2.4rem 1.6rem;
+  background:var(--card-bg);
+  border:1px solid var(--card-b);
+  border-top:2px solid var(--card-bt);
+  box-shadow:0 0 50px rgba(0,0,0,0.18), inset 0 0 30px rgba(255,255,255,0.05);
+  backdrop-filter:blur(var(--card-blur));
+  -webkit-backdrop-filter:blur(var(--card-blur));
+  color:var(--card-text);
+  font-family:'Georgia',serif;
+  will-change:transform,opacity; pointer-events:none; user-select:none;
+  transition: none;
+}
+.slide-card .eyebrow {
+  font-size:0.67rem; letter-spacing:0.13em; text-transform:uppercase;
+  color:var(--card-ey); margin-bottom:0.75rem;
+  font-family:'Courier New',monospace;
+}
+.slide-card .eyebrow::before { content:'—'; margin-right:0.5em; color:var(--card-eyb); }
+.slide-card h2 {
+  font-size:1.13rem; line-height:1.72; font-weight:normal;
+  color:var(--card-h2); margin-bottom:0.9rem;
+}
+.slide-card p { font-size:0.90rem; line-height:1.78; color:var(--card-p); margin-bottom:0.55rem; }
+.slide-card a { color:var(--card-link); text-decoration:underline; text-underline-offset:3px; }
+.slide-card .scroll-hint { font-size:0.70rem; color:var(--card-hint); letter-spacing:0.08em; margin-top:1.1rem; font-family:'Courier New',monospace; }
+#slide5,#slide6 { pointer-events:auto; }
+#slide5 a,#slide6 a { pointer-events:auto; }
+#slide6 blockquote {
+  font-style:italic; font-size:0.97rem; line-height:1.76;
+  color:var(--card-bqt); border-left:2px solid var(--card-bqb);
+  padding-left:1.1rem; margin-bottom:1.0rem;
+}
+
+/* ── BEACON GLOW ── */
+#beacon-glow {
+  position:fixed; pointer-events:none; z-index:6;
+  transform:translate(-50%,-50%);
+  opacity:0;
+  --bc:  rgba(200,150,60,0.85);
+  --bca: rgba(200,150,60,0.15);
+}
+.beacon-core {
+  position:absolute; width:6px; height:6px; border-radius:50%;
+  left:50%; top:50%; transform:translate(-50%,-50%);
+  background:var(--bc);
+  box-shadow:0 0 6px 2px var(--bc), 0 0 16px 6px var(--bca);
+  animation:bcore 3s ease-in-out infinite;
+}
+@keyframes bcore {
+  0%,100% { opacity:0.5; transform:translate(-50%,-50%) scale(1); }
+  50%      { opacity:1.0; transform:translate(-50%,-50%) scale(1.6); }
+}
+.beacon-ring {
+  position:absolute; border-radius:50%;
+  border:1.5px solid var(--bc);
+  left:50%; top:50%;
+  width:12px; height:12px;
+  transform:translate(-50%,-50%);
+  animation:bring 5s ease-out infinite;
+}
+.br2 { animation-delay:1.67s; }
+.br3 { animation-delay:3.33s; }
+@keyframes bring {
+  0%   { width:12px;  height:12px;  opacity:0; }
+  5%   { opacity:0.50; }
+  100% { width:240px; height:240px; opacity:0; }
+}
+</style>
+</head>
+<body>
+
+<div id="slide1" class="slide-card">
+  <div class="eyebrow">Horizon One — Status Quo</div>
+  <h2>Congress is trying to govern in the 21st century with processes rooted in the 19th century and technology dating back to the 20th century.</h2>
+  <p>The institution is falling behind and, unless its trajectory changes, risks becoming irrelevant.</p>
+  <div class="scroll-hint">↓ &nbsp; scroll to continue</div>
+</div>
+<div id="slide2" class="slide-card" style="opacity:0;">
+  <div class="eyebrow">Horizon Two Minus</div>
+  <h2>Over the last decade, Congressional modernization initiatives have eased immediate pressures created by Members and staff calling for updates to Congressional operations.</h2>
+  <p>Though progress has been made, Congress has not adopted conditions or processes to achieve lasting, sustaining improvement.</p>
+  <div class="scroll-hint">↓ &nbsp; scroll to continue</div>
+</div>
+<div id="slide3" class="slide-card" style="opacity:0;">
+  <div class="eyebrow">Horizon Two Plus</div>
+  <h2>Meeting today's challenges requires more than workarounds or one-off fixes. Congress is in need of institutional transformation.</h2>
+  <div class="scroll-hint">↓ &nbsp; scroll to continue</div>
+</div>
+<div id="slide4" class="slide-card" style="opacity:0;">
+  <div class="eyebrow">Horizon Three — The Vision</div>
+  <h2>We are building a roadmap toward an empowered Congress capable of adapting to the modern world's rapid pace of technological change.</h2>
+  <p>We are just getting started. We want you to be part of it.</p>
+</div>
+<div id="slide5" class="slide-card" style="opacity:0;">
+  <h2>Join the work</h2>
+  <p>We're collecting ideas around Congressional capacity, including structural and procedural reform, staffing and talent, technology and operations, and oversight and feedback loops.</p>
+  <p style="margin-top:0.9rem;">Have an idea? <a href="mailto:info@popvox.org">Contact us.</a></p>
+  <p>Learn more about the <a href="https://www.eatingpolicy.com/p/a-three-horizons-framework-for-government" target="_blank">Three Horizons Framework for Government Reform.</a></p>
+  <p>Learn more about <a href="https://popvox.org" target="_blank">POPVOX Foundation.</a></p>
+</div>
+<div id="slide6" class="slide-card" style="opacity:0;">
+  <h2>More to come</h2>
+  <blockquote>A Horizon 3 vision for Congress is rapidly approaching.<br>Check back for updates Summer 2026.</blockquote>
+</div>
+
+<div id="beacon-glow">
+  <div class="beacon-core"></div>
+  <div class="beacon-ring"></div>
+  <div class="beacon-ring br2"></div>
+  <div class="beacon-ring br3"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+// CAPITOL DRAWING  (transparent canvas background — renderer provides bg color)
+// ─────────────────────────────────────────────────────────────────────────────
+function drawCapitol(canvas, mode) {
+  // mode: 'sketch' | 'tech'
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const UNIT = 2.0, OX = W/2, OY = H*0.723;
+  const PI = Math.PI;
+
+  ctx.clearRect(0, 0, W, H); // transparent background
+
+  const isSketch = mode === 'sketch';
+  const lc = isSketch ? '#2c2318'  : '#00eedd';
+  const dc = isSketch ? '#7a6850'  : '#0077bb';
+  const LW = isSketch ? 2.2        : 1.5;
+  const DW = isSketch ? 1.2        : 0.9;
+  const TW = isSketch ? 1.7        : 1.1;
+
+  // Seeded LCG for sketch wobble
+  let seed = 54321;
+  function rand() { seed=(seed*1103515245+12345)&0x7fffffff; return (seed/0x7fffffff)-0.5; }
+
+  ctx.lineCap='round'; ctx.lineJoin='round';
+  if (!isSketch) { ctx.shadowColor='#00eedd'; ctx.shadowBlur=12; }
+
+  function X(x){ return OX+x*UNIT; }
+  function Y(y){ return OY-y*UNIT; }
+
+  function rawLine(x0,y0,x1,y1,w,c){
+    ctx.strokeStyle=c||lc; ctx.lineWidth=w||LW;
+    ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(x1,y1); ctx.stroke();
+  }
+  function line(x0,y0,x1,y1,w,c){
+    ctx.strokeStyle=c||lc; ctx.lineWidth=w||LW;
+    if(isSketch){
+      const mx=(X(x0)+X(x1))/2+rand()*(w||LW)*5;
+      const my=(Y(y0)+Y(y1))/2+rand()*(w||LW)*3;
+      ctx.beginPath(); ctx.moveTo(X(x0),Y(y0));
+      ctx.quadraticCurveTo(mx,my,X(x1),Y(y1)); ctx.stroke();
+    } else { rawLine(X(x0),Y(y0),X(x1),Y(y1),w,c); }
+  }
+  function hl(x0,x1,y,w,c){ line(x0,y,x1,y,w,c); }
+  function vl(x,y0,y1,w,c){ line(x,y0,x,y1,w,c); }
+  function ellipseArc(acx,acy,rx,ry,a0,a1,w,c){
+    ctx.strokeStyle=c||lc; ctx.lineWidth=w||LW;
+    ctx.beginPath(); ctx.ellipse(X(acx),Y(acy),rx*UNIT,ry*UNIT,0,a0,a1,false); ctx.stroke();
+  }
+  function cols(x0,x1,yb,yt,n,w,c){
+    if(n<=1){vl(x0,yb,yt,w,c);return;}
+    const s=(x1-x0)/(n-1);
+    for(let i=0;i<n;i++) vl(x0+s*i,yb,yt,w,c);
+  }
+
+  // For tech, add blueprint grid on transparent canvas
+  if(!isSketch){
+    ctx.shadowBlur=0;
+    ctx.strokeStyle='rgba(0,100,190,0.10)'; ctx.lineWidth=0.5;
+    for(let x=0;x<W;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(let y=0;y<H;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+    ctx.strokeStyle='rgba(0,130,220,0.17)'; ctx.lineWidth=0.8;
+    for(let x=0;x<W;x+=200){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(let y=0;y<H;y+=200){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+    ctx.shadowBlur=12;
+  }
+
+  // STEPS
+  if(!isSketch) ctx.shadowBlur=18;
+  hl(-418,418,0,LW*2.2);
+  if(!isSketch) ctx.shadowBlur=12;
+  hl(-418,418,9,LW); hl(-400,400,18,LW); hl(-385,385,28,LW);
+  vl(-418,0,28,DW); vl(418,0,28,DW);
+
+  // WINGS
+  hl(-385,-170,28,LW); hl(-385,-170,88,LW); vl(-385,28,88,DW);
+  cols(-365,-190,35,82,8,DW,dc);
+  hl(-385,-170,82,TW); hl(-385,-170,86,TW);
+  hl(170,385,28,LW); hl(170,385,88,LW); vl(385,28,88,DW);
+  cols(190,365,35,82,8,DW,dc);
+  hl(170,385,82,TW); hl(170,385,86,TW);
+
+  // Balustrade
+  if(!isSketch) ctx.shadowBlur=5;
+  for(let bx=-380;bx<=380;bx+=14){
+    if(bx>-170&&bx<170) continue;
+    vl(bx,88,97,DW*0.5,dc);
+  }
+  hl(-385,-170,97,DW,dc); hl(170,385,97,DW,dc);
+  if(!isSketch) ctx.shadowBlur=12;
+
+  // CENTRAL SECTION
+  vl(-170,28,116,DW); vl(170,28,116,DW);
+  cols(-148,148,35,105,10,DW,dc);
+  hl(-170,170,105,TW); hl(-170,170,110,TW); hl(-170,170,116,TW);
+
+  // DRUM BASE
+  hl(-148,148,116,LW); hl(-148,148,142,LW);
+  vl(-148,116,142,DW); vl(148,116,142,DW);
+  hl(-148,148,131,DW,dc);
+
+  // LOWER DRUM — 8 arched bays
+  hl(-125,125,142,LW); hl(-125,125,184,LW);
+  vl(-125,142,184,DW); vl(125,142,184,DW);
+  hl(-125,125,174,DW,dc);
+  if(!isSketch) ctx.shadowBlur=8;
+  const nBays=8, bayW=250/nBays;
+  for(let b=0;b<nBays;b++){
+    const bx=-125+bayW*(b+0.5), hw=bayW*0.28;
+    vl(bx-hw,146,174,DW,dc); vl(bx+hw,146,174,DW,dc);
+    ctx.strokeStyle=dc; ctx.lineWidth=DW;
+    ctx.beginPath(); ctx.ellipse(X(bx),Y(174),hw*UNIT*0.82,6*UNIT,0,PI,0,true); ctx.stroke();
+    if(!isSketch){ ctx.fillStyle='rgba(0,180,200,0.70)'; ctx.beginPath(); ctx.arc(X(bx),Y(180),DW*1.4,0,PI*2); ctx.fill(); }
+  }
+  if(!isSketch) ctx.shadowBlur=12;
+
+  // UPPER COLONNADE
+  hl(-102,102,184,LW); hl(-102,102,216,LW);
+  vl(-102,184,216,DW); vl(102,184,216,DW);
+  cols(-94,94,188,212,18,DW,dc);
+
+  // MAIN DOME
+  const DCX=0, DCY=216, DRX=94, DRY=164;
+  if(!isSketch) ctx.shadowBlur=20;
+  ctx.strokeStyle=lc; ctx.lineWidth=LW*1.7;
+  ctx.beginPath(); ctx.ellipse(X(DCX),Y(DCY),DRX*UNIT,DRY*UNIT,0,PI,0,false); ctx.stroke();
+  if(!isSketch) ctx.shadowBlur=12;
+  ellipseArc(DCX,DCY,DRX*0.88,DRY*0.88,PI,0,DW);
+  ellipseArc(DCX,DCY,DRX*0.72,DRY*0.72,PI,0,DW*0.65,dc);
+
+  // Horizontal bands
+  if(!isSketch) ctx.shadowBlur=7;
+  const sinBands=[0.10,0.25,0.43,0.60,0.76,0.90,0.97];
+  for(const s of sinBands){
+    const ct=Math.sqrt(1-s*s), xE=DRX*ct, yB=DCY+DRY*s;
+    hl(-xE,xE,yB,DW,dc);
+    hl(-xE*0.96,xE*0.96,yB+3.6,DW*0.55,dc);
+  }
+
+  // Vertical ribs
+  if(!isSketch) ctx.shadowBlur=5;
+  for(let r=1;r<=11;r++){
+    const ang=PI*r/12, tx=DRX*Math.cos(ang), ty=DCY+DRY*Math.sin(ang);
+    rawLine(X(tx*0.97),Y(DCY+3),X(tx),Y(ty),DW*0.85,dc);
+    rawLine(X(tx*0.88),Y(DCY+6),X(tx*0.90),Y(ty*0.96+DCY*0.04),DW*0.55,dc);
+  }
+  if(!isSketch) ctx.shadowBlur=12;
+
+  // LANTERN
+  const LB=DCY+DRY;
+  hl(-30,30,LB,LW); hl(-30,30,LB+12,TW);
+  vl(-30,LB,LB+12,DW); vl(30,LB,LB+12,DW);
+  cols(-26,26,LB+12,LB+90,16,DW,dc);
+  hl(-30,30,LB+90,TW); hl(-30,30,LB+102,LW);
+  vl(-30,LB+90,LB+102,DW); vl(30,LB+90,LB+102,DW);
+  ellipseArc(0,LB+102,24,20,PI,0,LW);
+  ellipseArc(0,LB+102,16,13,PI,0,DW,dc);
+
+  // STATUE
+  const SB=LB+122;
+  hl(-22,22,SB,DW); hl(-22,22,SB+8,DW);
+  vl(-22,SB,SB+8,DW); vl(22,SB,SB+8,DW);
+  vl(0,SB+8,SB+32,DW);
+  hl(-8,8,SB+15,DW); hl(-14,14,SB+24,DW);
+  hl(-22,-8,SB+24,DW,dc); hl(8,22,SB+24,DW,dc);
+  ctx.strokeStyle=lc; ctx.lineWidth=DW;
+  ctx.beginPath(); ctx.ellipse(X(0),Y(SB+37),4*UNIT,5.5*UNIT,0,0,PI*2); ctx.stroke();
+  if(!isSketch) ctx.shadowBlur=18;
+  vl(0,SB+42,SB+55,DW);
+  if(!isSketch) ctx.shadowBlur=0;
+
+  // LABELS
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  if(isSketch){
+    ctx.fillStyle='rgba(110,82,48,0.58)';
+    ctx.font=`bold ${Math.round(22*UNIT/2)}px 'Courier New'`;
+    ctx.fillText('UNITED STATES CAPITOL', X(0), Y(-36));
+    ctx.font=`${Math.round(12*UNIT/2)}px 'Courier New'`;
+    ctx.fillStyle='rgba(110,82,48,0.44)';
+    ctx.fillText('EAST FRONT ELEVATION', X(0), Y(-55));
+    // Dimension line
+    ctx.strokeStyle='rgba(120,90,52,0.28)'; ctx.lineWidth=0.9;
+    ctx.setLineDash([6,5]);
+    ctx.beginPath(); ctx.moveTo(X(-418),Y(-20)); ctx.lineTo(X(418),Y(-20)); ctx.stroke();
+    ctx.setLineDash([]);
+    rawLine(X(-418),Y(-15),X(-418),Y(-25),0.9,'rgba(120,90,52,0.35)');
+    rawLine(X( 418),Y(-15),X( 418),Y(-25),0.9,'rgba(120,90,52,0.35)');
+    ctx.fillStyle='rgba(110,82,48,0.42)';
+    ctx.font=`${Math.round(10*UNIT/2)}px 'Courier New'`;
+    ctx.fillText("751'—4\"", X(0), Y(-25));
+  } else {
+    ctx.shadowColor='#00eedd'; ctx.shadowBlur=8;
+    ctx.fillStyle='rgba(0,238,221,0.65)';
+    ctx.font=`bold ${Math.round(22*UNIT/2)}px 'Courier New'`;
+    ctx.fillText('U.S. CAPITOL — EAST FRONT ELEVATION', X(0), Y(-32));
+    ctx.shadowBlur=4;
+    ctx.font=`${Math.round(11*UNIT/2)}px 'Courier New'`;
+    ctx.fillStyle='rgba(0,180,220,0.50)';
+    ctx.fillText('BLUEPRINT v.2026 / POPVOX FOUNDATION', X(0), Y(-50));
+    // Corner brackets
+    ctx.strokeStyle='rgba(0,220,200,0.40)'; ctx.lineWidth=1.8;
+    const corners=[[-418,-68],[418,-68],[-418,SB+65],[418,SB+65]];
+    for(const [bx,by] of corners){
+      const sx=bx<0?22:-22, sy=by<0?22:-22;
+      rawLine(X(bx),Y(by),X(bx)+sx,Y(by),1.8,'rgba(0,220,200,0.40)');
+      rawLine(X(bx),Y(by),X(bx),Y(by)+sy,1.8,'rgba(0,220,200,0.40)');
+    }
+    ctx.shadowBlur=0;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// THREE.JS SCENE
+// ─────────────────────────────────────────────────────────────────────────────
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+renderer.setClearColor(0xf0e8d4,1);
+document.body.appendChild(renderer.domElement);
+document.body.style.background = '#f0e8d4';
+
+const scene  = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.01, 200);
+
+// Sketch canvas (pencil lines, transparent bg)
+const sketchCanvas = document.createElement('canvas');
+sketchCanvas.width = sketchCanvas.height = 2048;
+drawCapitol(sketchCanvas, 'sketch');
+const sketchTex = new THREE.CanvasTexture(sketchCanvas);
+
+// Tech canvas (neon lines + grid, transparent bg)
+const techCanvas = document.createElement('canvas');
+techCanvas.width = techCanvas.height = 2048;
+drawCapitol(techCanvas, 'tech');
+const techTex = new THREE.CanvasTexture(techCanvas);
+
+const geo = new THREE.PlaneGeometry(22, 22);
+
+// Sketch plane — normal blending, starts fully visible
+const planeSketch = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+  map: sketchTex,
+  transparent: true,
+  opacity: 1.0,
+  depthWrite: false
+}));
+planeSketch.renderOrder = 0;
+scene.add(planeSketch);
+
+// Tech plane — additive blending, starts invisible
+// Additive means dark/black pixels contribute nothing, bright neon adds on top
+const planeTech = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+  map: techTex,
+  transparent: true,
+  blending: THREE.AdditiveBlending,
+  opacity: 0.0,
+  depthWrite: false
+}));
+planeTech.position.z = 0.01; // tiny offset avoids z-fighting
+planeTech.renderOrder = 1;
+scene.add(planeTech);
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SCROLL SYSTEM
+// ─────────────────────────────────────────────────────────────────────────────
+const PHASE=innerHeight*0.9, MAX_SCROLL=PHASE*7.5;
+let scrollY=0, scrollTarget=0;
+const prog=(s)=>Math.max(0,Math.min((scrollY-s)/PHASE,1.0));
+
+window.addEventListener('wheel',e=>{
+  e.preventDefault();
+  scrollTarget=Math.max(0,Math.min(scrollTarget+e.deltaY*0.8,MAX_SCROLL));
+},{passive:false});
+let touchY=0;
+window.addEventListener('touchstart',e=>{touchY=e.touches[0].clientY;},{passive:true});
+window.addEventListener('touchmove',e=>{
+  const dy=touchY-e.touches[0].clientY; touchY=e.touches[0].clientY;
+  scrollTarget=Math.max(0,Math.min(scrollTarget+dy*1.2,MAX_SCROLL));
+},{passive:true});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SLIDES
+// ─────────────────────────────────────────────────────────────────────────────
+const slide1=document.getElementById('slide1');
+const slide2=document.getElementById('slide2');
+const slide3=document.getElementById('slide3');
+const slide4=document.getElementById('slide4');
+const slide5=document.getElementById('slide5');
+const slide6=document.getElementById('slide6');
+
+function applySlide(el,pIn,pOut){
+  const y=(1-pIn)*-innerHeight*0.72+pOut*innerHeight*0.65;
+  const a=Math.min(pIn*2.5,1.0)*(1.0-Math.min(pOut*1.5,1.0));
+  el.style.transform=`translateX(-50%) translateY(calc(-50% + ${y}px))`;
+  el.style.opacity=a;
+}
+function applySlide1(pOut){
+  const y=pOut*innerHeight*0.65;
+  const a=1.0-Math.min(pOut*1.5,1.0);
+  slide1.style.transform=`translateX(-50%) translateY(calc(-50% + ${y}px))`;
+  slide1.style.opacity=a;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// STYLE TRANSITION — sketch → tech
+// Starts at PHASE*2.5 (between slides 2 & 3), completes at PHASE*6.0
+// ─────────────────────────────────────────────────────────────────────────────
+function ease(t){ return t*t*(3-2*t); }
+
+// Lerp between two RGBA arrays, return CSS string
+function lc(s,t,x){
+  const r=s=>Math.round(s); const f=(a,b)=>a+(b-a)*x;
+  return `rgba(${r(f(s[0],t[0]))},${r(f(s[1],t[1]))},${r(f(s[2],t[2]))},${f(s[3],t[3]).toFixed(2)})`;
+}
+
+// Apply card vars to a specific element (inline overrides global CSS vars)
+function applyCardVars(el, st) {
+  el.style.setProperty('--card-bg',   lc([242,234,215,0.90],[4,10,22,0.88],st));
+  el.style.setProperty('--card-b',    lc([130,105,70,0.40],[0,200,180,0.26],st));
+  el.style.setProperty('--card-bt',   lc([110,82,48,0.68],[0,220,200,0.58],st));
+  el.style.setProperty('--card-text', lc([38,28,18,0.92],[200,242,232,0.90],st));
+  el.style.setProperty('--card-h2',   lc([32,22,12,0.94],[220,255,248,0.96],st));
+  el.style.setProperty('--card-p',    lc([58,42,28,0.82],[170,218,208,0.82],st));
+  el.style.setProperty('--card-ey',   lc([118,88,52,0.78],[0,210,188,0.72],st));
+  el.style.setProperty('--card-eyb',  lc([140,108,68,0.55],[0,180,160,0.50],st));
+  el.style.setProperty('--card-link', lc([100,68,32,0.88],[0,220,200,0.88],st));
+  el.style.setProperty('--card-hint', lc([118,92,58,0.52],[0,180,162,0.48],st));
+  el.style.setProperty('--card-blur', `${8+st*4}px`);
+}
+// Slide 3: fixed to sketch palette (matches slide 2, early in transition)
+// Slide 4: fixed to tech palette  (matches slide 5, late in transition)
+applyCardVars(slide3, ease(1.0/7.5));   // ≈ styleT 0.046
+applyCardVars(slide4, ease(5.5/7.5));   // ≈ styleT 0.824
+
+function updateStyle(st) {
+  const R = document.documentElement.style;
+  R.setProperty('--card-bg',   lc([242,234,215,0.90],[4,10,22,0.88],st));
+  R.setProperty('--card-b',    lc([130,105,70,0.40],[0,200,180,0.26],st));
+  R.setProperty('--card-bt',   lc([110,82,48,0.68],[0,220,200,0.58],st));
+  R.setProperty('--card-text', lc([38,28,18,0.92],[200,242,232,0.90],st));
+  R.setProperty('--card-h2',   lc([32,22,12,0.94],[220,255,248,0.96],st));
+  R.setProperty('--card-p',    lc([58,42,28,0.82],[170,218,208,0.82],st));
+  R.setProperty('--card-ey',   lc([118,88,52,0.78],[0,210,188,0.72],st));
+  R.setProperty('--card-eyb',  lc([140,108,68,0.55],[0,180,160,0.50],st));
+  R.setProperty('--card-link', lc([100,68,32,0.88],[0,220,200,0.88],st));
+  R.setProperty('--card-hint', lc([118,92,58,0.52],[0,180,162,0.48],st));
+  R.setProperty('--card-bqb',  lc([120,90,55,0.42],[0,200,180,0.38],st));
+  R.setProperty('--card-bqt',  lc([58,42,28,0.78],[160,215,202,0.80],st));
+  R.setProperty('--card-blur', `${8+st*4}px`);
+
+  // Background (body + renderer)
+  const br=Math.round(240+(6-240)*st);
+  const bg=Math.round(232+(12-232)*st);
+  const bb=Math.round(212+(20-212)*st);
+  const bgStr=`rgb(${br},${bg},${bb})`;
+  document.body.style.background = bgStr;
+  renderer.setClearColor(new THREE.Color(br/255,bg/255,bb/255),1);
+
+  // Blueprint plane cross-fade
+  planeSketch.material.opacity = 1-st;
+  planeTech.material.opacity   = st;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// BEACON
+// Statue tip is at canvas (1024, 366) on 2048×2048.
+// UV: u=0.5, v=1-366/2048≈0.821 → world on PlaneGeometry(22,22): x=0, y=7.07
+// ─────────────────────────────────────────────────────────────────────────────
+const beaconPos = new THREE.Vector3(0, 7.07, 0.01);
+const beaconEl  = document.getElementById('beacon-glow');
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ANIMATION LOOP
+// ─────────────────────────────────────────────────────────────────────────────
+const lookAt = new THREE.Vector3(0,0,0);
+
+function animate(){
+  requestAnimationFrame(animate);
+  scrollY += (scrollTarget-scrollY)*0.08;
+
+  // Slide progress
+  const p1out=prog(0);
+  const p2in=prog(PHASE*0.5),  p2out=prog(PHASE*1.5);
+  const p3in=prog(PHASE*2.0),  p3out=prog(PHASE*3.0);
+  const p4in=prog(PHASE*3.5),  p4out=prog(PHASE*4.5);
+  const p5in=prog(PHASE*5.0),  p5out=prog(PHASE*6.0);
+  const p6in=prog(PHASE*6.5);
+
+  applySlide1(p1out);
+  applySlide(slide2,p2in,p2out);
+  applySlide(slide3,p3in,p3out);
+  applySlide(slide4,p4in,p4out);
+  applySlide(slide5,p5in,p5out);
+  applySlide(slide6,p6in,0);
+
+  // Style transition: sketch→tech across the full scroll
+  const styleRaw = Math.max(0,Math.min(scrollY/MAX_SCROLL,1.0));
+  const styleT   = ease(styleRaw);
+  updateStyle(styleT);
+
+  // Camera arc: 83° → 0°, radius 7 → 14
+  const camT   = ease(Math.max(0,Math.min(scrollY/MAX_SCROLL,1.0)));
+  const angle  = (1-camT)*83*Math.PI/180;
+  const radius = 7+camT*7;
+  camera.position.set(0,-Math.sin(angle)*radius, Math.cos(angle)*radius);
+  camera.lookAt(lookAt);
+  camera.updateMatrixWorld();
+
+  // Beacon glow — project world position to screen each frame
+  const bNDC = beaconPos.clone().project(camera);
+  beaconEl.style.left = `${(bNDC.x+1)/2*innerWidth}px`;
+  beaconEl.style.top  = `${(-bNDC.y+1)/2*innerHeight}px`;
+  beaconEl.style.opacity = Math.min(p6in*3, 1).toFixed(3);
+  // Color: warm amber (sketch) → neon cyan (tech)
+  const bcR=Math.round(200+(0  -200)*styleT);
+  const bcG=Math.round(150+(220-150)*styleT);
+  const bcB=Math.round(60 +(200-60 )*styleT);
+  beaconEl.style.setProperty('--bc',  `rgba(${bcR},${bcG},${bcB},0.85)`);
+  beaconEl.style.setProperty('--bca', `rgba(${bcR},${bcG},${bcB},0.18)`);
+
+  renderer.render(scene,camera);
+}
+
+window.addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+
+animate();
+</script>
+</body>
+</html>
