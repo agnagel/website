@@ -255,15 +255,16 @@
     padding: 8px 20px 0;
     position: relative;
   }
-  .arc-svg { width: 280px; height: 170px; overflow: visible; }
+  .arc-svg { width: 280px; height: 170px; overflow: hidden; }
   #arcBg   { stroke: var(--border); }
   #arcFill { stroke: var(--accent); transition: stroke-dashoffset .4s linear; }
 
   .arc-center {
     position: absolute;
-    top: 50px;
+    /* 8px container padding + arc centre Y (see ARC_CY) */
+    top: 108px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     pointer-events: none;
   }
@@ -656,9 +657,13 @@
 /* ════════════════════════════════════════
    CONSTANTS
 ════════════════════════════════════════ */
+// Once the opening segment reaches this speed it stops climbing, so every
+// session from then on starts at the same steady pace while the rest build.
+const OPENER_CAP = 5.0;
+
 const BASE_ROUTINE = [
   { name: 'Warm-up',   mins: 5, speed: 'warmup',   icon: '🔥' },
-  { name: 'Segment 1', mins: 5, speed: 0,           icon: '▶'  },
+  { name: 'Segment 1', mins: 5, speed: 0, cap: OPENER_CAP, icon: '▶'  },
   { name: 'Segment 2', mins: 5, speed: 0.2,         icon: '↑'  },
   { name: 'Segment 3', mins: 5, speed: 0,           icon: '↓'  },
   { name: 'Segment 4', mins: 5, speed: 0.2,         icon: '↑'  },
@@ -723,7 +728,10 @@ function buildRoutine(sessionNum) {
     let mph;
     if (seg.speed === 'warmup')    mph = WARMUP_SPD;
     else if (seg.speed === 'cooldown') mph = COOLDOWN_SPD;
-    else mph = +(base + seg.speed).toFixed(1);
+    else {
+      mph = +(base + seg.speed).toFixed(1);
+      if (seg.cap != null) mph = Math.min(mph, seg.cap);
+    }
     return { ...seg, mph, seconds: seg.mins * 60 };
   });
 }
@@ -936,8 +944,10 @@ function fmtTime(s) {
 /* ════════════════════════════════════════
    ARC
 ════════════════════════════════════════ */
-const ARC_R = 110, CX = 140, CY = 160;
-const ARC_START = 200, ARC_END = 340;
+// Symmetric gauge open at the bottom, sized to stay inside the 280x170 viewBox
+// (stroke-width 10 means the drawn edge extends 5 past the radius).
+const ARC_R = 88, CX = 140, CY = 100;
+const ARC_START = 230, ARC_END = 490;
 
 function polarXY(cx, cy, r, deg) {
   const rad = (deg - 90) * Math.PI / 180;
@@ -1070,11 +1080,10 @@ function finishRun() {
 }
 
 function commitRun(completed) {
-  // Only advance nextSession if we just ran the current next session
-  if (runningSession === state.nextSession && completed) {
-    state.nextSession++;
-  } else if (runningSession >= state.nextSession && completed) {
-    // Ran a future session directly — advance past it
+  // Advance past the session we just ran, whether it played out to the last
+  // segment or was ended early with "End & Save" — either way you did it.
+  // Re-running an older session leaves the counter alone.
+  if (runningSession >= state.nextSession) {
     state.nextSession = runningSession + 1;
   }
   state.history.push({
