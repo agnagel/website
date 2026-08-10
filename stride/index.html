@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Stride</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@400;500;600&display=swap');
+
+  :root {
+    --bg:        #0a0b0e;
+    --surface:   #12141a;
+    --card:      #1a1d26;
+    --border:    #252836;
+    --accent:    #00e5a0;
+    --accent-dim:#00b87d;
+    --warn:      #ffb830;
+    --hot:       #ff4f4f;
+    --text:      #f0f2f5;
+    --muted:     #6b7280;
+    --seg-done:  #1e3d30;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #app {
+    max-width: 430px;
+    min-height: 100dvh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .screen { display: none; flex-direction: column; flex: 1; }
+  .screen.active { display: flex; }
+
+  /* ══ HOME ══ */
+  #homeScreen { padding: 0 20px 24px; overflow-y: auto; }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 52px 0 20px;
+  }
+  .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .session-badge {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .session-badge span { color: var(--accent); font-weight: 600; }
+
+  /* Session navigator */
+  .session-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .nav-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 10px;
+    width: 40px; height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .15s;
+    flex-shrink: 0;
+  }
+  .nav-btn:disabled { opacity: .25; cursor: default; }
+  .nav-btn:not(:disabled):active { background: var(--border); }
+  .nav-session-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+  }
+  .nav-session-label.is-next { color: var(--accent); }
+
+  .start-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px 24px 20px;
+    margin-bottom: 16px;
+  }
+  .start-card-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .start-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .start-card-title em { color: var(--accent); font-style: normal; }
+
+  .routine-preview {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    height: 32px;
+    align-items: flex-end;
+  }
+  .rp-seg {
+    flex: 1;
+    border-radius: 3px;
+    background: var(--border);
+    position: relative;
+  }
+
+  .btn-start {
+    width: 100%;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 16px;
+    cursor: pointer;
+    transition: transform .1s, filter .1s;
+  }
+  .btn-start:active { transform: scale(.97); filter: brightness(.9); }
+  .btn-start:disabled {
+    background: var(--border);
+    color: var(--muted);
+    cursor: default;
+    transform: none;
+    filter: none;
+  }
+
+  .next-session-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .next-session-info .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--warn);
+    flex-shrink: 0;
+  }
+  .next-session-info strong { color: var(--text); }
+
+  .history-header {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .history-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .hist-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 18px;
+  }
+  .hist-date { font-size: 13px; color: var(--muted); margin-bottom: 2px; }
+  .hist-name { font-size: 15px; font-weight: 600; }
+  .hist-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+  .hist-badge.plus  { background: #1e3d30; color: var(--accent); }
+  .hist-badge.base  { background: var(--border); color: var(--muted); }
+  .hist-badge.incomplete { background: #2a1a0a; color: var(--warn); }
+
+  /* ══ RUN ══ */
+  #runScreen { flex-direction: column; background: var(--bg); }
+
+  .run-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 52px 20px 16px;
+  }
+  .run-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .btn-stop {
+    background: transparent;
+    border: 1px solid #ff4f4f44;
+    color: var(--hot);
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .arc-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 20px 0;
+    position: relative;
+  }
+  .arc-svg { width: 280px; height: 170px; overflow: visible; }
+  #arcBg   { stroke: var(--border); }
+  #arcFill { stroke: var(--accent); transition: stroke-dashoffset .4s linear; }
+
+  .arc-center {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    pointer-events: none;
+  }
+  .mph-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -2px;
+  }
+  .mph-unit {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: -4px;
+  }
+
+  .time-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+  .time-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+  }
+  .time-block.primary { border-color: var(--accent); background: #0a1f17; }
+  .tb-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .tb-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .time-block.primary .tb-value { color: var(--accent); }
+
+  .seg-strip-wrap { padding: 0 20px; margin-bottom: 14px; }
+  .seg-strip-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .seg-strip { display: flex; gap: 4px; height: 8px; }
+  .ss-seg {
+    flex: 1;
+    border-radius: 4px;
+    background: var(--border);
+    transition: background .3s;
+  }
+  .ss-seg.done   { background: var(--seg-done); }
+  .ss-seg.active { background: var(--accent); }
+
+  .seg-cards-wrap {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 20px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .seg-card {
+    display: flex;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    opacity: .5;
+    transition: opacity .3s, border-color .3s;
+  }
+  .seg-card.done     { opacity: .3; }
+  .seg-card.active   { opacity: 1; border-color: var(--accent); background: #0a1f17; }
+  .seg-card.upcoming { opacity: .6; }
+
+  .sc-icon {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+  .seg-card.active .sc-icon { background: var(--accent); }
+  .sc-info { flex: 1; }
+  .sc-name   { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .sc-detail { font-size: 12px; color: var(--muted); }
+  .sc-speed {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .seg-card.active .sc-speed { color: var(--accent); }
+
+  .pause-overlay {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(10,11,14,.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 20;
+  }
+  .pause-overlay.show { display: flex; }
+  .pause-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--warn);
+    text-transform: uppercase;
+  }
+  .btn-resume {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 18px 48px;
+    cursor: pointer;
+  }
+  .btn-abandon {
+    background: transparent;
+    border: 1px solid var(--hot);
+    color: var(--hot);
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 32px;
+    cursor: pointer;
+  }
+  .btn-pause {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 50%;
+    width: 56px; height: 56px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+  }
+
+  /* ══ DONE ══ */
+  #doneScreen {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    gap: 24px;
+    text-align: center;
+  }
+  .done-icon  { font-size: 64px; }
+  .done-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .done-sub { color: var(--muted); font-size: 15px; }
+  .done-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+  .done-stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 12px;
+  }
+  .ds-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .ds-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .btn-home {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 18px;
+    cursor: pointer;
+  }
+
+  .toast {
+    position: fixed;
+    top: 20px;
+    left: 50%; transform: translateX(-50%);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity .3s;
+    pointer-events: none;
+    max-width: 90%;
+  }
+  .toast.show { opacity: 1; }
+
+  /* Wake lock button */
+  .btn-wakelock {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 10px;
+    padding: 7px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+    transition: border-color .15s, color .15s;
+  }
+  .btn-wakelock.active { border-color: var(--accent); color: var(--accent); }
+
+  .seg-card.done { cursor: pointer; }
+  .seg-card.done:active { background: var(--border); }
+  .seg-card.upcoming { cursor: pointer; }
+  .seg-card.upcoming:active { background: var(--border); }
+  .seg-jump-hint {
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    display: none;
+  }
+  .seg-card.upcoming .seg-jump-hint { display: block; }
+  .seg-card.done .seg-jump-hint { display: block; }
+
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- HOME -->
+  <div id="homeScreen" class="screen active">
+    <div class="top-bar">
+      <div class="logo">Stride</div>
+      <div class="session-badge">Next: Session <span id="homeSessionNum">1</span></div>
+    </div>
+
+    <!-- ← prev · label · next → -->
+    <div class="session-nav">
+      <button class="nav-btn" id="btnPrev" onclick="navSession(-1)" disabled>‹</button>
+      <div class="nav-session-label is-next" id="navLabel">Up next</div>
+      <button class="nav-btn" id="btnNext" onclick="navSession(+1)" disabled>›</button>
+    </div>
+
+    <div class="start-card">
+      <div class="start-card-label" id="cardLabel">Today's Routine</div>
+      <div class="start-card-title" id="homeRoutineTitle">Base Run — <em>4.5–5.0 mph</em></div>
+      <div class="routine-preview" id="homePreview"></div>
+      <button class="btn-start" id="btnStart" onclick="startRun()">Start Run</button>
+    </div>
+
+    <div class="next-session-info" id="nextInfo"></div>
+
+    <div class="history-header">Recent</div>
+    <div class="history-list" id="historyList"></div>
+  </div>
+
+  <!-- RUN -->
+  <div id="runScreen" class="screen">
+    <div class="run-header">
+      <div class="run-label" id="runSessionLabel">Session 1</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn-wakelock" id="btnWakeLock" onclick="toggleWakeLock()" title="Keep screen on">☀️</button>
+        <button class="btn-stop" onclick="togglePause()">⏸ Pause</button>
+      </div>
+    </div>
+
+    <div class="arc-container">
+      <svg class="arc-svg" viewBox="0 0 280 170">
+        <path id="arcBg"   fill="none" stroke-width="10" stroke-linecap="round"/>
+        <path id="arcFill" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1"/>
+      </svg>
+      <div class="arc-center">
+        <div class="mph-value" id="mphDisplay">4.5</div>
+        <div class="mph-unit">mph</div>
+      </div>
+    </div>
+
+    <div class="time-blocks">
+      <div class="time-block primary">
+        <div class="tb-label">Segment</div>
+        <div class="tb-value" id="segTimeDisplay">5:00</div>
+      </div>
+      <div class="time-block">
+        <div class="tb-label">Total Left</div>
+        <div class="tb-value" id="totalTimeDisplay">40:00</div>
+      </div>
+    </div>
+
+    <div class="seg-strip-wrap">
+      <div class="seg-strip-label">Progress</div>
+      <div class="seg-strip" id="segStrip"></div>
+    </div>
+
+    <div class="seg-cards-wrap" id="segCards"></div>
+    <button class="btn-pause" onclick="togglePause()">⏸</button>
+
+    <div class="pause-overlay" id="pauseOverlay">
+      <div class="pause-title">Paused</div>
+      <button class="btn-resume" onclick="togglePause()">▶ Resume</button>
+      <button class="btn-abandon" onclick="abandonRun()">End &amp; Save</button>
+    </div>
+  </div>
+
+  <!-- DONE -->
+  <div id="doneScreen" class="screen">
+    <div class="done-icon">🏁</div>
+    <div class="done-title">Run Complete</div>
+    <div class="done-sub" id="doneSubtitle">Great work</div>
+    <div class="done-stats">
+      <div class="done-stat">
+        <div class="ds-label">Duration</div>
+        <div class="ds-value" id="doneDuration">40:00</div>
+      </div>
+      <div class="done-stat">
+        <div class="ds-label">Peak Speed</div>
+        <div class="ds-value" id="donePeak">5.0 mph</div>
+      </div>
+      <div class="done-stat">
+        <div class="ds-label">Session</div>
+        <div class="ds-value" id="doneSession">#1</div>
+      </div>
+      <div class="done-stat">
+        <div class="ds-label">Next bump</div>
+        <div class="ds-value" id="doneNext">Session 3</div>
+      </div>
+    </div>
+    <button class="btn-home" onclick="goHome()">← Back Home</button>
+  </div>
+
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ════════════════════════════════════════
+   CONSTANTS
+════════════════════════════════════════ */
+const BASE_ROUTINE = [
+  { name: 'Warm-up',   mins: 5, speed: 'warmup',   icon: '🔥' },
+  { name: 'Segment 1', mins: 5, speed: 0,           icon: '▶'  },
+  { name: 'Segment 2', mins: 5, speed: 0.2,         icon: '↑'  },
+  { name: 'Segment 3', mins: 5, speed: 0,           icon: '↓'  },
+  { name: 'Segment 4', mins: 5, speed: 0.2,         icon: '↑'  },
+  { name: 'Segment 5', mins: 5, speed: 0.5,         icon: '↑'  },
+  { name: 'Segment 6', mins: 4, speed: 0.2,         icon: '↓'  },
+  { name: 'Segment 7', mins: 1, speed: 0.5,         icon: '↑'  },
+  { name: 'Cool-down', mins: 5, speed: 'cooldown',  icon: '❄'  },
+];
+const BASE_START   = 4.5;
+const WARMUP_SPD   = 3.5;
+const COOLDOWN_SPD = 3.5;
+const LS_KEY       = 'stride_v1';
+
+/* ════════════════════════════════════════
+   PERSISTED STATE  (localStorage)
+════════════════════════════════════════ */
+// nextSession  — the session number the user will run next (1-based)
+// history      — array of completed run records
+// previewSession — which session the home card is currently showing
+//                  (can differ from nextSession when browsing prev/next)
+
+let state = {
+  nextSession:    1,
+  history:        [],
+  previewSession: 1,
+};
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) state = { ...state, ...JSON.parse(raw) };
+  } catch(e) {}
+  state.previewSession = state.nextSession; // always land on "up next" on open
+}
+
+function saveState() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+/* ════════════════════════════════════════
+   RUN-TIME STATE  (not persisted)
+════════════════════════════════════════ */
+let currentRoutine   = [];
+let runningSession   = 0;   // session number currently being run
+let segIndex         = 0;
+let segSecondsLeft   = 0;
+let totalSecondsLeft = 0;
+let totalDuration    = 0;
+let paused           = false;
+let ticker           = null;
+let peakSpeed        = 0;
+
+/* ════════════════════════════════════════
+   ROUTINE BUILDER
+════════════════════════════════════════ */
+function buildRoutine(sessionNum) {
+  const increments = Math.floor((sessionNum - 1) / 2);
+  const offset     = +(increments * 0.1).toFixed(2);
+  const base       = +(BASE_START + offset).toFixed(1);
+
+  return BASE_ROUTINE.map(seg => {
+    let mph;
+    if (seg.speed === 'warmup')    mph = WARMUP_SPD;
+    else if (seg.speed === 'cooldown') mph = COOLDOWN_SPD;
+    else mph = +(base + seg.speed).toFixed(1);
+    return { ...seg, mph, seconds: seg.mins * 60 };
+  });
+}
+
+function routineRange(sessionNum) {
+  const r     = buildRoutine(sessionNum);
+  const main  = r.filter(s => s.mph > WARMUP_SPD);
+  const lo    = Math.min(...main.map(s => s.mph)).toFixed(1);
+  const hi    = Math.max(...main.map(s => s.mph)).toFixed(1);
+  return `${lo}–${hi} mph`;
+}
+
+/* ════════════════════════════════════════
+   HOME SCREEN
+════════════════════════════════════════ */
+function goHome() {
+  clearInterval(ticker);
+  showScreen('homeScreen');
+  renderHome();
+}
+
+function navSession(delta) {
+  const p = state.previewSession + delta;
+  if (p < 1) return;
+  state.previewSession = p;
+  renderHome();
+}
+
+function renderHome() {
+  const ps   = state.previewSession;
+  const next = state.nextSession;
+  const isNext = ps === next;
+  const isPast = ps < next;
+
+  // Badge top-right always shows "next"
+  document.getElementById('homeSessionNum').textContent = next;
+
+  // Nav arrows
+  document.getElementById('btnPrev').disabled = (ps <= 1);
+  // can always go further into the future
+  document.getElementById('btnNext').disabled = false;
+
+  // Nav label
+  const navLabel = document.getElementById('navLabel');
+  if (isNext) {
+    navLabel.textContent = 'Up next';
+    navLabel.className   = 'nav-session-label is-next';
+  } else if (isPast) {
+    navLabel.textContent = `Session ${ps} (completed)`;
+    navLabel.className   = 'nav-session-label';
+  } else {
+    navLabel.textContent = `Session ${ps} (future)`;
+    navLabel.className   = 'nav-session-label';
+  }
+
+  // Card
+  const range = routineRange(ps);
+  document.getElementById('cardLabel').textContent =
+    isPast ? `Completed Session` : isNext ? `Today's Routine` : `Future Session`;
+  document.getElementById('homeRoutineTitle').innerHTML =
+    `Session ${ps} — <em>${range}</em>`;
+
+  // Start button
+  const btnStart = document.getElementById('btnStart');
+  if (isPast) {
+    btnStart.textContent = 'Already done ✓';
+    btnStart.disabled    = true;
+  } else {
+    btnStart.textContent = isNext ? 'Start Run' : `Start Session ${ps}`;
+    btnStart.disabled    = false;
+  }
+
+  // Preview bars
+  renderPreviewBars(buildRoutine(ps));
+
+  // Hint about next speed bump
+  const nextInfo = document.getElementById('nextInfo');
+  const bumpSession = next % 2 === 0 ? next + 1 : (next === 1 ? 3 : next + 2);
+  const futureRange = routineRange(next + 2);
+  const futureHi    = futureRange.split('–')[1];
+  nextInfo.innerHTML = `<div class="dot"></div>
+    Session <strong>${bumpSession}</strong> will bump speeds <strong>+0.1 mph</strong> → up to ${futureHi} peak`;
+
+  renderHistory();
+}
+
+function renderPreviewBars(r) {
+  const preview = document.getElementById('homePreview');
+  preview.innerHTML = '';
+  const speeds = r.map(s => s.mph);
+  const maxS = Math.max(...speeds), minS = Math.min(...speeds);
+  r.forEach(seg => {
+    const div = document.createElement('div');
+    div.className = 'rp-seg';
+    const pct = (seg.mph - minS) / (maxS - minS + .001);
+    const h   = Math.round(40 + pct * 60);
+    div.style.height     = h + '%';
+    div.style.background = `hsl(${152 + pct * 30}deg 80% ${28 + pct * 22}%)`;
+    div.style.borderRadius = '3px';
+    preview.appendChild(div);
+  });
+}
+
+function renderHistory() {
+  const list = document.getElementById('historyList');
+  if (!state.history.length) {
+    list.innerHTML = `<div style="color:var(--muted);font-size:14px;padding:8px 0">No runs yet — let's go! 🚀</div>`;
+    return;
+  }
+  list.innerHTML = '';
+  [...state.history].reverse().forEach(h => {
+    const d = document.createElement('div');
+    d.className = 'hist-item';
+    const incr = h.sessionNum > 2 && h.sessionNum % 2 !== 0;
+    let badgeClass, badgeText;
+    if (!h.completed) {
+      badgeClass = 'incomplete'; badgeText = 'Partial';
+    } else if (incr) {
+      badgeClass = 'plus'; badgeText = '+0.1 mph';
+    } else {
+      badgeClass = 'base'; badgeText = 'Base';
+    }
+    d.innerHTML = `
+      <div>
+        <div class="hist-date">${h.date}</div>
+        <div class="hist-name">Session ${h.sessionNum} · ${h.range}</div>
+      </div>
+      <div class="hist-badge ${badgeClass}">${badgeText}</div>`;
+    list.appendChild(d);
+  });
+}
+
+/* ════════════════════════════════════════
+   RUN LOGIC
+════════════════════════════════════════ */
+function startRun() {
+  runningSession   = state.previewSession;
+  currentRoutine   = buildRoutine(runningSession);
+  segIndex         = 0;
+  segSecondsLeft   = currentRoutine[0].seconds;
+  totalSecondsLeft = currentRoutine.reduce((a, s) => a + s.seconds, 0);
+  totalDuration    = totalSecondsLeft;
+  peakSpeed        = 0;
+  paused           = false;
+
+  document.getElementById('runSessionLabel').textContent =
+    `Session ${runningSession} · ${routineRange(runningSession)}`;
+  document.getElementById('pauseOverlay').classList.remove('show');
+  document.querySelector('.btn-stop').textContent = '⏸ Pause';
+
+  renderSegCards();
+  renderSegStrip();
+  updateDisplays();
+  updateArc();
+
+  showScreen('runScreen');
+  clearInterval(ticker);
+  ticker = setInterval(tick, 1000);
+}
+
+function jumpToSeg(i) {
+  if (i === segIndex) return;
+  // Recalculate totalSecondsLeft as the sum of all remaining segments from i
+  totalSecondsLeft = currentRoutine[i].seconds +
+    currentRoutine.slice(i + 1).reduce((a, s) => a + s.seconds, 0);
+  segIndex = i;
+  segSecondsLeft = currentRoutine[i].seconds;
+  renderSegCards();
+  renderSegStrip();
+  updateDisplays();
+  updateArc();
+  showToast(`→ ${currentRoutine[i].name} · ${currentRoutine[i].mph.toFixed(1)} mph`);
+}
+
+function tick() {
+  if (paused) return;
+  segSecondsLeft--;
+  totalSecondsLeft--;
+
+  const seg = currentRoutine[segIndex];
+  peakSpeed = Math.max(peakSpeed, seg.mph);
+
+  if (segSecondsLeft <= 0) {
+    segIndex++;
+    if (segIndex >= currentRoutine.length) { finishRun(); return; }
+    segSecondsLeft = currentRoutine[segIndex].seconds;
+    renderSegCards();
+    renderSegStrip();
+    const next = currentRoutine[segIndex];
+    const dir  = next.mph > seg.mph ? '↑' : next.mph < seg.mph ? '↓' : '→';
+    showToast(`${dir} ${next.mph} mph — ${next.name}`);
+  }
+
+  updateDisplays();
+  updateArc();
+}
+
+function updateDisplays() {
+  const seg = currentRoutine[segIndex];
+  document.getElementById('mphDisplay').textContent      = seg.mph.toFixed(1);
+  document.getElementById('segTimeDisplay').textContent  = fmtTime(segSecondsLeft);
+  document.getElementById('totalTimeDisplay').textContent = fmtTime(totalSecondsLeft);
+}
+
+function fmtTime(s) {
+  const m = Math.floor(s / 60);
+  return `${m}:${String(s % 60).padStart(2,'0')}`;
+}
+
+/* ════════════════════════════════════════
+   ARC
+════════════════════════════════════════ */
+const ARC_R = 110, CX = 140, CY = 160;
+const ARC_START = 200, ARC_END = 340;
+
+function polarXY(cx, cy, r, deg) {
+  const rad = (deg - 90) * Math.PI / 180;
+  return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+}
+function arcPath(cx, cy, r, s, e) {
+  const a = polarXY(cx,cy,r,s), b = polarXY(cx,cy,r,e);
+  return `M ${a.x} ${a.y} A ${r} ${r} 0 ${(e-s)%360>180?1:0} 1 ${b.x} ${b.y}`;
+}
+
+(function initArc() {
+  const bg = document.getElementById('arcBg');
+  const fill = document.getElementById('arcFill');
+  const d = arcPath(CX,CY,ARC_R,ARC_START,ARC_END);
+  bg.setAttribute('d', d);
+  fill.setAttribute('d', d);
+  requestAnimationFrame(() => {
+    const len = fill.getTotalLength();
+    fill.style.strokeDasharray  = len;
+    fill.style.strokeDashoffset = len;
+    fill._len = len;
+  });
+})();
+
+function updateArc() {
+  const fill = document.getElementById('arcFill');
+  const len  = fill._len || 500;
+  const pct  = 1 - segSecondsLeft / currentRoutine[segIndex].seconds;
+  fill.style.strokeDashoffset = len * (1 - pct);
+  fill.style.stroke = `hsl(${Math.round(152 - pct * 100)}deg 90% 50%)`;
+}
+
+/* ════════════════════════════════════════
+   SEG CARDS & STRIP
+════════════════════════════════════════ */
+function renderSegCards() {
+  const wrap = document.getElementById('segCards');
+  wrap.innerHTML = '';
+  currentRoutine.forEach((seg, i) => {
+    const st   = i < segIndex ? 'done' : i === segIndex ? 'active' : 'upcoming';
+    const card = document.createElement('div');
+    card.className = `seg-card ${st}`;
+    card.id = `sc-${i}`;
+    if (st !== 'active') {
+      card.onclick = () => jumpToSeg(i);
+    }
+    card.innerHTML = `
+      <div class="sc-icon">${seg.icon}</div>
+      <div class="sc-info">
+        <div class="sc-name">${seg.name}</div>
+        <div class="sc-detail">${seg.mins} min</div>
+        <div class="seg-jump-hint">tap to jump here</div>
+      </div>
+      <div class="sc-speed">${seg.mph.toFixed(1)}</div>`;
+    wrap.appendChild(card);
+  });
+  setTimeout(() => {
+    const el = document.getElementById(`sc-${segIndex}`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 100);
+}
+
+function renderSegStrip() {
+  const strip = document.getElementById('segStrip');
+  strip.innerHTML = '';
+  currentRoutine.forEach((_, i) => {
+    const s = document.createElement('div');
+    s.className = `ss-seg ${i < segIndex ? 'done' : i === segIndex ? 'active' : ''}`;
+    strip.appendChild(s);
+  });
+}
+
+/* ════════════════════════════════════════
+   WAKE LOCK
+════════════════════════════════════════ */
+let wakeLock = null;
+
+async function toggleWakeLock() {
+  const btn = document.getElementById('btnWakeLock');
+  if (wakeLock) {
+    await wakeLock.release();
+    wakeLock = null;
+    btn.classList.remove('active');
+    btn.title = 'Keep screen on';
+    showToast('Screen lock re-enabled');
+  } else {
+    try {
+      wakeLock = await navigator.wakeLock.request('screen');
+      btn.classList.add('active');
+      btn.title = 'Screen staying on — tap to release';
+      showToast('☀️ Screen will stay on');
+      wakeLock.addEventListener('release', () => {
+        // released externally (e.g. tab hidden)
+        wakeLock = null;
+        btn.classList.remove('active');
+      });
+    } catch(e) {
+      showToast('Wake Lock not supported on this browser');
+    }
+  }
+}
+
+function releaseWakeLock() {
+  if (wakeLock) { wakeLock.release(); wakeLock = null; }
+  const btn = document.getElementById('btnWakeLock');
+  if (btn) btn.classList.remove('active');
+}
+
+/* ════════════════════════════════════════
+   PAUSE / FINISH
+════════════════════════════════════════ */
+function togglePause() {
+  paused = !paused;
+  document.getElementById('pauseOverlay').classList.toggle('show', paused);
+  document.querySelector('.btn-stop').textContent = paused ? '▶ Paused' : '⏸ Pause';
+}
+
+function abandonRun() {
+  clearInterval(ticker);
+  releaseWakeLock();
+  commitRun(false);
+  showDone(false);
+}
+
+function finishRun() {
+  clearInterval(ticker);
+  releaseWakeLock();
+  commitRun(true);
+  showDone(true);
+}
+
+function commitRun(completed) {
+  // Only advance nextSession if we just ran the current next session
+  if (runningSession === state.nextSession && completed) {
+    state.nextSession++;
+  } else if (runningSession >= state.nextSession && completed) {
+    // Ran a future session directly — advance past it
+    state.nextSession = runningSession + 1;
+  }
+  state.history.push({
+    sessionNum: runningSession,
+    range:      routineRange(runningSession),
+    date:       new Date().toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' }),
+    completed,
+  });
+  state.previewSession = state.nextSession;
+  saveState();
+}
+
+function showDone(completed) {
+  document.getElementById('doneDuration').textContent = fmtTime(totalDuration);
+  document.getElementById('donePeak').textContent     = peakSpeed.toFixed(1) + ' mph';
+  document.getElementById('doneSession').textContent  = '#' + runningSession;
+  const bump = state.nextSession % 2 === 0 ? state.nextSession + 1 : state.nextSession + 2;
+  document.getElementById('doneNext').textContent = `Session ${bump}`;
+  document.getElementById('doneSubtitle').textContent = completed
+    ? 'Full 40 minutes crushed 💪' : 'Partial run saved';
+  showScreen('doneScreen');
+}
+
+/* ════════════════════════════════════════
+   HELPERS
+════════════════════════════════════════ */
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* ════════════════════════════════════════
+   INIT
+════════════════════════════════════════ */
+loadState();
+goHome();
+</script>
+</body>
+</html>
