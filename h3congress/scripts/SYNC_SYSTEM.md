@@ -89,7 +89,7 @@ Rows without a numeric `ID` are skipped.
 | --- | --- |
 | `ID` | Integer. The key H2 ideas link back to. |
 | `Domain` | Comma-separated. Each maps to a `DomainKey`: Institutional Capacity → `capacity`, Staffing & Talent → `staffing`, Information → `information`, Technology & Systems → `technology`, Oversight → `oversight`. |
-| `Block` | Places the area on the diagram: Community Engagement, Culture, Technology, Oversight, Personnel, Law. |
+| `Block` | Comma-separated; each token places the area on a diagram bucket (a row may sit in several). Recognized: Constituent Engagement, Elections, Stakeholder Engagement, Funding Requests, Casework, Culture, Technology, Oversight, Personnel, Members, Structure, Processes, House, Senate, Support Agencies, District Offices, Committees, Legislation, Appropriations, Confirmations. See `BLOCK_TO_BUCKET` in `sync-system.mjs`. |
 | `Additional Tags` | Comma-separated chip labels. |
 | `H1 Time` / `H1 Statement` / `H1 Description` | The status quo. |
 | `H3 Time` / `H3 Statement` / `H3 Description` | The vision. |

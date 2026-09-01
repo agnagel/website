@@ -168,12 +168,6 @@ export const BUCKETS: Record<string, Bucket> = {
     node: "output",
     blurb: "The services and results delivered back to constituents."
   },
-  publicRecord: {
-    label: "Public Record",
-    node: "output",
-    blurb:
-      "The official record of proceedings — the Congressional Record and published bills and votes."
-  },
   otherActivities: {
     label: "Other Activities",
     node: "output",

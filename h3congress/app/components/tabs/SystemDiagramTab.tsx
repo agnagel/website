@@ -254,9 +254,10 @@ export default function SystemDiagramTab() {
   const areasByBucket = useMemo(() => {
     const map = new Map<string, ProblemArea[]>();
     for (const area of PROBLEM_AREAS) {
-      if (!area.bucket) continue;
-      if (!map.has(area.bucket)) map.set(area.bucket, []);
-      map.get(area.bucket)!.push(area);
+      for (const bucket of area.buckets) {
+        if (!map.has(bucket)) map.set(bucket, []);
+        map.get(bucket)!.push(area);
+      }
     }
     return map;
   }, []);
@@ -266,17 +267,16 @@ export default function SystemDiagramTab() {
   // they address (idea.h1h3Ids → area), NOT by the idea's own `bucket` tag, so
   // the count is derived the same way to stay in sync with what actually opens.
   const ideaCountByBucket = useMemo(() => {
-    const areaBucket = new Map<string, string>();
+    const areaBuckets = new Map<string, string[]>();
     for (const area of PROBLEM_AREAS) {
-      if (area.bucket) areaBucket.set(area.id, area.bucket);
+      if (area.buckets.length) areaBuckets.set(area.id, area.buckets);
     }
     const map = new Map<string, Set<string>>();
     for (const idea of H2_IDEAS) {
       if (idea.horizonKey !== "h2neg" && idea.horizonKey !== "h2pos") continue;
       const buckets = new Set<string>();
       for (const areaId of idea.h1h3Ids) {
-        const bucket = areaBucket.get(areaId);
-        if (bucket) buckets.add(bucket);
+        for (const bucket of areaBuckets.get(areaId) ?? []) buckets.add(bucket);
       }
       for (const bucket of buckets) {
         if (!map.has(bucket)) map.set(bucket, new Set());

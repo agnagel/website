@@ -41,14 +41,34 @@ const H2_TAB = "H2 Problem Space";
 // system.html now lives in app/data/systemDiagram.ts; this script only needs to
 // resolve each row's Block to a bucket id (stamped onto every emitted row).
 // ---------------------------------------------------------------------------
-// Sheet "Block" value -> diagram bucket id.
+// Sheet "Block" value -> diagram bucket id. The Block cell is comma-separated
+// (like Domain), so a row can land in several buckets; each token is looked up
+// here. Every id must have a matching entry in app/data/systemDiagram.ts to
+// actually appear on the diagram.
 const BLOCK_TO_BUCKET = {
-  "Community Engagement": "community",
+  // Inputs
+  "Constituent Engagement": "community",
+  "Elections": "elections",
+  "Stakeholder Engagement": "stakeholder",
+  "Funding Requests": "appropriationsRequests",
+  "Casework": "casework",
+  // Institution
   "Culture": "culture",
   "Technology": "technology",
   "Oversight": "oversight",
   "Personnel": "personnel",
-  "Law": "law",
+  "Members": "members",
+  "Structure": "structure",
+  "Processes": "processes",
+  "House": "house",
+  "Senate": "senate",
+  "Support Agencies": "supportAgencies",
+  "District Offices": "districtOffices",
+  "Committees": "committees",
+  // Outputs
+  "Legislation": "law",
+  "Appropriations": "appropriations",
+  "Confirmations": "confirmations",
 };
 
 // Sheet "Domain" value -> DomainKey used by the React tabs.
@@ -140,10 +160,17 @@ function toDomainKeys(domainRaw, warnings, rowLabel) {
   return keys;
 }
 
-function toBucket(block, warnings, rowLabel) {
-  const bucket = BLOCK_TO_BUCKET[str(block)];
-  if (!bucket) warnings.push(`${rowLabel}: unrecognized Block "${str(block)}" — not placed on the diagram`);
-  return bucket || "";
+function toBuckets(blockRaw, warnings, rowLabel) {
+  const buckets = [];
+  for (const name of splitList(blockRaw)) {
+    const bucket = BLOCK_TO_BUCKET[name];
+    if (!bucket) {
+      warnings.push(`${rowLabel}: unrecognized Block "${name}" — not placed on the diagram`);
+      continue;
+    }
+    if (!buckets.includes(bucket)) buckets.push(bucket);
+  }
+  return buckets;
 }
 
 function toHorizonKey(classification) {
@@ -173,7 +200,7 @@ function buildData(tabs) {
       domainsRaw: str(r.Domain),
       domains: toDomainKeys(r.Domain, warnings, `H1&H3 row ${id}`),
       block: str(r.Block),
-      bucket: toBucket(r.Block, warnings, `H1&H3 row ${id}`),
+      buckets: toBuckets(r.Block, warnings, `H1&H3 row ${id}`),
       additionalTags: str(r["Additional Tags"]),
       h1Time: parseYear(r["H1 Time"]),
       h1Statement: str(r["H1 Statement"]),
@@ -202,7 +229,7 @@ function buildData(tabs) {
       domainsRaw: str(r.Domain),
       domains: toDomainKeys(r.Domain, warnings, `H2 row ${id}`),
       block: str(r.Block),
-      bucket: toBucket(r.Block, warnings, `H2 row ${id}`),
+      buckets: toBuckets(r.Block, warnings, `H2 row ${id}`),
       additionalTags: str(r["Additional Tags"]),
       horizon,
       horizonKey,
@@ -230,13 +257,13 @@ function buildData(tabs) {
 function emitProblemSpace({ problemAreas, h2Ideas }) {
   const j = (v) => JSON.stringify(v, null, 2);
 
-  // Both React tabs consume these fields. `bucket` places the row on the System
-  // Diagram (empty string = not placed); `domains` groups it on the Domains tab.
+  // Both React tabs consume these fields. `buckets` places the row on the System
+  // Diagram (empty array = not placed); `domains` groups it on the Domains tab.
   // The raw Block/domainsRaw values are internal to this script and left out.
   const areasOut = problemAreas.map((a) => ({
     id: a.id,
     domains: a.domains,
-    bucket: a.bucket,
+    buckets: a.buckets,
     h1Time: a.h1Time,
     h1Statement: a.h1Statement,
     h1Description: a.h1Description,
@@ -247,7 +274,7 @@ function emitProblemSpace({ problemAreas, h2Ideas }) {
   const ideasOut = h2Ideas.map((i) => ({
     id: i.id,
     domains: i.domains,
-    bucket: i.bucket,
+    buckets: i.buckets,
     additionalTags: i.additionalTags,
     horizon: i.horizon,
     horizonKey: i.horizonKey,
@@ -286,7 +313,7 @@ export type SourceLink = {
 export type ProblemArea = {
   id: string;
   domains: DomainKey[];
-  bucket: string;
+  buckets: string[];
   h1Time: number | null;
   h1Statement: string;
   h1Description: string;
@@ -298,7 +325,7 @@ export type ProblemArea = {
 export type H2Idea = {
   id: string;
   domains: DomainKey[];
-  bucket: string;
+  buckets: string[];
   additionalTags: string;
   horizon: "H2-" | "H2+";
   horizonKey: "h2neg" | "h2pos";
