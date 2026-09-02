@@ -4,6 +4,17 @@ export default function SiteFooter() {
   return (
     <footer className="h3-footer">
       <div className="h3-container h3-footer-row">
+        <div className="h3-footer-brand">
+          <h3>Three Horizons Vision for Congress</h3>
+          <div className="h3-footer-brand-body">
+            <img className="h3-footer-mark" src="/assets/h3-logo.png" alt="H3 Congress" />
+            <p>
+              An interactive project mapping the structural capacity gap in the
+              legislative branch, built in public by POPVOX Foundation.
+            </p>
+          </div>
+        </div>
+
         <div className="h3-partners">
           <div>
             <span>A project of</span>
@@ -27,14 +38,6 @@ export default function SiteFooter() {
               <img src="/assets/raf-clear.png" alt="Recoding America Fund" />
             </a>
           </div>
-        </div>
-
-        <div className="h3-footer-brand">
-          <img className="h3-footer-mark" src="/assets/h3-logo.png" alt="H3 Congress" />
-          <p>
-            An interactive project mapping the structural capacity gap in the
-            legislative branch, built in public by POPVOX Foundation.
-          </p>
         </div>
 
         <nav className="h3-footer-col">

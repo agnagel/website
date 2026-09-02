@@ -14,6 +14,8 @@ export type ProblemSpaceGroup = {
   title: string;
   /** One-line description under the heading. */
   lede: string;
+  /** Optional longer disclaimer/context shown under the lede. */
+  note?: string;
   /** Small label in the modal head, e.g. a domain number or the diagram node. */
   eyebrowLabel: string;
   /** The H1→H3 pairs to show, in display order. */
@@ -208,6 +210,10 @@ export function ProblemSpaceModal({
               <h2>{effectiveGroup.title}</h2>
               <p className="h3-domain-modal-lede">{effectiveGroup.lede}</p>
 
+              {effectiveGroup.note && (
+                <p className="h3-domain-modal-note">{effectiveGroup.note}</p>
+              )}
+
               {anyIdeas && (
                 <p className="h3-domain-modal-instruction">
                   Click a pair of H1 → H3 to see the possible implementation
@@ -216,12 +222,14 @@ export function ProblemSpaceModal({
               )}
 
               {effectiveGroup.areas.length === 0 ? (
-                <p className="h3-domain-empty">
-                  No H1 status quo or H3 vision has been mapped here yet.{" "}
-                  <Link href="/get-involved" className="h3-domain-empty-cta">
-                    Submit your ideas.
-                  </Link>
-                </p>
+                effectiveGroup.note ? null : (
+                  <p className="h3-domain-empty">
+                    No H1 status quo or H3 vision has been mapped here yet.{" "}
+                    <Link href="/get-involved" className="h3-domain-empty-cta">
+                      Submit your ideas.
+                    </Link>
+                  </p>
+                )
               ) : (
                 effectiveGroup.areas.map((area) => (
                   <HorizonPairFrame

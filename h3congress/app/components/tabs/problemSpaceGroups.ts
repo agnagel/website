@@ -7,7 +7,12 @@ import type { ProblemSpaceGroup } from "./ProblemSpaceModal";
 
 // Per-group display copy — everything in a ProblemSpaceGroup except its id and
 // the areas (which this builder derives).
-export type GroupMeta = { title: string; lede: string; eyebrowLabel: string };
+export type GroupMeta = {
+  title: string;
+  lede: string;
+  eyebrowLabel: string;
+  note?: string;
+};
 
 /**
  * Partition the shared problem space — the H1→H3 areas and the H2 ideas under

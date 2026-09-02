@@ -1172,6 +1172,19 @@ textarea:focus-visible {
   max-width: none;
 }
 
+/* Longer disclaimer/context under the lede (e.g. the Elections block). */
+.h3-domain-modal-note {
+  margin: 0 0 24px;
+  padding: 14px 16px;
+  max-width: 68ch;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 /* Domain H1 status-quo → H3 vision framing pair (click to expand ladder) --- */
 /* Each frame is one self-contained unit: the H1→H3 pair plus its H2 dropdown.
    Multiple frames can stack below one another. */
@@ -1883,7 +1896,7 @@ textarea:focus-visible {
   border-top: 1px solid var(--line);
   background: var(--paper);
   color: var(--ink);
-  padding: clamp(28px, 4vh, 44px) clamp(20px, 7vw, 120px);
+  padding: clamp(28px, 4vh, 44px) clamp(20px, 3vw, 48px);
 }
 
 /* One compact row: partners · brand · Explore · Foundations · Get involved,
@@ -1896,22 +1909,27 @@ textarea:focus-visible {
   gap: clamp(16px, 2vw, 34px);
 }
 
-/* Icon + tagline, sitting together as one group. */
+/* Brand group (leftmost): header on top, icon + tagline beneath. */
 .h3-footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.h3-footer-brand-body {
   display: flex;
   align-items: flex-start;
   gap: 14px;
 }
 
 .h3-footer .h3-footer-brand p {
-  max-width: 24ch;
+  max-width: 30ch;
 }
 
 .h3-partners {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: clamp(20px, 2.6vw, 40px);
+  gap: clamp(16px, 2vw, 34px);
 }
 
 .h3-partners div {
@@ -1939,8 +1957,8 @@ textarea:focus-visible {
 .h3-partners img {
   display: block;
   width: auto;
-  max-width: min(160px, 52vw);
-  height: clamp(24px, 2.6vw, 36px);
+  max-width: min(130px, 46vw);
+  height: clamp(22px, 2.4vw, 34px);
   object-fit: contain;
   object-position: left center;
 }
@@ -1963,7 +1981,7 @@ textarea:focus-visible {
 }
 
 .h3-footer p {
-  max-width: 22ch;
+  max-width: 20ch;
   margin: 0;
   color: var(--muted);
   font-size: 14px;
@@ -2483,6 +2501,8 @@ textarea:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
+  /* Breathing room between the sourcing note and the domain filters below. */
+  margin-top: 32px;
   margin-bottom: 22px;
 }
 

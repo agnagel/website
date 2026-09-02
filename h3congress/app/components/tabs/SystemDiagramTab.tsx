@@ -258,7 +258,8 @@ export default function SystemDiagramTab() {
         (key) => ({
           title: bucketLabel(key),
           lede: BUCKETS[key].blurb,
-          eyebrowLabel: bucketNodeTitle(key)
+          eyebrowLabel: bucketNodeTitle(key),
+          note: BUCKETS[key].note
         })
       ),
     []

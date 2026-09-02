@@ -22,6 +22,8 @@ type Bucket = {
   label: string;
   node: string;
   blurb: string;
+  /** Optional longer disclaimer/context shown in the modal under the blurb. */
+  note?: string;
 };
 
 const NODES: SystemNode[] = [
@@ -86,7 +88,9 @@ export const BUCKETS: Record<string, Bucket> = {
   elections: {
     label: "Elections",
     node: "input",
-    blurb: "How districts and at-large seats are filled and representatives are chosen."
+    blurb: "How districts and at-large seats are filled and representatives are chosen.",
+    note:
+      "POPVOX Foundation does not focus on election reform, and it is not the purpose of this project. We highlight only a few election-reform ideas broadly — those that bear directly on members' ability to legislate effectively once in Congress. Many other groups are doing interesting work on voting methods, redistricting and gerrymandering, voting access and rights litigation, election administration and infrastructure, election integrity, and money in politics. Readers interested in election ideas should look to the work of those groups."
   },
   stakeholder: {
     label: "Stakeholder Engagement",
