@@ -1,3 +1,6 @@
+import ExportMotion from "./ExportMotion";
+import BinaryRain from "./BinaryRain";
+
 export const metadata = {
   title: "Export the data · H3 Congress"
 };
@@ -5,6 +8,9 @@ export const metadata = {
 export default function ExportPage() {
   return (
     <section className="h3-export">
+      <ExportMotion />
+      <BinaryRain />
+
       <div className="h3-container">
         <p className="h3-eyebrow h3-eyebrow-gold">Download the data</p>
         <h1>Export the Three Horizons Vision for Congress dataset</h1>
@@ -22,7 +28,7 @@ export default function ExportPage() {
             its matching Horizon&nbsp;3 statement, the future being aimed for.
           </li>
           <li>
-            <strong>H2-Problem-Space.csv</strong> — the ideas in between. Every
+            <strong>H2-Database.csv</strong> — the ideas in between. Every
             Horizon&nbsp;2 idea: both H2− moves that relieve pressure on
             today&rsquo;s system and H2+ moves that build toward the future
             vision.
@@ -32,7 +38,7 @@ export default function ExportPage() {
         <div className="h3-export-link">
           <h2>How the two files connect</h2>
           <p>
-            Every idea in <strong>H2-Problem-Space.csv</strong> lists a value in
+            Every idea in <strong>H2-Database.csv</strong> lists a value in
             its <strong>H1/H3 ID(s)</strong> column. That value matches the{" "}
             <strong>ID</strong> column in <strong>H1-and-H3.csv</strong>, so you
             can see which horizon pair any idea belongs to.

@@ -5,11 +5,10 @@ import { useReveal } from "../useReveal";
 import {
   PROBLEM_AREAS,
   H2_IDEAS,
-  type DomainKey,
-  type ProblemArea,
-  type H2Idea
+  type DomainKey
 } from "../../data/problemSpace";
-import { ProblemSpaceModal, type ProblemSpaceGroup } from "./ProblemSpaceModal";
+import { ProblemSpaceModal } from "./ProblemSpaceModal";
+import { buildProblemSpaceGroups } from "./problemSpaceGroups";
 
 type Domain = {
   number: string;
@@ -66,71 +65,24 @@ const domains: Domain[] = [
 export default function DomainsTab() {
   useReveal();
 
-  const [activeDomain, setActiveDomain] = useState<Domain | null>(null);
+  const [activeDomain, setActiveDomain] = useState<DomainKey | null>(null);
 
-  // The "N items" on each domain card = the H2−/H2+ ideas the domain's modal
-  // actually reveals. The modal lists ideas by the problem area(s) they address
-  // (idea.h1h3Ids → area), and a domain surfaces the areas tagged to it, so the
-  // count is derived the same way to stay in sync with what opens.
-  const ideaCountByDomain = useMemo(() => {
-    const areaDomains = new Map<string, DomainKey[]>();
-    for (const area of PROBLEM_AREAS) {
-      areaDomains.set(area.id, area.domains);
-    }
-    const map = new Map<DomainKey, Set<string>>();
-    for (const idea of H2_IDEAS) {
-      if (idea.horizonKey !== "h2neg" && idea.horizonKey !== "h2pos") continue;
-      const domains = new Set<DomainKey>();
-      for (const areaId of idea.h1h3Ids) {
-        for (const key of areaDomains.get(areaId) ?? []) domains.add(key);
-      }
-      for (const key of domains) {
-        if (!map.has(key)) map.set(key, new Set());
-        map.get(key)!.add(idea.id);
-      }
-    }
-    return map;
-  }, []);
-
-  // H1 status quo → H3 vision problem areas grouped by domain. A domain can hold
-  // several — all of them are shown, stacked, at the top of the domain view.
-  const areasByDomain = useMemo(() => {
-    const map = new Map<DomainKey, ProblemArea[]>();
-    for (const area of PROBLEM_AREAS) {
-      for (const key of area.domains) {
-        if (!map.has(key)) map.set(key, []);
-        map.get(key)!.push(area);
-      }
-    }
-    return map;
-  }, []);
-
-  const buildGroup = (domain: Domain): ProblemSpaceGroup => ({
-    title: domain.title,
-    lede: domain.lede,
-    // No eyebrow label for domains — the header shows only the Back control.
-    eyebrowLabel: "",
-    areas: areasByDomain.get(domain.key) ?? []
-  });
-
-  const activeGroup: ProblemSpaceGroup | null = activeDomain
-    ? buildGroup(activeDomain)
-    : null;
-
-  // When an idea is opened from the tag drawer it may live in another domain.
-  // Resolve that idea's own domain group so the modal follows it there — but if
-  // the idea also belongs to the domain you're already in, stay put.
-  const resolveGroupForIdea = (
-    item: H2Idea,
-    currentTitle: string
-  ): ProblemSpaceGroup | null => {
-    if (!item.domains.length) return null;
-    const stay = domains.find(
-      (d) => d.title === currentTitle && item.domains.includes(d.key)
-    );
-    const target = stay ?? domains.find((d) => d.key === item.domains[0]);
-    return target ? buildGroup(target) : null;
-  };
+  // Every domain as a modal group, plus the "N items" count on each card. The
+  // count = the H2−/H2+ ideas the domain's modal reveals; the shared builder
+  // derives both by grouping the problem space on `area.domains`.
+  const { groups, countByKey } = useMemo(
+    () =>
+      buildProblemSpaceGroups(
+        (area) => area.domains,
+        domains.map((domain) => domain.key),
+        (key) => {
+          const domain = domains.find((d) => d.key === key)!;
+          // No eyebrow label for domains — the header shows only the Back control.
+          return { title: domain.title, lede: domain.lede, eyebrowLabel: "" };
+        }
+      ),
+    []
+  );
 
   return (
     <section id="domains" className="h3-domains h3-domains-tab">
@@ -150,13 +102,13 @@ export default function DomainsTab() {
         </div>
         <div className="h3-domain-grid">
           {domains.map((domain) => {
-            const count = ideaCountByDomain.get(domain.key)?.size ?? 0;
+            const count = countByKey.get(domain.key) ?? 0;
             return (
               <button
                 className="h3-domain h3-domain-clickable"
                 data-reveal
                 key={domain.number}
-                onClick={() => setActiveDomain(domain)}
+                onClick={() => setActiveDomain(domain.key)}
                 type="button"
               >
                 <p>{domain.number}</p>
@@ -180,14 +132,14 @@ export default function DomainsTab() {
         </div>
       </div>
 
-      {activeGroup && (
+      {activeDomain && (
         <ProblemSpaceModal
-          group={activeGroup}
+          groups={groups}
+          activeGroupId={activeDomain}
           allAreas={PROBLEM_AREAS}
           allIdeas={H2_IDEAS}
           theme="light"
           onClose={() => setActiveDomain(null)}
-          resolveGroup={resolveGroupForIdea}
         />
       )}
     </section>

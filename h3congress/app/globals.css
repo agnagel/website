@@ -1883,22 +1883,41 @@ textarea:focus-visible {
   border-top: 1px solid var(--line);
   background: var(--paper);
   color: var(--ink);
-  padding: clamp(54px, 8vh, 90px) clamp(20px, 7vw, 120px);
+  padding: clamp(28px, 4vh, 44px) clamp(20px, 7vw, 120px);
+}
+
+/* One compact row: partners · brand · Explore · Foundations · Get involved,
+   spread edge to edge across the width. */
+.h3-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 34px);
+}
+
+/* Icon + tagline, sitting together as one group. */
+.h3-footer-brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.h3-footer .h3-footer-brand p {
+  max-width: 24ch;
 }
 
 .h3-partners {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: clamp(34px, 6vw, 72px);
-  margin-bottom: clamp(34px, 5vh, 52px);
-  padding-bottom: clamp(34px, 5vh, 52px);
+  gap: clamp(20px, 2.6vw, 40px);
 }
 
 .h3-partners div {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .h3-partners span,
@@ -1920,31 +1939,31 @@ textarea:focus-visible {
 .h3-partners img {
   display: block;
   width: auto;
-  max-width: min(280px, 72vw);
-  height: clamp(30px, 4vw, 50px);
+  max-width: min(160px, 52vw);
+  height: clamp(24px, 2.6vw, 36px);
   object-fit: contain;
   object-position: left center;
 }
 
-.h3-footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
+.h3-footer-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .h3-footer-mark {
   display: block;
   width: auto;
-  height: 108px;
-  margin: -26px 0 -8px;
+  height: 54px;
+  margin: 0;
+  flex-shrink: 0;
 }
 
 .h3-footer h3 {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 }
 
 .h3-footer p {
-  max-width: 34ch;
+  max-width: 22ch;
   margin: 0;
   color: var(--muted);
   font-size: 14px;
@@ -1953,7 +1972,7 @@ textarea:focus-visible {
 
 .h3-footer a {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
   color: var(--ink-soft);
   font-size: 14px;
   text-decoration: none;
@@ -3169,10 +3188,16 @@ textarea:focus-visible {
   color: var(--paper);
 }
 
-/* Explore panel: slightly lighter navy so it reads distinct from the quote
+/* Explore panel: the darker navy so it reads distinct from the (lighter) quote
    section it sits beneath. */
 .h3-explore {
+  background-color: var(--neon-bg);
+}
+
+/* Pahlka quote: the lighter navy, and drop the dot grid. */
+.h3-quote-section {
   background-color: var(--neon-bg-2);
+  background-image: none;
 }
 
 .h3-gap h2 {
@@ -3252,11 +3277,38 @@ textarea:focus-visible {
 
 /* export page */
 .h3-export {
+  position: relative;
+  overflow: hidden;
   padding: 72px 0 96px;
-  /* Solid paper background so the sketch grid doesn't show through — the
-     dense-text explanation reads more cleanly without it. */
+  /* Plain beige background. */
   background-color: var(--paper);
   background-image: none;
+}
+
+/* Binary rain dripping down the right edge, in muted grays and browns, fading
+   left into the paper so it stays clear of the copy. */
+.h3-export-rain {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(44%, 540px);
+  z-index: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 45%);
+}
+
+@media (max-width: 780px) {
+  .h3-export-rain {
+    width: min(40%, 220px);
+    opacity: 0.7;
+  }
+}
+
+.h3-export .h3-container {
+  position: relative;
+  z-index: 1;
 }
 
 .h3-export .h3-eyebrow-gold {

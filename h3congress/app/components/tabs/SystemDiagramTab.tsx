@@ -1,17 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import {
-  PROBLEM_AREAS,
-  H2_IDEAS,
-  type ProblemArea
-} from "../../data/problemSpace";
+import { PROBLEM_AREAS, H2_IDEAS } from "../../data/problemSpace";
 import {
   BUCKETS,
   bucketLabel,
   bucketNodeTitle
 } from "../../data/systemDiagram";
-import { ProblemSpaceModal, type ProblemSpaceGroup } from "./ProblemSpaceModal";
+import { ProblemSpaceModal } from "./ProblemSpaceModal";
+import { buildProblemSpaceGroups } from "./problemSpaceGroups";
 
 // The dark diagram palette, applied as CSS custom properties on the stage. The
 // original System Diagram set these inline; keeping them here preserves its look.
@@ -99,8 +96,7 @@ function ListBlock({
         height,
         width: "100%",
         cursor: "pointer",
-        textAlign: "left",
-        filter: big ? "drop-shadow(0 0 6px rgba(0,238,221,.22))" : undefined
+        textAlign: "left"
       }}
     >
       <Icon
@@ -251,53 +247,25 @@ export default function SystemDiagramTab() {
   const [activeBucket, setActiveBucket] = useState<string | null>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
 
-  const areasByBucket = useMemo(() => {
-    const map = new Map<string, ProblemArea[]>();
-    for (const area of PROBLEM_AREAS) {
-      for (const bucket of area.buckets) {
-        if (!map.has(bucket)) map.set(bucket, []);
-        map.get(bucket)!.push(area);
-      }
-    }
-    return map;
-  }, []);
+  // Every block as a modal group, plus the "(N)" count on each block title. The
+  // shared builder derives both by grouping the problem space on `area.buckets`,
+  // exactly as the Domains tab groups on `area.domains`.
+  const { groups, countByKey } = useMemo(
+    () =>
+      buildProblemSpaceGroups(
+        (area) => area.buckets,
+        Object.keys(BUCKETS),
+        (key) => ({
+          title: bucketLabel(key),
+          lede: BUCKETS[key].blurb,
+          eyebrowLabel: bucketNodeTitle(key)
+        })
+      ),
+    []
+  );
 
-  // The "(N)" beside each block title = the number of distinct H2−/H2+ ideas the
-  // modal reveals for that block. The modal lists ideas by the problem area(s)
-  // they address (idea.h1h3Ids → area), NOT by the idea's own `bucket` tag, so
-  // the count is derived the same way to stay in sync with what actually opens.
-  const ideaCountByBucket = useMemo(() => {
-    const areaBuckets = new Map<string, string[]>();
-    for (const area of PROBLEM_AREAS) {
-      if (area.buckets.length) areaBuckets.set(area.id, area.buckets);
-    }
-    const map = new Map<string, Set<string>>();
-    for (const idea of H2_IDEAS) {
-      if (idea.horizonKey !== "h2neg" && idea.horizonKey !== "h2pos") continue;
-      const buckets = new Set<string>();
-      for (const areaId of idea.h1h3Ids) {
-        for (const bucket of areaBuckets.get(areaId) ?? []) buckets.add(bucket);
-      }
-      for (const bucket of buckets) {
-        if (!map.has(bucket)) map.set(bucket, new Set());
-        map.get(bucket)!.add(idea.id);
-      }
-    }
-    return map;
-  }, []);
-
-  const count = (bucket: string) => ideaCountByBucket.get(bucket)?.size ?? 0;
+  const count = (bucket: string) => countByKey.get(bucket) ?? 0;
   const open = (bucket: string) => () => setActiveBucket(bucket);
-
-  const activeGroup: ProblemSpaceGroup | null =
-    activeBucket && BUCKETS[activeBucket]
-      ? {
-          title: bucketLabel(activeBucket),
-          lede: BUCKETS[activeBucket].blurb,
-          eyebrowLabel: bucketNodeTitle(activeBucket),
-          areas: areasByBucket.get(activeBucket) ?? []
-        }
-      : null;
 
   // Toggle the edge fades + "scroll to explore" hint based on how far the
   // horizontal diagram scroller is scrolled (the 1520px stage overflows on
@@ -489,9 +457,10 @@ export default function SystemDiagramTab() {
         </div>
       </div>
 
-      {activeGroup && (
+      {activeBucket && BUCKETS[activeBucket] && (
         <ProblemSpaceModal
-          group={activeGroup}
+          groups={groups}
+          activeGroupId={activeBucket}
           allAreas={PROBLEM_AREAS}
           allIdeas={H2_IDEAS}
           theme="dark"

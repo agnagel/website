@@ -8,6 +8,8 @@ import { DomainTagDrawer } from "./DomainTagDrawer";
 import { HorizonPairFrame } from "./HorizonPairFrame";
 
 export type ProblemSpaceGroup = {
+  /** Stable identifier for the group (domain key / bucket key). */
+  id: string;
   /** Heading shown at the top of the list view (domain / block name). */
   title: string;
   /** One-line description under the heading. */
@@ -23,49 +25,58 @@ export type ProblemSpaceGroup = {
 // It is the shared "infrastructure" both tabs open; the only thing that varies
 // between them is the `group` (how areas were selected) and the `theme` skin.
 export function ProblemSpaceModal({
-  group,
+  groups,
+  activeGroupId,
   allAreas,
   allIdeas,
   theme = "light",
-  onClose,
-  resolveGroup
+  onClose
 }: {
-  group: ProblemSpaceGroup;
+  /** Every group along the caller's dimension (all domains / all blocks). */
+  groups: ProblemSpaceGroup[];
+  /** Which of `groups` is open. */
+  activeGroupId: string;
   /** Every problem area site-wide — frames an idea against its primary H1/H3. */
   allAreas: ProblemArea[];
   /** Every H2 idea site-wide — feeds the per-area ladders and the tag drawer. */
   allIdeas: H2Idea[];
   theme?: "light" | "dark";
   onClose: () => void;
-  /**
-   * Given an idea opened from the tag drawer (which searches the whole site),
-   * return the group for that idea's own domain so the panel behind the drawer
-   * can follow it across domains. `currentTitle` lets the resolver keep the
-   * current domain when the idea also belongs to it. Omitted by callers whose
-   * group isn't domain-based (e.g. the system diagram), leaving behavior as-is.
-   */
-  resolveGroup?: (item: H2Idea, currentTitle: string) => ProblemSpaceGroup | null;
 }) {
   const [activeItem, setActiveItem] = useState<H2Idea | null>(null);
   const [openAreas, setOpenAreas] = useState<Set<string>>(new Set());
   const [activeTag, setActiveTag] = useState<string | null>(null);
-  // A tag-drawer selection can land on an idea from a different domain; when it
-  // does we swap in that idea's own group so the header, lede, and "Back to
-  // list" all reflect the domain you were actually taken to.
-  const [overrideGroup, setOverrideGroup] = useState<ProblemSpaceGroup | null>(
-    null
-  );
+  // A tag-drawer selection can land on an idea from a different group; when it
+  // does we follow it to that idea's own group so the header, lede, and "Back
+  // to list" all reflect the group you were actually taken to.
+  const [overrideId, setOverrideId] = useState<string | null>(null);
   // Clear the override whenever the caller opens a genuinely different group.
   useEffect(() => {
-    setOverrideGroup(null);
-  }, [group.title]);
-  const effectiveGroup = overrideGroup ?? group;
+    setOverrideId(null);
+  }, [activeGroupId]);
 
-  // Open an idea, following it to its own domain when it came from the drawer.
+  const groupById = useMemo(
+    () => new Map(groups.map((g) => [g.id, g])),
+    [groups]
+  );
+  const effectiveGroup =
+    groupById.get(overrideId ?? activeGroupId) ??
+    groupById.get(activeGroupId) ??
+    groups[0];
+
+  // A group "contains" an idea when any of its H1→H3 areas is one the idea
+  // addresses — the same relation that lists ideas under each pair.
+  const groupContains = (candidate: ProblemSpaceGroup, item: H2Idea) =>
+    candidate.areas.some((area) => item.h1h3Ids.includes(area.id));
+
+  // Open an idea, following it to its own group when it came from the drawer and
+  // the current group doesn't already contain it.
   const openItemFromDrawer = (item: H2Idea) => {
     setActiveItem(item);
-    const next = resolveGroup?.(item, effectiveGroup.title);
-    if (next) setOverrideGroup(next);
+    if (!groupContains(effectiveGroup, item)) {
+      const home = groups.find((g) => groupContains(g, item));
+      if (home) setOverrideId(home.id);
+    }
   };
 
   const toggleArea = (id: string) =>

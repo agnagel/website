@@ -23,7 +23,7 @@ const ROOT = path.resolve(__dirname, "..");
 // Google Sheet tab title -> CSV file name inside the ZIP.
 const EXPORT_TABS = [
   { tab: "H1 & H3", file: "H1-and-H3.csv" },
-  { tab: "H2 Problem Space", file: "H2-Problem-Space.csv" },
+  { tab: "H2 Problem Space", file: "H2-Database.csv" },
 ];
 
 const OUT_DIR = path.join(ROOT, "public", "exports");
