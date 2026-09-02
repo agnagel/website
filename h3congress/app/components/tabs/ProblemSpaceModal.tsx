@@ -27,7 +27,8 @@ export function ProblemSpaceModal({
   allAreas,
   allIdeas,
   theme = "light",
-  onClose
+  onClose,
+  resolveGroup
 }: {
   group: ProblemSpaceGroup;
   /** Every problem area site-wide — frames an idea against its primary H1/H3. */
@@ -36,10 +37,36 @@ export function ProblemSpaceModal({
   allIdeas: H2Idea[];
   theme?: "light" | "dark";
   onClose: () => void;
+  /**
+   * Given an idea opened from the tag drawer (which searches the whole site),
+   * return the group for that idea's own domain so the panel behind the drawer
+   * can follow it across domains. `currentTitle` lets the resolver keep the
+   * current domain when the idea also belongs to it. Omitted by callers whose
+   * group isn't domain-based (e.g. the system diagram), leaving behavior as-is.
+   */
+  resolveGroup?: (item: H2Idea, currentTitle: string) => ProblemSpaceGroup | null;
 }) {
   const [activeItem, setActiveItem] = useState<H2Idea | null>(null);
   const [openAreas, setOpenAreas] = useState<Set<string>>(new Set());
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  // A tag-drawer selection can land on an idea from a different domain; when it
+  // does we swap in that idea's own group so the header, lede, and "Back to
+  // list" all reflect the domain you were actually taken to.
+  const [overrideGroup, setOverrideGroup] = useState<ProblemSpaceGroup | null>(
+    null
+  );
+  // Clear the override whenever the caller opens a genuinely different group.
+  useEffect(() => {
+    setOverrideGroup(null);
+  }, [group.title]);
+  const effectiveGroup = overrideGroup ?? group;
+
+  // Open an idea, following it to its own domain when it came from the drawer.
+  const openItemFromDrawer = (item: H2Idea) => {
+    setActiveItem(item);
+    const next = resolveGroup?.(item, effectiveGroup.title);
+    if (next) setOverrideGroup(next);
+  };
 
   const toggleArea = (id: string) =>
     setOpenAreas((prev) => {
@@ -101,7 +128,7 @@ export function ProblemSpaceModal({
       ? areaById.get(activeItem.h1h3Ids[0]) ?? null
       : null;
 
-  const anyIdeas = group.areas.some(
+  const anyIdeas = effectiveGroup.areas.some(
     (area) => (ideasByArea.get(area.id) ?? []).length > 0
   );
 
@@ -117,7 +144,7 @@ export function ProblemSpaceModal({
           className="h3-domain-modal"
           role="dialog"
           aria-modal="true"
-          aria-label={group.title}
+          aria-label={effectiveGroup.title}
           onClick={(event) => event.stopPropagation()}
         >
           <div className="h3-domain-modal-head">
@@ -145,7 +172,7 @@ export function ProblemSpaceModal({
                 Back
               </button>
               <span className="h3-domain-modal-eyebrow">
-                {activeItem ? group.title : group.eyebrowLabel}
+                {activeItem ? effectiveGroup.title : effectiveGroup.eyebrowLabel}
               </span>
               {activeItem && activeArea?.h1Statement && (
                 <span className="h3-domain-modal-h1">
@@ -167,8 +194,8 @@ export function ProblemSpaceModal({
             <DomainItemDetail item={activeItem} onTagClick={setActiveTag} />
           ) : (
             <div className="h3-domain-modal-body">
-              <h2>{group.title}</h2>
-              <p className="h3-domain-modal-lede">{group.lede}</p>
+              <h2>{effectiveGroup.title}</h2>
+              <p className="h3-domain-modal-lede">{effectiveGroup.lede}</p>
 
               {anyIdeas && (
                 <p className="h3-domain-modal-instruction">
@@ -177,7 +204,7 @@ export function ProblemSpaceModal({
                 </p>
               )}
 
-              {group.areas.length === 0 ? (
+              {effectiveGroup.areas.length === 0 ? (
                 <p className="h3-domain-empty">
                   No H1 status quo or H3 vision has been mapped here yet.{" "}
                   <Link href="/get-involved" className="h3-domain-empty-cta">
@@ -185,7 +212,7 @@ export function ProblemSpaceModal({
                   </Link>
                 </p>
               ) : (
-                group.areas.map((area) => (
+                effectiveGroup.areas.map((area) => (
                   <HorizonPairFrame
                     key={area.id}
                     area={area}
@@ -207,7 +234,7 @@ export function ProblemSpaceModal({
           ideas={tagIdeas}
           activeId={activeItem?.id}
           theme={theme}
-          onSelect={(item) => setActiveItem(item)}
+          onSelect={openItemFromDrawer}
           onClose={() => setActiveTag(null)}
         />
       )}

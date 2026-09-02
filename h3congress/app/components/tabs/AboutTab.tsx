@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useReveal } from "../useReveal";
 import { useHeroScroll } from "../useHeroScroll";
+import { AboutSideNav } from "./AboutSideNav";
 
 const exploreLinks = [
   {
@@ -104,6 +105,8 @@ export default function AboutTab() {
   return (
     <>
       <div id="h3-progress" aria-hidden="true" />
+
+      <AboutSideNav />
 
       <header id="hero" className="h3-hero">
         <svg
@@ -376,9 +379,49 @@ export default function AboutTab() {
       <section id="methodology" className="h3-section h3-methodology">
         <div className="h3-container">
           <div className="h3-methodology-head" data-reveal>
-            <p className="h3-eyebrow">Methodology</p>
+            <p className="h3-eyebrow">Methodology &amp; acknowledgments</p>
             <h2 className="h3-statement">How this was built.</h2>
-            <p className="h3-methodology-placeholder">To be added.</p>
+          </div>
+          <div className="h3-methodology-body" data-reveal>
+            <p>
+              This map was built on an extensive base of research: a wide review
+              of existing literature on Congress and its capacity, alongside more
+              than fifty candid in-depth interviews with people who know the
+              institution from the inside.
+            </p>
+            <p>
+              The people we spoke with span the community that shapes how Congress
+              works: current and former congressional staff across personal
+              offices, committees, and leadership; legislative-branch support
+              offices; congressional-reform and good-government organizations;
+              researchers working on institutions and the future of governance;
+              academics; civic-technology practitioners; and government-relations
+              professionals.
+            </p>
+            <p>
+              Because the volume of material was large, AI was used as a research
+              and synthesis aid — to search across sources, research, and
+              interview notes; to summarize long documents; and to surface and
+              consolidate overlapping or redundant ideas so the map reflects
+              distinct proposals rather than duplicates. Every classification,
+              and every decision about what to include or leave out, remains a
+              human editorial judgment, and all of the site&rsquo;s content has
+              been reviewed by people. The website itself was generated primarily
+              with Claude Code.
+            </p>
+            <p>
+              Our sincere thanks to everyone who gave their time to be
+              interviewed — this work would not exist without your candor and
+              insight. We are also grateful to{" "}
+              <a
+                href="https://recodingamerica.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Recoding America
+              </a>{" "}
+              for their support of this project.
+            </p>
           </div>
         </div>
       </section>

@@ -6,7 +6,8 @@ import {
   PROBLEM_AREAS,
   H2_IDEAS,
   type DomainKey,
-  type ProblemArea
+  type ProblemArea,
+  type H2Idea
 } from "../../data/problemSpace";
 import { ProblemSpaceModal, type ProblemSpaceGroup } from "./ProblemSpaceModal";
 
@@ -104,15 +105,32 @@ export default function DomainsTab() {
     return map;
   }, []);
 
+  const buildGroup = (domain: Domain): ProblemSpaceGroup => ({
+    title: domain.title,
+    lede: domain.lede,
+    // No eyebrow label for domains — the header shows only the Back control.
+    eyebrowLabel: "",
+    areas: areasByDomain.get(domain.key) ?? []
+  });
+
   const activeGroup: ProblemSpaceGroup | null = activeDomain
-    ? {
-        title: activeDomain.title,
-        lede: activeDomain.lede,
-        // No eyebrow label for domains — the header shows only the Back control.
-        eyebrowLabel: "",
-        areas: areasByDomain.get(activeDomain.key) ?? []
-      }
+    ? buildGroup(activeDomain)
     : null;
+
+  // When an idea is opened from the tag drawer it may live in another domain.
+  // Resolve that idea's own domain group so the modal follows it there — but if
+  // the idea also belongs to the domain you're already in, stay put.
+  const resolveGroupForIdea = (
+    item: H2Idea,
+    currentTitle: string
+  ): ProblemSpaceGroup | null => {
+    if (!item.domains.length) return null;
+    const stay = domains.find(
+      (d) => d.title === currentTitle && item.domains.includes(d.key)
+    );
+    const target = stay ?? domains.find((d) => d.key === item.domains[0]);
+    return target ? buildGroup(target) : null;
+  };
 
   return (
     <section id="domains" className="h3-domains h3-domains-tab">
@@ -169,6 +187,7 @@ export default function DomainsTab() {
           allIdeas={H2_IDEAS}
           theme="light"
           onClose={() => setActiveDomain(null)}
+          resolveGroup={resolveGroupForIdea}
         />
       )}
     </section>

@@ -702,11 +702,103 @@ textarea:focus-visible {
   margin-top: 12px;
 }
 
-.h3-methodology-placeholder {
-  margin: 14px 0 0;
-  font-size: 16px;
-  font-style: italic;
+.h3-methodology-body {
+  max-width: none;
+  margin: 22px 0 0;
+}
+
+.h3-methodology-body p {
+  margin: 0 0 16px;
   color: var(--ink-soft);
+}
+
+.h3-methodology-body p:last-child {
+  margin-bottom: 0;
+}
+
+.h3-methodology-body a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* "On this page" rail for the About page — an icon-only column pinned to the
+   right edge, vertically centered. Each button shows a small glyph for its
+   section; the label slides out on hover. Kept transparent so it stays out of
+   the way, and hidden when the window is too narrow to spare the gutter. */
+.h3-about-nav {
+  position: fixed;
+  top: 50%;
+  right: clamp(10px, 1.6vw, 22px);
+  transform: translateY(-50%);
+  z-index: 40;
+}
+
+.h3-about-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.h3-about-nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #9a8b6f;
+  text-decoration: none;
+  transition: color 0.16s ease, background 0.16s ease;
+}
+
+.h3-about-nav a:hover,
+.h3-about-nav a:focus-visible {
+  color: #14253a;
+  background: rgba(20, 37, 58, 0.06);
+}
+
+.h3-about-nav a.is-active {
+  color: #9c471f;
+}
+
+.h3-about-nav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Label tooltip — hidden until the button is hovered or focused. */
+.h3-about-nav-label {
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #14253a;
+  color: #f4efe6;
+  font-size: 11.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.14s ease;
+  box-shadow: 0 6px 18px rgba(20, 20, 12, 0.18);
+}
+
+.h3-about-nav a:hover .h3-about-nav-label,
+.h3-about-nav a:focus-visible .h3-about-nav-label {
+  opacity: 1;
+}
+
+@media (max-width: 1080px) {
+  .h3-about-nav {
+    display: none;
+  }
 }
 
 .h3-explore-head h2 {
@@ -3140,22 +3232,103 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  border: 1px solid var(--line);
-  border-radius: 2px;
+  border: 0;
   background: transparent;
   color: var(--ink-soft);
-  padding: 7px 14px;
+  padding: 6px 2px;
   font: inherit;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 160ms ease, color 160ms ease;
+  text-decoration: none;
+  transition: color 160ms ease;
 }
 
 .h3-nav-links .h3-nav-export:hover,
-.h3-nav-links .h3-nav-export:focus-visible {
-  border-color: var(--ink);
+.h3-nav-links .h3-nav-export:focus-visible,
+.h3-nav-links .h3-nav-export.is-active {
+  color: var(--neon-cyan);
+}
+
+/* export page */
+.h3-export {
+  padding: 72px 0 96px;
+  /* Solid paper background so the sketch grid doesn't show through — the
+     dense-text explanation reads more cleanly without it. */
+  background-color: var(--paper);
+  background-image: none;
+}
+
+.h3-export .h3-eyebrow-gold {
+  color: #6b4423;
+}
+
+.h3-export h1 {
+  margin: 6px 0 0;
+}
+
+.h3-export-lede {
+  max-width: 60ch;
+  margin: 18px 0 0;
+  color: var(--ink-soft);
+}
+
+.h3-export-list {
+  max-width: 68ch;
+  margin: 28px 0 0;
+  padding-left: 1.1em;
+  list-style: disc;
+}
+
+.h3-export-list li {
+  margin: 0 0 12px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.h3-export-list li:last-child {
+  margin-bottom: 0;
+}
+
+.h3-export-list strong {
+  font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.92em;
   color: var(--ink);
+}
+
+.h3-export-link h2 {
+  margin: 8px 0 8px;
+  font-size: 19px;
+}
+
+.h3-export-link p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.h3-export-link {
+  max-width: 68ch;
+  margin: 40px 0 0;
+}
+
+.h3-export-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 36px 0 0;
+  padding: 12px 22px;
+  border-radius: 3px;
+  background: var(--ink);
+  color: var(--paper, #fff);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.h3-export-download:hover,
+.h3-export-download:focus-visible {
+  opacity: 0.85;
 }
 
 /* neon map cards */
