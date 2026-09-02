@@ -122,28 +122,110 @@ function luminance(hex: string) {
   return 0.2126 * channel(c.slice(0, 2)) + 0.7152 * channel(c.slice(2, 4)) + 0.0722 * channel(c.slice(4, 6));
 }
 
+// Deterministic per-id hash in [0, 1) (FNV-1a with a seed). Keyed off each dot's
+// id so its jitter is stable across renders and reloads; two different seeds
+// give independent horizontal (year) and vertical scatter.
+function hash01(id: string, seed: number): number {
+  let h = seed >>> 0;
+  for (let i = 0; i < id.length; i++) {
+    h ^= id.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return (h >>> 0) / 4294967296;
+}
+
+// Keep dots this far from a lane's top/bottom edge (px).
+const LANE_MARGIN = 15;
+// Nominal plot width (px) used to space dots in the collision pass; positions
+// are stored as % so they still scale, but overlap is resolved at this width.
+const PLOT_W = 772;
+const DRIFT_YEARS = 0.85; // most a dot may slide from its true year (each way)
+const DOT_GAP = 1.5; // extra px kept between dot edges
+const RELAX_ITERS = 140;
+
+function yearToXpx(year: number): number {
+  const pct = XPAD + ((year - YMIN) / (YMAX - YMIN)) * XSPAN;
+  return (Math.min(XPAD + XSPAN, Math.max(XPAD, pct)) / 100) * PLOT_W;
+}
+
 function positionedReforms(): PositionedReform[] {
   const offsets = [-42, 30, -8, 44, -26, 12, -52, 4];
   const counts: Partial<Record<Horizon, number>> = {};
 
-  return ALL_REFORMS.map((reform) => {
+  // Initial placement: jitter each dot ±0.5yr horizontally and scatter it
+  // vertically within its lane (structured offset + random). These become the
+  // starting points for the collision relaxation below.
+  const nodes = ALL_REFORMS.map((reform) => {
     const horizon = HORIZONS[reform.horizon];
     const index = counts[reform.horizon] ?? 0;
     counts[reform.horizon] = index + 1;
-    const leftPct = XPAD + ((reform.year - YMIN) / (YMAX - YMIN)) * XSPAN;
-    const laneCenter = horizon.lane * LANE_HEIGHT + LANE_HEIGHT / 2;
-    const topPx = Math.max(16, Math.min(PLOT_HEIGHT - 16, laneCenter + offsets[index % offsets.length]));
+
+    const plotYear = reform.year + (hash01(reform.id, 0x811c9dc5) - 0.5);
+    const laneTop = horizon.lane * LANE_HEIGHT;
+    const laneCenter = laneTop + LANE_HEIGHT / 2;
+    const y0 =
+      laneCenter +
+      offsets[index % offsets.length] * 0.4 +
+      (hash01(reform.id, 0x9e3779b9) - 0.5) * 62;
 
     return {
-      ...reform,
-      color: horizon.color,
-      hlabel: horizon.label,
-      hname: horizon.name,
-      leftPct: Math.round(leftPct * 10) / 10,
-      topPx,
-      size: reform.horizon === "h3" ? 16 : 14
+      reform,
+      horizon,
+      x: yearToXpx(plotYear),
+      y: Math.max(laneTop + LANE_MARGIN, Math.min(laneTop + LANE_HEIGHT - LANE_MARGIN, y0)),
+      xMin: yearToXpx(reform.year - DRIFT_YEARS),
+      xMax: yearToXpx(reform.year + DRIFT_YEARS),
+      yMin: laneTop + LANE_MARGIN,
+      yMax: laneTop + LANE_HEIGHT - LANE_MARGIN,
+      r: (reform.horizon === "h3" ? 16 : 14) / 2
     };
   });
+
+  // Relax overlaps: repeatedly push any pair of dots that are closer than their
+  // combined radii apart. Horizontal movement is damped so dots keep their year;
+  // vertical does most of the separating. Each dot stays clamped to its lane and
+  // its ±DRIFT_YEARS band, so classification and year reading are preserved.
+  for (let iter = 0; iter < RELAX_ITERS; iter++) {
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        let dx = b.x - a.x;
+        let dy = b.y - a.y;
+        const minD = a.r + b.r + DOT_GAP;
+        const d2 = dx * dx + dy * dy;
+        if (d2 >= minD * minD) continue;
+        let d = Math.sqrt(d2);
+        if (d < 1e-4) {
+          // Near-coincident: separate straight up/down.
+          dx = 0;
+          dy = 1;
+          d = 1;
+        }
+        const push = (minD - d) / 2;
+        const ux = dx / d;
+        const uy = dy / d;
+        a.x -= ux * push * 0.55;
+        b.x += ux * push * 0.55;
+        a.y -= uy * push;
+        b.y += uy * push;
+        a.x = Math.max(a.xMin, Math.min(a.xMax, a.x));
+        b.x = Math.max(b.xMin, Math.min(b.xMax, b.x));
+        a.y = Math.max(a.yMin, Math.min(a.yMax, a.y));
+        b.y = Math.max(b.yMin, Math.min(b.yMax, b.y));
+      }
+    }
+  }
+
+  return nodes.map(({ reform, horizon, x, y }) => ({
+    ...reform,
+    color: horizon.color,
+    hlabel: horizon.label,
+    hname: horizon.name,
+    leftPct: Math.round((x / PLOT_W) * 1000) / 10,
+    topPx: Math.round(y),
+    size: reform.horizon === "h3" ? 16 : 14
+  }));
 }
 
 export default function ReformMap() {
@@ -337,7 +419,7 @@ function DetailPanel({ reform, onClose }: { reform: PositionedReform; onClose: (
       <div className="h3-map-detail-meta">
         <span>{DOMAINS[reform.domain]}</span>
         <span>·</span>
-        <span>{reform.year >= 2027 ? `${reform.year} · horizon` : reform.year}</span>
+        <span>{reform.year}</span>
       </div>
       {reform.blurb && <p>{reform.blurb}</p>}
       {reform.why && (
