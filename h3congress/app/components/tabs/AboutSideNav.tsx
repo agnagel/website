@@ -76,17 +76,6 @@ const SECTIONS: Section[] = [
         <path d="M15.5 8.5 11 11l-2.5 4.5L13 13z" />
       </>
     )
-  },
-  {
-    id: "methodology",
-    label: "Methodology",
-    // flask — "how this was built"
-    icon: (
-      <>
-        <path d="M9 3h6M10 3v6l-4.5 8a1 1 0 0 0 .9 1.5h11.2a1 1 0 0 0 .9-1.5L14 9V3" />
-        <path d="M7.5 15h9" />
-      </>
-    )
   }
 ];
 

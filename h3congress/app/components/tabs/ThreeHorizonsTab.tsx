@@ -98,7 +98,7 @@ const horizonPanels = [
   }
 ];
 
-export default function AboutTab() {
+export default function ThreeHorizonsTab() {
   useReveal();
   useHeroScroll();
 
@@ -152,7 +152,8 @@ export default function AboutTab() {
           <p className="h3-launch-note h3-hero-copy">
             The key distinction is inside Horizon 2: H2- efforts can provide near-term relief
             while leaving growth constrained; H2+ efforts become stepping stones toward deeper
-            transformation. Use this site to help identify what Congress must build next.
+            transformation. We hope this site can be useful in identifying next steps to
+            strengthen congressional capacity.
           </p>
         </div>
       </header>
@@ -166,15 +167,15 @@ export default function AboutTab() {
           <div className="h3-two-col" data-reveal>
             <p>
               Congress is being asked to govern faster, more technical, more interconnected
-              systems. This project asks whether the legislative branch has the staffing,
+              systems than ever before. This project asks whether the legislative branch has the staffing,
               institutions, information flows, technology, and feedback loops to meet that
               challenge.
             </p>
             <p>
-              The goal is not to advocate for every reform idea. The goal is to distinguish between
-              reforms that make today&apos;s system easier to survive and reforms that build the
-              conditions for a stronger Congress. That distinction is the difference between H2-
-              and H2+.
+              The goal is not to advocate for every reform idea. It is to distinguish between
+              reforms that compensate for the limits of today&apos;s Congress and reforms that
+              expand what the institution is capable of, reducing the need for those workarounds
+              over time. That distinction is the difference between H2- and H2+.
             </p>
           </div>
         </div>
@@ -355,7 +356,7 @@ export default function AboutTab() {
             </p>
             <p className="h3-source-note">
               Ideas are sourced from interviews and existing literature, and are
-              not necessarily originated by POPVOX Foundation.
+              not necessarily originated or endorsed by POPVOX Foundation.
             </p>
           </div>
           <div className="h3-explore-grid">
@@ -372,56 +373,6 @@ export default function AboutTab() {
                 <span className="h3-explore-cta">Open {link.title} →</span>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="methodology" className="h3-section h3-methodology">
-        <div className="h3-container">
-          <div className="h3-methodology-head" data-reveal>
-            <p className="h3-eyebrow">Methodology &amp; acknowledgments</p>
-            <h2 className="h3-statement">How this was built.</h2>
-          </div>
-          <div className="h3-methodology-body" data-reveal>
-            <p>
-              This map was built on an extensive base of research: a wide review
-              of existing literature on Congress and its capacity, alongside more
-              than fifty candid in-depth interviews with people who know the
-              institution from the inside.
-            </p>
-            <p>
-              The people we spoke with span the community that shapes how Congress
-              works: current and former congressional staff across personal
-              offices, committees, and leadership; legislative-branch support
-              offices; congressional-reform and good-government organizations;
-              researchers working on institutions and the future of governance;
-              academics; civic-technology practitioners; and government-relations
-              professionals.
-            </p>
-            <p>
-              Because the volume of material was large, AI was used as a research
-              and synthesis aid — to search across sources, research, and
-              interview notes; to summarize long documents; and to surface and
-              consolidate overlapping or redundant ideas so the map reflects
-              distinct proposals rather than duplicates. Every classification,
-              and every decision about what to include or leave out, remains a
-              human editorial judgment, and all of the site&rsquo;s content has
-              been reviewed by people. The website itself was generated primarily
-              with Claude Code.
-            </p>
-            <p>
-              Our sincere thanks to everyone who gave their time to be
-              interviewed — this work would not exist without your candor and
-              insight. We are also grateful to{" "}
-              <a
-                href="https://recodingamerica.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Recoding America
-              </a>{" "}
-              for their support of this project.
-            </p>
           </div>
         </div>
       </section>

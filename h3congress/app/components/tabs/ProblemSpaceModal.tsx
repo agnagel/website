@@ -93,6 +93,11 @@ export function ProblemSpaceModal({
     [allAreas]
   );
 
+  const ideaById = useMemo(
+    () => new Map(allIdeas.map((idea) => [idea.id, idea])),
+    [allIdeas]
+  );
+
   // H2−/H2+ ideas grouped by the problem area(s) they address (via h1h3Ids), so
   // each H1→H3 pair reveals exactly the ideas mapped to it. H2− first.
   const ideasByArea = useMemo(() => {
@@ -204,7 +209,12 @@ export function ProblemSpaceModal({
           </div>
 
           {activeItem ? (
-            <DomainItemDetail item={activeItem} onTagClick={setActiveTag} />
+            <DomainItemDetail
+              item={activeItem}
+              onTagClick={setActiveTag}
+              ideaById={ideaById}
+              onOpenIdea={openItemFromDrawer}
+            />
           ) : (
             <div className="h3-domain-modal-body">
               <h2>{effectiveGroup.title}</h2>

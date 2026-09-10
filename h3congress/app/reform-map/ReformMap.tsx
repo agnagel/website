@@ -33,10 +33,13 @@ type PositionedReform = Reform & {
 
 const YMIN = 2016;
 const YMAX = 2042;
+// The "today" marker. H1 (status-quo) dots are kept on/behind this line, and
+// H2 dots dated to the current year are pushed just past it (see positionedReforms).
+const TODAY_YEAR = 2026;
 
 // Every dot on the map is sourced from the Google Sheet (via
 // app/data/problemSpace.ts): H1 status quo and H3 vision points come from the
-// "H1 & H3" problem areas, and the H2− / H2+ dots from the "H2 Problem Space"
+// "H1 & H3" problem areas, and the H2− / H2+ dots from the "H2 Database"
 // ideas. Nothing here is hand-written — re-run `npm run sync-system` to refresh.
 function buildReforms(): Reform[] {
   const out: Reform[] = [];
@@ -80,7 +83,9 @@ function buildReforms(): Reform[] {
       blurb: idea.solutionDescription,
       pattern: idea.problemStatement,
       why: idea.horizonJustification || idea.problemDescription,
-      shift: idea.pathToH2plus || undefined
+      // Strip the leading "H2+ #N." cross-reference so the "How it could become
+      // H2+" paragraph reads as prose rather than opening with an idea number.
+      shift: idea.pathToH2plus.replace(/^\s*H2\+\s*#?\d+\.?\s*/i, "").trim() || undefined
     });
   }
 
@@ -151,6 +156,7 @@ function yearToXpx(year: number): number {
 function positionedReforms(): PositionedReform[] {
   const offsets = [-42, 30, -8, 44, -26, 12, -52, 4];
   const counts: Partial<Record<Horizon, number>> = {};
+  const todayXpx = yearToXpx(TODAY_YEAR);
 
   // Initial placement: jitter each dot ±0.5yr horizontally and scatter it
   // vertically within its lane (structured offset + random). These become the
@@ -168,16 +174,33 @@ function positionedReforms(): PositionedReform[] {
       offsets[index % offsets.length] * 0.4 +
       (hash01(reform.id, 0x9e3779b9) - 0.5) * 62;
 
+    const r = (reform.horizon === "h3" ? 16 : 14) / 2;
+    let xMin = yearToXpx(reform.year - DRIFT_YEARS);
+    let xMax = yearToXpx(reform.year + DRIFT_YEARS);
+    // Respect the "today" line. H1 dots (the status quo) always sit fully behind
+    // it; H2−/H2+ dots dated to the current year sit fully past it, so the line
+    // cleanly separates "today and before" from "now and forward". The ± r keeps
+    // the whole dot, not just its center, on the correct side.
+    if (reform.horizon === "h1") {
+      xMax = Math.min(xMax, todayXpx - r);
+    } else if (
+      reform.year >= TODAY_YEAR &&
+      (reform.horizon === "h2neg" || reform.horizon === "h2pos")
+    ) {
+      xMin = Math.max(xMin, todayXpx + r);
+    }
+    if (xMin > xMax) xMin = xMax;
+
     return {
       reform,
       horizon,
-      x: yearToXpx(plotYear),
+      x: Math.max(xMin, Math.min(xMax, yearToXpx(plotYear))),
       y: Math.max(laneTop + LANE_MARGIN, Math.min(laneTop + LANE_HEIGHT - LANE_MARGIN, y0)),
-      xMin: yearToXpx(reform.year - DRIFT_YEARS),
-      xMax: yearToXpx(reform.year + DRIFT_YEARS),
+      xMin,
+      xMax,
       yMin: laneTop + LANE_MARGIN,
       yMax: laneTop + LANE_HEIGHT - LANE_MARGIN,
-      r: (reform.horizon === "h3" ? 16 : 14) / 2
+      r
     };
   });
 
@@ -257,7 +280,7 @@ export default function ReformMap() {
         </p>
         <p className="h3-source-note">
           Ideas are sourced from interviews and existing literature, and are not
-          necessarily originated by POPVOX Foundation.
+          necessarily originated or endorsed by POPVOX Foundation.
         </p>
       </section>
 
@@ -418,8 +441,12 @@ function DetailPanel({ reform, onClose }: { reform: PositionedReform; onClose: (
       <h2>{reform.name}</h2>
       <div className="h3-map-detail-meta">
         <span>{DOMAINS[reform.domain]}</span>
-        <span>·</span>
-        <span>{reform.year}</span>
+        {reform.horizon !== "h1" && (
+          <>
+            <span>·</span>
+            <span>{reform.year}</span>
+          </>
+        )}
       </div>
       {reform.blurb && <p>{reform.blurb}</p>}
       {reform.why && (

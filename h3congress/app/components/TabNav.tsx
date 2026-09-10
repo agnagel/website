@@ -4,10 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const TABS: Array<{ href: string; label: string }> = [
-  { href: "/", label: "About" },
+  { href: "/", label: "Three Horizons" },
+  { href: "/about", label: "About" },
   { href: "/reform-map", label: "Reform Map" },
   { href: "/domains", label: "Domains" },
-  { href: "/system-diagram", label: "System Diagram" }
+  { href: "/system-diagram", label: "System Diagram" },
+  { href: "/chatbot", label: "Modbot" }
 ];
 
 export default function TabNav() {

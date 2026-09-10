@@ -89,12 +89,12 @@ Rows without a numeric `ID` are skipped.
 | --- | --- |
 | `ID` | Integer. The key H2 ideas link back to. |
 | `Domain` | Comma-separated. Each maps to a `DomainKey`: Institutional Capacity → `capacity`, Staffing & Talent → `staffing`, Information → `information`, Technology & Systems → `technology`, Oversight → `oversight`. |
-| `Block` | Comma-separated; each token places the area on a diagram bucket (a row may sit in several). Recognized: Constituent Engagement, Elections, Stakeholder Engagement, Funding Requests, Casework, Culture, Technology, Oversight, Personnel, Members, Structure, Processes, House, Senate, Support Agencies, District Offices, Committees, Legislation, Appropriations, Confirmations. See `BLOCK_TO_BUCKET` in `sync-system.mjs`. |
+| `Block` | Comma-separated; each token places the area on a diagram bucket (a row may sit in several). Recognized: Constituent Engagement, Elections, Stakeholder Engagement, Funding Requests, Funding, Casework, Culture, Technology, Oversight, Personnel, Members, Structure, Processes, House, Senate, Support Agencies, District Offices, Committees, Communications, Legislation, Appropriations, Confirmations, Constituent Outcomes, Other Activities, Other Services. See `BLOCK_TO_BUCKET` in `sync-system.mjs`. |
 | `Additional Tags` | Comma-separated chip labels. |
-| `H1 Time` / `H1 Statement` / `H1 Description` | The status quo. |
+| `H1 Statement` / `H1 Description` | The status quo. (There is no `H1 Time` column — H1 dots get a stable pseudo-random year in [2015, 2026]; see `h1AssignedYear`. It is not shown on the Reform Map card.) |
 | `H3 Time` / `H3 Statement` / `H3 Description` | The vision. |
 
-### Tab `H2 Problem Space` — one row per H2−/H2+ idea
+### Tab `H2 Database` — one row per H2−/H2+ idea
 
 Rows without a numeric `ID` are skipped.
 

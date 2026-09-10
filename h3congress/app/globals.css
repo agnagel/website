@@ -681,13 +681,13 @@ textarea:focus-visible {
 
 .h3-explore {
   border-top: 1px solid var(--line);
-  /* Tighter band than the default .h3-section padding above/below.
+  /* Roomier band above the heading line and below the three cards.
      Navy theme + neon tokens applied via the dark-section group below. */
-  padding-block: clamp(36px, 5vh, 60px);
+  padding-block: clamp(60px, 9vh, 104px);
 }
 
 .h3-explore-head {
-  margin-bottom: clamp(28px, 4vh, 44px);
+  margin-bottom: clamp(44px, 6.5vh, 72px);
 }
 
 /* Beige methodology panel beneath the (dark) explore band — placeholder for now.
@@ -720,6 +720,36 @@ textarea:focus-visible {
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* Subtle per-panel textures so the consecutive beige About panels each read a
+   little distinct — a faint grid, a denser grid, a flat warmer tone, and a dot
+   field — all on the same beige so the page still feels of a piece. */
+.h3-methodology.tex-grid-fine {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.h3-methodology.tex-grid-dense {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--line) 42%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--line) 42%, transparent) 1px, transparent 1px);
+  background-size: 17px 17px;
+}
+
+.h3-methodology.tex-plain {
+  background-color: var(--paper-2);
+  background-image: none;
+}
+
+.h3-methodology.tex-dots {
+  background-color: var(--paper);
+  background-image: radial-gradient(color-mix(in srgb, var(--line) 68%, transparent) 1.1px, transparent 1.5px);
+  background-size: 20px 20px;
 }
 
 /* "On this page" rail for the About page — an icon-only column pinned to the
@@ -1731,6 +1761,24 @@ textarea:focus-visible {
 
 .h3-domain-detail-links span[aria-hidden="true"] {
   color: var(--muted);
+}
+
+/* Inline "open the referenced H2+ idea" link inside the Path to H2+ row. Styled
+   as a link but implemented as a button since it drives in-modal navigation. */
+.h3-domain-detail-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.h3-domain-detail-link:hover,
+.h3-domain-detail-link:focus-visible {
+  text-decoration: none;
 }
 
 @media (max-width: 640px) {
@@ -3214,10 +3262,24 @@ textarea:focus-visible {
   background-color: var(--neon-bg);
 }
 
-/* Pahlka quote: the lighter navy, and drop the dot grid. */
+/* Pahlka quote: beige-themed panel (light background, dark text) instead of the
+   navy the neighboring explore/involved panels use. Redeclares the color tokens
+   the shared dark-section group set above, then re-inverts background and text. */
 .h3-quote-section {
-  background-color: var(--neon-bg-2);
+  --paper: #f4efe6;
+  --ink: #14253a;
+  --ink-soft: #45566a;
+  --muted: #6e7686;
+  --line: #dad0bd;
+  --h3: #b8791f;
+  background-color: var(--paper-2);
   background-image: none;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+}
+
+.h3-quote-section figcaption {
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
 }
 
 .h3-gap h2 {
@@ -3225,7 +3287,7 @@ textarea:focus-visible {
 }
 
 .h3-quote-section blockquote > p:not(.h3-quote-setup) {
-  text-shadow: 0 0 20px rgba(29, 226, 255, 0.14);
+  text-shadow: none;
 }
 
 #h3-tech-path {
@@ -3582,6 +3644,58 @@ textarea:focus-visible {
   color: var(--ink);
   display: flex;
   flex-direction: column;
+}
+
+/* Chatbot page — shares the System Diagram's navy/neon skin. The arxivix embed
+   mounts its own widget; the intro sets the scene above it. */
+.h3-chatbot {
+  --paper: #060f22;
+  --ink: #dff5f3;
+  background: var(--neon-bg);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.h3-chatbot-intro {
+  padding: clamp(40px, 6vh, 72px) clamp(20px, 5vw, 64px) clamp(20px, 3vh, 32px);
+  max-width: 820px;
+}
+
+.h3-chatbot-intro h2 {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.08;
+  margin: 10px 0 14px;
+  color: #eef7f6;
+}
+
+.h3-chatbot-intro p {
+  color: #9fc7cb;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: none;
+}
+
+/* The chat surface spans the full width of the main section beneath the intro.
+   The embed injects a shadow-DOM <section> (its :host caps at 720px); the
+   higher-specificity rule below lets it fill the page width instead. */
+.h3-chatbot-embed {
+  flex: 1 1 auto;
+  display: flex;
+  width: 100%;
+  padding: 0 clamp(20px, 5vw, 64px) clamp(40px, 6vh, 72px);
+  /* The embed renders inside a shadow root, so only inherited custom properties
+     reach it. Its buttons use var(--accent, …); point that at a deep on-brand
+     teal (dark enough for the button's white label) instead of the site rust. */
+  --accent: #0d7d8f;
+}
+
+.h3-chatbot-embed > section {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: none;
 }
 
 .h3-sysdiagram-intro {

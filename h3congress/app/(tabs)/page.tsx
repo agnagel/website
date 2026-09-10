@@ -1,5 +1,5 @@
-import AboutTab from "../components/tabs/AboutTab";
+import ThreeHorizonsTab from "../components/tabs/ThreeHorizonsTab";
 
-export default function AboutPage() {
-  return <AboutTab />;
+export default function ThreeHorizonsPage() {
+  return <ThreeHorizonsTab />;
 }

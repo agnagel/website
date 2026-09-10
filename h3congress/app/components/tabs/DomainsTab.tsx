@@ -97,7 +97,7 @@ export default function DomainsTab() {
           </p>
           <p className="h3-source-note">
             Ideas are sourced from interviews and existing literature, and are not
-            necessarily originated by POPVOX Foundation.
+            necessarily originated or endorsed by POPVOX Foundation.
           </p>
         </div>
         <div className="h3-domain-grid">

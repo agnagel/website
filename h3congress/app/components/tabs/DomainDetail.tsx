@@ -22,6 +22,50 @@ function DetailRow({ label, value }: { label: string; value: string }) {
   );
 }
 
+// Matches the leading "H2+ #66." cross-reference the sheet puts at the start of a
+// Path-to-H2+ note. Group 1 is the referenced H2+ idea's ID.
+const H2PLUS_REF = /^\s*H2\+\s*#?(\d+[a-z]*)\.?\s*/i;
+
+// The "Path to H2+" row. When the note opens with an "H2+ #N." reference to
+// another idea, that prefix is replaced by a link to the referenced H2+ idea,
+// labeled with its solution statement, so readers can jump straight to it.
+function PathToH2PlusRow({
+  value,
+  ideaById,
+  onOpenIdea
+}: {
+  value: string;
+  ideaById?: Map<string, H2Idea>;
+  onOpenIdea?: (item: H2Idea) => void;
+}) {
+  if (!value) return null;
+  const match = value.match(H2PLUS_REF);
+  const target = match && ideaById ? ideaById.get(match[1]) : undefined;
+
+  if (!match || !target || !onOpenIdea) {
+    // Unresolvable reference: show the note without the bare "H2+ #N." prefix.
+    const plain = value.replace(H2PLUS_REF, "").trim() || value;
+    return <DetailRow label="Path to H2+" value={plain} />;
+  }
+
+  const rest = value.slice(match[0].length).trim();
+  return (
+    <div className="h3-domain-detail-row">
+      <dt>Path to H2+</dt>
+      <dd>
+        <button
+          type="button"
+          className="h3-domain-detail-link"
+          onClick={() => onOpenIdea(target)}
+        >
+          {target.solutionStatement}
+        </button>
+        {rest && <>. {rest}</>}
+      </dd>
+    </div>
+  );
+}
+
 // A metadata row whose value is a list of links (Sources / Learn more). Each item
 // renders as its title — a hyperlink when a URL is present, plain text otherwise.
 function LinkRow({ label, items }: { label: string; items: SourceLink[] }) {
@@ -52,10 +96,15 @@ function LinkRow({ label, items }: { label: string; items: SourceLink[] }) {
 // in the modal header.)
 export function DomainItemDetail({
   item,
-  onTagClick
+  onTagClick,
+  ideaById,
+  onOpenIdea
 }: {
   item: H2Idea;
   onTagClick: (tag: string) => void;
+  // Lets the "Path to H2+" note link to the referenced H2+ idea and open it.
+  ideaById?: Map<string, H2Idea>;
+  onOpenIdea?: (item: H2Idea) => void;
 }) {
   const horizon = horizonChip(item.horizonKey);
   const tags = itemTags(item);
@@ -102,7 +151,11 @@ export function DomainItemDetail({
           </div>
         )}
         <DetailRow label="Horizon rationale" value={item.horizonJustification} />
-        <DetailRow label="Path to H2+" value={item.pathToH2plus} />
+        <PathToH2PlusRow
+          value={item.pathToH2plus}
+          ideaById={ideaById}
+          onOpenIdea={onOpenIdea}
+        />
         <DetailRow label="Current status" value={item.currentStatus} />
         <LinkRow label="Sources" items={item.sources} />
         <LinkRow label="Learn more" items={item.learnMore} />
