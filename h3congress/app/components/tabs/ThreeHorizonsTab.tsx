@@ -149,6 +149,9 @@ export default function ThreeHorizonsTab() {
             Horizon 1 is the current path, Horizon 2 is the field of changes underway now,
             and Horizon 3 is the future Congress that becomes possible.
           </p>
+          <p className="h3-hero-note">
+            <em>For the best experience, we recommend viewing this site on a desktop.</em>
+          </p>
         </div>
       </header>
 

@@ -381,7 +381,7 @@ export default function ReformMap() {
                     key={tick.year}
                     style={{ left: `${tick.leftPct}%` }}
                   >
-                    {tick.year}
+                    {tick.year === 2018 ? "the past" : tick.year}
                   </span>
                 ))}
                 <strong>time →</strong>

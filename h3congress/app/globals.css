@@ -213,6 +213,13 @@ textarea:focus-visible {
   font-weight: 600;
 }
 
+/* Small italic viewing note beneath the hero paragraph. */
+.h3-hero-note {
+  margin: -24px 0 0;
+  color: color-mix(in srgb, var(--ink-soft) 82%, transparent);
+  font-size: 14px;
+}
+
 .h3-section,
 .h3-domains,
 .h3-involved {
@@ -275,8 +282,8 @@ textarea:focus-visible {
 .h3-gap-pinned {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: clamp(20px, 3vh, 40px) clamp(20px, 6vw, 90px) 0;
+  justify-content: center;
+  padding: clamp(20px, 3vh, 40px) clamp(20px, 6vw, 90px);
 }
 
 .h3-gap h2,

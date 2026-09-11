@@ -67,7 +67,7 @@ export default function AboutPageTab() {
               The Foundation works with legislative bodies — the U.S. Congress,
               state legislatures, and parliaments around the world — on
               responsible AI adoption, tech literacy, and software prototyping,
-              helping democratic institutions strengthen their ability to govern in today's age. 
+              helping democratic institutions strengthen their ability to govern in the information age. 
             </p>
           </div>
         </div>
