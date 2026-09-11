@@ -3646,9 +3646,9 @@ textarea:focus-visible {
   flex-direction: column;
 }
 
-/* Chatbot page — shares the System Diagram's navy/neon skin. The arxivix embed
+/* Modbot page — shares the System Diagram's navy/neon skin. The arxivix embed
    mounts its own widget; the intro sets the scene above it. */
-.h3-chatbot {
+.h3-modbot {
   --paper: #060f22;
   --ink: #dff5f3;
   background: var(--neon-bg);
@@ -3658,12 +3658,12 @@ textarea:focus-visible {
   min-height: 100vh;
 }
 
-.h3-chatbot-intro {
+.h3-modbot-intro {
   padding: clamp(40px, 6vh, 72px) clamp(20px, 5vw, 64px) clamp(20px, 3vh, 32px);
   max-width: 820px;
 }
 
-.h3-chatbot-intro h2 {
+.h3-modbot-intro h2 {
   font-family: var(--font-newsreader), Georgia, serif;
   font-size: clamp(28px, 4vw, 44px);
   line-height: 1.08;
@@ -3671,7 +3671,7 @@ textarea:focus-visible {
   color: #eef7f6;
 }
 
-.h3-chatbot-intro p {
+.h3-modbot-intro p {
   color: #9fc7cb;
   font-size: 16px;
   line-height: 1.55;
@@ -3681,7 +3681,7 @@ textarea:focus-visible {
 /* The chat surface spans the full width of the main section beneath the intro.
    The embed injects a shadow-DOM <section> (its :host caps at 720px); the
    higher-specificity rule below lets it fill the page width instead. */
-.h3-chatbot-embed {
+.h3-modbot-embed {
   flex: 1 1 auto;
   display: flex;
   width: 100%;
@@ -3692,7 +3692,7 @@ textarea:focus-visible {
   --accent: #0d7d8f;
 }
 
-.h3-chatbot-embed > section {
+.h3-modbot-embed > section {
   flex: 1 1 auto;
   width: 100%;
   max-width: none;

@@ -46,7 +46,7 @@ export default function SiteFooter() {
           <Link href="/reform-map">Reform Map</Link>
           <Link href="/domains">Domains</Link>
           <Link href="/system-diagram">System Diagram</Link>
-          <Link href="/chatbot">Modbot</Link>
+          <Link href="/modbot">Modbot</Link>
         </nav>
 
         <nav className="h3-footer-col">

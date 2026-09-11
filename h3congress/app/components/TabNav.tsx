@@ -9,7 +9,7 @@ const TABS: Array<{ href: string; label: string }> = [
   { href: "/reform-map", label: "Reform Map" },
   { href: "/domains", label: "Domains" },
   { href: "/system-diagram", label: "System Diagram" },
-  { href: "/chatbot", label: "Modbot" }
+  { href: "/modbot", label: "Modbot" }
 ];
 
 export default function TabNav() {

@@ -11,21 +11,21 @@ const exploreLinks = [
     title: "Reform Map",
     art: "map",
     body:
-      "See how individual reform efforts sort into pressure relief (H2−) and capacity building (H2+)."
+      "See how reform efforts sort into pressure relief (H2−) and capacity building (H2+)."
   },
   {
     href: "/domains",
     title: "Domains",
     art: "domains",
     body:
-      "Explore the high-level domains where congressional capacity could get built."
+      "Survey the high-level congressional capacity domains."
   },
   {
     href: "/system-diagram",
     title: "System Diagram",
     art: "diagram",
     body:
-      "View Congress as an information system, mapped across the legislative cycle."
+      "View the different functions of Congress and understand how they fit together."
   }
 ];
 
@@ -93,7 +93,7 @@ const horizonPanels = [
     tag: "H3 - THE FUTURE CONGRESS",
     title: "A Congress that can learn in time.",
     body:
-      "H3 is not the current institution working harder. It is a Congress with the capacity to see problems earlier, test policy before failure becomes visible, learn from implementation, oversee complex systems, and adapt without surrendering its constitutional role. You build the path through H2+.",
+      "H3 is not the current institution working harder. It is a Congress with the capacity to see problems earlier, test policy before failure becomes visible, learn from implementation, oversee complex systems, and adapt without surrendering its constitutional role. You build the path to H3 through H2+.",
     color: "var(--h3)"
   }
 ];
@@ -149,12 +149,6 @@ export default function ThreeHorizonsTab() {
             Horizon 1 is the current path, Horizon 2 is the field of changes underway now,
             and Horizon 3 is the future Congress that becomes possible.
           </p>
-          <p className="h3-launch-note h3-hero-copy">
-            The key distinction is inside Horizon 2: H2- efforts can provide near-term relief
-            while leaving growth constrained; H2+ efforts become stepping stones toward deeper
-            transformation. We hope this site can be useful in identifying next steps to
-            strengthen congressional capacity.
-          </p>
         </div>
       </header>
 
@@ -166,16 +160,14 @@ export default function ThreeHorizonsTab() {
           </div>
           <div className="h3-two-col" data-reveal>
             <p>
-              Congress is being asked to govern faster, more technical, more interconnected
+              Congress is being asked to govern faster-moving, more technical, and more interconnected
               systems than ever before. This project asks whether the legislative branch has the staffing,
-              institutions, information flows, technology, and feedback loops to meet that
-              challenge.
+              institutions, information flows, technology, and feedback loops it needs to meet that
+              challenge, and what can be done to close the gap where it does not.
             </p>
             <p>
-              The goal is not to advocate for every reform idea. It is to distinguish between
-              reforms that compensate for the limits of today&apos;s Congress and reforms that
-              expand what the institution is capable of, reducing the need for those workarounds
-              over time. That distinction is the difference between H2- and H2+.
+              Our goal is not to advocate for every reform idea, but to identify and distinguish between
+              reforms that provide near-term relief while leaving growth constrained, and reforms that become stepping stones toward deeper transformation. That distinction is the difference between working within Horizon 2- (H2-) and Horizon 2+ (H2+).
             </p>
           </div>
         </div>
@@ -321,7 +313,7 @@ export default function ThreeHorizonsTab() {
           </figure>
           <div className="h3-quote-copy">
             <p className="h3-quote-setup">
-              The danger is not failed reform. The danger is reform that succeeds just enough
+              The danger is not failed reform, but reform that succeeds just enough
               to keep Congress from changing.
             </p>
             <blockquote>
@@ -349,14 +341,10 @@ export default function ThreeHorizonsTab() {
       <section id="explore" className="h3-section h3-explore">
         <div className="h3-container">
           <div className="h3-explore-head" data-reveal>
-            <p className="h3-eyebrow h3-eyebrow-accent">Explore</p>
-            <h2 className="h3-statement">See the landscape of ideas.</h2>
+            <p className="h3-eyebrow h3-eyebrow-accent">Imagine</p>
+            <h2 className="h3-statement">Explore the landscape of what&rsquo;s possible.</h2>
             <p className="h3-explore-sub">
-              View different visualizations of the same ideas.
-            </p>
-            <p className="h3-source-note">
-              Ideas are sourced from interviews and existing literature, and are
-              not necessarily originated or endorsed by POPVOX Foundation.
+              Use this website to understand the legislative capacity problem and solution spaces. View different visualizations of the same reform ideas. Understand the conversation. Decide what you think is H2- vs H2+. Add your voice to the discourse.
             </p>
           </div>
           <div className="h3-explore-grid">

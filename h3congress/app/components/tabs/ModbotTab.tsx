@@ -11,7 +11,7 @@ import { useEffect, useRef } from "react";
 const EMBED_SRC = "https://arxivix.com/embed.js";
 const EMBED_KEY = "emb_rN8oYY9nk7p35q5NbusMqhqGLYodKV89";
 
-export default function ChatbotTab() {
+export default function ModbotTab() {
   const hostRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -28,13 +28,13 @@ export default function ChatbotTab() {
   }, []);
 
   return (
-    <section className="h3-chatbot" aria-label="H3 Congress chatbot">
-      <div className="h3-chatbot-intro">
+    <section className="h3-modbot" aria-label="Modbot congressional modernization assistant">
+      <div className="h3-modbot-intro">
         <p className="h3-eyebrow h3-eyebrow-gold">Ask Modbot</p>
         <h2>Chat with the Congressional Modernization Assistant</h2>
         <p>Have a question about the Three Horizons framework, a reform idea, or any of the citations? Ask it here!</p>
       </div>
-      <div className="h3-chatbot-embed" ref={hostRef} />
+      <div className="h3-modbot-embed" ref={hostRef} />
     </section>
   );
 }

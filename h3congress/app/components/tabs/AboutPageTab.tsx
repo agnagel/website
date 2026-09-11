@@ -17,28 +17,28 @@ export default function AboutPageTab() {
             <p>
               This map was built on an extensive base of research: a wide review
               of existing literature on Congress and its capacity, alongside more
-              than fifty candid in-depth interviews with people who know the
-              institution from the inside.
+              than sixty candid interviews with people who know the
+              institution well.
             </p>
             <p>
               The people we spoke with span the community that shapes how Congress
               works: current and former congressional staff across personal
-              offices, committees, and leadership; legislative-branch support
-              offices; congressional-reform and good-government organizations;
-              researchers working on institutions and the future of governance;
-              academics; civic-technology practitioners; and government-relations
+              offices and committees; legislative-branch support
+              offices; good-governance organizations;
+              academic researchers; civic-technologists; and government-relations
               professionals.
             </p>
             <p>
               Because the volume of material was large, AI was used as a research
               and synthesis aid — to search across sources, research, and
-              interview notes; to summarize long documents; and to surface and
-              consolidate overlapping or redundant ideas so the map does not
-              count the same proposal multiple times. Every classification,
+              interview notes; to summarize long documents; and to
+              consolidate overlapping or redundant ideas so the map does not double-count proposals. Every classification,
               and every decision about what to include or leave out, remains a
-              human editorial judgment, and all of the site&rsquo;s content has
-              been reviewed by people. The website itself was generated primarily
-              with Claude Code.
+              human editorial judgment. The website itself was generated with the assistance 
+              of Claude Code.
+            </p>
+            <p>
+              This is a living project. We will continue to gather and refine ideas for some time to come.
             </p>
           </div>
         </div>
@@ -67,8 +67,7 @@ export default function AboutPageTab() {
               The Foundation works with legislative bodies — the U.S. Congress,
               state legislatures, and parliaments around the world — on
               responsible AI adoption, tech literacy, and software prototyping,
-              helping democratic institutions build the capacity to govern in a
-              fast-changing world.
+              helping democratic institutions strengthen their ability to govern in today's age. 
             </p>
           </div>
         </div>
@@ -98,7 +97,7 @@ export default function AboutPageTab() {
               Acting as a field catalyst, it convenes diverse stakeholders across
               ideological lines and supports reforms in how government hires
               talent, procures goods and services, builds systems, and learns from
-              experience — at both the federal and state levels.
+              experience, at both the federal and state levels.
             </p>
           </div>
         </div>
@@ -126,8 +125,7 @@ export default function AboutPageTab() {
             <p>
               She previously served as a Senate legislative fellow focused on AI
               policy and government modernization. Before entering public service,
-              she was a senior software automation engineer at Apple and developed
-              software for Honeywell Aerospace. Ashley holds a B.S. and M.S. in
+              she was a senior software automation engineer at Apple. Ashley holds a B.S. and M.S. in
               Electrical Engineering from Columbia University.
             </p>
           </div>
@@ -150,7 +148,10 @@ export default function AboutPageTab() {
             <p>
               Ashley would like to especially thank and acknowledge her
               colleagues, Caitlin McNally, Aubrey Wilson, and Marci Harris, for
-              their contributions and encouragement! &lt;3
+              their contributions and encouragement. 
+            </p>
+            <p>
+              &lt;3
             </p>
           </div>
         </div>
