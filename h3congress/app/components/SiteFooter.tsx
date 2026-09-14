@@ -4,7 +4,7 @@ export default function SiteFooter() {
   return (
     <footer className="h3-footer">
       <div className="h3-container h3-footer-row">
-        <div className="h3-footer-brand">
+        <Link className="h3-footer-brand" href="/">
           <h3>Three Horizons Vision for Congress</h3>
           <div className="h3-footer-brand-body">
             <img className="h3-footer-mark" src="/assets/h3-logo.png" alt="H3 Congress" />
@@ -13,7 +13,7 @@ export default function SiteFooter() {
               legislative branch, built in public by POPVOX Foundation.
             </p>
           </div>
-        </div>
+        </Link>
 
         <div className="h3-footer-partner">
           <span>A project of</span>
@@ -39,15 +39,6 @@ export default function SiteFooter() {
         </div>
 
         <nav className="h3-footer-col">
-          <h3>Explore</h3>
-          <Link href="/">About</Link>
-          <Link href="/reform-map">Reform Map</Link>
-          <Link href="/domains">Domains</Link>
-          <Link href="/system-diagram">System Diagram</Link>
-          <Link href="/modbot">Modbot</Link>
-        </nav>
-
-        <nav className="h3-footer-col">
           <h3>Foundations</h3>
           <a
             href="https://www.eatingpolicy.com/p/a-three-horizons-framework-for-government"
@@ -63,6 +54,16 @@ export default function SiteFooter() {
           >
             The pacing problem →
           </a>
+        </nav>
+
+        <nav className="h3-footer-col">
+          <h3>Explore</h3>
+          <Link href="/about">About</Link>
+          <Link href="/reform-map">Reform Map</Link>
+          <Link href="/domains">Domains</Link>
+          <Link href="/system-diagram">System Diagram</Link>
+          <Link href="/modbot">Modbot</Link>
+          <Link href="/export">Export</Link>
         </nav>
 
         <div className="h3-footer-col">

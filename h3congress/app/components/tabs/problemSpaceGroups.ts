@@ -7,7 +7,7 @@ import type { ProblemSpaceGroup } from "./ProblemSpaceModal";
 
 // Per-group display copy — everything in a ProblemSpaceGroup except its id and
 // the areas (which this builder derives).
-export type GroupMeta = {
+type GroupMeta = {
   title: string;
   lede: string;
   eyebrowLabel: string;
