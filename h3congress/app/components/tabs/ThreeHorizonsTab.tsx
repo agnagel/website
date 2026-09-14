@@ -18,7 +18,7 @@ const exploreLinks = [
     title: "Domains",
     art: "domains",
     body:
-      "Survey the high-level congressional capacity domains."
+      "Survey the high-level congressional capacity domains and their challenges."
   },
   {
     href: "/system-diagram",

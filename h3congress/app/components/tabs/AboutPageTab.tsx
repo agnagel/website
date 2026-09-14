@@ -42,7 +42,7 @@ export default function AboutPageTab() {
     <>
       <section id="methodology" className="h3-section h3-methodology tex-grid-fine">
         <div className="h3-container h3-about-grid">
-          <AboutHead label="Methodology" title="How this was built.">
+          <AboutHead label="Methodology" title="How this was built">
             <path d="M9 3h6M10 3v6l-4.5 8a1 1 0 0 0 .9 1.5h11.2a1 1 0 0 0 .9-1.5L14 9V3" />
             <path d="M7.5 15h9" />
           </AboutHead>
@@ -168,7 +168,7 @@ export default function AboutPageTab() {
 
       <section id="acknowledgments" className="h3-section h3-methodology">
         <div className="h3-container h3-about-grid">
-          <AboutHead label="Acknowledgments" title="With thanks.">
+          <AboutHead label="Acknowledgments" title="With thanks">
             <path d="M12 20s-6.5-4.2-6.5-9A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 6.5 2c0 4.8-6.5 10-6.5 10z" />
           </AboutHead>
           <div className="h3-methodology-body" data-reveal>

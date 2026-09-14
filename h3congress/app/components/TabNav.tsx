@@ -61,7 +61,7 @@ export default function TabNav() {
           className={`h3-nav-cta${isActive("/get-involved") ? " is-active" : ""}`}
           href="/get-involved"
         >
-          Get involved
+          Get Involved
         </Link>
       </div>
     </nav>

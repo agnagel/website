@@ -12,7 +12,7 @@ export default function ExportPage() {
       <BinaryRain />
 
       <div className="h3-container">
-        <p className="h3-eyebrow h3-eyebrow-gold">Download the data</p>
+        <p className="h3-eyebrow h3-eyebrow-gold">Access the data</p>
         <h1>Export the Three Horizons Vision for Congress dataset</h1>
         <p className="h3-export-lede">
           Download a ZIP file, a single compressed folder, holding two

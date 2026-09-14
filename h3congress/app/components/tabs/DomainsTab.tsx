@@ -91,8 +91,8 @@ export default function DomainsTab() {
           <p className="h3-eyebrow">The domains</p>
           <h2>Where congressional capacity gets built — or gets stuck.</h2>
           <p>
-            Each domain is a different lens on building a more capable
-            Congress.{" "}
+            Each domain is a pillar holding up Congress&rsquo;s capacity to
+            govern.{" "}
             <strong>Select a domain</strong> to see the problems and
             solutions mapped to it.
           </p>

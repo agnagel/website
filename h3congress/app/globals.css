@@ -865,11 +865,12 @@ textarea:focus-visible {
 
 .h3-explore-head h2 {
   margin-top: 12px;
+  max-width: 36ch;
 }
 
 .h3-explore-sub {
   margin: 14px 0 0;
-  max-width: 52ch;
+  max-width: 78ch;
   font-size: 16px;
   line-height: 1.55;
   color: var(--ink-soft);
@@ -879,6 +880,7 @@ textarea:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(16px, 2vw, 24px);
+  margin-bottom: clamp(48px, 7vh, 88px);
 }
 
 @media (max-width: 860px) {

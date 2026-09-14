@@ -13,7 +13,7 @@ export default function H3SimpleHeader() {
         </Link>
         <Link href="/#reform-map">Reform Map</Link>
         <Link className="h3-nav-cta" href="/#involved">
-          Get involved
+          Get Involved
         </Link>
       </div>
     </nav>

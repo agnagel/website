@@ -160,7 +160,7 @@ export default function GetInvolvedTab() {
             <span className="h3-h2pos">H2+</span> to one person and{" "}
             <span className="h3-h2neg">H2-</span> to another: it depends on which
             third horizon they are trying to build. The disagreement is not a flaw in
-            the framework — it's the start of the conversation.
+            the framework — it's the conversation worth having.
           </p>
 
           <p>
