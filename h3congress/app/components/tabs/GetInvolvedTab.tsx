@@ -112,7 +112,6 @@ export default function GetInvolvedTab() {
 
   function handleSubmitIdea() {
     const trimmedIdea = idea.trim();
-    if (!trimmedIdea) return;
 
     const selectedCriteria = criteria
       .filter((_, index) => checks[index])
@@ -129,20 +128,22 @@ export default function GetInvolvedTab() {
 
     setVision(summary);
     setError("");
-    document.getElementById("involved")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+    // Wait a tick so the form is in the DOM/updated, then bring it into view and
+    // focus the textarea. (Runs after the state update paints.)
+    window.requestAnimationFrame(() => {
+      const target = document.getElementById("involved");
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.setTimeout(() => {
+        document.getElementById("vision")?.focus({ preventScroll: true });
+      }, 400);
     });
-    window.setTimeout(() => {
-      document.getElementById("vision")?.focus({ preventScroll: true });
-    }, 500);
   }
 
   return (
     <>
       <section id="distinction" className="h3-distinction">
         <div className="h3-container" data-reveal>
-          <p className="h3-eyebrow h3-eyebrow-gold">No single H3</p>
+          <p className="h3-eyebrow h3-eyebrow-gold">Join the conversation</p>
           <h2>
             <span className="h3-h3gold">H3</span> is the destination.{" "}
             <span className="h3-h2pos">H2+</span> is the path.
@@ -153,17 +154,20 @@ export default function GetInvolvedTab() {
             that builds toward it.
           </p>
           <p>
+            There is no single H3. There are many third horizons, each worth
+            articulating and debating. A third horizon is always a moving target. 
             The same effort can read as{" "}
             <span className="h3-h2pos">H2+</span> to one person and{" "}
             <span className="h3-h2neg">H2-</span> to another: it depends on which
             third horizon they are trying to build. The disagreement is not a flaw in
-            the framework. It is the conversation the framework is for.
+            the framework — it's the start of the conversation.
           </p>
+
           <p>
-            There is no single H3 — there are many third horizons, each worth
-            articulating and debating. A third horizon is always a moving target. The point is not to
-            wait for perfect consensus. It is to describe an operating model fit for
-            purpose and invite the field to compare notes.
+            Use the litmus test below to gauge whether your idea leans{" "}
+            <span className="h3-h2neg">H2-</span> or{" "}
+            <span className="h3-h2pos">H2+</span>, or skip to the form at the bottom
+            of the page to share any other feedback. <i>We want to hear from you!</i>
           </p>
         </div>
       </section>
@@ -219,7 +223,6 @@ export default function GetInvolvedTab() {
               <p>{result.body}</p>
               <button
                 className="h3-litmus-submit"
-                disabled={!idea.trim()}
                 onClick={handleSubmitIdea}
                 type="button"
               >
@@ -253,14 +256,14 @@ export default function GetInvolvedTab() {
             <p className="h3-eyebrow h3-eyebrow-gold">Get involved</p>
             <h2>Help make the map more accurate.</h2>
             <p>
-              This project is being built with people who know Congress from the inside:
+              This project is being built with the help of people who know Congress from the inside:
               congressional offices, committees, support agencies, reform organizations,
               academics, technologists, and comparative parliament experts.
             </p>
             <p>
               If you see a missing reform, a weak classification, a better example, or a blind
-              spot, tell us. If the map does not reflect your experience of how Congress
-              actually works, that is exactly the kind of input we need.
+              spot, tell us. If this website does not reflect your experience of how Congress
+              actually works, give us that input.
             </p>
           </div>
           <div data-reveal>
@@ -280,10 +283,10 @@ export default function GetInvolvedTab() {
                 </label>
                 <textarea
                   id="vision"
-                  rows={4}
+                  rows={8}
                   value={vision}
                   onChange={(event) => setVision(event.target.value)}
-                  placeholder="Share an H3 capability, a reform effort, a missing source, or feedback on the framing."
+                  placeholder="Share a reform idea, your vision for Congress, a missing source, a disagreement on classification, feedback on the website itself, or anything else you'd like us to know!"
                   required
                 />
                 <div className="h3-honeypot" aria-hidden="true">
@@ -316,9 +319,6 @@ export default function GetInvolvedTab() {
                 <button type="submit" disabled={submitting}>
                   {submitting ? "Sharing..." : "Share input"}
                 </button>
-                <p>
-                  Feedback, disagreements, and suggested interviews will make the map sharper.
-                </p>
               </form>
             )}
           </div>

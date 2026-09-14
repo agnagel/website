@@ -15,29 +15,27 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="h3-partners">
-          <div>
-            <span>A project of</span>
-            <a
-              href="http://popvox.org"
-              aria-label="Visit POPVOX Foundation"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="/assets/popvox-fdn-clear.png" alt="POPVOX Foundation" />
-            </a>
-          </div>
-          <div>
-            <span>With support from</span>
-            <a
-              href="https://www.recodingamerica.fund/"
-              aria-label="Visit Recoding America Fund"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="/assets/raf-clear.png" alt="Recoding America Fund" />
-            </a>
-          </div>
+        <div className="h3-footer-partner">
+          <span>A project of</span>
+          <a
+            href="http://popvox.org"
+            aria-label="Visit POPVOX Foundation"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="/assets/popvox-fdn-clear.png" alt="POPVOX Foundation" />
+          </a>
+        </div>
+        <div className="h3-footer-partner">
+          <span>With support from</span>
+          <a
+            href="https://www.recodingamerica.fund/"
+            aria-label="Visit Recoding America Fund"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="/assets/raf-clear.png" alt="Recoding America Fund" />
+          </a>
         </div>
 
         <nav className="h3-footer-col">

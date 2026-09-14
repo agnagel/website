@@ -226,8 +226,8 @@ export function ProblemSpaceModal({
 
               {anyIdeas && (
                 <p className="h3-domain-modal-instruction">
-                  Click a pair of H1 → H3 to see the possible implementation
-                  ideas in between.
+                  Click a pair of H1 → H3 to see the possible H2 steps
+                  in between.
                 </p>
               )}
 

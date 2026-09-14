@@ -88,11 +88,12 @@ export default function DomainsTab() {
     <section id="domains" className="h3-domains h3-domains-tab">
       <div className="h3-container">
         <div className="h3-domains-intro" data-reveal>
-          <p className="h3-eyebrow">The landscape</p>
+          <p className="h3-eyebrow">The domains</p>
           <h2>Where congressional capacity gets built — or gets stuck.</h2>
           <p>
-            H3 begins with five domains. Each one contains ideas that can point in
-            different directions. <strong>Select a domain</strong> to see the problems and
+            Each domain is a different lens on building a more capable
+            Congress.{" "}
+            <strong>Select a domain</strong> to see the problems and
             solutions mapped to it.
           </p>
           <p className="h3-source-note">
@@ -123,9 +124,8 @@ export default function DomainsTab() {
           })}
           <article className="h3-domain h3-domain-summary" data-reveal>
             <p>
-              Each domain faces the same test: does the idea preserve{" "}
-              <span className="h3-h2neg">H1</span>, build{" "}
-              <span className="h3-h2pos">H2+</span>, or point toward{" "}
+              Each domain faces the same challenge: does the idea within it preserve{" "}
+              <span className="h3-h2neg">H1</span>, or point toward{" "}
               <span className="h3-h3gold">H3</span>?
             </p>
           </article>

@@ -298,12 +298,11 @@ export default function SystemDiagramTab() {
   return (
     <section className="h3-sysdiagram" aria-label="Congress system diagram">
       <div className="h3-sysdiagram-intro">
-        <p className="h3-eyebrow h3-eyebrow-gold">The Legislative Cycle</p>
-        <h2>Congress as an Information System</h2>
+        <p className="h3-eyebrow h3-eyebrow-gold">The system diagram</p>
+        <h2>Congress is an information system.</h2>
         <p>
-          The blocks shown are the most common and time-consuming activities
-          today&rsquo;s Congress conducts. Select any highlighted block to surface the
-          problems with today&rsquo;s Congress — and, for each, the solutions that range
+          The blocks shown represent the most common and time-consuming activities of
+          today&rsquo;s Congress. <strong>Select a block</strong> to surface its known issues — and, for each, the solutions that range
           from near-term workarounds to the end-state vision.
         </p>
         <p className="h3-source-note">

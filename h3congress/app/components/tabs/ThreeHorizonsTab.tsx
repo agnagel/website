@@ -268,14 +268,21 @@ export default function ThreeHorizonsTab() {
           <div className="h3-reveal" aria-hidden="true">
             <div className="h3-reveal-circuit">
               <img src="/assets/us_capitol_neon_circuit.svg" alt="" />
-              <div className="h3-beacon">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <i />
-              </div>
+              <svg
+                className="h3-beacon"
+                viewBox="0 0 680 470"
+                preserveAspectRatio="xMidYMid meet"
+                aria-hidden="true"
+              >
+                <g transform="translate(340 42)">
+                  <circle className="h3-beacon-ring" r="30" />
+                  <circle className="h3-beacon-ring" r="30" />
+                  <circle className="h3-beacon-ring" r="30" />
+                  <circle className="h3-beacon-ring" r="30" />
+                  <circle className="h3-beacon-ring" r="30" />
+                  <circle className="h3-beacon-core" r="3.4" />
+                </g>
+              </svg>
             </div>
             <div className="h3-reveal-pencil" id="h3-reveal-pencil">
               <img src="/assets/us_capitol_pencil_sketch.svg" alt="" />

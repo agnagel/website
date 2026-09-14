@@ -111,6 +111,9 @@ export function DomainItemDetail({
   return (
     <div className="h3-domain-detail">
       {tags.length > 0 && (
+        <p className="h3-domain-tags-hint">Click on tags to see related items.</p>
+      )}
+      {tags.length > 0 && (
         <div className="h3-domain-tags">
           {tags.map((tag) => (
             <button

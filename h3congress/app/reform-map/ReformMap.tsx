@@ -267,13 +267,13 @@ export default function ReformMap() {
   return (
     <section id="reform-map" className="h3-map-page" aria-labelledby="reform-map-title">
       <section className="h3-map-intro">
-        <p className="h3-map-kicker">Initial Reform Map</p>
+        <p className="h3-map-kicker">The reform map</p>
         <h2 id="reform-map-title">Every reform effort faces the same question.</h2>
         <p>
           The map places reform ideas across time and across the Three Horizons.{" "}
           <strong>Click a dot</strong> to see the provisional classification and the
-          reasoning. Challenge the call. Add missing examples. Help make the map sharper.{" "}
-          <Link className="h3-map-intro-cta" href="/get-involved#h3-test">
+          reasoning. Challenge the call. Add missing examples.{" "}
+          <Link className="h3-map-intro-cta" href="/get-involved">
             Test your idea against the third horizon&nbsp;
             <span aria-hidden="true">→</span>
           </Link>
@@ -368,8 +368,8 @@ export default function ReformMap() {
                     }
                   >
                     <span className="h3-tt-dot" />
-                    {hovered.name}
                     <strong>{hovered.hlabel}</strong>
+                    {hovered.name}
                   </div>
                 )}
               </div>
@@ -396,10 +396,6 @@ export default function ReformMap() {
           ) : (
             <ReadMapPanel />
           )}
-          <p className="h3-map-note">
-            This is a public draft. Future updates will add examples, refine classifications,
-            and incorporate feedback.
-          </p>
         </aside>
       </section>
     </section>

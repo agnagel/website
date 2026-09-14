@@ -96,6 +96,8 @@ textarea:focus-visible {
   background: color-mix(in srgb, var(--paper) 86%, transparent);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(8px);
+  /* Match the footer brand ("Three Horizons Vision for Congress") typeface. */
+  font-family: var(--font-plex-mono), monospace;
 }
 
 .h3-brand {
@@ -109,7 +111,7 @@ textarea:focus-visible {
 .h3-eyebrow,
 .h3-scroll-hint,
 #h3-gap-caption,
-.h3-partners span,
+.h3-footer-partner span,
 .h3-footer h3,
 .h3-domain > p:first-child,
 .h3-panel > p:first-child,
@@ -402,60 +404,55 @@ textarea:focus-visible {
   background: #060f22;
 }
 
-/* radiating ripple over the circuit dome finial */
+/* Radiating ripple over the circuit dome finial. The beacon is an inline SVG
+   overlay sharing the Capitol image's exact box (top:7% left:8% 84%×84%) and its
+   contain/center fit (preserveAspectRatio="xMidYMid meet" == object-fit:contain +
+   object-position:center). With the same viewBox, its (340,42) maps onto the
+   finial at every window size — no aspect-dependent drift. */
 .h3-beacon {
   position: absolute;
-  left: 50%;
-  top: 14.5%;
-  width: 0;
-  height: 0;
+  top: 7%;
+  left: 8%;
+  width: 84%;
+  height: 84%;
   z-index: 1;
   pointer-events: none;
+  overflow: visible;
 }
 
-.h3-beacon span {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 94px;
-  height: 94px;
-  margin: -47px 0 0 -47px;
-  border: 1.6px solid #9fecff;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(29, 226, 255, 0.6);
+.h3-beacon-ring {
+  fill: none;
+  stroke: #9fecff;
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: center;
   opacity: 0;
-  transform: scale(0.1);
+  transform: scale(0.05);
 }
 
-.h3-beacon.is-live span {
+.h3-beacon.is-live .h3-beacon-ring {
   animation: h3beacon 2.8s linear infinite;
 }
 
-.h3-beacon span:nth-child(2) { animation-delay: 0.56s; }
-.h3-beacon span:nth-child(3) { animation-delay: 1.12s; }
-.h3-beacon span:nth-child(4) { animation-delay: 1.68s; }
-.h3-beacon span:nth-child(5) { animation-delay: 2.24s; }
+.h3-beacon-ring:nth-child(2) { animation-delay: 0.56s; }
+.h3-beacon-ring:nth-child(3) { animation-delay: 1.12s; }
+.h3-beacon-ring:nth-child(4) { animation-delay: 1.68s; }
+.h3-beacon-ring:nth-child(5) { animation-delay: 2.24s; }
 
-.h3-beacon i {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
-  border-radius: 50%;
-  background: #eafcff;
-  box-shadow: 0 0 8px #9fecff;
+.h3-beacon-core {
+  fill: #eafcff;
+  filter: drop-shadow(0 0 3px #9fecff);
   opacity: 0;
 }
 
-.h3-beacon.is-live i {
+.h3-beacon.is-live .h3-beacon-core {
   opacity: 1;
   animation: h3beacon-core 1.7s ease-in-out infinite;
 }
 
 @keyframes h3beacon {
-  0% { opacity: 0.95; transform: scale(0.1); }
+  0% { opacity: 0.95; transform: scale(0.05); }
   100% { opacity: 0; transform: scale(1); }
 }
 
@@ -702,7 +699,8 @@ textarea:focus-visible {
 .h3-methodology {
   border-top: 1px solid var(--line);
   background: var(--paper);
-  padding-block: clamp(48px, 7vh, 88px);
+  /* Slightly tighter padding around the section content. */
+  padding: clamp(38px, 5.5vh, 68px) clamp(20px, 6vw, 96px);
 }
 
 .h3-methodology-head h2 {
@@ -757,6 +755,33 @@ textarea:focus-visible {
   background-color: var(--paper);
   background-image: radial-gradient(color-mix(in srgb, var(--line) 68%, transparent) 1.1px, transparent 1.5px);
   background-size: 20px 20px;
+}
+
+/* Two-column About section: numbered/glyph head on the left, body on the right. */
+.h3-about-grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) 1fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.h3-about-grid .h3-methodology-body {
+  margin-top: 0;
+}
+
+.h3-about-glyph {
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 14px;
+  color: #a87718;
+}
+
+@media (max-width: 760px) {
+  .h3-about-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 /* "On this page" rail for the About page — an icon-only column pinned to the
@@ -939,6 +964,7 @@ textarea:focus-visible {
 }
 
 .h3-domains-intro h2 {
+  max-width: none;
   margin-bottom: 16px;
   margin-top: 14px;
 }
@@ -1498,6 +1524,13 @@ textarea:focus-visible {
 }
 
 /* Detail meta line (horizon + year) and the clickable tag line below it ---- */
+.h3-domain-tags-hint {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-style: italic;
+}
+
 .h3-domain-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1863,7 +1896,9 @@ textarea:focus-visible {
 
 .h3-form textarea {
   margin-bottom: 18px;
-  line-height: 1.5;
+  padding: 16px 16px;
+  min-height: 200px;
+  line-height: 1.6;
   resize: vertical;
 }
 
@@ -1957,6 +1992,10 @@ textarea:focus-visible {
 /* One compact row: partners · brand · Explore · Foundations · Get involved,
    spread edge to edge across the width. */
 .h3-footer-row {
+  /* Span the full footer width (overriding the 1240px .h3-container cap) so the
+     row can spread edge to edge like the top nav and reflow onto one line when
+     the window is wide, instead of being boxed at 1240px and wrapping. */
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -1980,20 +2019,15 @@ textarea:focus-visible {
   max-width: 30ch;
 }
 
-.h3-partners {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: clamp(16px, 2vw, 34px);
-}
-
-.h3-partners div {
+/* Each partner ("A project of" / "With support from") is now its own footer
+   column, sitting alongside the brand and the nav columns. */
+.h3-footer-partner {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.h3-partners span,
+.h3-footer-partner span,
 .h3-footer h3 {
   color: var(--muted);
   font-size: 11px;
@@ -2003,13 +2037,13 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
-.h3-partners a {
+.h3-footer-partner a {
   display: inline-flex;
   width: fit-content;
   margin: 0;
 }
 
-.h3-partners img {
+.h3-footer-partner img {
   display: block;
   width: auto;
   max-width: min(130px, 46vw);
@@ -2243,10 +2277,9 @@ textarea:focus-visible {
   color: var(--paper);
   background-color: #eadfc4;
   background-image:
-    repeating-linear-gradient(0deg, transparent 0 23px, rgba(120, 100, 70, 0.11) 23px 24px),
-    repeating-linear-gradient(90deg, transparent 0 23px, rgba(120, 100, 70, 0.11) 23px 24px),
-    repeating-linear-gradient(0deg, transparent 0 119px, rgba(120, 100, 70, 0.17) 119px 120px),
-    repeating-linear-gradient(90deg, transparent 0 119px, rgba(120, 100, 70, 0.17) 119px 120px);
+    linear-gradient(to right, color-mix(in srgb, var(--line) 45%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--line) 45%, transparent) 1px, transparent 1px);
+  background-size: 34px 34px;
 }
 
 .h3-litmus-grid {
@@ -2386,9 +2419,9 @@ textarea:focus-visible {
 .h3-litmus-submit {
   width: 100%;
   margin-top: 20px;
-  border: 1px solid color-mix(in srgb, var(--h3) 72%, transparent);
+  border: 1px solid color-mix(in srgb, var(--h3) 55%, transparent);
   border-radius: 6px;
-  background: var(--h3);
+  background: color-mix(in srgb, var(--h3) 55%, #fff);
   color: var(--paper);
   cursor: pointer;
   padding: 12px 16px;
@@ -2450,10 +2483,7 @@ textarea:focus-visible {
   --h3: #a87718;
   border-top: 1px solid var(--line);
   padding: clamp(24px, 3.5vh, 40px) clamp(20px, 7vw, 120px);
-  background-color: var(--paper-2);
-  background-image:
-    repeating-linear-gradient(0deg, transparent 0 23px, rgba(120, 100, 70, 0.11) 23px 24px),
-    repeating-linear-gradient(90deg, transparent 0 23px, rgba(120, 100, 70, 0.11) 23px 24px);
+  background-color: var(--paper);
 }
 
 .h3-distinction .h3-h2pos {
@@ -2466,6 +2496,7 @@ textarea:focus-visible {
 
 .h3-distinction h2 {
   max-width: none;
+  margin: 14px 0 16px;
 }
 
 .h3-distinction p:not(.h3-eyebrow) {
@@ -2480,11 +2511,15 @@ textarea:focus-visible {
 }
 
 .h3-map-page {
-  min-height: 100vh;
   background: var(--paper);
   border-top: 1px solid var(--line);
   color: var(--ink);
-  padding: clamp(22px, 4vw, 52px);
+  /* Match the Domains tab: same min-height, centering, and padding/spacing. */
+  min-height: calc(100vh - 220px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 5.5vh, 72px) clamp(20px, 7vw, 120px) clamp(80px, 12vh, 160px);
 }
 
 .h3-map-intro,
@@ -2496,28 +2531,28 @@ textarea:focus-visible {
 }
 
 .h3-map-kicker {
-  margin: 0 0 8px;
+  margin: 0 0 22px;
   color: var(--muted);
   font-family: var(--font-plex-mono), monospace;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .h3-map-intro h2 {
-  max-width: 22ch;
-  margin: 0 0 12px;
+  max-width: none;
+  margin: 14px 0 16px;
   font-family: var(--font-newsreader), serif;
-  font-size: clamp(26px, 3.4vw, 42px);
+  font-size: clamp(26px, 3.6vw, 46px);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.18;
 }
 
 .h3-map-intro > p:nth-of-type(2) {
   max-width: none;
   margin: 0 0 26px;
   color: var(--ink-soft);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
 }
 
@@ -2539,7 +2574,7 @@ textarea:focus-visible {
 /* Domains keeps a measured line length; the other intros let the note span the
    full content width. */
 .h3-domains-intro .h3-source-note {
-  max-width: 60ch;
+  max-width: none;
 }
 
 .h3-map-intro strong {
@@ -3368,7 +3403,12 @@ textarea:focus-visible {
 .h3-export {
   position: relative;
   overflow: hidden;
-  padding: 72px 0 96px;
+  /* Match the Domains tab: same min-height, centering, and padding/spacing. */
+  min-height: calc(100vh - 220px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 5.5vh, 72px) clamp(20px, 7vw, 120px) clamp(80px, 12vh, 160px);
   /* Plain beige background. */
   background-color: var(--paper);
   background-image: none;
@@ -3398,6 +3438,10 @@ textarea:focus-visible {
 .h3-export .h3-container {
   position: relative;
   z-index: 1;
+  /* Hold all export text to a narrower centered column. */
+  width: 60%;
+  max-width: none;
+  margin-inline: auto;
 }
 
 .h3-export .h3-eyebrow-gold {
@@ -3405,17 +3449,23 @@ textarea:focus-visible {
 }
 
 .h3-export h1 {
-  margin: 6px 0 0;
+  margin: 14px 0 16px;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(26px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.18;
 }
 
 .h3-export-lede {
-  max-width: 60ch;
-  margin: 18px 0 0;
+  max-width: none;
+  margin: 0;
   color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 .h3-export-list {
-  max-width: 68ch;
+  max-width: none;
   margin: 28px 0 0;
   padding-left: 1.1em;
   list-style: disc;
@@ -3540,7 +3590,9 @@ textarea:focus-visible {
 .h3-involved {
   position: relative;
   overflow: hidden;
-  padding-top: clamp(58px, 9vh, 120px);
+  /* Slightly tighter band around the panel. */
+  padding-top: clamp(48px, 7.5vh, 104px);
+  padding-bottom: clamp(60px, 9vh, 120px);
   background-color: #060f22;
   background-image: radial-gradient(circle, rgba(0, 125, 190, 0.12) 0.9px, transparent 1.3px);
   background-size: 22px 22px;
@@ -3638,6 +3690,10 @@ textarea:focus-visible {
    after a preceding section in one long scroll. */
 .h3-domains-tab {
   min-height: calc(100vh - 220px);
+  /* Center the content block vertically as well as horizontally. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ============================================================
@@ -3651,6 +3707,9 @@ textarea:focus-visible {
   color: var(--ink);
   display: flex;
   flex-direction: column;
+  /* Match the Domains tab: same min-height and vertical centering. */
+  min-height: calc(100vh - 220px);
+  justify-content: center;
 }
 
 /* Modbot page — shares the System Diagram's navy/neon skin. The arxivix embed
@@ -3662,36 +3721,118 @@ textarea:focus-visible {
   color: var(--ink);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* Match the Domains tab's min-height. */
+  min-height: calc(100vh - 220px);
+  /* Contain the roaming mascot within the tab. */
+  position: relative;
+  overflow: hidden;
 }
 
 .h3-modbot-intro {
+  width: min(100%, 900px);
+  margin-inline: auto;
   padding: clamp(40px, 6vh, 72px) clamp(20px, 5vw, 64px) clamp(20px, 3vh, 32px);
-  max-width: 820px;
+}
+
+/* Cute Modbot mascot that wanders around the page. The outer element drifts on a
+   looping path (h3bot-roam); the inner element does the gentle bob (h3bot-float)
+   so both transforms can run at once. Eyes blink, antenna pulses. It's purely
+   decorative and never blocks clicks. */
+.h3-modbot-bot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  animation: h3bot-roam 28s ease-in-out infinite;
+}
+
+.h3-modbot-bot-inner {
+  animation: h3bot-float 3.2s ease-in-out infinite;
+}
+
+.h3-modbot-bot svg {
+  display: block;
+  width: 82px;
+  height: 82px;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px rgba(29, 226, 255, 0.35));
+}
+
+.h3-modbot-bot .bot-eye {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: h3bot-blink 4.5s ease-in-out infinite;
+}
+
+.h3-modbot-bot .bot-antenna {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: h3bot-pulse 1.8s ease-in-out infinite;
+}
+
+/* Wander around the tab, keeping clear of the edges. */
+@keyframes h3bot-roam {
+  0%   { transform: translate(6vw, 16vh) rotate(-4deg); }
+  16%  { transform: translate(66vw, 9vh) rotate(4deg); }
+  33%  { transform: translate(80vw, 48vh) rotate(-2deg); }
+  50%  { transform: translate(50vw, 72vh) rotate(3deg); }
+  66%  { transform: translate(14vw, 60vh) rotate(-3deg); }
+  83%  { transform: translate(30vw, 28vh) rotate(2deg); }
+  100% { transform: translate(6vw, 16vh) rotate(-4deg); }
+}
+
+@keyframes h3bot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes h3bot-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.12); }
+}
+
+@keyframes h3bot-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h3-modbot-bot {
+    transform: translate(6vw, 12vh);
+  }
+  .h3-modbot-bot,
+  .h3-modbot-bot-inner,
+  .h3-modbot-bot .bot-eye,
+  .h3-modbot-bot .bot-antenna {
+    animation: none;
+  }
 }
 
 .h3-modbot-intro h2 {
-  font-family: var(--font-newsreader), Georgia, serif;
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.08;
-  margin: 10px 0 14px;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(26px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.18;
+  margin: 14px 0 16px;
   color: #eef7f6;
 }
 
 .h3-modbot-intro p {
   color: #9fc7cb;
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 17px;
+  line-height: 1.6;
   max-width: none;
 }
 
-/* The chat surface spans the full width of the main section beneath the intro.
-   The embed injects a shadow-DOM <section> (its :host caps at 720px); the
-   higher-specificity rule below lets it fill the page width instead. */
+/* The chat surface is held to a centered max-width column (matching the intro)
+   rather than spanning the full page. The embed injects a shadow-DOM <section>
+   (its :host caps at 720px); the rule below lets it fill this column. */
 .h3-modbot-embed {
   flex: 1 1 auto;
   display: flex;
-  width: 100%;
+  width: min(100%, 900px);
+  margin-inline: auto;
   padding: 0 clamp(20px, 5vw, 64px) clamp(40px, 6vh, 72px);
   /* The embed renders inside a shadow root, so only inherited custom properties
      reach it. Its buttons use var(--accent, …); point that at a deep on-brand
@@ -3706,22 +3847,24 @@ textarea:focus-visible {
 }
 
 .h3-sysdiagram-intro {
+  width: min(100%, 1280px);
+  margin-inline: auto;
   padding: clamp(40px, 6vh, 72px) clamp(20px, 5vw, 64px) clamp(20px, 3vh, 32px);
-  max-width: 820px;
 }
 
 .h3-sysdiagram-intro h2 {
-  font-family: var(--font-newsreader), Georgia, serif;
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.08;
-  margin: 10px 0 14px;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(26px, 3.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.18;
+  margin: 14px 0 16px;
   color: #eef7f6;
 }
 
 .h3-sysdiagram-intro p {
   color: #9fc7cb;
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 17px;
+  line-height: 1.6;
   max-width: none;
 }
 
@@ -3913,4 +4056,21 @@ textarea:focus-visible {
 .h3-tag-scrim[data-theme="dark"] .h3-domain-horizon.is-h2pos {
   background: #1fa463;
   color: var(--ink);
+}
+
+/* ── Uniform eyebrow size across every tab intro ──────────────────────────
+   Authoritative override (placed last) so the reform-map kicker and the export
+   eyebrow render at the same size as Domains and System Diagram. */
+.h3-map-kicker,
+.h3-map-intro .h3-eyebrow,
+.h3-domains-intro .h3-eyebrow,
+.h3-sysdiagram-intro .h3-eyebrow,
+.h3-modbot-intro .h3-eyebrow,
+.h3-export .h3-eyebrow,
+.h3-distinction .h3-eyebrow,
+.h3-litmus .h3-eyebrow,
+.h3-involved .h3-eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
