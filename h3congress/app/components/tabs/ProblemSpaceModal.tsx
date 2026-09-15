@@ -6,6 +6,7 @@ import type { H2Idea, ProblemArea } from "../../data/problemSpace";
 import { DomainItemDetail, itemTags } from "./DomainDetail";
 import { DomainTagDrawer } from "./DomainTagDrawer";
 import { HorizonPairFrame } from "./HorizonPairFrame";
+import { IdeaList } from "./IdeaList";
 
 export type ProblemSpaceGroup = {
   /** Stable identifier for the group (domain key / bucket key). */
@@ -20,6 +21,13 @@ export type ProblemSpaceGroup = {
   eyebrowLabel: string;
   /** The H1→H3 pairs to show, in display order. */
   areas: ProblemArea[];
+  /**
+   * When set, the group lists these H2 ideas directly — a flat ladder with no
+   * overarching H1→H3 pair — instead of grouping by `areas`. Used by catch-all
+   * blocks (Other Activities / Other Services) that collect ideas by their own
+   * tag rather than through a mapped status-quo→vision pair.
+   */
+  directIdeas?: H2Idea[];
 };
 
 // The full problem-space explorer surface: a modal that walks a group's H1→H3
@@ -67,9 +75,11 @@ export function ProblemSpaceModal({
     groups[0];
 
   // A group "contains" an idea when any of its H1→H3 areas is one the idea
-  // addresses — the same relation that lists ideas under each pair.
+  // addresses — the same relation that lists ideas under each pair — or, for a
+  // direct-listing group, when the idea is one of the ones it lists outright.
   const groupContains = (candidate: ProblemSpaceGroup, item: H2Idea) =>
-    candidate.areas.some((area) => item.h1h3Ids.includes(area.id));
+    candidate.areas.some((area) => item.h1h3Ids.includes(area.id)) ||
+    (candidate.directIdeas?.some((idea) => idea.id === item.id) ?? false);
 
   // Open an idea, following it to its own group when it came from the drawer and
   // the current group doesn't already contain it.
@@ -146,9 +156,12 @@ export function ProblemSpaceModal({
       ? areaById.get(activeItem.h1h3Ids[0]) ?? null
       : null;
 
-  const anyIdeas = effectiveGroup.areas.some(
-    (area) => (ideasByArea.get(area.id) ?? []).length > 0
-  );
+  const directIdeas = effectiveGroup.directIdeas;
+  const anyIdeas = directIdeas
+    ? directIdeas.length > 0
+    : effectiveGroup.areas.some(
+        (area) => (ideasByArea.get(area.id) ?? []).length > 0
+      );
 
   return (
     <>
@@ -224,14 +237,25 @@ export function ProblemSpaceModal({
                 <p className="h3-domain-modal-note">{effectiveGroup.note}</p>
               )}
 
-              {anyIdeas && (
+              {anyIdeas && !directIdeas && (
                 <p className="h3-domain-modal-instruction">
                   Click a pair of H1 → H3 to see the possible H2 steps
                   in between.
                 </p>
               )}
 
-              {effectiveGroup.areas.length === 0 ? (
+              {directIdeas ? (
+                directIdeas.length > 0 ? (
+                  <IdeaList ideas={directIdeas} onOpenIdea={setActiveItem} />
+                ) : (
+                  <p className="h3-domain-empty">
+                    No H2 ideas have been mapped here yet.{" "}
+                    <Link href="/get-involved" className="h3-domain-empty-cta">
+                      Submit your ideas.
+                    </Link>
+                  </p>
+                )
+              ) : effectiveGroup.areas.length === 0 ? (
                 effectiveGroup.note ? null : (
                   <p className="h3-domain-empty">
                     No H1 status quo or H3 vision has been mapped here yet.{" "}

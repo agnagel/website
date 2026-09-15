@@ -50,7 +50,7 @@ export default function AboutPageTab() {
             <p>
               This map was built on an extensive base of research: a wide review
               of existing literature on Congress and its capacity, alongside more
-              than sixty candid interviews with people who know the
+              than fifty candid interviews with people who know the
               institution well.
             </p>
             <p>

@@ -92,7 +92,7 @@ export default function WhatIsH3() {
           </p>
           <div className="h3-sub-actions">
             <a href="#h3-test">Test an idea</a>
-            <Link href="/#reform-map">See the map</Link>
+            <Link href="/reform-map">See the map</Link>
           </div>
         </div>
       </header>
@@ -194,8 +194,8 @@ export default function WhatIsH3() {
             field to compare notes.
           </p>
           <div className="h3-sub-actions">
-            <Link href="/#involved">Write your H3</Link>
-            <Link href="/#reform-map">See where reforms sit today</Link>
+            <Link href="/get-involved">Write your H3</Link>
+            <Link href="/reform-map">See where reforms sit today</Link>
           </div>
         </div>
       </section>

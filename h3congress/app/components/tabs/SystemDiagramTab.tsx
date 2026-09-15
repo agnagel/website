@@ -178,7 +178,7 @@ function InstBlock({
   );
 }
 
-// One of the round core seams (District Offices, DC Offices, Committees).
+// One of the round core seams (District Offices, Capitol, Committees).
 function CircleBlock({
   icon,
   label,
@@ -265,7 +265,41 @@ export default function SystemDiagramTab() {
     []
   );
 
-  const count = (bucket: string) => countByKey.get(bucket) ?? 0;
+  // Catch-all blocks that list their H2 ideas directly — by the idea's own
+  // `buckets` tag — with no overarching H1→H3 pair, unlike every other block.
+  const DIRECT_BUCKETS = useMemo(() => ["otherActivities", "otherServices"], []);
+  const directIdeasByBucket = useMemo(() => {
+    const map = new Map<string, typeof H2_IDEAS>(
+      DIRECT_BUCKETS.map((key) => [key, []])
+    );
+    for (const idea of H2_IDEAS) {
+      if (idea.horizonKey !== "h2neg" && idea.horizonKey !== "h2pos") continue;
+      for (const key of DIRECT_BUCKETS)
+        if (idea.buckets.includes(key)) map.get(key)!.push(idea);
+    }
+    for (const list of map.values())
+      list.sort(
+        (a, b) =>
+          (a.horizonKey === "h2neg" ? 0 : 1) - (b.horizonKey === "h2neg" ? 0 : 1)
+      );
+    return map;
+  }, [DIRECT_BUCKETS]);
+
+  // Groups with the two catch-all blocks switched to direct idea listing.
+  const modalGroups = useMemo(
+    () =>
+      groups.map((g) =>
+        directIdeasByBucket.has(g.id)
+          ? { ...g, directIdeas: directIdeasByBucket.get(g.id) }
+          : g
+      ),
+    [groups, directIdeasByBucket]
+  );
+
+  const count = (bucket: string) =>
+    directIdeasByBucket.has(bucket)
+      ? directIdeasByBucket.get(bucket)!.length
+      : countByKey.get(bucket) ?? 0;
   const open = (bucket: string) => () => setActiveBucket(bucket);
 
   // Toggle the edge fades + "scroll to explore" hint based on how far the
@@ -337,6 +371,7 @@ export default function SystemDiagramTab() {
                 <symbol id="ic-vote" viewBox="0 0 24 24"><rect x="4.5" y="5" width="15" height="14" rx="1.5" /><path d="M8 12l2.6 2.6L16 9" /></symbol>
                 <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21c3.5-4.5 5.5-7.5 5.5-10.5a5.5 5.5 0 10-11 0c0 3 2 6 5.5 10.5z" /><circle cx="12" cy="10" r="2" /></symbol>
                 <symbol id="ic-org" viewBox="0 0 24 24"><rect x="9" y="3.5" width="6" height="4.5" rx="1" /><rect x="3" y="15.5" width="6" height="4.5" rx="1" /><rect x="15" y="15.5" width="6" height="4.5" rx="1" /><path d="M12 8V13M6 15.5V13H18V15.5" /></symbol>
+                <symbol id="ic-gavel" viewBox="0 0 24 24"><g transform="rotate(45 12 12)"><rect x="8" y="4.5" width="8" height="4" rx="1.3" /><path d="M12 8.5v8" /></g><path d="M6 20.5h8" /></symbol>
               </defs>
             </svg>
 
@@ -381,7 +416,7 @@ export default function SystemDiagramTab() {
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "var(--dim)" }}>Closer to the people</div>
               </button>
               <button onClick={open("senate")} style={{ position: "absolute", left: 319, top: 142, width: 276, height: 293, border: "1px solid var(--accent)", background: "var(--core)", borderRadius: "0 8px 8px 0", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 7, filter: "var(--glow)", zIndex: 2, cursor: "pointer" }}>
-                <Icon id="ic-dome" size={26} color="var(--accent)" strokeWidth={1.6} />
+                <Icon id="ic-gavel" size={26} color="var(--accent)" strokeWidth={1.6} />
                 <div style={{ fontSize: 16, fontWeight: 700, color: "var(--ink)", textAlign: "center" }}>Senate <span style={{ color: "var(--dim)", fontWeight: 500 }}>({count("senate")})</span></div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "var(--dim)" }}>More deliberative</div>
               </button>
@@ -395,7 +430,7 @@ export default function SystemDiagramTab() {
               </button>
               {/* Round seams */}
               <CircleBlock icon="ic-pin" label="District Offices" count={count("districtOffices")} top={150} onClick={open("districtOffices")} />
-              <CircleBlock icon="ic-org" label="DC Offices" count={count("dcOffices")} top={236} onClick={open("dcOffices")} />
+              <CircleBlock icon="ic-dome" label="Capitol" count={count("capitol")} top={236} onClick={open("capitol")} />
               <CircleBlock icon="ic-people" label="Committees" count={count("committees")} top={322} onClick={open("committees")} />
               {/* BOTTOM ROW */}
               <InstBlock icon="ic-person" label="Personnel" count={count("personnel")} onClick={open("personnel")} style={{ left: 15, top: 478, width: 186, height: 58 }} />
@@ -459,7 +494,7 @@ export default function SystemDiagramTab() {
 
       {activeBucket && BUCKETS[activeBucket] && (
         <ProblemSpaceModal
-          groups={groups}
+          groups={modalGroups}
           activeGroupId={activeBucket}
           allAreas={PROBLEM_AREAS}
           allIdeas={H2_IDEAS}

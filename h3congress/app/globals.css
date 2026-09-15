@@ -93,6 +93,7 @@ textarea:focus-visible {
   justify-content: space-between;
   gap: 24px;
   padding: 16px clamp(20px, 5vw, 64px);
+  background: rgba(6, 15, 34, 0.96);
   background: color-mix(in srgb, var(--paper) 86%, transparent);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(8px);
@@ -149,6 +150,10 @@ textarea:focus-visible {
   background: var(--ink);
   color: var(--paper);
   padding: 8px 16px;
+}
+
+.h3-menu-toggle {
+  display: none;
 }
 
 .h3-hero {
@@ -2109,6 +2114,7 @@ textarea:focus-visible {
 }
 
 .h3-simple-nav {
+  background: rgba(6, 15, 34, 0.96);
   background: color-mix(in srgb, var(--paper) 92%, transparent);
 }
 
@@ -3065,24 +3071,120 @@ textarea:focus-visible {
 }
 
 @media (max-width: 780px) {
+  html {
+    scroll-padding-top: 73px;
+  }
+
+  #h3-root [id] {
+    scroll-margin-top: 73px;
+  }
+
   .h3-nav {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    min-height: 73px;
+    padding: 10px 16px;
+    background: rgba(6, 15, 34, 0.98);
   }
 
   .h3-brand {
     align-items: center;
+    min-width: 0;
+  }
+
+  .h3-brand img {
+    height: 52px;
+  }
+
+  .h3-brand span {
+    font-size: 12px;
+    line-height: 1.25;
   }
 
   .h3-nav-links {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 10px 16px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: flex;
+    width: auto;
+    max-height: calc(100vh - 73px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow-y: auto;
+    padding: 8px 16px 16px;
+    border-bottom: 1px solid var(--line);
+    background: #060f22;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.32);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    visibility: hidden;
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease;
+  }
+
+  .h3-nav-links.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .h3-nav-links a,
+  .h3-nav-links .h3-nav-export {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 10px 8px;
+  }
+
+  .h3-menu-toggle {
+    position: relative;
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid rgba(29, 226, 255, 0.34);
+    border-radius: 2px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .h3-menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease;
+  }
+
+  .h3-menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .h3-menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .h3-menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .h3-nav-links .h3-nav-cta {
-    margin-left: auto;
+    justify-content: center;
+    margin-top: 8px;
+    margin-left: 0;
   }
 
   .h3-gap-pinned {
@@ -3730,25 +3832,35 @@ textarea:focus-visible {
   /* Contain the roaming mascot within the tab. */
   position: relative;
   overflow: hidden;
+  background-image:
+    radial-gradient(circle at 78% 16%, rgba(29, 226, 255, 0.1), transparent 30%),
+    radial-gradient(circle, rgba(57, 255, 142, 0.1) 0.8px, transparent 1px);
+  background-size: auto, 22px 22px;
 }
 
 .h3-modbot-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(24px, 6vw, 72px);
   width: min(100%, 900px);
   margin-inline: auto;
   padding: clamp(40px, 6vh, 72px) clamp(20px, 5vw, 64px) clamp(20px, 3vh, 32px);
 }
 
-/* Cute Modbot mascot that wanders around the page. The outer element drifts on a
-   looping path (h3bot-roam); the inner element does the gentle bob (h3bot-float)
-   so both transforms can run at once. Eyes blink, antenna pulses. It's purely
-   decorative and never blocks clicks. */
+/* The mascot is a calm identity mark beside the introduction. */
 .h3-modbot-bot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-items: center;
+  border: 1px solid rgba(29, 226, 255, 0.24);
+  border-radius: 50%;
+  background: rgba(12, 26, 52, 0.72);
+  box-shadow:
+    inset 0 0 28px rgba(29, 226, 255, 0.08),
+    0 0 32px rgba(29, 226, 255, 0.08);
   pointer-events: none;
-  animation: h3bot-roam 28s ease-in-out infinite;
 }
 
 .h3-modbot-bot-inner {
@@ -3757,8 +3869,8 @@ textarea:focus-visible {
 
 .h3-modbot-bot svg {
   display: block;
-  width: 82px;
-  height: 82px;
+  width: 76px;
+  height: 76px;
   overflow: visible;
   filter: drop-shadow(0 0 10px rgba(29, 226, 255, 0.35));
 }
@@ -3773,17 +3885,6 @@ textarea:focus-visible {
   transform-box: fill-box;
   transform-origin: center;
   animation: h3bot-pulse 1.8s ease-in-out infinite;
-}
-
-/* Wander around the tab, keeping clear of the edges. */
-@keyframes h3bot-roam {
-  0%   { transform: translate(6vw, 16vh) rotate(-4deg); }
-  16%  { transform: translate(66vw, 9vh) rotate(4deg); }
-  33%  { transform: translate(80vw, 48vh) rotate(-2deg); }
-  50%  { transform: translate(50vw, 72vh) rotate(3deg); }
-  66%  { transform: translate(14vw, 60vh) rotate(-3deg); }
-  83%  { transform: translate(30vw, 28vh) rotate(2deg); }
-  100% { transform: translate(6vw, 16vh) rotate(-4deg); }
 }
 
 @keyframes h3bot-float {
@@ -3802,9 +3903,6 @@ textarea:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .h3-modbot-bot {
-    transform: translate(6vw, 12vh);
-  }
   .h3-modbot-bot,
   .h3-modbot-bot-inner,
   .h3-modbot-bot .bot-eye,
@@ -3829,25 +3927,139 @@ textarea:focus-visible {
   max-width: none;
 }
 
-/* The chat surface is held to a centered max-width column (matching the intro)
-   rather than spanning the full page. The embed injects a shadow-DOM <section>
-   (its :host caps at 720px); the rule below lets it fill this column. */
-.h3-modbot-embed {
-  flex: 1 1 auto;
+.h3-modbot-meta {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.h3-modbot-meta li {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid rgba(57, 255, 142, 0.24);
+  color: #bfe7da;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.h3-modbot-meta li::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 8px rgba(57, 255, 142, 0.5);
+  content: "";
+}
+
+.h3-modbot-embed-shell {
+  flex: 1 1 auto;
   width: min(100%, 900px);
   margin-inline: auto;
   padding: 0 clamp(20px, 5vw, 64px) clamp(40px, 6vh, 72px);
-  /* The embed renders inside a shadow root, so only inherited custom properties
-     reach it. Its buttons use var(--accent, …); point that at a deep on-brand
-     teal (dark enough for the button's white label) instead of the site rust. */
-  --accent: #0d7d8f;
+}
+
+.h3-modbot-embed {
+  display: flex;
+  min-height: 286px;
+  padding: 1px;
+  border: 1px solid rgba(29, 226, 255, 0.24);
+  background: rgba(6, 15, 34, 0.76);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+  --arxivix-surface: #08172b;
+  --arxivix-muted-surface: #0d2138;
+  --arxivix-user-surface: #103745;
+  --arxivix-input: #061326;
+  --arxivix-text: #dff5f3;
+  --arxivix-muted-text: #8eb9bd;
+  --arxivix-border: rgba(29, 226, 255, 0.2);
+  --arxivix-accent: #1de2ff;
+  --arxivix-accent-text: #041318;
+  --arxivix-focus: #39ff8e;
+  --arxivix-font-family: var(--font-public-sans), system-ui, sans-serif;
+  --arxivix-radius: 1px;
 }
 
 .h3-modbot-embed > section {
   flex: 1 1 auto;
   width: 100%;
   max-width: none;
+}
+
+.h3-modbot-load-state {
+  display: flex;
+  min-height: 286px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(29, 226, 255, 0.24);
+  color: #9fc7cb;
+  font-size: 14px;
+  text-align: center;
+}
+
+.h3-modbot-load-state strong {
+  color: #eef7f6;
+  font-family: var(--font-newsreader), serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.h3-modbot-loader {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(29, 226, 255, 0.2);
+  border-top-color: var(--neon-cyan);
+  border-radius: 50%;
+  animation: h3-modbot-spin 800ms linear infinite;
+}
+
+@keyframes h3-modbot-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h3-modbot-loader {
+    animation: none;
+  }
+}
+
+.h3-modbot-embed-shell:not(.is-ready) .h3-modbot-embed,
+.h3-modbot-embed-shell.is-ready .h3-modbot-load-state {
+  display: none;
+}
+
+.h3-modbot-hint {
+  margin: 10px 0 0;
+  color: #739ba1;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  text-align: right;
+}
+
+@media (max-width: 620px) {
+  .h3-modbot-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .h3-modbot-bot {
+    display: none;
+  }
+
+  .h3-modbot-hint {
+    text-align: left;
+  }
 }
 
 .h3-sysdiagram-intro {

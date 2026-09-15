@@ -66,16 +66,13 @@ const BLOCK_TO_BUCKET = {
   "Support Agencies": "supportAgencies",
   "District Offices": "districtOffices",
   "Committees": "committees",
-  "Funding": "funding",
+  "Capitol": "capitol",
   "Communications": "communications",
-  // Inputs (mirrors of the above with a source-sheet spelling variant)
-  "Constiuent Engagement": "community",
   // Outputs
   "Legislation": "law",
   "Appropriations": "appropriations",
   "Confirmations": "confirmations",
   "Constituent Outcomes": "constituentOutcomes",
-  "Constiuent Outcomes": "constituentOutcomes",
   "Other Activities": "otherActivities",
   "Other Services": "otherServices",
 };

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const TABS: Array<{ href: string; label: string }> = [
   { href: "/about", label: "About" },
@@ -13,6 +14,22 @@ const TABS: Array<{ href: string; label: string }> = [
 
 export default function TabNav() {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -23,7 +40,22 @@ export default function TabNav() {
         <img src="/assets/h3-logo.png" alt="H3 Congress" />
         <span>A Three Horizons Vision for Congress</span>
       </Link>
-      <div className="h3-nav-links h3-tab-links">
+      <button
+        type="button"
+        className={`h3-menu-toggle${menuOpen ? " is-open" : ""}`}
+        aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <div
+        id="primary-navigation"
+        className={`h3-nav-links h3-tab-links${menuOpen ? " is-open" : ""}`}
+      >
         {TABS.map((tab) => (
           <Link
             key={tab.href}

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { horizonChip } from "../../data/horizons";
 import type { H2Idea, ProblemArea } from "../../data/problemSpace";
+import { IdeaList } from "./IdeaList";
 
 // One H1 status-quo → H3 vision pair, expandable to reveal the H2−/H2+ idea
 // ladder mapped to it. Shared verbatim by the Domains tab and the System Diagram
@@ -86,32 +86,7 @@ export function HorizonPairFrame({
       {open && (
         <div className="h3-domain-frame-list">
           {hasIdeas ? (
-            <ul className="h3-domain-list">
-              {ideas.map((item) => {
-                const horizon = horizonChip(item.horizonKey);
-                return (
-                  <li key={item.id}>
-                    <button
-                      className="h3-domain-list-item"
-                      onClick={() => onOpenIdea(item)}
-                      type="button"
-                    >
-                      <span className={`h3-domain-horizon ${horizon.className}`}>
-                        {horizon.label}
-                      </span>
-                      <span className="h3-domain-list-text">
-                        <span className="h3-domain-list-title">
-                          {item.solutionStatement}
-                        </span>
-                      </span>
-                      <span className="h3-domain-list-arrow" aria-hidden="true">
-                        →
-                      </span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+            <IdeaList ideas={ideas} onOpenIdea={onOpenIdea} />
           ) : (
             <p className="h3-domain-frame-empty">
               No H2 ideas.{" "}

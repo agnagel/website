@@ -85,7 +85,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2016,
     "h1Statement": "Congress underinvests in its people",
     "h1Description": "Onboarding, mentorship, and training vary office by office with no institutional floor, so a staffer's grasp of procedure, policy, and oversight depends on where they landed rather than any deliberate investment.",
-    "h3Time": 2030,
+    "h3Time": 2031,
     "h3Statement": "Congress deliberately builds its workforce's expertise",
     "h3Description": "Structured onboarding, mentorship, and institution-wide HR standards give every staffer the same baseline knowledge regardless of which office hires them."
   },
@@ -100,7 +100,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2017,
     "h1Statement": "Congress has difficulty retaining talent",
     "h1Description": "Staff leave for lobbying firms and agencies as their expertise matures, shifting the knowledge advantage to the very interests Congress is meant to scrutinize. A legislature that cannot think independently cannot govern independently.",
-    "h3Time": 2031,
+    "h3Time": 2035,
     "h3Statement": "Congress retains institutional knowledge",
     "h3Description": "Competitive pay, benefits, and career paths that let people build a life on the Hill turn a two-year stop into a career, keeping expertise in-house and preserving Congress's ability to execute effectively."
   },
@@ -131,7 +131,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2023,
     "h1Statement": "Support agencies cannot meet the demands of members and staff",
     "h1Description": "Requests to CRS, GAO, and Legislative Counsel arrive faster than they can be filled, and requesters have little visibility into how work is prioritized or where their request sits. Products often land long after the decision they were meant to inform.",
-    "h3Time": 2032,
+    "h3Time": 2034,
     "h3Statement": "Institutional knowledge is queryable on demand",
     "h3Description": "Support agency analysis is held in structured, queryable form that a staffer can search from a phone, so routine questions resolve immediately and analysts spend their time on work only they can do. Intake screening routes the rest to the right agency at the right depth."
   },
@@ -177,7 +177,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2022,
     "h1Statement": "Public input into Congress is low quality",
     "h1Description": "Participation mostly diffuses tension rather than informing lawmaking. Offices lack the capacity to process input at scale, and deep distrust of representation means what does arrive rarely carries usable signal.",
-    "h3Time": 2035,
+    "h3Time": 2036,
     "h3Statement": "Public input is structured signal that shapes legislation",
     "h3Description": "Deliberation at scale produces clear, weighted signal about what constituents want and which tradeoffs they will accept. Commitments made in public are tracked over time, and a member can see how input moved a bill."
   },
@@ -193,7 +193,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2023,
     "h1Statement": "Constituent management systems are outdated and hold offices' data captive",
     "h1Description": "Offices run casework and constituent mail on a handful of approved vendor systems that store the office's history in proprietary formats, so changing tools means losing that history. Answering a question across offices means asking each one by hand.",
-    "h3Time": 2030,
+    "h3Time": 2029,
     "h3Statement": "Offices own their constituent data and choose the tools that sit on top of it",
     "h3Description": "Constituent records live in a shared, standards-based layer the institution owns, with vendors competing on the functions built above it. An office can switch tools without losing what it knows. Data can also aggregate across offices."
   },
@@ -210,7 +210,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2015,
     "h1Statement": "Congressional offices do not track stakeholder engagement",
     "h1Description": "Meetings with advocates, industry, and local organizations live in individual staffers' notes and calendars, so an office's knowledge of who wants what leaves when that staffer does. Offices cannot easily see who in the district a pending bill would affect.",
-    "h3Time": 2032,
+    "h3Time": 2030,
     "h3Statement": "Offices hold a durable record of who they hear from and what is at stake in the district",
     "h3Description": "Stakeholder contact and district impact are captured as structured data tied to bills and issues, so any staffer can see the history behind a position and members know who a vote reaches at home before they cast it."
   },
@@ -226,7 +226,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2026,
     "h1Statement": "There is no unified system for making funding requests to offices",
     "h1Description": "The House and Senate run separate request processes with separate forms and separate vetting, so committees spend the front of every cycle matching requests submitted to multiple offices to avoid funding the same project twice. Nothing routes a request to GAO or OMB before markup.",
-    "h3Time": 2030,
+    "h3Time": 2031,
     "h3Statement": "One pipeline carries a funding request from member to committee to oversight",
     "h3Description": "Every request enters through a single portal in a common format, is checked automatically for duplication, eligibility, and conflicts across both chambers and the executive branch, and carries that record forward, so oversight begins at the request rather than years after the money is spent."
   },
@@ -242,7 +242,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2025,
     "h1Statement": "Caseworkers are increasingly overloaded with requests",
     "h1Description": "Casework volume has grown many times over as constituents turn to Congress to reach agencies that have become slower or harder to reach, and much of what arrives is a request for publicly available information. Offices work hundreds of near-identical cases by hand in systems that cannot see each other.",
-    "h3Time": 2031,
+    "h3Time": 2030,
     "h3Statement": "Constituents' issues are addressed quickly and transparently",
     "h3Description": "Routine inquiries are triaged and answered at the front door, patterns across offices are visible in aggregate, and constituents can check the status of their own case without calling to ask. Caseworkers spend their time on the cases that need a human advocate."
   },
@@ -258,7 +258,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2024,
     "h1Statement": "Members are not incentivized to care about institutional power",
     "h1Description": "A member's standing depends on their party and the White House rather than on the strength of the branch they serve in, so ceding authority to the executive and failing to invest in the institution are considered politically safest.",
-    "h3Time": 2036,
+    "h3Time": 2042,
     "h3Statement": "Members have reason to defend the power of their own branch",
     "h3Description": "Congress exercises its authority routinely enough that giving it away is visible and costly, and members build careers on what they can accomplish through the institution rather than on their proximity to the executive."
   },
@@ -274,7 +274,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2019,
     "h1Statement": "Members are not incentivized to care about effective policymaking",
     "h1Description": "Most substantive policy moves on a few must-pass vehicles, so the rest of legislating is partisan position-taking, and the years between enactment and implementation mean credit rarely returns to whoever wrote the law. Nothing in the job rewards finding out whether a policy worked.",
-    "h3Time": 2034,
+    "h3Time": 2041,
     "h3Statement": "Legislating is rewarded on whether it works",
     "h3Description": "More bills move on their own rather than riding a single annual vehicle, results come back to the members who wrote them, and following a law into implementation is a normal part of the job rather than an optional interest."
   },
@@ -290,7 +290,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2018,
     "h1Statement": "Members' schedules are unpredictable and poorly used",
     "h1Description": "The annual calendar is set late and changes often, and committees schedule against each other with no binding way to deconflict, so members move between competing obligations rather than working through any of them. Planning a legislative strategy, or a life, around it is difficult.",
-    "h3Time": 2029,
+    "h3Time": 2030,
     "h3Statement": "Members' time is scheduled deliberately and predictably",
     "h3Description": "A stable calendar published well in advance, with block scheduling and enforced committee deconfliction, lets members be in one place doing one thing at a time and lets staff build legislative work around a known rhythm."
   },
@@ -306,7 +306,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2017,
     "h1Statement": "Floor time is shrinking and poorly used",
     "h1Description": "The chambers hold fewer legislative days than a generation ago, and much of that floor time goes to suspension bills and messaging votes whose outcomes are settled in advance, while real amendments and negotiation happen in leadership offices.",
-    "h3Time": 2033,
+    "h3Time": 2031,
     "h3Statement": "The floor is where legislation is debated, amended, and decided",
     "h3Description": "More session days go to bills that can be amended and voted on in the open, with predictable paths to the floor that do not depend entirely on leadership discretion, so a bill's fate is settled by votes rather than by scheduling."
   },
@@ -321,7 +321,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2016,
     "h1Statement": "Tech approval and procurement pipelines are clogged and fragmented",
     "h1Description": "Offices wait months for tool approvals, no channel aggregates demand across offices, and the House and Senate run separate, inconsistent vendor processes, so every office starts the same review from zero.",
-    "h3Time": 2035,
+    "h3Time": 2032,
     "h3Statement": "Congress acquires technology once, for the whole institution, at the speed of need",
     "h3Description": "A single security review is binding on both chambers, aggregated demand from offices triggers funded procurement automatically, and low-risk tools reach staff in days rather than quarters."
   },
@@ -337,7 +337,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2023,
     "h1Statement": "Congress lacks permanent in-house tech policy expertise",
     "h1Description": "The expertise Congress relies on is either scaled for an earlier era or borrowed temporarily from outside through fellows, detailees, and philanthropy, leaving no standing technical capacity the institution itself owns.",
-    "h3Time": 2030,
+    "h3Time": 2034,
     "h3Statement": "Congress owns standing, nonpartisan technical expertise",
     "h3Description": "Permanent technology assessment capacity sits inside the legislative branch, with career paths and pay that make it a real job rather than a fellowship year, so committees can get fast, credible technical answers without borrowing them."
   },
@@ -347,12 +347,13 @@ export const PROBLEM_AREAS: ProblemArea[] = [
       "information"
     ],
     "buckets": [
-      "technology"
+      "technology",
+      "otherServices"
     ],
     "h1Time": 2022,
     "h1Statement": "Congress has little shared data or analytical infrastructure",
     "h1Description": "Common publishing standards exist for bill text, but analysis is built one committee and one contract at a time with no durable plumbing underneath, so evidence rarely reaches lawmaking in usable form and nothing built for one office carries over to the next.",
-    "h3Time": 2030,
+    "h3Time": 2031,
     "h3Statement": "Shared legislative data infrastructure the whole institution builds on",
     "h3Description": "Common data standards and durable, owned plumbing connect committees, offices, and support agencies. Analysis built once is reusable everywhere, and new tools start from infrastructure instead of from scratch."
   },
@@ -369,7 +370,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2018,
     "h1Statement": "No dedicated digital service serves all of Congress",
     "h1Description": "The House has a small digital service, the Senate has no equivalent, and the two chambers run separate infrastructure, vendor reviews, and systems for the same functions. Delivery capacity depends on a handful of people, and what is built for one chamber cannot be reused in the other.",
-    "h3Time": 2035,
+    "h3Time": 2037,
     "h3Statement": "A permanent technical corps sits inside Congress",
     "h3Description": "Standing in-house technical expertise across offices and committees, with career paths, pay scales, and hiring authorities that make technical work a normal congressional career rather than a borrowed exception."
   },
@@ -385,7 +386,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2019,
     "h1Statement": "The Senate cannot act on measures that hold majority support",
     "h1Description": "Ending debate on legislation takes sixty votes, so the chamber legislates through a narrow reconciliation path or not at all, and bills with broad bipartisan cosponsorship never receive a vote. Objecting costs a senator nothing and requires nothing on the record.",
-    "h3Time": 2036,
+    "h3Time": 2035,
     "h3Statement": "The Senate can act on measures that hold majority support",
     "h3Description": "Debate rules require senators to hold the floor to block a bill rather than to signal an objection, making obstruction visible and costly, so legislation with real support gets a vote instead of dying in the queue."
   },
@@ -400,7 +401,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2016,
     "h1Statement": "District offices are underserved by congressional infrastructure",
     "h1Description": "District staff carry most casework and constituent contact but sit at the end of systems, training, and support designed around Washington offices. What they learn about how policy is landing rarely reaches legislative staff.",
-    "h3Time": 2030,
+    "h3Time": 2032,
     "h3Statement": "District offices are fully supported members of the congressional workforce",
     "h3Description": "District staff get the same tools, training, and support as Washington staff, and what they hear from constituents feeds directly into the office's legislative and oversight work."
   },
@@ -416,7 +417,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2017,
     "h1Statement": "Committees are steadily losing power to leadership",
     "h1Description": "Agenda-setting, bill text, and negotiation have moved into leadership offices, leaving committees to hold hearings on bills they will not write. Chairs and their staff hold the subject matter expertise but decreasing control over what reaches the floor.",
-    "h3Time": 2034,
+    "h3Time": 2040,
     "h3Statement": "Committees are where legislation is written and negotiated",
     "h3Description": "Committees control their own agendas, are staffed and resourced to do the work, and report bills that leadership schedules rather than rewrites, making subject matter expertise the basis of legislative power again."
   },
@@ -431,7 +432,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2022,
     "h1Statement": "Pervasive risk aversion blocks experimentation",
     "h1Description": "The default institutional answer is no. Staff are penalized for trying new tools, first movers absorb the social and political risk, and innovation work sits under five or six layers of approval, so a small change takes months instead of weeks.",
-    "h3Time": 2030,
+    "h3Time": 2032,
     "h3Statement": "Experimentation is a normal, protected part of how the institution works",
     "h3Description": "Trying a new tool is unremarkable. Staff have standing authority to test low-risk technology, failure is treated as information rather than liability, and the path from a working prototype to something every office can use is measured in weeks."
   },
@@ -448,7 +449,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2023,
     "h1Statement": "Bill drafting and the US Code pipeline are archaic and opaque",
     "h1Description": "Staff cannot easily see how bill text modifies the US Code. The handoff among Legislative Counsel, the floor, and GPO is manual and error-prone, and no version control sits under the statute the process produces.",
-    "h3Time": 2033,
+    "h3Time": 2039,
     "h3Statement": "Statute is drafted, reviewed, and maintained under version control",
     "h3Description": "Drafters see a live diff of how a bill changes the US Code, the chain of custody from draft to enacted law is automated and auditable, and any staffer can trace a provision's history in seconds."
   },
@@ -463,7 +464,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2020,
     "h1Statement": "Government is funded by crisis rather than by process",
     "h1Description": "Appropriations bills almost never pass on time, so agencies run on continuing resolutions that carry forward last year's decisions, and the threat of a lapse becomes the negotiating instrument. What should be twelve deliberate decisions arrives as a year-end package or a full-year CR written under deadline.",
-    "h3Time": 2033,
+    "h3Time": 2037,
     "h3Statement": "Government is funded on time, every year",
     "h3Description": "The twelve bills move on a schedule the chambers can actually hold, with deadlines enforced by process rather than by shutdown risk, so agencies plan against real budgets and Congress makes funding choices deliberately."
   },
@@ -479,7 +480,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2021,
     "h1Statement": "Funding cannot be traced from what Congress approved to what was actually spent",
     "h1Description": "Committee reports, allocation tables, and project lists are published as PDFs and screenshots rather than data, and the House, Senate, and CBO run separate systems whose numbers must be reconciled by hand at every stage. Once money is enacted, connecting it to actual spending is manual work in an entirely different set of systems.",
-    "h3Time": 2032,
+    "h3Time": 2038,
     "h3Statement": "Machine readable appropriations data traceable from source to output",
     "h3Description": "Appropriations move as structured data through one shared system used across both chambers and CBO and published openly, so a dollar can be followed from request to enacted line to outlay without anyone rekeying a number."
   },
@@ -495,7 +496,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2022,
     "h1Statement": "The confirmation process crowds out the Senate's legislative work",
     "h1Description": "An administration opens with well over a thousand positions requiring Senate action. Batch consideration now clears sub-Cabinet nominees faster, but it concentrates the decision in the majority leader's hands, and the Senate still spends floor time on nominations that could go to legislating.",
-    "h3Time": 2031,
+    "h3Time": 2034,
     "h3Statement": "The Senate's confirmation attention goes to the positions that warrant it",
     "h3Description": "Routine positions clear through expedited processes and individual consideration is reserved for senior and lifetime appointments, so agencies are led by confirmed officials early and floor time returns to legislating."
   },
@@ -510,7 +511,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2023,
     "h1Statement": "Congress learns what agencies did long after they did it",
     "h1Description": "Oversight runs on hearings and document requests that arrive well after decisions are made, while the executive branch holds better data, faster procurement, and more technical capacity than the committees reviewing it. Routine staff-level contact between committees and agencies is thin, and formal channels default to no.",
-    "h3Time": 2038,
+    "h3Time": 2040,
     "h3Statement": "Feedback from implementation reaches Congress continuously",
     "h3Description": "Committees receive structured, ongoing information from agency implementation rather than episodic document dumps, with working staff-level channels and shared data that let Congress see problems as they develop and act while it still matters."
   },
@@ -526,7 +527,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2025,
     "h1Statement": "Congress has limited mechanisms to understand specific policy impacts on constituents",
     "h1Description": "No standing function tracks implementation, maps how a regulatory regime actually operates, or feeds what is learned back into legislating, so oversight lags the systems it governs by years.",
-    "h3Time": 2031,
+    "h3Time": 2035,
     "h3Statement": "Continuous “is this law working?” loops",
     "h3Description": "Learning whether a law works is a standing function of the branch. Implementation is tracked as a matter of course, findings return to the committees that wrote the law, and Congress can adapt statute continuously without institutional crisis."
   },
@@ -544,7 +545,7 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     "h1Time": 2024,
     "h1Statement": "Much of the public record of Congress is difficult to use",
     "h1Description": "Bill text and roll call votes are well structured and available through Congress.gov, but hearings, committee reports, amendments, and supporting documents are scattered across separate systems as PDFs and scanned images, most without an API. Whether a record is usable depends on which part of the institution produced it.",
-    "h3Time": 2031,
+    "h3Time": 2029,
     "h3Statement": "Congressional records and documents are easily accessible to the public",
     "h3Description": "Everything Congress produces is published as structured data through a common interface as soon as it exists, searchable across both chambers and across years by researchers, journalists, staff, and AI agents."
   },
@@ -560,10 +561,145 @@ export const PROBLEM_AREAS: ProblemArea[] = [
     ],
     "h1Time": 2015,
     "h1Statement": "Committee jurisdictions are outdated and misaligned across chambers and agencies",
-    "h1Description": "House jurisdictions run on Rule X plus a layer of precedent and inter-committee agreements, last comprehensively realigned in the 1970s with a narrower round of changes in 1995. The Senate's Rule XXV map was drawn separately and does not parallel it. Issues that cut across agencies, from homeland security to artificial intelligence, are split among panels that match neither each other nor the executive branch they oversee, so a cross-agency bill needs multiple referrals in each chamber and faces a different set of committees on each side of the Capitol.",
-    "h3Time": null,
+    "h1Description": "House jurisdictions run on Rule X plus layers of precedent and inter-committee agreement, last realigned comprehensively in the 1970s, and the Senate's Rule XXV map does not parallel it. Issues cutting across agencies, from homeland security to artificial intelligence, are split among panels matching neither each other nor the executive branch they oversee, so a cross-agency bill needs multiple referrals and faces different committees in each chamber.",
+    "h3Time": 2041,
     "h3Statement": "Jurisdictions match the problems Congress legislates on",
     "h3Description": "Committee jurisdictions are drawn around how government actually works and reviewed on a set cadence rather than left to accumulate through precedent. The two chambers' maps correspond closely enough that a bill meets a comparable set of committees in each, and a measure spanning several agencies has one committee accountable for it rather than five with partial claims."
+  },
+  {
+    "id": "33",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "members",
+      "elections"
+    ],
+    "h1Time": 2026,
+    "h1Statement": "Congress has no structural mechanism for member turnover or tenure",
+    "h1Description": "A member can serve for as long as they continue to win reelection, with no institutional limit on how many terms a member may hold and no structured way to weigh continued capacity to serve, so turnover in Congress depends entirely on individual campaigns rather than institutional design.",
+    "h3Time": 2040,
+    "h3Statement": "Congress has structural mechanisms shaping member turnover and capacity to serve",
+    "h3Description": "Institutional structure, not the reelection cycle alone, shapes how long members serve, giving the body a designed process for renewal and confidence that those serving remain able to do the job."
+  },
+  {
+    "id": "34",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "members"
+    ],
+    "h1Time": 2021,
+    "h1Statement": "Working as an elected official means putting you and your family's safety at risk",
+    "h1Description": "Responsibility for protecting members, staff, and the Capitol complex is split across offices with overlapping jurisdiction, and the Capitol Police Board provides limited independent accountability, leaving safety dependent on which office happens to own a given gap.",
+    "h3Time": 2038,
+    "h3Statement": "One accountable office keeps Congress safe",
+    "h3Description": "A modern, unified security structure with clear ownership and independent oversight protects members, staff, and visitors, so safety does not depend on personal vigilance or which office happens to be responsible."
+  },
+  {
+    "id": "35",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "capitol",
+      "community",
+      "supportAgencies"
+    ],
+    "h1Time": 2020,
+    "h1Statement": "The Capitol does not work for everyone who comes",
+    "h1Description": "The complex spans multiple buildings with inconsistent signage, no single inventory of available space, and no advance notice of construction, so members, staff, and visitors lose time finding rooms, hearings, and each other. Screening, tours, and accessibility are handled building by building, and what someone encounters depends on which door they came through and who is expecting them.",
+    "h3Time": 2034,
+    "h3Statement": "The Capitol is welcoming and navigable for everyone who comes",
+    "h3Description": "Members, staff, and visitors can find rooms, hearings, and each other, and anyone can plan a visit and move through the complex whatever their mobility, hearing, vision, or language. Space, signage, construction notice, and access are managed as one system rather than building by building, so the place reads as the public's rather than as one that runs on insider knowledge."
+  },
+  {
+    "id": "36",
+    "domains": [
+      "capacity",
+      "oversight"
+    ],
+    "buckets": [
+      "law",
+      "structure"
+    ],
+    "h1Time": 2023,
+    "h1Statement": "Congress hands its lawmaking power to the executive",
+    "h1Description": "Statutes are written broadly enough that the substantive choice belongs to whoever administers them, and authority granted for a particular moment stays on the books for decades. When a president stretches that authority, the correction arrives from a court rather than from the branch that granted it.",
+    "h3Time": 2041,
+    "h3Statement": "Congress makes the decisions the Constitution gives it to make",
+    "h3Description": "The contested questions are settled on the floor of the House and Senate, where members representing every part of the country have to reach agreement, so the law carries more than the preferences of a single officeholder. Congress grants authority deliberately, on terms it sets, and takes it back when the reason for granting it has passed."
+  },
+  {
+    "id": "37",
+    "domains": [
+      "staffing",
+      "capacity"
+    ],
+    "buckets": [
+      "personnel",
+      "structure",
+      "house"
+    ],
+    "h1Time": 2022,
+    "h1Statement": "Congress is sized for a smaller country",
+    "h1Description": "The number of members, the staff each office may hire, and the budget of the branch as a whole were set when the country was a fraction of its present size and the government Congress oversees was a fraction of its present complexity. The work does not shrink to fit, so what cannot be absorbed is triaged away or handed to someone else.",
+    "h3Time": 2042,
+    "h3Statement": "Congress is sized to the job the country needs it to do",
+    "h3Description": "The first branch carries enough members, staff, and resources to legislate on the country's hardest problems and to follow the money it appropriates, rather than choosing between them. Capacity grows with the population Congress represents and the government it oversees, so scale is a deliberate decision rather than an inheritance."
+  },
+  {
+    "id": "38",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "structure",
+      "house",
+      "senate"
+    ],
+    "h1Time": 2017,
+    "h1Statement": "Congress has no tested way to keep functioning after a catastrophe",
+    "h1Description": "There is no proven mechanism for a quorum that cannot physically convene, no procedure for declaring members missing or incapacitated, and no state can run special elections fast enough to refill a decimated chamber. What plans exist have never been exercised, and the questions get asked only after something has already happened.",
+    "h3Time": 2035,
+    "h3Statement": "Congress can convene, decide, and be reconstituted under any circumstances",
+    "h3Description": "Whatever the emergency, the first branch can assemble, establish a quorum, debate, and vote, and districts that lose their representation get it back in days rather than months. The rules for doing so are written down, rehearsed, and understood before they are needed, so continuity does not depend on improvisation at the worst possible moment."
+  },
+  {
+    "id": "39",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "house",
+      "senate",
+      "districtOffices",
+      "processes"
+    ],
+    "h1Time": 2016,
+    "h1Statement": "Offices aren't resilient to emergencies and disruptions",
+    "h1Description": "Whether an office can keep serving constituents through a shutdown, a security incident, or a sudden move to remote work depends on what that office happened to prepare in advance. Continuity plans, equipment readiness, and crisis communications vary office by office, with no institutional floor and no shared guidance to fall back on.",
+    "h3Time": 2030,
+    "h3Statement": "Every office keeps serving its district through any emergency or disruption",
+    "h3Description": "Staff know the plan before they need it, the equipment works when they are sent home, and constituents get consistent information about what their office can still do for them. Continuity is a standard the institution sets and supports rather than something each office reinvents under pressure."
+  },
+  {
+    "id": "40",
+    "domains": [
+      "capacity",
+      "oversight"
+    ],
+    "buckets": [
+      "technology",
+      "communications"
+    ],
+    "h1Time": 2024,
+    "h1Statement": "Congress cannot keep its own communications secure",
+    "h1Description": "Staff and members conduct sensitive legislative business over commercial email, consumer messaging apps, and vendor-run conferencing tools that were never built to protect legislative privilege, and classified traffic often routes through channels the executive branch operates. The confidentiality of Congress's internal deliberations depends on platforms and networks the institution does not control and cannot fully secure.",
+    "h3Time": 2031,
+    "h3Statement": "Congress controls and encrypts its own communications, safeguarding legislative privilege",
+    "h3Description": "Staff and members communicate over end-to-end encrypted channels the institution owns or governs by contract, so legislative deliberation, oversight work, and member-to-staff traffic stay private by default. Legislative privilege is protected in practice by infrastructure rather than resting on vendor settings or the goodwill of the branches Congress is meant to check."
   }
 ];
 
@@ -577,10 +713,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "senate"
     ],
-    "additionalTags": "Professional Development, Interns",
+    "additionalTags": "Professional Development, Interns, SAA",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "1",
       "2"
@@ -596,9 +732,6 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "appropriations.senate.gov",
         "url": "https://www.appropriations.senate.gov/imo/media/doc/download_testimony78.pdf"
-      },
-      {
-        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -624,10 +757,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "personnel"
     ],
-    "additionalTags": "CAO, Organization",
+    "additionalTags": "CAO, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2031,
     "h1h3Ids": [
       "1",
       "3"
@@ -635,37 +768,29 @@ export const H2_IDEAS: H2Idea[] = [
     "problemStatement": "Congressional pay is set office by office with no underlying structure",
     "problemDescription": "Each office sets salaries from its own allowance, so pay for the same job varies widely, there is no automatic adjustment for inflation, and a raise depends on a staffer's chief of staff rather than on a schedule. Junior salaries cannot compete with those offered by agencies and firms, and mid-career staff leave before their expertise matures.",
     "solutionStatement": "Put congressional staff on a structured pay scale",
-    "solutionDescription": "Move staff onto a GS-style scale with defined bands by role and seniority and automatic cost-of-living adjustments, raising junior salaries meaningfully while leaving offices discretion within each band, so pay becomes a property of the job rather than a negotiation each staffer runs alone. Proposals converge on the scale but differ on mechanism: apply the GS scale to committee staff or to all staff; make the existing link between the House staff pay cap and Executive Schedule Level II automatic rather than requiring a fresh Speaker's Pay Order each Congress; raise or remove the personal office staff cap, unchanged since the late 1970s while average district population rose from 519,235 to 761,169; sever the statutory link between the staff pay cap and Member salary so it can be set independently; and direct the CAO to build an inflation-indexing mechanism applied annually to the office allowance formula.",
+    "solutionDescription": "Move staff onto a GS-style scale with bands by role and seniority and automatic cost-of-living adjustments, so pay is a property of the job rather than a negotiation each staffer runs alone, with offices keeping discretion within each band. Proposals differ on mechanism: apply the scale to committee staff or to all staff; make the pay cap's link to Executive Schedule Level II automatic rather than requiring a Speaker's Pay Order each Congress; raise or remove the personal office staff cap, unchanged since the late 1970s while average district population rose from 519,235 to 761,169; sever the cap's link to Member salary; and have the CAO index the allowance formula to inflation.",
     "horizonJustification": "Automatic adjustment removes the annual political decision that keeps pay flat, so the fix persists through changes in leadership and budget climate rather than eroding between one-time increases.",
     "pathToH2plus": "",
     "currentStatus": "House set a $45,000 minimum staff salary in 2022; no scale exists in either chamber\nBPC tracker (Apr 2026), Rec 67: Closed-Implemented. 117th Congress: The House's HR Hub includes job profiles with salary ranges for staff to consult.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 20 (tracker Rec 67): Closed-Implemented. 117th Congress: The House's HR Hub includes job profiles with salary ranges for staff to consult.",
     "sources": [
       {
         "title": "newamerica.org",
-        "url": "https://www.newamerica.org/political-reform/reports/congressional-brain-drain/compensating-congressional-staff-a-human-capital-analysis/ American Governance Institute (Aug 2026) Brennan Center (June 2026) Recoding America ModSub Submissions (2026) Rebuild Congress Initiative (Aug 2026) Working Group Reform Options Package (April 2026)"
+        "url": "https://www.newamerica.org/political-reform/reports/congressional-brain-drain/compensating-congressional-staff-a-human-capital-analysis/"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 20"
-      },
-      {
-        "title": "23"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "Interview with nonprofit staff"
+      },
+      {
+        "title": "issueone.org",
+        "url": "https://issueone.org/wp-content/uploads/2022/01/Fair-Pay-Why-Congress-Needs-to-Invest-in-Junior-Staff.pdf"
       }
     ],
     "learnMore": [
@@ -680,6 +805,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/files/2024-08-27_R44323_80d27b37063a501c1bc8cce913e80a1a97621e26.pdf"
+      },
+      {
+        "title": "democracyjournal.org",
+        "url": "https://democracyjournal.org/magazine/74/how-modernizing-congress-would-heal-dysfunction/"
       }
     ]
   },
@@ -694,7 +823,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2023,
     "h1h3Ids": [
       "1",
       "3"
@@ -709,27 +838,19 @@ export const H2_IDEAS: H2Idea[] = [
     "sources": [
       {
         "title": "issueone.org",
-        "url": "https://issueone.org/articles/why-congress-needs-to-invest-in-junior-staff/ American Governance Institute (Aug 2026) Recoding America ModSub Submissions (2026) Working Group Reform Options Package (April 2026)"
+        "url": "https://issueone.org/articles/why-congress-needs-to-invest-in-junior-staff/"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 19"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "issueone.org",
+        "url": "https://issueone.org/wp-content/uploads/2022/01/Fair-Pay-Why-Congress-Needs-to-Invest-in-Junior-Staff.pdf"
       }
     ],
     "learnMore": [
@@ -754,7 +875,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Professional Development, In-House Development, Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2036,
     "h1h3Ids": [
       "18",
       "2"
@@ -764,15 +885,12 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Technology fellowships and agency detailees",
     "solutionDescription": "Continue placing fellows and detailees in offices and committees to fill immediate technical gaps, with the fellow choosing their placement and the host office bearing no salary cost, and build a conversion path on top of that: extend the Intern Resource Office's mandate to cover fellows, create a fellow registry using a bona fide agreement as the registration instrument on the model of Senate Rule 41, give departing fellows access to internal job postings and the resume bank, give hiring offices conversion guidance covering budget and slot timing, and report annual conversion rates as the primary metric. The benchmark to beat is roughly 130 technologists placed over a decade, of whom 30 converted to long-term staff.",
     "horizonJustification": "Each placement helps one office and quietly reduces the pressure to fund permanent technical staff, so the institution stays dependent on outside money for a capability it should own.",
-    "pathToH2plus": "H2+ #121. The fellowship program's conversion tracking, hiring guidance, and job-posting access build a demonstrated pipeline of technologists willing to work on the Hill, giving committees the recruiting evidence and workflow needed to justify permanent, committee-housed technical positions.",
+    "pathToH2plus": "H2+ #120. The fellowship program's conversion tracking, hiring guidance, and job-posting access build a demonstrated pipeline of technologists willing to work on the Hill, giving committees the recruiting evidence and workflow needed to justify permanent, committee-housed technical positions.",
     "currentStatus": "TechCongress and agency details operate today; no conversion path to permanent roles",
     "sources": [
       {
         "title": "techcongress.io",
         "url": "https://www.techcongress.io/"
-      },
-      {
-        "title": "Recoding America ModSub Submissions (2026)"
       }
     ],
     "learnMore": [
@@ -792,40 +910,41 @@ export const H2_IDEAS: H2Idea[] = [
       "staffing"
     ],
     "buckets": [
-      "personnel"
+      "personnel",
+      "senate"
     ],
-    "additionalTags": "Professional Development, Orientation",
+    "additionalTags": "Professional Development, Orientation, SAA, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2029,
     "h1h3Ids": [
       "2"
     ],
-    "problemStatement": "Staff development depends on which office hires you",
-    "problemDescription": "Institution-wide training exists but participation is optional and uneven, so onboarding, mentorship, and procedural knowledge vary sharply across offices and committees.",
-    "solutionStatement": "Institution-wide onboarding and professional development standards",
-    "solutionDescription": "Establish a baseline curriculum every new staffer completes, structured mentorship across offices, and HR standards that apply chamber-wide, delivered through the existing staff academies and expanded to the Senate. Two proposals arrive at this independently, both framing better onboarding and ongoing training as a precondition for member and staff effectiveness rather than as a benefit.",
-    "horizonJustification": "Making a floor institutional rather than optional changes what every staffer knows regardless of where they land, and the standard survives the turnover of any particular chief of staff.",
+    "problemStatement": "Senate staff development still depends on which office hires you",
+    "problemDescription": "The Senate has no equivalent to the House's institution-wide onboarding course. The Senate Sergeant at Arms' Office of Training and Development offers professional-development programming, but onboarding for new personal-office and committee staff is still set office by office, with no comprehensive, mandatory curriculum covering benefits, security, ethics, and Senate operations.",
+    "solutionStatement": "Institution-wide onboarding course for all new Senate staff",
+    "solutionDescription": "The Senate Sergeant at Arms builds and requires a comprehensive onboarding course for all new personal-office and committee staff, on the model of the House's Congressional Staff Academy course, covering benefits, security, ethics, and Senate operations regardless of which office hires them.",
+    "horizonJustification": "Making onboarding institutional rather than office-by-office changes what every new Senate staffer knows regardless of who hires them, and the standard survives the turnover of any particular chief of staff, the same shift the House made in 2022.",
     "pathToH2plus": "",
-    "currentStatus": "Congressional Staff Academy exists in the House; participation is discretionary\nBPC tracker (Apr 2026), Rec 64: Closed-Implemented. 117th Congress: The Congressional Staff Academy began offering all-day, comprehensive onboarding training to all new staff in February 2022.",
+    "currentStatus": "The Senate Sergeant at Arms' Office of Training and Development offers professional development programming and is currently hiring to build out training capacity, but no comprehensive, mandatory onboarding course for all new Senate staff exists yet.",
     "sources": [
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
       {
         "title": "popvox.org",
         "url": "https://www.popvox.org/futureproofing-congress-accomplishments/standardized-onboarding"
       },
       {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/CRPT-116hrpt407/html/CRPT-116hrpt407.htm"
+        "title": "senate.gov",
+        "url": "https://www.senate.gov/employment/saa/about.htm"
       },
       {
-        "title": "rollcall.com",
-        "url": "https://rollcall.com/2025/11/19/house-quietly-built-a-training-revolution/"
+        "title": "careers.employment.senate.gov",
+        "url": "https://careers.employment.senate.gov/company/senate-sergeant-at-arms-0160"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/futureproofing"
       }
     ]
   },
@@ -840,7 +959,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Professional Development, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "2"
     ],
@@ -884,44 +1003,42 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "structure"
     ],
-    "additionalTags": "GAO, Organization, In-House Development",
+    "additionalTags": "GAO, CRS",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2030,
     "h1h3Ids": [
       "18"
     ],
     "problemStatement": "Congress has no standing nonpartisan technical assessment capacity",
     "problemDescription": "The Office of Technology Assessment, which produced independent technology assessments for Congress, was defunded in 1995, and nothing has replaced its function of giving committees credible technical analysis they did not have to borrow.",
     "solutionStatement": "Reestablish an Office of Technology Assessment",
-    "solutionDescription": "Fund a permanent nonpartisan technology assessment office serving both chambers, designed for faster turnaround than the original, with authority to convene outside expertise and report directly to committees. Proposals disagree on where the function should sit: one locates science and technology assessment in a new House office under House Administration, carried in row 86; another places it as a hub inside GAO connecting members and staff to outside experts.",
+    "solutionDescription": "Fund a permanent nonpartisan technology assessment office serving both chambers, designed for faster turnaround than the original, with authority to convene outside expertise and report directly to committees. Proposals disagree on where the function should sit: one locates science and technology assessment in a new House office under House Administration, carried in row 85; another places it as a hub inside GAO connecting members and staff to outside experts.",
     "horizonJustification": "It creates a standing institutional capability rather than a temporary one, and the absence of that capability is what keeps regenerating the problem across every new technology cycle.",
     "pathToH2plus": "",
     "currentStatus": "OTA remains authorized but unfunded; reestablishment bills have been introduced repeatedly since 2018\nBPC tracker (Apr 2026), Rec 84: Closed-Implemented. 118th Congress: FY 2022 and 2023 Legislative Branch Appropriations bills increased budgets, allowing for more investment in policy staff; need to examine the potential for GAO to expand its role.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 36 (tracker Rec 17): Closed-Not Implemented. 118th Congress: Based on staff research and feedback, including congressionally directed review by NAPA, reestablishing OTA does not have sufficient support. Alternatives, such as Recommendation 141, should be considered.",
     "sources": [
       {
         "title": "everycrsreport.com",
-        "url": "https://www.everycrsreport.com/reports/R46327.html American Governance Institute (Aug 2026) Brennan Center (June 2026)"
+        "url": "https://www.everycrsreport.com/reports/R46327.html"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 36"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "Interview with nonprofit staff"
+      },
+      {
+        "title": "Interview with academic researcher"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/2618"
       }
     ],
     "learnMore": [
@@ -944,10 +1061,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "technology"
     ],
-    "additionalTags": "Organization, Coordination, In-House Development, CAO",
+    "additionalTags": "Coordination, CAO, GPO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2034,
     "h1h3Ids": [
       "18",
       "20"
@@ -967,6 +1084,14 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "understandingcongress.org",
         "url": "https://www.understandingcongress.org/proposed-the-congressional-capacity-and-technology-office/"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
       }
     ],
     "learnMore": [
@@ -984,10 +1109,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "structure"
     ],
-    "additionalTags": "In-House Development, Operations",
+    "additionalTags": "Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2041,
     "h1h3Ids": [
       "18"
     ],
@@ -1004,7 +1129,7 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://post.parliament.uk/"
       },
       {
-        "title": "American Governance Institute (Aug 2026)"
+        "title": "Interview with academic researcher"
       }
     ],
     "learnMore": [
@@ -1015,6 +1140,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "nsf.gov",
         "url": "https://www.nsf.gov/careers/rotator-programs"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/2618"
       }
     ]
   },
@@ -1027,10 +1156,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "senate"
     ],
-    "additionalTags": "In-House Development, Organization, Coordination, CAO",
+    "additionalTags": "In-House Development, Coordination, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2033,
     "h1h3Ids": [
       "20"
     ],
@@ -1039,12 +1168,15 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Establish a Senate digital service",
     "solutionDescription": "Fund a delivery team inside the Senate with product, design, and engineering staff, working on constituent systems, committee tools, and floor operations, and structured from the start to coordinate with its House counterpart.",
     "horizonJustification": "It creates permanent delivery capacity in the chamber that has none, and gives bicameral work an actual counterparty rather than one chamber trying to build for both.",
-    "pathToH2plus": "",
+    "pathToH2plus": "H2+ #11. A working Senate delivery team is the second half of the pair that a single congressional digital service would merge, so building it is the step that makes integration possible rather than theoretical.",
     "currentStatus": "Raised by Senate and House staff in interviews; not funded",
     "sources": [
       {
         "title": "popvox.org",
         "url": "https://www.popvox.org/futureproofing-congress-accomplishments/hds"
+      },
+      {
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -1067,10 +1199,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "technology"
     ],
-    "additionalTags": "Coordination, Organization, In-House Development, Procurement",
+    "additionalTags": "Coordination, In-House Development, Procurement, GPO, AOC",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2035,
+    "year": 2039,
     "h1h3Ids": [
       "20",
       "17"
@@ -1090,6 +1222,12 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "popvox.org",
         "url": "https://www.popvox.org/blog/jclbo"
+      },
+      {
+        "title": "Interview with House staff"
+      },
+      {
+        "title": "Interview with private sector"
       }
     ],
     "learnMore": [
@@ -1108,10 +1246,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "committees"
     ],
-    "additionalTags": "Coordination, Organization, Rules",
+    "additionalTags": "Coordination, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
       "20",
       "23"
@@ -1125,7 +1263,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed by CMF and others; not introduced",
     "sources": [
       {
-        "title": "Brennan Center (June 2026)"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       },
       {
         "title": "popvox.org",
@@ -1138,6 +1277,9 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "popvox.org",
         "url": "https://www.popvox.org/blog/c-tech"
+      },
+      {
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
@@ -1159,7 +1301,7 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "technology"
     ],
-    "additionalTags": "Procurement, Operations, Data, Transparency",
+    "additionalTags": "Procurement, Operations, Data, Cybersecurity, Standardization",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -1175,23 +1317,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Recognized problem; no unified process exists\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 65 (tracker Rec 51): Closed-Implemented. 117th Congress: The House purchased and provided enterprise licenses to tools such as Microsoft Teams, WebEx, Zoom, and Office 365 during the COVID-19 pandemic.",
     "sources": [
       {
-        "title": "Recoding America ModSub Submissions (2026)"
-      },
-      {
         "title": "cha.house.gov",
         "url": "https://cha.house.gov/_cache/files/4/2/42dca19e-194b-481e-b11b-67153a8ab821/A0DC312390F4983FB50A73CB71E3E346.cha-modernization-ai-flash-report-12-20-24-v3.0.pdf"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 65"
       },
       {
         "title": "govinfo.gov",
@@ -1199,11 +1326,15 @@ export const H2_IDEAS: H2Idea[] = [
       },
       {
         "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/ https://www.popvox.org/blog/future-of-constituent-engagement-testimony"
       },
       {
         "title": "popvox.org",
-        "url": "https://www.popvox.org/blog/future-of-constituent-engagement-testimony"
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
       }
     ],
     "learnMore": [
@@ -1221,10 +1352,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "technology"
     ],
-    "additionalTags": "Procurement, Coordination, Operations",
+    "additionalTags": "Procurement, Coordination, Operations, Cybersecurity, Standardization, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "17",
       "20"
@@ -1262,7 +1393,7 @@ export const H2_IDEAS: H2Idea[] = [
       "culture",
       "technology"
     ],
-    "additionalTags": "Norms, In-House Development, Professional Development, Procurement",
+    "additionalTags": "Professional Development, Procurement, AI, GAO, Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -1278,11 +1409,15 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Not approved today; a GAO test kitchen existed but its outputs never reached the Hill\nBPC tracker (Apr 2026), Rec 21: Closed-Implemented. 119th Congress: House Digital Service has established a beta testing program (HDS advisory group) for in-house developed and approved technologies. The advisory group is made up of member offices and regularly tests platforms in development.",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026) https://www.gao.gov/blog/2019/10/29/our-innovation-lab-building-a-sandbox-for-audit-tech"
+        "title": "gao.gov",
+        "url": "https://www.gao.gov/blog/2019/10/29/our-innovation-lab-building-a-sandbox-for-audit-tech"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -1305,7 +1440,7 @@ export const H2_IDEAS: H2Idea[] = [
       "culture",
       "technology"
     ],
-    "additionalTags": "Procurement, Organization, Operations, Norms",
+    "additionalTags": "Procurement, Operations, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
     "year": 2026,
@@ -1326,24 +1461,15 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://cha.house.gov/_cache/files/4/2/42dca19e-194b-481e-b11b-67153a8ab821/A0DC312390F4983FB50A73CB71E3E346.cha-modernization-ai-flash-report-12-20-24-v3.0.pdf"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 40"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -1362,10 +1488,10 @@ export const H2_IDEAS: H2Idea[] = [
       "culture",
       "technology"
     ],
-    "additionalTags": "GAO, In-House Development, Organization, Norms",
+    "additionalTags": "GAO, In-House Development",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2035,
     "h1h3Ids": [
       "24",
       "18"
@@ -1402,10 +1528,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "technology"
     ],
-    "additionalTags": "In-House Development, Coordination, Operations",
+    "additionalTags": "Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "17",
       "20"
@@ -1415,7 +1541,7 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Congressional Hackathon",
     "solutionDescription": "Convene staff, civil society, and technologists to build prototypes against real congressional problems, showcasing what modern tools could do.",
     "horizonJustification": "It proves the possible and builds relationships, but risks being read as evidence the problem is being handled rather than that it is structural.",
-    "pathToH2plus": "H2+ #103. A hackathon produces working prototypes and relationships with outside technologists but no office empowered to adopt or maintain them; refounding the House Digital Service as an independent office with its own hiring authority gives those demos an owner that can carry them into production.",
+    "pathToH2plus": "H2+ #102. A hackathon produces working prototypes and relationships with outside technologists but no office empowered to adopt or maintain them; refounding the House Digital Service as an independent office with its own hiring authority gives those demos an owner that can carry them into production.",
     "currentStatus": "Held periodically since 2011",
     "sources": [
       {
@@ -1442,10 +1568,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "Coordination, Operations, Data, Transparency, Organization",
+    "additionalTags": "Coordination, Operations, Data, GAO, CRS",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "4"
     ],
@@ -1488,7 +1614,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "GAO, CRS, Operations, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2036,
     "h1h3Ids": [
       "5",
       "25"
@@ -1504,6 +1630,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "gao.gov",
         "url": "https://www.gao.gov/products/gao-17-767g"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
@@ -1525,11 +1655,12 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "CRS, GAO, CBO, Operations, Organization",
+    "additionalTags": "CRS, GAO, CBO, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
     "year": 2026,
     "h1h3Ids": [
+      "37",
       "5"
     ],
     "problemStatement": "Support agencies cannot meet demand",
@@ -1565,6 +1696,14 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R43397.html"
+      },
+      {
+        "title": "effectivegov.uchicago.edu",
+        "url": "https://effectivegov.uchicago.edu/primers/filibuster-reform"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
@@ -1577,10 +1716,10 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "technology"
     ],
-    "additionalTags": "GAO, CRS, CBO, Data, Transparency, In-House Development",
+    "additionalTags": "GAO, CRS, CBO, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2037,
     "h1h3Ids": [
       "5",
       "19"
@@ -1596,6 +1735,9 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "gao.gov",
         "url": "https://www.gao.gov/about/what-gao-does/recommendations"
+      },
+      {
+        "title": "Interview with GAO staff"
       }
     ],
     "learnMore": [
@@ -1613,10 +1755,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "technology"
     ],
-    "additionalTags": "GPO, Data, Transparency, Coordination, Organization",
+    "additionalTags": "GPO, Data, Coordination, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2033,
     "h1h3Ids": [
       "19"
     ],
@@ -1656,7 +1798,7 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "technology"
     ],
-    "additionalTags": "Procurement, Organization",
+    "additionalTags": "Procurement, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -1671,18 +1813,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "H2+ #23. Building one bespoke analytics tool for a single committee surfaces the data fields, identifiers, and workflow patterns that a shared data standard needs, giving the institution a concrete first case to generalize into durable cross-committee infrastructure.",
     "currentStatus": "Common practice today\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 24 (tracker Rec 71): Closed-Implemented. 117th Congress: Interns participating in the House Paid Internship Program are now eligible to be placed in ECMOs.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 24"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -1711,10 +1841,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "technology"
     ],
-    "additionalTags": "GPO, LOC, Data, Transparency, Operations",
+    "additionalTags": "GPO, LOC, Data, Transparency, Operations, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2034,
     "h1h3Ids": [
       "31"
     ],
@@ -1754,10 +1884,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "law"
     ],
-    "additionalTags": "GPO, In-House Development, Coordination",
+    "additionalTags": "GPO, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "25"
     ],
@@ -1782,26 +1912,21 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 2"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
       {
         "title": "datafoundation.org",
         "url": "https://datafoundation.org/news/blogs/335/335-Version-Control-for-Law-Tracking-Changes-in-the-US-Congress"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ]
   },
@@ -1813,10 +1938,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "law"
     ],
-    "additionalTags": "GPO, Organization, In-House Development, Operations",
+    "additionalTags": "GPO, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "25"
     ],
@@ -1835,6 +1960,9 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -1850,12 +1978,12 @@ export const H2_IDEAS: H2Idea[] = [
       "technology"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "GPO, Data, Transparency, Operations",
+    "additionalTags": "GPO, Data, Transparency, Operations, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
       "27",
       "31"
@@ -1875,6 +2003,9 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/blog/congressionally-directed-spending-fy2022-dataset/"
+      },
+      {
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -1894,12 +2025,12 @@ export const H2_IDEAS: H2Idea[] = [
       "technology"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "CBO, Coordination, Operations",
+    "additionalTags": "CBO, Coordination, Operations, Information Silos, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
       "27"
     ],
@@ -1912,7 +2043,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "No shared system; each body maintains its own",
     "sources": [
       {
-        "title": "No verifiable public source found for this claim; both CBO pages previously cited here were checked and do not support it. Treat as an internal observation pending a citation."
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -1932,12 +2063,12 @@ export const H2_IDEAS: H2Idea[] = [
       "technology"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Coordination, Operations, Time Management",
+    "additionalTags": "Coordination, Operations, CBO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2037,
     "h1h3Ids": [
       "27"
     ],
@@ -1975,12 +2106,13 @@ export const H2_IDEAS: H2Idea[] = [
       "technology"
     ],
     "buckets": [
+      "appropriations",
       "appropriationsRequests"
     ],
-    "additionalTags": "GAO, Coordination, Data, Transparency",
+    "additionalTags": "GAO, Coordination, Data, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2034,
     "h1h3Ids": [
       "11"
     ],
@@ -1993,11 +2125,11 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Chambers run separate processes; GAO reviews a sample of projects after enactment",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative (Aug 2026)"
-      },
-      {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R46722.html"
+      },
+      {
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -2017,12 +2149,13 @@ export const H2_IDEAS: H2Idea[] = [
       "technology"
     ],
     "buckets": [
+      "appropriations",
       "appropriationsRequests"
     ],
     "additionalTags": "Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "11"
     ],
@@ -2056,12 +2189,12 @@ export const H2_IDEAS: H2Idea[] = [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Rules, Time Management, Data, Transparency",
+    "additionalTags": "Rules, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2042,
     "h1h3Ids": [
       "26"
     ],
@@ -2070,15 +2203,19 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Biennial two-year appropriations cycle",
     "solutionDescription": "Move appropriations to a two-year cycle, with the off year reserved for authorization and oversight work, on the theory that halving the frequency makes the deadline achievable. The variant that has come closest pairs a biennial budget resolution with annual appropriations, the core mark of the 2018 Joint Select Committee on Budget and Appropriations Process Reform and of the Enzi-Whitehouse proposal, and restricts single-year appropriations bills in the first year of a biennium. The source catalog flags its own proposals as contradictory.",
     "horizonJustification": "Stretching the timeline gives requests more time to accumulate while parochial spending, committee turf, and election-year pressure stay as they are, and the off year gets absorbed by the same politics. It treats time pressure rather than the fragmented data, weak transparency, and incentives underneath it.",
-    "pathToH2plus": "H2+ #125. A biennial cycle alone stretches the timeline without changing who sits in the room or how decisions sequence; folding it into the broader budget resolution redesign, with fixed deadlines and reordered committee roles, addresses the turf and incentive problems the biennial fix leaves standing.",
+    "pathToH2plus": "H2+ #124. A biennial cycle alone stretches the timeline without changing who sits in the room or how decisions sequence; folding it into the broader budget resolution redesign, with fixed deadlines and reordered committee roles, addresses the turf and incentive problems the biennial fix leaves standing.",
     "currentStatus": "Proposed repeatedly since the 1980s; never enacted\nBPC tracker (Apr 2026), Rec 87: Open-Needs Attention. 117th Congress: Need statutory revisions to the Congressional Budget Act.",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative (Aug 2026) https://www.everycrsreport.com/reports/R44732.html"
-      },
-      {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with nonprofit staff"
+      },
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
       }
     ],
     "learnMore": [
@@ -2098,13 +2235,13 @@ export const H2_IDEAS: H2Idea[] = [
       "capacity"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "committees"
     ],
-    "additionalTags": "CBO, Organization, Rules",
+    "additionalTags": "CBO, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2036,
+    "year": 2040,
     "h1h3Ids": [
       "26",
       "23"
@@ -2118,7 +2255,10 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Hundreds of billions annually flow to expired authorizations; proposal raised by multiple interviewees and strongly opposed by appropriators",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative (Aug 2026)"
+        "title": "Interview with Senate staff"
+      },
+      {
+        "title": "Interview with nonprofit staff"
       }
     ],
     "learnMore": [
@@ -2138,12 +2278,12 @@ export const H2_IDEAS: H2Idea[] = [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Rules, Time Management, Operations",
+    "additionalTags": "Rules, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2042,
     "h1h3Ids": [
       "26"
     ],
@@ -2152,15 +2292,24 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Automatic continuing resolution",
     "solutionDescription": "Provide that if appropriations lapse, funding continues automatically at the prior year's level, removing the shutdown as an event. The leading vehicle is a rolling 14-day continuing resolution that restricts member travel and bars other business until appropriations finish; a related incentive device holds member salaries in escrow when a chamber has not adopted a budget resolution. The objection is that an automatic CR transfers leverage to a determined minority, and that a President could veto appropriations to hold the automatic funding in place indefinitely.",
     "horizonJustification": "It removes the crisis while freezing last year's decisions indefinitely, and it can reduce the pressure that now forces any agreement at all.",
-    "pathToH2plus": "H2+ #125. An automatic CR removes the shutdown threat that currently forces last-minute deals, taking hostage-taking off the table so the underlying budget resolution process, its deadlines, composition, and sequencing, can be renegotiated on its own merits instead of under deadline duress.",
+    "pathToH2plus": "H2+ #124. An automatic CR removes the shutdown threat that currently forces last-minute deals, taking hostage-taking off the table so the underlying budget resolution process, its deadlines, composition, and sequencing, can be renegotiated on its own merits instead of under deadline duress.",
     "currentStatus": "Introduced repeatedly; not enacted",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative (Aug 2026)"
-      },
-      {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R46595.html"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/5870"
+      },
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
+      },
+      {
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/research/elements-of-change-building-blocks-for-a-better-budget-2/"
       }
     ],
     "learnMore": [
@@ -2184,12 +2333,13 @@ export const H2_IDEAS: H2Idea[] = [
       "capacity"
     ],
     "buckets": [
-      "casework"
+      "casework",
+      "constituentOutcomes"
     ],
-    "additionalTags": "Coordination, Data, Transparency",
+    "additionalTags": "Coordination, Data, Data Privacy, Information Silos",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2030,
     "h1h3Ids": [
       "12",
       "30"
@@ -2203,11 +2353,19 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "The House has a shared database; the Senate does not; cross-office coordination runs on chat\nBPC tracker (Apr 2026), Rec 50: Closed-Resolved. 119th Congress: Implementing the full recommendation as drafted would require creating a new, secure document management system for handling constituent communications, particularly when a crisis requires staff to work remotely.",
     "sources": [
       {
-        "title": "Recoding America ModSub Submissions (2026) https://www.popvox.org/case-notes/state-of-casework"
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/case-notes/state-of-casework"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with Senate staff"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/recommendations-for-casework"
       }
     ],
     "learnMore": [
@@ -2231,12 +2389,13 @@ export const H2_IDEAS: H2Idea[] = [
       "capacity"
     ],
     "buckets": [
-      "casework"
+      "casework",
+      "constituentOutcomes"
     ],
-    "additionalTags": "Operations, In-House Development",
+    "additionalTags": "Operations, AI, Data Privacy",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "12"
     ],
@@ -2251,6 +2410,9 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "rollcall.com",
         "url": "https://rollcall.com/2026/08/31/casework-strained-breaking-point-report-says/"
+      },
+      {
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -2265,6 +2427,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "popvox.org",
         "url": "https://www.popvox.org/case-notes/set-up"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/recommendations-for-casework"
       }
     ]
   },
@@ -2275,12 +2441,13 @@ export const H2_IDEAS: H2Idea[] = [
     ],
     "buckets": [
       "casework",
-      "districtOffices"
+      "districtOffices",
+      "constituentOutcomes"
     ],
-    "additionalTags": "CAO, Organization, Professional Development, Coordination",
+    "additionalTags": "CAO, Professional Development, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2028,
     "h1h3Ids": [
       "12",
       "22"
@@ -2300,6 +2467,14 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "docs.house.gov",
+        "url": "https://docs.house.gov/meetings/AP/AP24/20260317/119053/HHRG-119-AP24-Wstate-MeekerA-20260317.pdf"
       }
     ],
     "learnMore": [
@@ -2324,7 +2499,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Professional Development, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "12"
     ],
@@ -2361,10 +2536,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "community"
     ],
-    "additionalTags": "Procurement, Data, Transparency, Coordination",
+    "additionalTags": "Procurement, Data, Coordination, Data Privacy, Information Silos",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2034,
     "h1h3Ids": [
       "9"
     ],
@@ -2376,9 +2551,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "Next Senate constituent system contract is scheduled for 2028",
     "sources": [
-      {
-        "title": "Recoding America ModSub Submissions (2026)"
-      },
       {
         "title": "republicans-cha.house.gov",
         "url": "https://republicans-cha.house.gov/2026/4/subcommittee-on-modernization-and-innovation-s-request-for-constituent-engagement-innovation-project-funding-was-approved"
@@ -2404,10 +2576,10 @@ export const H2_IDEAS: H2Idea[] = [
       "community",
       "technology"
     ],
-    "additionalTags": "Data, Transparency, Norms",
+    "additionalTags": "Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2035,
+    "year": 2039,
     "h1h3Ids": [
       "8"
     ],
@@ -2451,10 +2623,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "stakeholder"
     ],
-    "additionalTags": "Data, Transparency, Coordination",
+    "additionalTags": "Data, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
       "10",
       "30"
@@ -2495,7 +2667,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Time Management, Leadership, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2031,
     "h1h3Ids": [
       "15"
     ],
@@ -2509,33 +2681,30 @@ export const H2_IDEAS: H2Idea[] = [
     "sources": [
       {
         "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/optimizing-the-u-s-congressional-calendar-to-boost-legislative-productivity/ https://bipartisanpolicy.org/article/a-simple-fix-to-congress-calendaring-catastrophe/ https://www.understandingcongress.org/the-speakers-authority-to-convene-and-adjourn-the-house/ Working Group Reform Options Package (April 2026)"
+        "url": "https://bipartisanpolicy.org/article/optimizing-the-u-s-congressional-calendar-to-boost-legislative-productivity/ https://bipartisanpolicy.org/article/a-simple-fix-to-congress-calendaring-catastrophe/ https://www.understandingcongress.org/the-speakers-authority-to-convene-and-adjourn-the-house/"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 93"
-      },
-      {
-        "title": "95"
-      },
-      {
-        "title": "96"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "Interview with House staff"
+      },
+      {
+        "title": "Interview with academic researcher"
+      },
+      {
+        "title": "Interview with Senate staff"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -2558,10 +2727,10 @@ export const H2_IDEAS: H2Idea[] = [
       "members",
       "processes"
     ],
-    "additionalTags": "Time Management, Coordination, In-House Development",
+    "additionalTags": "Time Management, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "15"
     ],
@@ -2575,27 +2744,30 @@ export const H2_IDEAS: H2Idea[] = [
     "sources": [
       {
         "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/a-simple-fix-to-congress-calendaring-catastrophe/ https://www.govinfo.gov/content/pkg/CPRT-116HPRT41922/html/CPRT-116HPRT41922.htm Working Group Reform Options Package (April 2026)"
+        "url": "https://bipartisanpolicy.org/article/a-simple-fix-to-congress-calendaring-catastrophe/ https://www.govinfo.gov/content/pkg/CPRT-116HPRT41922/html/CPRT-116HPRT41922.htm"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 94"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "Interview with House staff"
+      },
+      {
+        "title": "Interview with academic researcher"
+      },
+      {
+        "title": "Interview with Senate staff"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -2618,7 +2790,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Leadership, Bipartisanship",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2038,
     "h1h3Ids": [
       "16",
       "23"
@@ -2626,7 +2798,7 @@ export const H2_IDEAS: H2Idea[] = [
     "problemStatement": "Floor access runs entirely through leadership",
     "problemDescription": "The consensus and suspension calendars operate at leadership's discretion, so a bill with broad support has no path to the floor independent of leadership's choice. Committees that hold hearings and mark up bipartisan legislation, including routine reauthorizations, have no assurance their work will ever be scheduled, which removes much of the reason to do it.",
     "solutionStatement": "Guaranteed regular order and member-driven paths to the floor",
-    "solutionDescription": "Create a guaranteed regular order procedure under which a committee that runs a thorough deliberative process of hearings and markup earns floor consideration for the resulting bipartisan bill, particularly reauthorizations. A bipartisan standard at committee, such as one-third of minority members present and voting, confers priority status or guaranteed consideration within a set number of legislative days, with the Rules Committee still structuring debate but a required vote on the bill as reported rather than on a leadership substitute. Pair this with predictable routes for bills meeting defined thresholds of support, different calendars for different classes of legislation, and bounded layover requirements. The cited precedent is the Texas House local and consent calendars.",
+    "solutionDescription": "Create a guaranteed regular order procedure: a committee that holds hearings and a markup earns floor consideration for the resulting bipartisan bill, particularly reauthorizations. A bipartisan standard at committee, such as one-third of minority members present and voting, confers consideration within a set number of legislative days, with Rules still structuring debate but a required vote on the bill as reported rather than a leadership substitute. Pair it with predictable routes for bills meeting defined support thresholds, separate calendars by class of legislation, and bounded layover requirements, on the model of the Texas House local and consent calendars.",
     "horizonJustification": "It changes who controls the agenda rather than making leadership's process faster, and it restores the connection between doing committee work and producing law, the incentive that does not exist today.",
     "pathToH2plus": "",
     "currentStatus": "Recommended by the Bipartisan Policy Center's Working Group on Congress, Courts, and Administrative Law; a workable model is outlined by a Hoover Institution and Sunwater Institute task force",
@@ -2640,7 +2812,8 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://www.hoover.org/research/revitalizing-house-bipartisan-recommendations-rules-and-process"
       },
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
@@ -2651,6 +2824,14 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R46485.html"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/the-missing-branch/"
+      },
+      {
+        "title": "protectdemocracy.org",
+        "url": "https://protectdemocracy.org/work/democratize-congress/"
       }
     ]
   },
@@ -2662,10 +2843,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "house"
     ],
-    "additionalTags": "Rules, Leadership, Norms",
+    "additionalTags": "Rules, Leadership",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2034,
     "h1h3Ids": [
       "16"
     ],
@@ -2686,7 +2867,7 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://bipartisanpolicy.org/article/open-amendment-process/"
       },
       {
-        "title": "Rebuild Congress Initiative (Aug 2026)"
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
@@ -2708,10 +2889,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "committees"
     ],
-    "additionalTags": "Leadership, Rules, Organization",
+    "additionalTags": "Leadership, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2034,
+    "year": 2039,
     "h1h3Ids": [
       "23"
     ],
@@ -2730,21 +2911,6 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "rstreet.org",
         "url": "https://www.rstreet.org/commentary/working-on-the-hill-data-shows-dramatic-declines-since-1981-kosar-tells-committee-the-congress-needs-bigger-staff/"
-      },
-      {
-        "title": "Rebuild Congress Initiative (Aug 2026)"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 74"
       },
       {
         "title": "govinfo.gov",
@@ -2775,59 +2941,38 @@ export const H2_IDEAS: H2Idea[] = [
       "committees",
       "culture"
     ],
-    "additionalTags": "Bipartisanship, Norms, Coordination",
+    "additionalTags": "Bipartisanship, Norms, Coordination, Time Management",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "23"
     ],
     "problemStatement": "Committees rarely work across party lines outside of markup",
     "problemDescription": "Nothing prevents committees or Members from holding bipartisan retreats, pre-hearing meetings, or joint agenda-setting sessions, but there is no incentive to do so, no calendar slot reserved for it, and no one whose job it is to organize them.",
     "solutionStatement": "Bipartisan retreats and agenda-setting sessions",
-    "solutionDescription": "Hold bipartisan committee retreats at the start of each year, alongside biennial retreats for all Members and their families at the start of each Congress, to set a shared agenda, build working relationships, and encourage civil decorum. Extend bipartisan contact beyond the annual retreat through recurring pre-hearing committee meetings and standing committee policies for ongoing bipartisan staff learning. Build the retreat into the official congressional calendar rather than funding it only through appropriations that can lapse unused, as happened to the $500,000 Congress set aside for a retreat in FY2022 that was never held. Formalize committee-level agenda setting by requiring chairs and ranking members to jointly certify that a session occurred.",
+    "solutionDescription": "Hold bipartisan committee retreats at the start of each year, plus biennial retreats for all Members and their families at the start of each Congress, to set a shared agenda, build relationships, and encourage civil decorum. Extend bipartisan contact through recurring pre-hearing meetings and standing committee policies for ongoing bipartisan staff learning, and require chairs and ranking members to jointly certify that an agenda-setting session occurred. Build the retreat into the official calendar rather than relying on appropriations that can lapse, as the $500,000 set aside for an FY2022 retreat did when it was never held.",
     "horizonJustification": "It improves the atmosphere inside committees and chambers that choose to participate while leaving jurisdiction, staffing, and leadership control of the floor untouched.",
     "pathToH2plus": "H2+ #45. Bipartisan retreats build the joint agenda-setting habit and cross-party working relationships that a guaranteed floor pathway can then reward, since regular order requires committees to demonstrate the same bipartisan process retreats are meant to produce.",
     "currentStatus": "Permitted today; rarely done\nBPC tracker (Apr 2026), Rec 33: Closed-Implemented. 118th Congress: In the 117th Congress the Select Committee, along with the Select Committee on Economic Disparity and Fairness in Growth, held bipartisan retreats. In the 118th the Select Committee on the CCP also adopted bipartisan practices.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 10 (tracker Rec 33): Closed-Implemented. 118th Congress: In the 117th Congress the Select Committee, along with the Select Committee on Economic Disparity and Fairness in Growth, held bipartisan retreats. In the 118th the Select Committee on the CCP also adopted bipartisan practices.",
     "sources": [
       {
         "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/fixing-congress/ https://www.govinfo.gov/content/pkg/CRPT-117hrpt80/html/CRPT-117hrpt80.htm https://hunt-institute.org/programs/state-legislators-retreats/ Working Group Reform Options Package (April 2026)"
+        "url": "https://bipartisanpolicy.org/article/fixing-congress/ https://www.govinfo.gov/content/pkg/CRPT-117hrpt80/html/CRPT-117hrpt80.htm https://hunt-institute.org/programs/state-legislators-retreats/"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 8"
-      },
-      {
-        "title": "9"
-      },
-      {
-        "title": "10"
-      },
-      {
-        "title": "75"
-      },
-      {
-        "title": "77"
-      },
-      {
-        "title": "97"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -2846,10 +2991,10 @@ export const H2_IDEAS: H2Idea[] = [
       "processes",
       "senate"
     ],
-    "additionalTags": "Rules, Norms",
+    "additionalTags": "Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2036,
+    "year": 2039,
     "h1h3Ids": [
       "21"
     ],
@@ -2868,6 +3013,17 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R41342.html"
+      },
+      {
+        "title": "Interview with think tank researcher"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/how-congress-became-the-weakest-branch/"
+      },
+      {
+        "title": "effectivegov.uchicago.edu",
+        "url": "https://effectivegov.uchicago.edu/primers/filibuster-reform"
       }
     ],
     "learnMore": [
@@ -2878,6 +3034,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "brennancenter.org",
         "url": "https://www.brennancenter.org/our-work/research-reports/filibuster-explained"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/make-the-president-a-less-powerful-legislator-in-chief/"
       }
     ]
   },
@@ -2892,7 +3052,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Operations, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2035,
     "h1h3Ids": [
       "28"
     ],
@@ -2913,7 +3073,8 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://www.everycrsreport.com/reports/RL30959.html"
       },
       {
-        "title": "Brennan Center (June 2026)"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       }
     ],
     "learnMore": [
@@ -2924,6 +3085,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/RL31980.html"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
@@ -2938,7 +3103,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Operations, Leadership",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2025,
     "h1h3Ids": [
       "28"
     ],
@@ -2955,7 +3120,8 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://www.everycrsreport.com/reports/R48729.html"
       },
       {
-        "title": "Brennan Center (June 2026)"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       }
     ],
     "learnMore": [
@@ -2966,6 +3132,12 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/RL31980.html"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "Departure Dialogues: Key Findings"
       }
     ]
   },
@@ -2978,10 +3150,10 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "committees"
     ],
-    "additionalTags": "GAO, Data, Transparency, Coordination",
+    "additionalTags": "GAO, Data, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2037,
     "h1h3Ids": [
       "30",
       "14"
@@ -2999,7 +3171,7 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://www.gao.gov/products/gao-12-621sp"
       },
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "Interview with private sector"
       }
     ],
     "learnMore": [
@@ -3024,7 +3196,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Coordination, Norms",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "29"
     ],
@@ -3033,7 +3205,7 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Regular off-camera committee and agency staff meetings",
     "solutionDescription": "Establish standing monthly working meetings between committee staff and agency staff, away from cameras and press, on the model used during major implementation efforts.",
     "horizonJustification": "Working relationships improve information flow for as long as the particular staff involved stay in place, without changing the formal channels, the executive's control of communication, or the information asymmetry itself.",
-    "pathToH2plus": "H2+ #143. Regular off-camera staff meetings show what steady agency contact does for oversight, but the relationship survives only as long as those particular staff remain; permanent, career-staffed liaison offices in the Capitol lock that same contact into the institution.",
+    "pathToH2plus": "H2+ #142. Regular off-camera staff meetings show what steady agency contact does for oversight, but the relationship survives only as long as those particular staff remain; permanent, career-staffed liaison offices in the Capitol lock that same contact into the institution.",
     "currentStatus": "Practiced on specific implementations; not standard",
     "sources": [
       {
@@ -3061,10 +3233,10 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "technology"
     ],
-    "additionalTags": "Data, Transparency, In-House Development",
+    "additionalTags": "Data, AI, Data Privacy",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2038,
+    "year": 2040,
     "h1h3Ids": [
       "29"
     ],
@@ -3079,9 +3251,6 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "archives.gov",
         "url": "https://www.archives.gov/records-mgmt/memos/ac-11-2026"
-      },
-      {
-        "title": "Oversight at AI Scale (March 2026)"
       }
     ],
     "learnMore": [
@@ -3107,10 +3276,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "oversight"
     ],
-    "additionalTags": "Coordination, Data, Transparency, Norms",
+    "additionalTags": "Coordination, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2035,
+    "year": 2039,
     "h1h3Ids": [
       "29"
     ],
@@ -3147,12 +3316,12 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "law"
     ],
-    "additionalTags": "Data, Transparency, Coordination, In-House Development",
+    "additionalTags": "Data, Coordination, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2037,
     "h1h3Ids": [
-      "29",
+      "36",
       "25"
     ],
     "problemStatement": "Congress cannot track what it has delegated",
@@ -3166,6 +3335,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "consilium.europa.eu",
         "url": "https://www.consilium.europa.eu/en/press/press-releases/2017/12/13/more-transparency-on-eu-decision-making-new-register-of-delegated-acts/"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
@@ -3176,6 +3349,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "niskanencenter.org",
         "url": "https://www.niskanencenter.org/proposing-a-balanced-approach-to-delegation-of-legislative-power/"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/you-cant-replace-congress-with-the-president/"
       }
     ]
   },
@@ -3191,44 +3368,26 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Orientation, Professional Development, Bipartisanship",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2031,
     "h1h3Ids": [
       "13",
       "2"
     ],
     "problemStatement": "New member orientation is partisan, compressed, and one-time",
-    "problemDescription": "Orientation tries to compress everything new members need to know about running an office and navigating Congress into one or two weeks, an experience often described as drinking from a firehose. The formal program makes efforts to be bipartisan, but it is organized in advance by the party in the majority, while the parties often control much of the remaining time through their own events and social programming. By the end, new members are being asked to vote on a rules package governing an institution they have barely had time to understand.",
+    "problemDescription": "Orientation compresses everything a new member needs to know about running an office and navigating Congress into one or two weeks. The formal program aims to be bipartisan but is organized by the majority party, and the parties control much of the remaining time through their own events. By the end, new members vote on a rules package governing an institution they have barely had time to understand.",
     "solutionStatement": "Standing bipartisan orientation delivered across the term",
-    "solutionDescription": "Move orientation to a standing bipartisan body rather than the majority party, spread it across the first year so training arrives when each subject becomes relevant, and build a more comprehensive curriculum including a required institutional module on chamber rules, the appropriations calendar, and the powers members hold, plus continuity of operations, telework, and cybersecurity training for every new member. Sequence a first-term development track against real legislative moments: office setup and committee selection at the start, then committee onboarding, pre-markup drafting and amendment strategy, the appropriations cycle, a mid-term negotiation module, and ongoing training on working with the support agencies, with a separate track for members seated by special election. A companion proposal directs the House Historian to build learning modules on procedural and organizational precedent for use in orientation.",
+    "solutionDescription": "Move orientation to a standing bipartisan body rather than the majority party, spread it across the first year so each subject arrives when it becomes relevant, and require an institutional module on chamber rules, the appropriations calendar, and the powers members hold, alongside continuity of operations, telework, and cybersecurity training. Sequence the first-term track against real legislative moments: office setup and committee selection, then committee onboarding, pre-markup drafting and amendment strategy, the appropriations cycle, a mid-term negotiation module, and ongoing training on the support agencies, with a separate track for members seated by special election. A companion proposal has the House Historian build learning modules on procedural and organizational precedent.",
     "horizonJustification": "Changing who runs orientation and when it happens changes what every incoming class knows about the institution, and it compounds with each new Congress rather than expiring.",
     "pathToH2plus": "",
     "currentStatus": "Orientation runs largely through party channels\nBPC tracker (Apr 2026), Rec 12: Closed-Implemented. 118th Congress: Over 20 bipartisan briefings were provided to members-elect and their aides during New Member Orientation for the 117th, 118th, and 119th Congresses.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 28 (tracker Rec 12): Closed-Implemented. 118th Congress: Over 20 bipartisan briefings were provided to members-elect and their aides during New Member Orientation for the 117th, 118th, and 119th Congresses.",
     "sources": [
       {
         "title": "popvox.org",
-        "url": "https://www.popvox.org/blog/nmo Working Group Reform Options Package (April 2026) American Governance Institute (Aug 2026) Brennan Center (June 2026)"
+        "url": "https://www.popvox.org/blog/nmo"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 28"
-      },
-      {
-        "title": "29"
-      },
-      {
-        "title": "71"
       },
       {
         "title": "govinfo.gov",
@@ -3253,7 +3412,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Orientation, Rules, Professional Development",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "13"
     ],
@@ -3274,6 +3433,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R48466.html"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/how-congress-became-the-weakest-branch/"
       }
     ]
   },
@@ -3286,10 +3449,10 @@ export const H2_IDEAS: H2Idea[] = [
       "members",
       "elections"
     ],
-    "additionalTags": "Time Management, Norms",
+    "additionalTags": "Norms",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2030,
+    "year": 2043,
     "h1h3Ids": [
       "7"
     ],
@@ -3325,7 +3488,7 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "elections"
     ],
-    "additionalTags": "Time Management, Norms",
+    "additionalTags": "Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
     "year": 2040,
@@ -3344,6 +3507,16 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "brennancenter.org",
         "url": "https://www.brennancenter.org/topics/voting-elections/redistricting"
+      },
+      {
+        "title": "Interview with Senate staff"
+      },
+      {
+        "title": "Interview with academic researcher"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/4632"
       }
     ],
     "learnMore": [
@@ -3354,6 +3527,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "npr.org",
         "url": "https://www.npr.org/2026/05/30/nx-s1-5839201/party-primaries-polarized-congress"
+      },
+      {
+        "title": "amacad.org",
+        "url": "https://www.amacad.org/daedalus/upgrading-congress-to-meet-demands-21st-century"
       }
     ]
   },
@@ -3365,10 +3542,10 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "districtOffices"
     ],
-    "additionalTags": "Organization, Coordination, Professional Development",
+    "additionalTags": "Coordination, Professional Development",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2037,
     "h1h3Ids": [
       "22"
     ],
@@ -3402,12 +3579,12 @@ export const H2_IDEAS: H2Idea[] = [
       "technology"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Data, Transparency, In-House Development, Coordination",
+    "additionalTags": "Data, Coordination, AI",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "27",
       "24"
@@ -3449,10 +3626,10 @@ export const H2_IDEAS: H2Idea[] = [
       "culture",
       "technology"
     ],
-    "additionalTags": "Rules, In-House Development, CAO, Professional Development",
+    "additionalTags": "Rules, CAO, Professional Development",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2029,
+    "year": 2033,
     "h1h3Ids": [
       "24",
       "17"
@@ -3494,10 +3671,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "culture"
     ],
-    "additionalTags": "Bipartisanship, Orientation, Coordination",
+    "additionalTags": "Orientation, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "24",
       "8"
@@ -3527,17 +3704,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "66",
+    "id": "65",
     "domains": [
       "staffing"
     ],
     "buckets": [
       "personnel"
     ],
-    "additionalTags": "Orientation, Professional Development, CAO",
+    "additionalTags": "Orientation, Professional Development, CAO, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2022,
     "h1h3Ids": [
       "2"
     ],
@@ -3562,18 +3739,6 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 17"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       }
@@ -3586,7 +3751,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "67",
+    "id": "66",
     "domains": [
       "staffing"
     ],
@@ -3594,10 +3759,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "technology"
     ],
-    "additionalTags": "Professional Development, CAO, Coordination",
+    "additionalTags": "Professional Development, CAO, Coordination, AI",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2027,
     "h1h3Ids": [
       "2",
       "24"
@@ -3631,14 +3796,14 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "68",
+    "id": "67",
     "domains": [
       "staffing"
     ],
     "buckets": [
       "personnel"
     ],
-    "additionalTags": "Interns, Professional Development, Orientation, Coordination",
+    "additionalTags": "Interns, Professional Development, Orientation, Coordination, AI",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
@@ -3651,7 +3816,7 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Intern technology resource hub",
     "solutionDescription": "Have the House AI Center partner with the House Intern Resource Office to provide intern-specific resources on AI use, basic data analytics, collaboration tools, and introductory cybersecurity, delivered during intern onboarding and provided to offices managing interns.",
     "horizonJustification": "It improves the preparation of one cohort at a time using existing resources, without changing what the institution requires of staff at any later stage of a career.",
-    "pathToH2plus": "H2+ #66. The intern hub proves House staff need structured grounding in AI, data, and cybersecurity; folding those same modules into required onboarding for every House staffer turns a program for one cohort into a baseline every incoming staffer gets.",
+    "pathToH2plus": "H2+ #65. The intern hub proves House staff need structured grounding in AI, data, and cybersecurity; folding those same modules into required onboarding for every House staffer turns a program for one cohort into a baseline every incoming staffer gets.",
     "currentStatus": "Submitted to CHA; within HIRO's existing role",
     "sources": [
       {
@@ -3675,7 +3840,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "69",
+    "id": "68",
     "domains": [
       "information"
     ],
@@ -3683,7 +3848,7 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "technology"
     ],
-    "additionalTags": "Operations, Data, Transparency, In-House Development",
+    "additionalTags": "Operations, Data, AI",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
@@ -3696,7 +3861,7 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "HouseNet assistant grounded in approved House sources",
     "solutionDescription": "Launch an optional assistant from the House AI Center that answers administrative questions from approved House sources, cites the source page for every answer, and routes to a human office when it cannot answer, beginning with the highest-use support pages.",
     "horizonJustification": "It makes existing guidance easier to reach without changing whether that guidance is current, well organized, or owned by anyone, and a retrieval layer over stale content returns stale answers.",
-    "pathToH2plus": "H2+ #70. An assistant that retrieves from HouseNet only works if HouseNet's content is current and organized; the Clerk's institutional knowledge repository fixes that underlying record first, giving any future retrieval assistant an authoritative, well-maintained source to draw from instead of scattered guidance.",
+    "pathToH2plus": "H2+ #69. An assistant that retrieves from HouseNet only works if HouseNet's content is current and organized; the Clerk's institutional knowledge repository fixes that underlying record first, giving any future retrieval assistant an authoritative, well-maintained source to draw from instead of scattered guidance.",
     "currentStatus": "Proposed to CHA; distinct from the House's existing assistant",
     "sources": [
       {
@@ -3720,17 +3885,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "70",
+    "id": "69",
     "domains": [
       "information"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "Data, Transparency, Organization, Operations, In-House Development",
+    "additionalTags": "Data, Operations, Information Silos",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2033,
     "h1h3Ids": [
       "19",
       "31"
@@ -3764,17 +3929,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "71",
+    "id": "70",
     "domains": [
       "information"
     ],
     "buckets": [
       "law"
     ],
-    "additionalTags": "LOC, Data, Transparency, Coordination",
+    "additionalTags": "LOC, Data, Transparency, Coordination, Public Records",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2029,
     "h1h3Ids": [
       "31",
       "25"
@@ -3808,17 +3973,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "72",
+    "id": "71",
     "domains": [
       "information"
     ],
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "CRS, GAO, CBO, LOC, Coordination",
+    "additionalTags": "CRS, GAO, CBO, LOC, Coordination, AI, Information Silos, Public Records, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2037,
     "h1h3Ids": [
       "5",
       "31"
@@ -3852,17 +4017,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "73",
+    "id": "72",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "CRS, Operations, Data, Transparency, Coordination",
+    "additionalTags": "CRS, Operations, Data, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2036,
     "h1h3Ids": [
       "4",
       "5"
@@ -3876,7 +4041,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed to CHA",
     "sources": [
       {
-        "title": "Recoding America ModSub Submissions (2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -3891,7 +4056,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "74",
+    "id": "73",
     "domains": [
       "capacity"
     ],
@@ -3899,10 +4064,10 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "law"
     ],
-    "additionalTags": "Operations, Data, Transparency, Coordination",
+    "additionalTags": "Operations, Data, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "4",
       "25"
@@ -3916,26 +4081,22 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed to CHA",
     "sources": [
       {
-        "title": "Recoding America ModSub Submissions (2026)"
-      },
-      {
         "title": "thenextweb.com",
         "url": "https://thenextweb.com/news/ai-drafted-bills-house-legislative-counsel-swamped"
+      },
+      {
+        "title": "Interview with lobbyist"
       }
     ],
     "learnMore": [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/RS20735.html"
-      },
-      {
-        "title": "thenextweb.com",
-        "url": "https://thenextweb.com/news/ai-drafted-bills-house-legislative-counsel-swamped"
       }
     ]
   },
   {
-    "id": "75",
+    "id": "74",
     "domains": [
       "technology"
     ],
@@ -3945,7 +4106,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Procurement, CAO, Rules, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2029,
     "h1h3Ids": [
       "17"
     ],
@@ -3970,21 +4131,26 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "house.gov",
         "url": "https://www.house.gov/doing-business-with-the-house"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
       }
     ]
   },
   {
-    "id": "76",
+    "id": "75",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "structure"
+      "structure",
+      "capitol"
     ],
     "additionalTags": "AOC, Procurement, Operations, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2036,
     "h1h3Ids": [
       "2"
     ],
@@ -3997,7 +4163,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Submitted to CHA\nBPC tracker (Apr 2026), Rec 93: Open-In Progress. 117th Congress: The Architect of the Capitol laid out future principles in its Vision 2100 plan; need to assess progress made identifying specific projects.",
     "sources": [
       {
-        "title": "American Governance Institute (Aug 2026) https://wherewilltheyallsit.org/ https://napawash.org/academy-studies/architect-of-the-capitol-blue-ribbon-panel-renewal-of-the-longworth-and-rayburn-house-office-buildings"
+        "title": "wherewilltheyallsit.org",
+        "url": "https://wherewilltheyallsit.org/ https://napawash.org/academy-studies/architect-of-the-capitol-blue-ribbon-panel-renewal-of-the-longworth-and-rayburn-house-office-buildings"
       },
       {
         "title": "bipartisanpolicy.org",
@@ -4016,17 +4183,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "77",
+    "id": "76",
     "domains": [
       "information"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "Data, Transparency, Rules, In-House Development",
+    "additionalTags": "Data, Transparency, Rules, AI, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2033,
     "h1h3Ids": [
       "31",
       "19"
@@ -4056,14 +4223,14 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "78",
+    "id": "77",
     "domains": [
       "information"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "LOC, Data, Transparency, In-House Development, Coordination",
+    "additionalTags": "LOC, Data, Transparency, Coordination, AI, Public Records",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
@@ -4095,17 +4262,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "79",
+    "id": "78",
     "domains": [
       "information"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "GPO, LOC, CAO, Data, Transparency, Coordination",
+    "additionalTags": "GPO, LOC, CAO, Data, Transparency, Coordination, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2029,
+    "year": 2032,
     "h1h3Ids": [
       "31"
     ],
@@ -4134,14 +4301,14 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "80",
+    "id": "79",
     "domains": [
       "information"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "Data, Transparency, Coordination, Operations",
+    "additionalTags": "Data, Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
@@ -4154,7 +4321,7 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "One-time assessment of the legislative data map",
     "solutionDescription": "Task the Congressional Data Task Force with inventorying each node in the legislative data map, identifying those most vulnerable to attack or to outdated infrastructure, assessing redundancy, and reporting findings to House Administration.",
     "horizonJustification": "A one-time assessment produces findings without authority to act on them, and the Task Force convenes rather than directs the offices whose systems it would assess.",
-    "pathToH2plus": "H2+ #94. The one-time inventory of vulnerable data nodes gives the Data Coordination Officer a concrete starting map, while 94 supplies the standing authority to act on those findings that the convening-only Task Force lacked.",
+    "pathToH2plus": "H2+ #93. The one-time inventory of vulnerable data nodes gives the Data Coordination Officer a concrete starting map, while 94 supplies the standing authority to act on those findings that the convening-only Task Force lacked.",
     "currentStatus": "Proposed to CHA",
     "sources": [
       {
@@ -4169,16 +4336,12 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": [
       {
         "title": "congressionaldata.org",
-        "url": "https://congressionaldata.org/legislative-branch-data-map/"
-      },
-      {
-        "title": "congressionaldata.org",
         "url": "https://congressionaldata.org/the-congressional-data-task-force-continues-efforts-to-modernize-congressional-tech-including-itself/"
       }
     ]
   },
   {
-    "id": "81",
+    "id": "80",
     "domains": [
       "information"
     ],
@@ -4186,7 +4349,7 @@ export const H2_IDEAS: H2Idea[] = [
       "communications",
       "technology"
     ],
-    "additionalTags": "Data, Transparency, Operations",
+    "additionalTags": "Data, Transparency, Operations, Public Records",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -4199,7 +4362,7 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Rebuild the franking disclosure site and strengthen internal mail accountability",
     "solutionDescription": "Have the Communications Standards Commission replace the current site with a searchable, accessible service offering plain-language search, filters by member, date, communication type, and Congress, stable result links, and structured downloads, run in beta beside the existing site before cutover. Pair the rebuild with stronger internal accountability and tracking for member-sponsored mail itself, so the data feeding the public site is accurate and current.",
     "horizonJustification": "Rebuilding one disclosure interface fixes that disclosure while every other congressional publication with the same problem stays as it is.",
-    "pathToH2plus": "H2+ #94. Rebuilding the franking site as a searchable, structured reference implementation gives the Data Coordination Officer a working model, and 94's mandate to advise offices on publication and design discovery resources extends that fix to every other disclosure site.",
+    "pathToH2plus": "H2+ #93. Rebuilding the franking site as a searchable, structured reference implementation gives the Data Coordination Officer a working model, and 94's mandate to advise offices on publication and design discovery resources extends that fix to every other disclosure site.",
     "currentStatus": "Proposed to CHA\nBPC tracker (Apr 2026), Rec 45: Closed-Implemented. 117th Congress: The Communications Standards Commission now provides approved communications and mass emails online.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 59 (tracker Rec 45): Closed-Implemented. 117th Congress: The Communications Standards Commission now provides approved communications and mass emails online.",
     "sources": [
       {
@@ -4213,21 +4376,6 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 56"
-      },
-      {
-        "title": "59"
       },
       {
         "title": "govinfo.gov",
@@ -4246,17 +4394,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "82",
+    "id": "81",
     "domains": [
       "information"
     ],
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "CRS, GAO, CBO, Data, Transparency",
+    "additionalTags": "CRS, GAO, CBO, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2038,
     "h1h3Ids": [
       "5",
       "19"
@@ -4270,8 +4418,11 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed to CHA",
     "sources": [
       {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/congress-courts-administrative-law-working-group/"
+        "title": "cbo.gov",
+        "url": "https://www.cbo.gov/data"
+      },
+      {
+        "title": "Interview with GAO staff"
       }
     ],
     "learnMore": [
@@ -4282,17 +4433,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "83",
+    "id": "82",
     "domains": [
       "technology"
     ],
     "buckets": [
       "committees"
     ],
-    "additionalTags": "CAO, Operations, In-House Development",
+    "additionalTags": "CAO, Operations, Information Silos",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2029,
     "h1h3Ids": [
       "23",
       "19"
@@ -4306,8 +4457,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed to CHA\nBPC tracker (Apr 2026), Rec 192: Open-In Progress. 119th Congress: Construction of the Committee Activity Portal has developed its initial three modules.",
     "sources": [
       {
+        "title": "cha.house.gov",
+        "url": "https://cha.house.gov/modernization"
+      },
+      {
         "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/congress-courts-administrative-law-working-group/"
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       }
     ],
     "learnMore": [
@@ -4318,7 +4473,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "84",
+    "id": "83",
     "domains": [
       "capacity"
     ],
@@ -4327,35 +4482,66 @@ export const H2_IDEAS: H2Idea[] = [
       "house",
       "senate"
     ],
-    "additionalTags": "Rules, Coordination, Organization",
+    "additionalTags": "Rules, Coordination, Security, Emergency Preparedness",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
     "h1h3Ids": [
+      "38",
       "13"
     ],
     "problemStatement": "Congress has no tested plan for operating through a crisis",
     "problemDescription": "An unusual number of vacancies in this Congress, combined with a heightened threat environment, raises questions the institution cannot answer: how it would function if a large number of members were unable to serve, and how continuity of representation would be preserved for the districts affected.",
     "solutionStatement": "Joint Committee on the Continuity of Congress",
-    "solutionDescription": "Establish a joint committee to conduct a systematic review of continuity, security, and representation in a crisis, following the model of the Select Committee on Modernization, with authority to make constitutional, legal, and policy recommendations. Ground its initial mandate in a retrospective review of COVID-19 pandemic lessons learned, including an inventory of the operational changes the House made during the pandemic and a determination of which to keep. The substantive mechanisms such a committee would need to produce are set out in row 92: emergency deliberation rules adopted before a disaster, and a constitutional amendment allowing rapid temporary replacement of members. A former Parliamentarian warns that courts may honor only emergency rules adopted before the event, which is what makes advance adoption the operative step.",
+    "solutionDescription": "Establish a joint committee to review continuity, security, and representation in a crisis on the model of the Select Committee on Modernization, with authority to make constitutional, legal, and policy recommendations. Ground its initial mandate in a retrospective on COVID-19, inventorying the operational changes the House made and deciding which to keep. Row 91 sets out what it would need to produce: emergency deliberation rules adopted before a disaster, and a constitutional amendment for rapid temporary replacement of members. A former Parliamentarian warns that courts may honor only rules adopted in advance, which is what makes early adoption the operative step.",
     "horizonJustification": "A review body produces recommendations rather than continuity, and the same questions have been studied before without the resulting proposals being adopted, so the gap persists until something is changed.",
-    "pathToH2plus": "H2+ #92. The joint committee's own review is designed to produce the emergency operating rules and replacement amendment specified in 92, and the H2- text names 92 directly since courts will only honor rules adopted before a crisis.",
+    "pathToH2plus": "H2+ #91. The joint committee's own review is designed to produce the emergency operating rules and replacement amendment specified in 92, and the H2- text names 92 directly since courts will only honor rules adopted before a crisis.",
     "currentStatus": "Recommended by the Bipartisan Policy Center; no continuity committee exists\nBPC tracker (Apr 2026), Rec 97: Closed-Implemented.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 72 (tracker Rec 97): Closed-Implemented. 118th Congress: The Clerk has identified changes made during the pandemic and maintained those that improve operational efficiency.",
     "sources": [
       {
         "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/report/final-report-and-recommendations/"
+        "url": "https://bipartisanpolicy.org/article/after-historic-shutdown-continuity-of-government-and-member-security-need-attention/"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "rollcall.com",
+        "url": "https://rollcall.com/2026/09/09/congress-still-stalled-on-continuity-25-years-later/"
+      },
+      {
+        "title": "contrariannews.org",
+        "url": "https://www.contrariannews.org/p/25-year-later-we-still-havent-dealt"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R40628.html"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/crs-product/TE10107"
       }
     ]
   },
   {
-    "id": "85",
+    "id": "84",
     "domains": [
       "staffing"
     ],
@@ -4363,10 +4549,10 @@ export const H2_IDEAS: H2Idea[] = [
       "members",
       "culture"
     ],
-    "additionalTags": "Bipartisanship, Rules, Norms",
+    "additionalTags": "Bipartisanship, Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "14"
     ],
@@ -4375,12 +4561,26 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Dual sponsorship of legislation",
     "solutionDescription": "Amend House rules to let one member from each party jointly sponsor a bill, making bipartisan authorship visible in the record and showing constituents which bills carry both parties' support.",
     "horizonJustification": "It records collaboration differently without changing what it produces: the incentive is reputational, and a dual-sponsored bill reaches the floor no more easily than any other.",
-    "pathToH2plus": "H2+ #140. Dual sponsorship creates a visible record of which bills carry genuine joint authorship, giving the evidence-grounded pathway in 140 a ready population of bipartisan bills to qualify for guaranteed markup and priority floor scheduling.",
+    "pathToH2plus": "H2+ #139. Dual sponsorship creates a visible record of which bills carry genuine joint authorship, giving the evidence-grounded pathway in 140 a ready population of bipartisan bills to qualify for guaranteed markup and priority floor scheduling.",
     "currentStatus": "Recommended by the Select Committee on Modernization; introduced as the BUDS Resolution and BUDS Act by Reps. Kim and Cleaver across several Congresses; not adopted\nBPC tracker (Apr 2026), Rec 195: Open-In Progress. 118th Congress: Rep. Cleaver introduced H.Res. 668 which would accomplish this rules change. Need to resolve implementation challenges with the Clerk.",
     "sources": [
       {
+        "title": "youngkim.house.gov",
+        "url": "https://youngkim.house.gov/2025/06/11/rep-young-kim-leads-buds-act-to-promote-bipartisan-collaboration-in-congress/"
+      },
+      {
         "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/congress-courts-administrative-law-working-group/"
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-resolution/501/text"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -4391,7 +4591,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "86",
+    "id": "85",
     "domains": [
       "capacity"
     ],
@@ -4399,10 +4599,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "technology"
     ],
-    "additionalTags": "GAO, Organization, In-House Development",
+    "additionalTags": "GAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2034,
     "h1h3Ids": [
       "18"
     ],
@@ -4415,8 +4615,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; OTA remains authorized and unfunded",
     "sources": [
       {
-        "title": "American Governance Institute, Recommendation for the Future of Congressional Modernization (Aug 2026)\nBrennan Center, Eight Solutions to Unstick Congress (June 2026)",
-        "url": "https://youngkim.house.gov/2025/06/11/rep-young-kim-leads-buds-act-to-promote-bipartisan-collaboration-in-congress/"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
+      },
+      {
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       }
     ],
     "learnMore": [
@@ -4427,7 +4631,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "87",
+    "id": "86",
     "domains": [
       "staffing"
     ],
@@ -4435,13 +4639,13 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "committees"
     ],
-    "additionalTags": "Organization",
+    "additionalTags": "",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
-      "3",
-      "23"
+      "37",
+      "3"
     ],
     "problemStatement": "Members have no dedicated policy staff for their committee work",
     "problemDescription": "Legislative staff are stretched across every jurisdiction a member sits in, so committee assignments are covered by generalists and expertise never accumulates.",
@@ -4452,10 +4656,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; the model exists only on the intelligence committees",
     "sources": [
       {
-        "title": "American Governance Institute"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       },
       {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
@@ -4466,14 +4672,14 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "88",
+    "id": "87",
     "domains": [
       "information"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "In-House Development, Procurement, Data, Transparency, Operations",
+    "additionalTags": "In-House Development, Procurement, Data, Operations, Information Silos",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
@@ -4490,10 +4696,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; modeled on a defunct civil society tool",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -4504,7 +4708,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "89",
+    "id": "88",
     "domains": [
       "staffing"
     ],
@@ -4514,7 +4718,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "CAO, GAO, Professional Development, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2035,
     "h1h3Ids": [
       "2",
       "18"
@@ -4528,13 +4732,11 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; executive-to-legislative flow exists, the reverse does not",
     "sources": [
       {
-        "title": "American Governance Institute"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       },
       {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
-      },
-      {
-        "title": "Functional Fusion (April 2026)"
+        "title": "Interview with nonprofit staff"
       }
     ],
     "learnMore": [
@@ -4545,7 +4747,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "90",
+    "id": "89",
     "domains": [
       "staffing"
     ],
@@ -4555,7 +4757,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "CAO, Data, Transparency, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2027,
     "h1h3Ids": [
       "1",
       "3"
@@ -4569,10 +4771,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; collection lapsed with the Office of Diversity and Inclusion\nBPC tracker (Apr 2026), Rec 100: Closed-Implemented. 118th Congress: The SalarySense Compensation Dashboard is a searchable database of anonymized staff compensation information created by HDS and available to congressional managers.",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
@@ -4587,7 +4787,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "91",
+    "id": "90",
     "domains": [
       "capacity"
     ],
@@ -4595,10 +4795,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "personnel"
     ],
-    "additionalTags": "CAO, Time Management, Operations, Data, Transparency",
+    "additionalTags": "CAO, Time Management, Operations, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "17",
       "24"
@@ -4612,13 +4812,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
-      },
-      {
-        "title": "Recoding America ModSub Submissions (2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -4629,7 +4824,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "92",
+    "id": "91",
     "domains": [
       "capacity"
     ],
@@ -4638,11 +4833,12 @@ export const H2_IDEAS: H2Idea[] = [
       "house",
       "senate"
     ],
-    "additionalTags": "Rules, Operations, Coordination",
+    "additionalTags": "Rules, Operations, Coordination, Emergency Preparedness",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2037,
     "h1h3Ids": [
+      "38",
       "13"
     ],
     "problemStatement": "Congress cannot operate if its members cannot reach the Capitol",
@@ -4654,21 +4850,35 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; no adopted emergency framework exists",
     "sources": [
       {
-        "title": "American Governance Institute"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       },
       {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/118th-congress/house-joint-resolution/118/text"
+      },
+      {
+        "title": "rollcall.com",
+        "url": "https://rollcall.com/2026/09/09/congress-still-stalled-on-continuity-25-years-later/"
+      },
+      {
+        "title": "contrariannews.org",
+        "url": "https://www.contrariannews.org/p/25-year-later-we-still-havent-dealt"
       }
     ],
     "learnMore": [
       {
         "title": "brennancenter.org",
         "url": "https://www.brennancenter.org/our-work/research-reports/maintaining-legislative-continuity-through-emergencies"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/crs-product/TE10107"
       }
     ]
   },
   {
-    "id": "93",
+    "id": "92",
     "domains": [
       "staffing"
     ],
@@ -4676,7 +4886,7 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "culture"
     ],
-    "additionalTags": "CAO, AOC, Operations",
+    "additionalTags": "CAO, AOC, Operations, Family Support",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
@@ -4689,14 +4899,16 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Expand congressional child care capacity",
     "solutionDescription": "Have the CAO survey staff and review the waiting list to project demand, including demand from any staff expansion. Have the Architect of the Capitol evaluate leasing or purchasing space. Have appropriators fund subsidies as an interim measure until capacity exists.",
     "horizonJustification": "Subsidies relieve cost for some families without adding a slot, and the capacity shortfall is the binding constraint.",
-    "pathToH2plus": "H2+ #90. The CAO's one-time survey and waitlist review to project child care demand becomes, in 90, permanent published human capital tracking, giving future capacity and retention decisions continuous evidence instead of a single snapshot that goes stale.",
+    "pathToH2plus": "H2+ #89. The CAO's one-time survey and waitlist review to project child care demand becomes, in 90, permanent published human capital tracking, giving future capacity and retention decisions continuous evidence instead of a single snapshot that goes stale.",
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       },
       {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
       }
     ],
     "learnMore": [
@@ -4707,7 +4919,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "94",
+    "id": "93",
     "domains": [
       "information"
     ],
@@ -4715,10 +4927,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "structure"
     ],
-    "additionalTags": "Data, Transparency, Coordination, Organization",
+    "additionalTags": "Data, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2029,
+    "year": 2033,
     "h1h3Ids": [
       "19",
       "31"
@@ -4732,10 +4944,14 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       },
       {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -4746,7 +4962,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "95",
+    "id": "94",
     "domains": [
       "information"
     ],
@@ -4754,10 +4970,10 @@ export const H2_IDEAS: H2Idea[] = [
       "law",
       "stakeholder"
     ],
-    "additionalTags": "In-House Development, Coordination",
+    "additionalTags": "Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2039,
     "h1h3Ids": [
       "10",
       "25"
@@ -4767,14 +4983,12 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Stakeholder comment tool for draft legislation",
     "solutionDescription": "Build a tool that lets a bill owner receive and synthesize comments while controlling which stakeholders see which comments and how much of the draft is visible. Scope it through the digital service, fund an initial evaluation through House Administration, and pilot it with a committee or a set of member offices. Input covers ideas and gaps, not participatory drafting.",
     "horizonJustification": "It improves one part of a drafting workflow that remains manual, undocumented, and unversioned everywhere else.",
-    "pathToH2plus": "H2+ #114. Piloting a controlled stakeholder-comment tool proves offices can manage structured input without losing control of the draft, building the practice and demand for formally letting sponsors publish revised, versioned bill text before markup.",
+    "pathToH2plus": "H2+ #113. Piloting a controlled stakeholder-comment tool proves offices can manage structured input without losing control of the draft, building the practice and demand for formally letting sponsors publish revised, versioned bill text before markup.",
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -4785,14 +4999,14 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "96",
+    "id": "95",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "CAO, Time Management, In-House Development",
+    "additionalTags": "CAO, Time Management",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
@@ -4808,10 +5022,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -4822,7 +5034,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "97",
+    "id": "96",
     "domains": [
       "oversight"
     ],
@@ -4830,10 +5042,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "committees"
     ],
-    "additionalTags": "CAO, SAA, AOC, Coordination",
+    "additionalTags": "CAO, SAA, AOC, Coordination, Security, Cybersecurity, Encryption",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2035,
     "h1h3Ids": [
       "29"
     ],
@@ -4846,10 +5058,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -4860,7 +5070,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "98",
+    "id": "97",
     "domains": [
       "oversight"
     ],
@@ -4871,7 +5081,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Leadership",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2037,
     "h1h3Ids": [
       "29"
     ],
@@ -4884,31 +5094,37 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; prior resolutions exist as templates",
     "sources": [
       {
-        "title": "American Governance Institute"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       },
       {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "justsecurity.org",
+        "url": "https://www.justsecurity.org/72847/good-governance-paper-no-2-the-congressional-subpoena-power/"
       }
     ],
     "learnMore": [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/RL34097.html"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
   {
-    "id": "99",
+    "id": "98",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "structure"
     ],
-    "additionalTags": "CAO, Organization, Leadership, Coordination, Rules",
+    "additionalTags": "CAO, Leadership, Coordination, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2038,
     "h1h3Ids": [
       "20"
     ],
@@ -4921,10 +5137,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -4935,7 +5149,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "100",
+    "id": "99",
     "domains": [
       "capacity"
     ],
@@ -4943,10 +5157,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "committees"
     ],
-    "additionalTags": "Rules, Organization, Leadership",
+    "additionalTags": "Rules, Leadership",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2037,
     "h1h3Ids": [
       "23",
       "13"
@@ -4960,10 +5174,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -4974,17 +5186,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "101",
+    "id": "100",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "structure"
     ],
-    "additionalTags": "Rules, Organization, Bipartisanship",
+    "additionalTags": "Rules, Bipartisanship",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2029,
     "h1h3Ids": [
       "24",
       "13"
@@ -4994,11 +5206,11 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Re-establish the Select Committee on the Modernization of Congress",
     "solutionDescription": "Adopt a resolution at the start of a Congress establishing the select committee with a budget and equal party membership, covering technology, staff retention, and House procedures, and, unlike its predecessor, authorized to draft and introduce legislation rather than only recommend.",
     "horizonJustification": "A temporary recommending body has to be recreated every few Congresses and depends on others to implement what it finds, which is why the same recommendations recur.",
-    "pathToH2plus": "H2+ #100. Re-establishing the select committee each Congress rebuilds the recurring evidence and political momentum for institutional reform, but only becomes durable once replaced by a permanently elected committee empowered to draft and send its own measures to the floor.",
+    "pathToH2plus": "H2+ #99. Re-establishing the select committee each Congress rebuilds the recurring evidence and political momentum for institutional reform, but only becomes durable once replaced by a permanently elected committee empowered to draft and send its own measures to the floor.",
     "currentStatus": "Recommended by the Select Committee itself; not reauthorized",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -5013,19 +5225,19 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "102",
+    "id": "101",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "structure"
     ],
-    "additionalTags": "Organization, Coordination, Operations",
+    "additionalTags": "Coordination, Operations, Security",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2035,
     "h1h3Ids": [
-      "22"
+      "34"
     ],
     "problemStatement": "Congressional security runs on a decentralized model built for a lower-threat era",
     "problemDescription": "Responsibility is split across offices with overlapping jurisdiction, and the Capitol Police board structure provides limited accountability with no independent inspector general.",
@@ -5036,10 +5248,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -5054,7 +5264,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "103",
+    "id": "102",
     "domains": [
       "technology"
     ],
@@ -5062,10 +5272,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "technology"
     ],
-    "additionalTags": "CAO, Organization, In-House Development, Procurement",
+    "additionalTags": "CAO, In-House Development, Procurement",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2033,
     "h1h3Ids": [
       "20",
       "17"
@@ -5079,10 +5289,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; the digital service was moved down in a CAO reorganization",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -5093,7 +5301,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "104",
+    "id": "103",
     "domains": [
       "capacity"
     ],
@@ -5101,10 +5309,10 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "structure"
     ],
-    "additionalTags": "CRS, LOC, Organization, Data, Transparency",
+    "additionalTags": "CRS, LOC, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2038,
     "h1h3Ids": [
       "5",
       "4"
@@ -5118,10 +5326,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "American Governance Institute"
-      },
-      {
-        "title": "Recommendation for the Future of Congressional Modernization (Aug 2026)"
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/08/2026-08-28-AGI-Future-of-Congressional-Modernization-Recommendations.pdf"
       }
     ],
     "learnMore": [
@@ -5136,7 +5342,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "105",
+    "id": "104",
     "domains": [
       "oversight"
     ],
@@ -5144,10 +5350,10 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "technology"
     ],
-    "additionalTags": "Data, Transparency, In-House Development, Coordination",
+    "additionalTags": "Data, Coordination, AI",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2029,
     "h1h3Ids": [
       "29"
     ],
@@ -5160,7 +5366,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Concept stage; the document review technology exists",
     "sources": [
       {
-        "title": "Oversight at AI Scale: Toward a New Equilibrium for Democratic Accountability (March 2026)"
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
@@ -5175,17 +5381,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "106",
+    "id": "105",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "committees"
     ],
-    "additionalTags": "Rules, Organization, Leadership",
+    "additionalTags": "Rules, Leadership",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2034,
+    "year": 2038,
     "h1h3Ids": [
       "32"
     ],
@@ -5198,21 +5404,27 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; last major reorganization in the 1970s",
     "sources": [
       {
-        "title": "Brennan Center"
-      },
-      {
-        "title": "Eight Solutions to Unstick Congress (June 2026)"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       }
     ],
     "learnMore": [
       {
         "title": "brennancenter.org",
         "url": "https://www.brennancenter.org/our-work/analysis-opinion/be-effective-tech-congress-needs-tech-committee"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/congress-is-struggling-to-get-its-work-done-and-a-new-report-argues-for-21st-century-upgrades/"
+      },
+      {
+        "title": "amacad.org",
+        "url": "https://www.amacad.org/daedalus/upgrading-congress-to-meet-demands-21st-century"
       }
     ]
   },
   {
-    "id": "107",
+    "id": "106",
     "domains": [
       "capacity"
     ],
@@ -5221,10 +5433,10 @@ export const H2_IDEAS: H2Idea[] = [
       "house",
       "senate"
     ],
-    "additionalTags": "Coordination, Organization, Rules",
+    "additionalTags": "Coordination, Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2039,
     "h1h3Ids": [
       "32",
       "26"
@@ -5234,28 +5446,26 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Joint Committee on the Reorganization of Congress",
     "solutionDescription": "Pass a concurrent resolution for a temporary bicameral joint committee, equal parts House and Senate, modeled on those of 1946, 1970, and 1993, to hold hearings and recommend changes to jurisdictions, budget process, and coordination. A variant: an independent blue-ribbon commission of former members and experts, statutorily requiring a vote on its recommendations.",
     "horizonJustification": "A joint committee produces a report, and the 1993 precedent shows one can conclude with nothing adopted.",
-    "pathToH2plus": "H2+ #106. The joint committee's hearings on committee jurisdictions supply the bicameral record and political cover a jurisdiction realignment needs, turning a review that risks producing nothing into an actual redrawing of committee lines and new technology committees.",
+    "pathToH2plus": "H2+ #105. The joint committee's hearings on committee jurisdictions supply the bicameral record and political cover a jurisdiction realignment needs, turning a review that risks producing nothing into an actual redrawing of committee lines and new technology committees.",
     "currentStatus": "Proposed; three prior joint committees, with declining results",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
-      },
-      {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
       {
         "title": "congressionalinstitute.org",
         "url": "https://www.congressionalinstitute.org/lessons-learned-from-the-1993-joint-committee-on-the-organization-of-congress/"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2019/03/History-of-Congressional-Reform.pdf"
       }
     ]
   },
   {
-    "id": "108",
+    "id": "107",
     "domains": [
       "staffing"
     ],
@@ -5265,9 +5475,10 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
-      "13"
+      "1",
+      "3"
     ],
     "problemStatement": "Member pay has been frozen for over fifteen years",
     "problemDescription": "Members have had no increase, not even for inflation, since 2009. Upwards of a hundred sleep in their offices, retiring members cite financial strain, and the freeze narrows who can afford to serve toward the independently wealthy.",
@@ -5278,24 +5489,32 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Frozen since 2009 and extended again through FY2026",
     "sources": [
       {
-        "title": "Brennan Center"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       },
       {
-        "title": "Eight Solutions to Unstick Congress (June 2026)"
+        "title": "Interview with House staff"
       },
       {
-        "title": "Recoding America ModSub Submissions (2026)"
+        "title": "Interview with nonprofit staff"
+      },
+      {
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/97-1011.html"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/congress-is-struggling-to-get-its-work-done-and-a-new-report-argues-for-21st-century-upgrades/"
       }
     ]
   },
   {
-    "id": "109",
+    "id": "108",
     "domains": [
       "capacity"
     ],
@@ -5303,10 +5522,10 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "culture"
     ],
-    "additionalTags": "Rules, Organization",
+    "additionalTags": "Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2033,
     "h1h3Ids": [
       "13"
     ],
@@ -5319,10 +5538,11 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; House office reauthorized each Congress, Senate has no equivalent",
     "sources": [
       {
-        "title": "Brennan Center"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       },
       {
-        "title": "Eight Solutions to Unstick Congress (June 2026)"
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
@@ -5337,18 +5557,18 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "110",
+    "id": "109",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "oversight"
     ],
-    "additionalTags": "GAO, Data, Transparency, Operations",
+    "additionalTags": "GAO, Data, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2034,
     "h1h3Ids": [
       "26",
       "29"
@@ -5362,27 +5582,31 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Multiple bills pending; contested in current litigation",
     "sources": [
       {
-        "title": "Brennan Center"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       },
       {
-        "title": "Eight Solutions to Unstick Congress (June 2026)"
-      },
-      {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "spia.princeton.edu",
+        "url": "https://spia.princeton.edu/news/new-report-how-congress-can-recapture-constitutional-powers-it-ceded-executive-branch"
       }
     ],
     "learnMore": [
       {
         "title": "gao.gov",
         "url": "https://www.gao.gov/legal/appropriations-law/impoundment-control-act"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/the-missing-branch/"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
   {
-    "id": "111",
+    "id": "110",
     "domains": [
       "staffing"
     ],
@@ -5390,12 +5614,12 @@ export const H2_IDEAS: H2Idea[] = [
       "elections",
       "members"
     ],
-    "additionalTags": "Organization",
+    "additionalTags": "",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2038,
+    "year": 2040,
     "h1h3Ids": [
-      "6",
+      "37",
       "12"
     ],
     "problemStatement": "Each member represents too many people to represent them well",
@@ -5407,21 +5631,50 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed repeatedly; contested on whether it addresses the problems people name",
     "sources": [
       {
-        "title": "Brennan Center"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       },
       {
-        "title": "Eight Solutions to Unstick Congress (June 2026)"
+        "title": "Interview with think tank researcher"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/2797"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/research-products/report/the-case-for-enlarging-the-house-of-representatives/"
       }
     ],
     "learnMore": [
       {
         "title": "amacad.org",
         "url": "https://www.amacad.org/ourcommonpurpose/enlarging-the-house/section/5"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/how-congress-became-the-weakest-branch/"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/congress-is-struggling-to-get-its-work-done-and-a-new-report-argues-for-21st-century-upgrades/"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/4632"
+      },
+      {
+        "title": "amacad.org",
+        "url": "https://www.amacad.org/sites/default/files/publication/downloads/2025_expanding-representation.pdf"
+      },
+      {
+        "title": "amacad.org",
+        "url": "https://www.amacad.org/daedalus/upgrading-congress-to-meet-demands-21st-century"
       }
     ]
   },
   {
-    "id": "112",
+    "id": "111",
     "domains": [
       "staffing"
     ],
@@ -5429,7 +5682,7 @@ export const H2_IDEAS: H2Idea[] = [
       "members",
       "elections"
     ],
-    "additionalTags": "Organization, Norms",
+    "additionalTags": "Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
     "year": 2040,
@@ -5445,21 +5698,26 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Speculative; polls well and has no legislative path",
     "sources": [
       {
-        "title": "Brennan Center"
+        "title": "brennancenter.org",
+        "url": "https://www.brennancenter.org/media/15711/download/2026_06_solutions_series_congress.pdf"
       },
       {
-        "title": "Eight Solutions to Unstick Congress (June 2026)"
+        "title": "Interview with academic researcher"
       }
     ],
     "learnMore": [
       {
         "title": "brennancenter.org",
         "url": "https://www.brennancenter.org/our-work/analysis-opinion/age-limits-would-strengthen-congress"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/congress-is-struggling-to-get-its-work-done-and-a-new-report-argues-for-21st-century-upgrades/"
       }
     ]
   },
   {
-    "id": "113",
+    "id": "112",
     "domains": [
       "capacity"
     ],
@@ -5467,10 +5725,10 @@ export const H2_IDEAS: H2Idea[] = [
       "house",
       "committees"
     ],
-    "additionalTags": "Rules, Leadership",
+    "additionalTags": "Rules, Leadership, Time Management",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2034,
     "h1h3Ids": [
       "16",
       "23"
@@ -5484,7 +5742,17 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "The rule exists and is dispensed with almost weekly",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "Interview with House staff"
+      },
+      {
+        "title": "protectdemocracy.org",
+        "url": "https://protectdemocracy.org/work/democratize-congress/"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -5499,17 +5767,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "114",
+    "id": "113",
     "domains": [
       "information"
     ],
     "buckets": [
       "law"
     ],
-    "additionalTags": "Rules, Data, Transparency",
+    "additionalTags": "Rules, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2030,
+    "year": 2033,
     "h1h3Ids": [
       "25",
       "31"
@@ -5523,7 +5791,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; standard practice in several states",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -5534,7 +5802,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "115",
+    "id": "114",
     "domains": [
       "capacity"
     ],
@@ -5545,7 +5813,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Leadership",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2029,
+    "year": 2033,
     "h1h3Ids": [
       "16",
       "23"
@@ -5559,7 +5827,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "The 2019 change removed the referral step; the one-member threshold has been adjusted between Congresses",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -5570,18 +5838,19 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "116",
+    "id": "115",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "culture",
-      "house"
+      "house",
+      "capitol"
     ],
     "additionalTags": "AOC, Bipartisanship, Norms, Leadership",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "23"
     ],
@@ -5594,23 +5863,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed previously; the Senate has an equivalent room\nBPC tracker (Apr 2026), Rec 30: Open-Needs Attention. 117th Congress: Implementing text included in H.Res. 1331; need to identify space in the Capitol with close proximity to the House Floor that can be optimized for members gathering and collaborating in private and across party lines.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 7 (tracker Rec 30): Open-Needs Attention. 117th Congress: Implementing text included in H.Res. 1331; need to identify space in the Capitol with close proximity to the House Floor that can be optimized for members gathering and collaborating in private and across party lines.",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
-      },
-      {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 7"
       },
       {
         "title": "govinfo.gov",
@@ -5625,12 +5879,12 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "117",
+    "id": "116",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "structure"
     ],
     "additionalTags": "GAO, CBO, CRS",
@@ -5638,7 +5892,7 @@ export const H2_IDEAS: H2Idea[] = [
     "horizonKey": "h2neg",
     "year": 2026,
     "h1h3Ids": [
-      "5",
+      "37",
       "3"
     ],
     "problemStatement": "Congress underfunds its own capacity",
@@ -5646,24 +5900,9 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Targeted legislative branch capacity initiative",
     "solutionDescription": "Win a bipartisan leadership commitment to prioritize capacity in the next appropriations cycle, increases targeted to GAO, CBO, CRS, Legislative Counsel, committee funds, a restored Office of Technology Assessment, and member allowances for staff pay and casework technology, not across the board and excluding security.",
     "horizonJustification": "A single-cycle increase rebuilds capability while the budget's trajectory and the politics behind it stay put; the case recurs annually.",
-    "pathToH2plus": "H2+ #118. Winning one bipartisan appropriations cycle proves capacity funding can succeed politically, and that coalition is what a formula tying legislative branch funding to a fixed share of spending needs to lock in permanently.",
+    "pathToH2plus": "H2+ #117. Winning one bipartisan appropriations cycle proves capacity funding can succeed politically, and that coalition is what a formula tying legislative branch funding to a fixed share of spending needs to lock in permanently.",
     "currentStatus": "Proposed for the next cycle\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 84 (tracker Rec 84): Closed-Implemented. 118th Congress: FY 2022 and 2023 Legislative Branch Appropriations bills increased budgets, allowing for more investment in policy staff; need to examine the potential for GAO to expand its role.",
     "sources": [
-      {
-        "title": "Working Group Reform Options Package (April 2026)"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 84"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -5671,6 +5910,14 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
+      },
+      {
+        "title": "docs.house.gov",
+        "url": "https://docs.house.gov/meetings/AP/AP24/20240417/117122/HHRG-118-AP24-Wstate-BonetJ-20240417.pdf"
       }
     ],
     "learnMore": [
@@ -5685,20 +5932,20 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "118",
+    "id": "117",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
     "additionalTags": "Rules, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2038,
     "h1h3Ids": [
-      "5",
-      "3"
+      "37",
+      "5"
     ],
     "problemStatement": "Congress's budget does not scale with what it oversees",
     "problemDescription": "The legislative branch has averaged around 0.15 percent of federal budget authority since 1976 and can be quietly starved relative to the government it appropriates for, since its own funding competes annually against every other priority.",
@@ -5709,16 +5956,8 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed independently by multiple groups",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
-      },
-      {
-        "title": "Recoding America ModSub Submissions (2026)"
-      },
-      {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       }
     ],
     "learnMore": [
@@ -5729,37 +5968,31 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "119",
+    "id": "118",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "AOC, Operations",
+    "additionalTags": "AOC, Operations, Security",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
     "h1h3Ids": [
       "26",
-      "5"
+      "37"
     ],
     "problemStatement": "Security spending masks the decline in congressional capacity",
     "problemDescription": "Growth in Capitol Police, Visitor Center, and Architect of the Capitol funding sits in the same bill as staff, committee, and support agency accounts, so the legislative branch total looks stable while capacity accounts stagnate.",
     "solutionStatement": "Separate security funding into its own line",
     "solutionDescription": "Split security accounts out of the legislative branch capacity accounts, either as distinct lines within the bill or as a separate measure, so the capacity argument can be made on its own terms and the two are not traded against each other.",
     "horizonJustification": "Reorganizing the presentation clarifies the argument without adding a dollar to either side, and the trade-off it exposes still has to be won.",
-    "pathToH2plus": "H2+ #118. Splitting security spending into its own line isolates the capacity shortfall on its own terms, supplying the evidence needed to peg legislative branch funding to a fixed share of federal spending rather than negotiate it against security every year.",
+    "pathToH2plus": "H2+ #117. Splitting security spending into its own line isolates the capacity shortfall on its own terms, supplying the evidence needed to peg legislative branch funding to a fixed share of federal spending rather than negotiate it against security every year.",
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
-      },
-      {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -5770,19 +6003,19 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "120",
+    "id": "119",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "structure"
     ],
-    "additionalTags": "Organization, Operations, Coordination",
+    "additionalTags": "Operations, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
     "h1h3Ids": [
-      "20",
+      "37",
       "3"
     ],
     "problemStatement": "No one has mapped how congressional capacity is organized",
@@ -5790,11 +6023,11 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Congressional capacity landscape analysis",
     "solutionDescription": "Commission a comprehensive assessment by a nonpartisan organization with organizational-assessment expertise, run separately for the House and Senate, producing restructuring options rather than diagnosis alone and running in parallel with the appropriations ask rather than delaying it.",
     "horizonJustification": "An assessment produces options that someone else must choose to act on, and the absence of an owner for those options is itself part of the problem being assessed.",
-    "pathToH2plus": "H2+ #99. The commissioned landscape analysis supplies the organizational assessment and restructuring options that the Secretary General proposal explicitly builds from, converting a one-time diagnostic into the evidence base for a senior civil servant who owns implementation.",
+    "pathToH2plus": "H2+ #98. The commissioned landscape analysis supplies the organizational assessment and restructuring options that the Secretary General proposal explicitly builds from, converting a one-time diagnostic into the evidence base for a senior civil servant who owns implementation.",
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
@@ -5809,7 +6042,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "121",
+    "id": "120",
     "domains": [
       "staffing"
     ],
@@ -5820,7 +6053,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "In-House Development, Professional Development",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2034,
     "h1h3Ids": [
       "18",
       "23"
@@ -5834,18 +6067,28 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/reforms-to-empower-house-committees/"
+      },
+      {
+        "title": "Kosar"
+      },
+      {
+        "title": "Staffing Congress to Strengthen Oversight of the Administrative State"
+      },
+      {
+        "title": "C. Boyden Gray Center Policy Brief 24-01 (March 2024)"
       }
     ]
   },
   {
-    "id": "122",
+    "id": "121",
     "domains": [
       "capacity"
     ],
@@ -5856,7 +6099,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Bipartisanship, Coordination, Leadership",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2039,
     "h1h3Ids": [
       "16",
       "21"
@@ -5866,11 +6109,12 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Bicameral coordination of bipartisan bills",
     "solutionDescription": "Convene a bicameral working group of leadership designees and committee staff to identify ten to twenty bipartisan bills eligible for coordination and flag them for prioritized consideration in the other chamber. Pair it with a House fast-track review process letting committees readvance bipartisan bills passed in a prior Congress.",
     "horizonJustification": "A coordination group depends entirely on leadership goodwill in both chambers and covers a handful of bills, leaving the underlying absence of any cross-chamber pathway intact.",
-    "pathToH2plus": "H2+ #123. The ad hoc working group's practice of identifying and prioritizing bipartisan bills for cross-chamber action builds a working pipeline that a revitalized, rules-based conference process can resolve routinely, replacing leadership goodwill with standing procedure and trained staff.",
+    "pathToH2plus": "H2+ #122. The ad hoc working group's practice of identifying and prioritizing bipartisan bills for cross-chamber action builds a working pipeline that a revitalized, rules-based conference process can resolve routinely, replacing leadership goodwill with standing procedure and trained staff.",
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/CPRT-117HPRT46273/html/CPRT-117HPRT46273.htm"
       }
     ],
     "learnMore": [
@@ -5885,7 +6129,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "123",
+    "id": "122",
     "domains": [
       "capacity"
     ],
@@ -5894,10 +6138,10 @@ export const H2_IDEAS: H2Idea[] = [
       "house",
       "senate"
     ],
-    "additionalTags": "Rules, Coordination, Professional Development",
+    "additionalTags": "Rules, Coordination, Professional Development, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2035,
     "h1h3Ids": [
       "16",
       "21"
@@ -5911,7 +6155,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Atrophied; conferences are now rare",
     "sources": [
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -5922,17 +6166,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "124",
+    "id": "123",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Time Management, Operations",
+    "additionalTags": "Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2035,
     "h1h3Ids": [
       "26"
     ],
@@ -5945,10 +6189,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Raised by five trillion dollars in 2025 inside a reconciliation bill; contested",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
       },
       {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/research/elements-of-change-building-blocks-for-a-better-budget-2/"
       }
     ],
     "learnMore": [
@@ -5959,17 +6205,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "125",
+    "id": "124",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Rules, Time Management, Coordination",
+    "additionalTags": "Rules, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2037,
     "h1h3Ids": [
       "26"
     ],
@@ -5982,57 +6228,45 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Elements advanced by the 2018 Joint Select Committee, which deadlocked\nBPC tracker (Apr 2026), Rec 87: Open-Needs Attention. 117th Congress: Need statutory revisions to the Congressional Budget Act.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 87 (tracker Rec 87): Open-Needs Attention. 117th Congress: Need statutory revisions to the Congressional Budget Act.",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
-      },
-      {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 87"
-      },
-      {
-        "title": "88"
-      },
-      {
-        "title": "92"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
       }
     ],
     "learnMore": [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R44732.html"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/how-congress-became-the-weakest-branch/"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/the-inescapable-answer-to-americas-problems-fix-congress/"
       }
     ]
   },
   {
-    "id": "126",
+    "id": "125",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
     "additionalTags": "Rules, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2035,
+    "year": 2039,
     "h1h3Ids": [
       "26"
     ],
@@ -6045,30 +6279,20 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Multiple competing versions in circulation; the underlying proposals contradict each other on scope\nBPC tracker (Apr 2026), Rec 91: Open-Needs Attention. 117th Congress: Need a statutory revision to the Congressional Budget Act.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 91 (tracker Rec 91): Open-Needs Attention. 117th Congress: Need a statutory revision to the Congressional Budget Act.",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
-      },
-      {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 91"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
+      },
+      {
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/research/elements-of-change-building-blocks-for-a-better-budget-2/"
       }
     ],
     "learnMore": [
@@ -6083,18 +6307,19 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "127",
+    "id": "126",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding",
-      "oversight"
+      "appropriations",
+      "oversight",
+      "law"
     ],
-    "additionalTags": "Rules, Organization, Operations",
+    "additionalTags": "Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2034,
+    "year": 2038,
     "h1h3Ids": [
       "26",
       "30"
@@ -6108,16 +6333,62 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; versions exist at the state level",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/RL34551.html"
+      }
+    ]
+  },
+  {
+    "id": "127",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight",
+      "law"
+    ],
+    "additionalTags": "Coordination, War Powers",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2038,
+    "h1h3Ids": [
+      "36",
+      "13"
+    ],
+    "problemStatement": "Delegated war and emergency powers never return to Congress",
+    "problemDescription": "Authorities delegated for specific circumstances persist for decades, and emergency declarations are used to justify action that Congress never affirmatively approved.",
+    "solutionStatement": "Periodic reauthorization of war and emergency powers",
+    "solutionDescription": "Revise the war powers and emergency powers statutes to require affirmative congressional ratification of declarations and force authorizations, with fast-tracked up-or-down votes to reauthorize on a regular cycle, so lapsed authority expires by default rather than persisting.",
+    "horizonJustification": "It reverses the default: authority returns to Congress unless renewed, which changes the structural direction of delegation rather than contesting individual uses of it.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed in multiple forms",
+    "sources": [
+      {
+        "title": "Interview with think tank researcher"
+      },
+      {
+        "title": "spia.princeton.edu",
+        "url": "https://spia.princeton.edu/news/new-report-how-congress-can-recapture-constitutional-powers-it-ceded-executive-branch"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "newamerica.org",
+        "url": "https://www.newamerica.org/political-reform/reports/tools-congress-manage-us-security-partnerships/part-iii-use-of-force/"
+      },
+      {
+        "title": "everycrsreport.com",
+        "url": "https://www.everycrsreport.com/reports/R47603.html"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
@@ -6130,56 +6401,13 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "law"
     ],
-    "additionalTags": "Rules, Operations, Coordination",
-    "horizon": "H2+",
-    "horizonKey": "h2pos",
-    "year": 2034,
-    "h1h3Ids": [
-      "29",
-      "13"
-    ],
-    "problemStatement": "Delegated war and emergency powers never return to Congress",
-    "problemDescription": "Authorities delegated for specific circumstances persist for decades, and emergency declarations are used to justify action that Congress never affirmatively approved.",
-    "solutionStatement": "Periodic reauthorization of war and emergency powers",
-    "solutionDescription": "Revise the war powers and emergency powers statutes to require affirmative congressional ratification of declarations and force authorizations, with fast-tracked up-or-down votes to reauthorize on a regular cycle, so lapsed authority expires by default rather than persisting.",
-    "horizonJustification": "It reverses the default: authority returns to Congress unless renewed, which changes the structural direction of delegation rather than contesting individual uses of it.",
-    "pathToH2plus": "",
-    "currentStatus": "Proposed in multiple forms",
-    "sources": [
-      {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "newamerica.org",
-        "url": "https://www.newamerica.org/political-reform/reports/tools-congress-manage-us-security-partnerships/part-iii-use-of-force/"
-      },
-      {
-        "title": "everycrsreport.com",
-        "url": "https://www.everycrsreport.com/reports/R47603.html"
-      }
-    ]
-  },
-  {
-    "id": "129",
-    "domains": [
-      "oversight"
-    ],
-    "buckets": [
-      "oversight",
-      "law"
-    ],
     "additionalTags": "Rules, Coordination, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2035,
+    "year": 2039,
     "h1h3Ids": [
-      "29",
-      "25"
+      "36",
+      "29"
     ],
     "problemStatement": "Congress has delegated major questions and waits for courts to settle them",
     "problemDescription": "Significant policy is made through agency rulemaking that Congress never votes on, and the resulting disputes are resolved in litigation years later.",
@@ -6190,21 +6418,23 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; related to post-Chevron proposals",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R41651.html"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/make-the-president-a-less-powerful-legislator-in-chief/"
       }
     ]
   },
   {
-    "id": "130",
+    "id": "129",
     "domains": [
       "oversight"
     ],
@@ -6212,10 +6442,10 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "oversight"
     ],
-    "additionalTags": "GAO, CBO, Organization, In-House Development",
+    "additionalTags": "GAO, CBO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
       "5",
       "29"
@@ -6229,13 +6459,17 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed by several groups",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       },
       {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "Kosar"
       },
       {
-        "title": "Working Group Reform Options Package (April 2026)"
+        "title": "Staffing Congress to Strengthen Oversight of the Administrative State"
+      },
+      {
+        "title": "C. Boyden Gray Center Policy Brief 24-01 (March 2024)"
       }
     ],
     "learnMore": [
@@ -6246,7 +6480,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "131",
+    "id": "130",
     "domains": [
       "oversight"
     ],
@@ -6254,10 +6488,10 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "structure"
     ],
-    "additionalTags": "GAO, Organization, Coordination, Operations",
+    "additionalTags": "GAO, Coordination, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2035,
+    "year": 2039,
     "h1h3Ids": [
       "29",
       "30"
@@ -6271,35 +6505,33 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed in two forms with different destinations",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
-      },
-      {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
       {
         "title": "gao.gov",
         "url": "https://www.gao.gov/products/gao-20-639r"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
   {
-    "id": "132",
+    "id": "131",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "committees"
     ],
     "additionalTags": "Leadership, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2035,
     "h1h3Ids": [
       "23",
       "26"
@@ -6313,10 +6545,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed by staff and outside experts",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -6331,17 +6560,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "133",
+    "id": "132",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
     "additionalTags": "Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2034,
     "h1h3Ids": [
       "26",
       "23"
@@ -6355,10 +6584,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed by staff and outside experts",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -6373,19 +6599,19 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "134",
+    "id": "133",
     "domains": [
       "information"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "community",
       "communications"
     ],
     "additionalTags": "CBO, Data, Transparency",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "8",
       "26"
@@ -6399,16 +6625,56 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed",
     "sources": [
       {
-        "title": "Rebuild Congress Initiative"
-      },
-      {
-        "title": "Budget and Appropriations Pre-Read (Aug 2026)"
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/research/elements-of-change-building-blocks-for-a-better-budget-2/"
       }
     ],
     "learnMore": [
       {
         "title": "ntu.org",
         "url": "https://www.ntu.org/foundation/detail/25-reforms-for-enhancing-transparency-and-accountability-at-the-congressional-budget-office"
+      }
+    ]
+  },
+  {
+    "id": "134",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight",
+      "committees"
+    ],
+    "additionalTags": "Coordination, Operations",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2036,
+    "h1h3Ids": [
+      "29",
+      "30"
+    ],
+    "problemStatement": "Congress and agencies set priorities in parallel and never reconcile them",
+    "problemDescription": "Agencies produce strategic and performance plans under existing law without any structured congressional engagement, so the branch that writes the mandate never states which priorities it endorses.",
+    "solutionStatement": "Joint agency performance plan review",
+    "solutionDescription": "Require each agency to submit its annual performance plan to committees of jurisdiction for a structured review of at least sixty days before finalization. Committees issue a formal statement recording priorities endorsed, priorities requested but not adopted, and points of disagreement, and agencies must respond in writing explaining how that input was or was not incorporated.",
+    "horizonJustification": "It creates a recurring, documented moment where the two branches state priorities to each other, which is the loop that currently does not exist at any point in the cycle.",
+    "pathToH2plus": "",
+    "currentStatus": "",
+    "sources": [
+      {
+        "title": "Interview with Senate staff"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "gao.gov",
+        "url": "https://www.gao.gov/products/gao-12-621sp"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "Departure Dialogues: Key Findings"
       }
     ]
   },
@@ -6421,46 +6687,10 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "committees"
     ],
-    "additionalTags": "Coordination, Operations",
+    "additionalTags": "GAO, Coordination, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
-    "h1h3Ids": [
-      "29",
-      "30"
-    ],
-    "problemStatement": "Congress and agencies set priorities in parallel and never reconcile them",
-    "problemDescription": "Agencies produce strategic and performance plans under existing law without any structured congressional engagement, so the branch that writes the mandate never states which priorities it endorses.",
-    "solutionStatement": "Joint agency performance plan review",
-    "solutionDescription": "Require each agency to submit its annual performance plan to committees of jurisdiction for a structured review of at least sixty days before finalization. Committees issue a formal statement recording priorities endorsed, priorities requested but not adopted, and points of disagreement, and agencies must respond in writing explaining how that input was or was not incorporated.",
-    "horizonJustification": "It creates a recurring, documented moment where the two branches state priorities to each other, which is the loop that currently does not exist at any point in the cycle.",
-    "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; not introduced",
-    "sources": [
-      {
-        "title": "Functional Fusion (April 2026)"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "gao.gov",
-        "url": "https://www.gao.gov/products/gao-12-621sp"
-      }
-    ]
-  },
-  {
-    "id": "136",
-    "domains": [
-      "oversight"
-    ],
-    "buckets": [
-      "oversight",
-      "committees"
-    ],
-    "additionalTags": "GAO, Coordination, Bipartisanship, Data, Transparency",
-    "horizon": "H2+",
-    "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2038,
     "h1h3Ids": [
       "29",
       "19"
@@ -6471,10 +6701,10 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Give committees standing authority to convene working groups on high-priority issues, jointly staffed by committee staff, career agency staff, and GAO, co-chaired by a member and a senior agency official, with required bipartisan staff participation. Each group publishes interim updates and a final joint report of findings, implementation barriers, and policy options. The chair holds an independent right to release findings, so neither branch can suppress them.",
     "horizonJustification": "It puts congressional and agency staff in a shared analytic process with a protected right of publication, changing where diagnosis is done rather than how it is received.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; not introduced",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -6485,7 +6715,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "137",
+    "id": "136",
     "domains": [
       "information"
     ],
@@ -6495,7 +6725,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "GAO, Rules, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2038,
     "h1h3Ids": [
       "25",
       "14"
@@ -6506,10 +6736,10 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Establish a quarterly docket for agency-submitted statutory clarifications, exceptions, and waivers from implementation. GAO and the Parliamentarian jointly certify each as non-substantive; the subcommittee approves or rejects within a set period; approved items ride one consolidated vehicle with expedited floor procedure and a germaneness bar.",
     "horizonJustification": "It clears technical debt without changing how legislation is developed, and certification holds it to changes that are not policy.",
     "pathToH2plus": "H2+ #27. The quarterly technical-corrections docket proves agencies and Congress can process small statutory fixes through a certified pipeline, a workflow a version-controlled US Code with consolidated drafting offices would run continuously rather than reassembling case by case each quarter.",
-    "currentStatus": "Drafted as illustrative bill text; called the most immediately achievable element of its package",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
@@ -6520,7 +6750,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "138",
+    "id": "137",
     "domains": [
       "oversight"
     ],
@@ -6531,7 +6761,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "GAO, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2038,
     "h1h3Ids": [
       "30",
       "29"
@@ -6542,10 +6772,11 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Give each subcommittee an annual authorization to approve a limited number of pilots at agencies in its jurisdiction, each with defined objectives, timeframe, evaluation plan, and supplemental appropriations within set parameters. GAO evaluates each pilot on completion, and the subcommittee makes a public determination to scale, redesign, or discontinue, with written rationale. The authority is structured as a condition on delegated authority rather than a legislative veto.",
     "horizonJustification": "It gives Congress a way to learn from a bounded experiment before legislating at scale, a capability the institution has no mechanism for.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; not introduced",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       }
     ],
     "learnMore": [
@@ -6556,18 +6787,18 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "139",
+    "id": "138",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "committees"
     ],
-    "additionalTags": "Coordination, Organization, Data, Transparency",
+    "additionalTags": "Coordination, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2034,
+    "year": 2038,
     "h1h3Ids": [
       "26",
       "23"
@@ -6578,21 +6809,25 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Grant subcommittees of jurisdiction a defined reprogramming authority within parameters set by the relevant appropriations subcommittee. Agencies submit written justification, subcommittees act within a defined period with approval deemed on inaction, and all approved reprogrammings are publicly reported. Appropriations subcommittees set annual dollar thresholds and eligibility.",
     "horizonJustification": "It distributes a piece of spending discretion to the committees that hold the subject matter knowledge, changing who can act on implementation information and how fast.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; appropriators would contest it",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R47600.html"
+      },
+      {
+        "title": "spia.princeton.edu",
+        "url": "https://spia.princeton.edu/news/new-report-how-congress-can-recapture-constitutional-powers-it-ceded-executive-branch"
       }
     ]
   },
   {
-    "id": "140",
+    "id": "139",
     "domains": [
       "capacity"
     ],
@@ -6600,10 +6835,10 @@ export const H2_IDEAS: H2Idea[] = [
       "law",
       "committees"
     ],
-    "additionalTags": "GAO, Rules, Data, Transparency",
+    "additionalTags": "GAO, Rules, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2033,
+    "year": 2037,
     "h1h3Ids": [
       "14",
       "16"
@@ -6614,10 +6849,11 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Create a defined pathway for bills developed out of joint diagnostic working groups. Qualifying bills carry a GAO-validated implementation assessment documenting findings, options considered, and the evidence base, and receive a guaranteed markup vote within a defined period plus priority floor scheduling. GAO maintains a public registry, and each member has an annual allocation of supported bills.",
     "horizonJustification": "It attaches procedural advantage to evidence rather than to sponsorship or leadership favor, which changes what members are rewarded for doing.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; explicitly creates two tiers of legislation",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       }
     ],
     "learnMore": [
@@ -6628,17 +6864,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "141",
+    "id": "140",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "GAO, Organization, Coordination",
+    "additionalTags": "GAO, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2034,
+    "year": 2039,
     "h1h3Ids": [
       "5",
       "29"
@@ -6649,10 +6885,17 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Amend GAO's organic statute to establish it as an institution of Congress serving the legislative branch exclusively, transferring executive functions to the relevant agencies. Expand its mission to cover cross-branch facilitation, early-stage policy analysis, and statutory interpretation support, with organizationally distinct units and a structural firewall between audit and advisory work, producing implementation assessments of major legislation under consideration at committee request.",
     "horizonJustification": "It changes what GAO is for and when it engages, converting the branch's largest analytic asset from an after-action reviewer into a design capability.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; not introduced",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "Departure Dialogues: Key Findings"
       }
     ],
     "learnMore": [
@@ -6667,7 +6910,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "142",
+    "id": "141",
     "domains": [
       "staffing"
     ],
@@ -6675,10 +6918,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "supportAgencies"
     ],
-    "additionalTags": "GAO, Organization",
+    "additionalTags": "GAO, In-House Development",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2036,
+    "year": 2039,
     "h1h3Ids": [
       "3",
       "18"
@@ -6689,10 +6932,15 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Create within GAO a corps of roughly three thousand career civil servants, reclassified from existing positions, supporting committees in policy analysis, drafting, working group staffing, and implementation assessment. They hold civil service protections; the Comptroller General appoints them in consultation with committee leadership; partisan activity is barred on duty.",
     "horizonJustification": "A permanent professional layer survives elections, something every comparable institution has and Congress lacks.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; the largest staffing proposal in this set",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "justsecurity.org",
+        "url": "https://www.justsecurity.org/72990/good-governance-paper-no-8-how-to-strengthen-oversight-by-congress/"
       }
     ],
     "learnMore": [
@@ -6707,7 +6955,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "143",
+    "id": "142",
     "domains": [
       "oversight"
     ],
@@ -6718,7 +6966,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Coordination, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
       "29"
     ],
@@ -6728,10 +6976,10 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Require each agency above a defined budget threshold to maintain a physical liaison office in the Capitol complex, staffed by career civil servants with operational program expertise and subject to a minimum tenure requirement, supplying timely operational information to staff on request and supporting committee engagement across the cycle.",
     "horizonJustification": "It creates a permanent, career-staffed channel between the branches that does not run through political appointees, changing what information is available and how quickly.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; not introduced",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -6742,7 +6990,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "144",
+    "id": "143",
     "domains": [
       "information"
     ],
@@ -6753,7 +7001,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "GAO, Professional Development, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2037,
     "h1h3Ids": [
       "25",
       "29"
@@ -6764,10 +7012,11 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Direct House and Senate Legislative Counsel, coordinating with GAO, to expand drafting assistance to reflect operational feasibility and to build expertise in administrative law and program implementation. They would advise members on lawfully structuring conditions on delegated authority, pilot authorizations, and reprogramming, produce interpretation guidance on committee request, and report annually on interpretive questions that warrant legislation.",
     "horizonJustification": "It changes what drafting expertise covers at the moment statutes are written, which determines how much interpretive room courts and agencies have later.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; not introduced",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
@@ -6778,17 +7027,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "145",
+    "id": "144",
     "domains": [
       "oversight"
     ],
     "buckets": [
       "oversight"
     ],
-    "additionalTags": "Organization, Operations",
+    "additionalTags": "Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2036,
+    "year": 2039,
     "h1h3Ids": [
       "29"
     ],
@@ -6798,10 +7047,10 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionDescription": "Direct a review of all political appointee positions within a year of enactment, identifying those convertible to career status, and set a government-wide reduction target returning toward pre-Watergate levels, to be achieved over four years.",
     "horizonJustification": "It changes who executes the laws Congress writes, which conditions whether any oversight or implementation reform reaches the people doing the work.",
     "pathToH2plus": "",
-    "currentStatus": "Drafted as illustrative bill text; contested across administrations",
+    "currentStatus": "",
     "sources": [
       {
-        "title": "Functional Fusion (April 2026)"
+        "title": "Interview with Senate staff"
       }
     ],
     "learnMore": [
@@ -6812,11 +7061,15 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "govexec.com",
         "url": "https://www.govexec.com/management/2026/03/number-political-appointees-surge-and-career-ses-ranks-shrink-one-nonprofit-warns-institutional-consequences/412496/"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
   {
-    "id": "146",
+    "id": "145",
     "domains": [
       "information"
     ],
@@ -6824,10 +7077,10 @@ export const H2_IDEAS: H2Idea[] = [
       "members",
       "oversight"
     ],
-    "additionalTags": "Norms, Data, Transparency",
+    "additionalTags": "Norms, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2027,
     "h1h3Ids": [
       "14"
     ],
@@ -6836,17 +7089,11 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Measure output by significant policy change rather than bill count",
     "solutionDescription": "Adopt a measure of productivity based on laws that alter existing government policy to a significant degree, applied consistently over time, in place of counts of public laws enacted.",
     "horizonJustification": "A better metric changes how the institution is described without changing anything it does, and metrics become distorting as soon as anyone optimizes for them.",
-    "pathToH2plus": "H2+ #140. Adopting a measure that separates substantive policy change from bill-count padding supplies the definition and evidentiary standard an evidence-grounded pathway needs to certify which bills qualify for guaranteed markup and priority floor scheduling.",
+    "pathToH2plus": "H2+ #139. Adopting a measure that separates substantive policy change from bill-count padding supplies the definition and evidentiary standard an evidence-grounded pathway needs to certify which bills qualify for guaranteed markup and priority floor scheduling.",
     "currentStatus": "Long-standing academic proposal",
     "sources": [
       {
-        "title": "Vox"
-      },
-      {
-        "title": "Congressional Dysfunction (Ezra Klein"
-      },
-      {
-        "title": "citing David Mayhew)"
+        "title": "Interview with think tank researcher"
       }
     ],
     "learnMore": [
@@ -6861,17 +7108,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "147",
+    "id": "146",
     "domains": [
       "technology"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "CAO, Procurement, In-House Development, Operations",
+    "additionalTags": "CAO, Procurement, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2029,
+    "year": 2033,
     "h1h3Ids": [
       "17",
       "24"
@@ -6885,7 +7132,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; not adopted",
     "sources": [
       {
-        "title": "Recoding America ModSub Submissions (2026)"
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -6896,17 +7143,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "148",
+    "id": "147",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "structure"
     ],
-    "additionalTags": "CAO, Organization, Operations, Coordination, Data, Transparency",
+    "additionalTags": "CAO, Operations, Coordination, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "4",
       "17"
@@ -6920,7 +7167,7 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "Proposed; not adopted",
     "sources": [
       {
-        "title": "Recoding America ModSub Submissions (2026)"
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -6931,7 +7178,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "149",
+    "id": "148",
     "domains": [
       "staffing"
     ],
@@ -6939,7 +7186,7 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "house"
     ],
-    "additionalTags": "Professional Development, Leadership, In-House Development, Norms",
+    "additionalTags": "Professional Development, Leadership, CAO, Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -6955,18 +7202,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 98: Closed-Implemented. 117th Congress: CAO Coaches began providing new classroom and virtual training courses in management and leadership, among other topics.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 98"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -6984,7 +7219,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "150",
+    "id": "149",
     "domains": [
       "staffing"
     ],
@@ -6992,10 +7227,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "house"
     ],
-    "additionalTags": "CAO, Coordination, Organization, Operations",
+    "additionalTags": "CAO, Coordination, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2022,
     "h1h3Ids": [
       "3",
       "1"
@@ -7009,18 +7244,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 99: Closed-Implemented. 117th Congress: The Task Force on the House Workforce was named in the report accompanying the Consolidated Appropriations Act, 2022.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 15 (tracker Rec 10): Closed-Implemented. 118th Congress: The Office of Diversity and Inclusion carried out staff surveys in 2019 and 2021. The CAO's new Office of Talent and Development now conducts such surveys.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 99"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -7029,16 +7252,53 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/futureproofing-congress-accomplishments/professional-certification-programs"
       },
       {
-        "title": "Final Report"
+        "title": "congressionalinstitute.org",
+        "url": "https://www.congressionalinstitute.org/wp-content/uploads/2021/08/Recomendation-Summaries-7-.29.pdf"
+      }
+    ]
+  },
+  {
+    "id": "150",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "personnel",
+      "house"
+    ],
+    "additionalTags": "Professional Development, CAO",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2024,
+    "h1h3Ids": [
+      "2",
+      "1"
+    ],
+    "problemStatement": "Staff must pay out of pocket for certification programs",
+    "problemDescription": "Certification programs exist for many staff roles, from IT to procurement to communications, but offices have no clear authority to pay for them. Staff who want a credential either cover the cost themselves or go without, and the answer varies office by office.",
+    "solutionStatement": "Authorize office-funded certifications and expand Academy-delivered ones",
+    "solutionDescription": "Allow member, committee, and leadership offices to pay for professional development opportunities that lead to a certification, using existing office budgets, and expand certifications offered directly through the nonpartisan Congressional Staff Academy's own curriculum. Staff gain two paths to a credential in their field: an office-funded outside program or an Academy-delivered certification alongside its existing trainings.",
+    "horizonJustification": "Authorizing office spending and expanding Academy certifications each help some staff reach a credential, but neither guarantees coverage: office funding still depends on each office's budget, and Academy offerings depend on what the Academy chooses to include in its curriculum, so an institution-wide standard remains absent.",
+    "pathToH2plus": "",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 102: Closed-Implemented. 117th Congress: CHA updated the Members' Congressional Handbook to allow for office reimbursement of job-related professional development programs that provide a certification.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 16 (tracker Rec 63): Closed-Implemented. 118th Congress: CAO offers career-path course work through the Congressional Staff Academy, as well as certifications for specific skills and classes. Full implementation would include role-specific certifications.",
+    "sources": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 15"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
         "title": "govinfo.gov",
@@ -7065,34 +7325,21 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "house"
     ],
-    "additionalTags": "Professional Development, In-House Development",
+    "additionalTags": "Procurement, Operations, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
-      "2",
-      "1"
+      "2"
     ],
-    "problemStatement": "Staff must pay out of pocket for certification programs",
-    "problemDescription": "Certification programs exist for many staff roles, from IT to procurement to communications, but offices have no clear authority to pay for them. Staff who want a credential either cover the cost themselves or go without, and the answer varies office by office.",
-    "solutionStatement": "Authorize office-funded certifications and expand Academy-delivered ones",
-    "solutionDescription": "Allow member, committee, and leadership offices to pay for professional development opportunities that lead to a certification, using existing office budgets, and expand certifications offered directly through the nonpartisan Congressional Staff Academy's own curriculum. Staff gain two paths to a credential in their field: an office-funded outside program or an Academy-delivered certification alongside its existing trainings.",
-    "horizonJustification": "Authorizing office spending and expanding Academy certifications each help some staff reach a credential, but neither guarantees coverage: office funding still depends on each office's budget, and Academy offerings depend on what the Academy chooses to include in its curriculum, so an institution-wide standard remains absent.",
+    "problemStatement": "Contract employees lack access to House employee assistance services",
+    "problemDescription": "Contractors who work on the Capitol campus alongside House staff are not covered by the Office of Employee Assistance, even though they work the same halls under the same pressures. Coverage depends entirely on what their employer, not the House, chooses to offer.",
+    "solutionStatement": "Extend employee assistance services to contract staff",
+    "solutionDescription": "Direct the House to work with its contractors, where feasible, so Capitol campus contract employees have access to assistance services comparable to what the Office of Employee Assistance provides House staff. Coverage is negotiated contract by contract rather than guaranteed outright.",
+    "horizonJustification": "Coverage runs through individual contract negotiations rather than a House-owned guarantee, so it depends on what each contractor agrees to and can lapse when a contract changes.",
     "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 102: Closed-Implemented. 117th Congress: CHA updated the Members' Congressional Handbook to allow for office reimbursement of job-related professional development programs that provide a certification.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 16 (tracker Rec 63): Closed-Implemented. 118th Congress: CAO offers career-path course work through the Congressional Staff Academy, as well as certifications for specific skills and classes. Full implementation would include role-specific certifications.",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 104: Closed-Implemented. 118th Congress: CAO and CHA have reviewed and validated that these services are in place for larger contractors working in the Capitol complex.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 102"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7100,29 +7347,9 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 16"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       }
     ],
     "learnMore": [
-      {
-        "title": "popvox.org",
-        "url": "https://www.popvox.org/futureproofing-congress-accomplishments/professional-certification-programs"
-      },
       {
         "title": "congressionalinstitute.org",
         "url": "https://www.congressionalinstitute.org/wp-content/uploads/2021/08/Recomendation-Summaries-7-.29.pdf"
@@ -7138,33 +7365,22 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "house"
     ],
-    "additionalTags": "Procurement, Operations",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2026,
+    "additionalTags": "CAO, Operations, Accessibility",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2029,
     "h1h3Ids": [
-      "2"
+      "2",
+      "3"
     ],
-    "problemStatement": "Contract employees lack access to House employee assistance services",
-    "problemDescription": "Contractors who work on the Capitol campus alongside House staff are not covered by the Office of Employee Assistance, even though they work the same halls under the same pressures. Coverage depends entirely on what their employer, not the House, chooses to offer.",
-    "solutionStatement": "Extend employee assistance services to contract staff",
-    "solutionDescription": "Direct the House to work with its contractors, where feasible, so Capitol campus contract employees have access to assistance services comparable to what the Office of Employee Assistance provides House staff. Coverage is negotiated contract by contract rather than guaranteed outright.",
-    "horizonJustification": "Coverage runs through individual contract negotiations rather than a House-owned guarantee, so it depends on what each contractor agrees to and can lapse when a contract changes.",
+    "problemStatement": "Office of Employee Assistance lacks bilingual and trauma care capacity",
+    "problemDescription": "The Office of Employee Assistance is the main mental health and crisis resource for House staff, but it does not consistently offer bilingual services or clinicians trained in trauma care. Staff whose first language is not English, or who need trauma-specific support, may not find it inside the office meant to serve them.",
+    "solutionStatement": "Build bilingual and trauma capacity into Employee Assistance",
+    "solutionDescription": "Direct the Office of Employee Assistance to recruit and retain a diverse staff, offer services in languages beyond English, and keep clinicians on staff who are trained to provide trauma care. The office becomes able to serve a wider range of staff needs without referring them elsewhere.",
+    "horizonJustification": "It builds durable clinical capacity inside an office the House already owns and staffs permanently, so the improvement holds without depending on outside grants or a one-time hire.",
     "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 104: Closed-Implemented. 118th Congress: CAO and CHA have reviewed and validated that these services are in place for larger contractors working in the Capitol complex.",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 105: Closed-Resolved. 117th Congress: Report language encouraging this was included in the Consolidated Appropriations Act, 2022; need additional information from the Office of Employee Assistance.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 104"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7190,63 +7406,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "house"
     ],
-    "additionalTags": "CAO, Organization, Operations, Norms",
-    "horizon": "H2+",
-    "horizonKey": "h2pos",
-    "year": 2026,
-    "h1h3Ids": [
-      "2",
-      "3"
-    ],
-    "problemStatement": "Office of Employee Assistance lacks bilingual and trauma care capacity",
-    "problemDescription": "The Office of Employee Assistance is the main mental health and crisis resource for House staff, but it does not consistently offer bilingual services or clinicians trained in trauma care. Staff whose first language is not English, or who need trauma-specific support, may not find it inside the office meant to serve them.",
-    "solutionStatement": "Build bilingual and trauma capacity into Employee Assistance",
-    "solutionDescription": "Direct the Office of Employee Assistance to recruit and retain a diverse staff, offer services in languages beyond English, and keep clinicians on staff who are trained to provide trauma care. The office becomes able to serve a wider range of staff needs without referring them elsewhere.",
-    "horizonJustification": "It builds durable clinical capacity inside an office the House already owns and staffs permanently, so the improvement holds without depending on outside grants or a one-time hire.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 105: Closed-Resolved. 117th Congress: Report language encouraging this was included in the Consolidated Appropriations Act, 2022; need additional information from the Office of Employee Assistance.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 105"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "congressionalinstitute.org",
-        "url": "https://www.congressionalinstitute.org/wp-content/uploads/2021/08/Recomendation-Summaries-7-.29.pdf"
-      }
-    ]
-  },
-  {
-    "id": "154",
-    "domains": [
-      "staffing"
-    ],
-    "buckets": [
-      "personnel",
-      "house"
-    ],
-    "additionalTags": "Professional Development, In-House Development",
+    "additionalTags": "Professional Development",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2023,
     "h1h3Ids": [
       "1",
       "3"
@@ -7256,21 +7419,9 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Expand loan repayment into tuition assistance",
     "solutionDescription": "Broaden the Student Loan Repayment Program so it also covers tuition assistance, letting the House support staff who are paying for education now rather than only those repaying debt from the past. The same program administers both benefits.",
     "horizonJustification": "It widens an existing benefit rather than changing who owns staff education support, so the fix is a funding expansion layered onto a program that already exists.",
-    "pathToH2plus": "",
+    "pathToH2plus": "H2+ #211. Demonstrating demand for tuition assistance alongside loan repayment builds the case for lifting the benefit out of the pay cap entirely rather than expanding it one program at a time.",
     "currentStatus": "BPC tracker (Apr 2026), Rec 106: Closed-Implemented. 118th Congress: Language was passed into law with the Consolidated Appropriations Act, 2023, P.L. 117-328. 119th Congress: CHA promulgated new regulations and renamed the program.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 106"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7288,7 +7439,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "155",
+    "id": "154",
     "domains": [
       "staffing"
     ],
@@ -7299,7 +7450,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "CAO, Procurement, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2029,
     "h1h3Ids": [
       "1"
     ],
@@ -7311,18 +7462,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 107: Open-In Progress. 118th Congress: CAO is making new software available for offices and began enrolling participants at New Member Orientation.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 107"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7340,7 +7479,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "156",
+    "id": "155",
     "domains": [
       "staffing"
     ],
@@ -7348,7 +7487,7 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "house"
     ],
-    "additionalTags": "CAO, Interns, Data, Transparency",
+    "additionalTags": "CAO, Interns, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -7363,18 +7502,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 109: Closed-Resolved. 119th Congress: In 2022 the House authorized the House Paid Intern Program, which provides participating offices with a stipend they can use to pay their interns.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 109"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7396,7 +7523,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "157",
+    "id": "156",
     "domains": [
       "staffing"
     ],
@@ -7404,10 +7531,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "house"
     ],
-    "additionalTags": "Interns, Orientation, Professional Development, Coordination",
+    "additionalTags": "Interns, Orientation, Professional Development, Coordination, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2023,
     "h1h3Ids": [
       "1",
       "2"
@@ -7421,17 +7548,48 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 110: Closed-Implemented. 118th Congress: Language to establish the office was passed into law with the Consolidated Appropriations Act, 2023, P.L. 117-328. There is now an Intern and Fellow page on the HR Hub.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
-        "title": "Final Report"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt136/html/CRPT-117hrpt136.htm"
       },
       {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 110"
-      },
+        "title": "democracyjournal.org",
+        "url": "https://democracyjournal.org/magazine/74/how-modernizing-congress-would-heal-dysfunction/"
+      }
+    ]
+  },
+  {
+    "id": "157",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "personnel"
+    ],
+    "additionalTags": "Rules, Operations, Interns",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2028,
+    "h1h3Ids": [
+      "2"
+    ],
+    "problemStatement": "Fellows and detailees receive fewer resources than staff",
+    "problemDescription": "Fellows and detailees often work full legislative or policy roles inside an office, but current rules do not clearly entitle them to the same resources as professional staff, from equipment to system access. Offices are left to interpret or work around the ambiguity individually.",
+    "solutionStatement": "Clarify rules granting fellows equipment parity",
+    "solutionDescription": "Amend House and Senate rules to state plainly that fellows and detailees receive the same resources and equipment as professional staff. Offices no longer have to interpret ambiguous rules or make case by case exceptions to equip a fellow to do the job they were placed to do.",
+    "horizonJustification": "Once the rule is clarified, resource access holds automatically for every future fellow or detailee without further action, which is what makes it self-sustaining.",
+    "pathToH2plus": "",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 111: Closed-Implemented. 117th Congress: Implementing language included in H.Res. 1331; need to review existing rules and amend the Members' Congressional Handbook to clarify access by fellows.",
+    "sources": [
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7439,6 +7597,12 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -7454,64 +7618,13 @@ export const H2_IDEAS: H2Idea[] = [
       "staffing"
     ],
     "buckets": [
-      "personnel"
-    ],
-    "additionalTags": "Rules, Operations",
-    "horizon": "H2+",
-    "horizonKey": "h2pos",
-    "year": 2026,
-    "h1h3Ids": [
-      "2"
-    ],
-    "problemStatement": "Fellows and detailees receive fewer resources than staff",
-    "problemDescription": "Fellows and detailees often work full legislative or policy roles inside an office, but current rules do not clearly entitle them to the same resources as professional staff, from equipment to system access. Offices are left to interpret or work around the ambiguity individually.",
-    "solutionStatement": "Clarify rules granting fellows equipment parity",
-    "solutionDescription": "Amend House and Senate rules to state plainly that fellows and detailees receive the same resources and equipment as professional staff. Offices no longer have to interpret ambiguous rules or make case by case exceptions to equip a fellow to do the job they were placed to do.",
-    "horizonJustification": "Once the rule is clarified, resource access holds automatically for every future fellow or detailee without further action, which is what makes it self-sustaining.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 111: Closed-Implemented. 117th Congress: Implementing language included in H.Res. 1331; need to review existing rules and amend the Members' Congressional Handbook to clarify access by fellows.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 111"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt136/html/CRPT-117hrpt136.htm"
-      }
-    ]
-  },
-  {
-    "id": "159",
-    "domains": [
-      "staffing"
-    ],
-    "buckets": [
       "personnel",
       "house"
     ],
-    "additionalTags": "Interns, Time Management",
+    "additionalTags": "Interns",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "1"
     ],
@@ -7523,18 +7636,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 112: Closed-Not Implemented. 119th Congress: The intent was to expand opportunities for individuals who cannot travel to and live in Washington, D.C. Closed without implementation.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 112"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7556,7 +7657,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "160",
+    "id": "159",
     "domains": [
       "staffing"
     ],
@@ -7567,7 +7668,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Interns, Procurement",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "1"
     ],
@@ -7579,18 +7680,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 113: Closed-Implemented. 118th Congress: CHA passed Committee Resolution 118-33 to approve allocation for paid committee internships.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 113"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7608,14 +7697,15 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "161",
+    "id": "160",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "house"
+      "community",
+      "capitol"
     ],
-    "additionalTags": "AOC, Operations, Coordination",
+    "additionalTags": "AOC, Operations, Accessibility, SAA",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -7630,18 +7720,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 114: Closed-Implemented. 118th Congress: The Modernization Subcommittee sent a letter to the AOC, SAA, and USCP requesting a preliminary study and a temporary solution for Spring 2024.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 114"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7663,19 +7741,21 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "162",
+    "id": "161",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "house"
+      "community",
+      "otherServices",
+      "capitol"
     ],
-    "additionalTags": "AOC, Operations, Coordination, Data, Transparency",
+    "additionalTags": "AOC, Operations, Transparency, Accessibility, Security",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
-      "1"
+      "35"
     ],
     "problemStatement": "Visitors and staff with disabilities arrive at security screening with no idea what to expect",
     "problemDescription": "Capitol security screening involves procedures, equipment, and physical layouts that can be disorienting or inaccessible for people with disabilities, and neither Capitol Police nor the House currently publishes information describing what visitors and staff will encounter. People learn the process by going through it once, which discourages some from visiting or working on the Hill at all.",
@@ -7685,18 +7765,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 115: Closed-Implemented. 118th Congress: The U.S. Capitol Police website now provides screening information. The Subcommittee has requested this also be posted with the Capitol Visitor Center.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 115"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7718,14 +7786,16 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "163",
+    "id": "162",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "house"
+      "community",
+      "otherServices",
+      "capitol"
     ],
-    "additionalTags": "AOC, Operations, Procurement",
+    "additionalTags": "AOC, Operations, Accessibility",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2028,
@@ -7740,18 +7810,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 116: Open-Needs Attention. 118th Congress: Making all doors accessible requires significant investment in funding and staff. The AOC has made cost estimates available but adequate funding has not been appropriated.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 116"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7769,17 +7827,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "164",
+    "id": "163",
     "domains": [
       "technology"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "Professional Development, In-House Development, Operations",
+    "additionalTags": "Professional Development, Operations, Accessibility, CAO, Transparency",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2029,
     "h1h3Ids": [
       "31"
     ],
@@ -7792,36 +7850,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 117: Closed-Implemented. 118th Congress: House Web Services hosted an event on July 24, 2023 on web accessibility and Section 508 compliance, and reviewed member site ratings.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 33 (tracker Rec 27): Closed-Implemented. 118th Congress: Pursuant to H. Res. 756, CAO is nearing completion on bringing all CAO-controlled websites into compliance.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 117"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 33"
       },
       {
         "title": "govinfo.gov",
@@ -7836,7 +7870,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "165",
+    "id": "164",
     "domains": [
       "staffing"
     ],
@@ -7859,36 +7893,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 118: Closed-Implemented. 118th Congress: Programming was included during the most recent NMO for members elected to the 119th Congress highlighting the importance of civility and collaboration.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 30 (tracker Rec 14): Closed-Implemented. 118th Congress: The 117th and 118th Congress NMO programs included sessions where decorum and bipartisanship were discussed.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 118"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 30"
       },
       {
         "title": "govinfo.gov",
@@ -7903,7 +7913,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "166",
+    "id": "165",
     "domains": [
       "staffing"
     ],
@@ -7913,7 +7923,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Professional Development, Leadership, Bipartisanship, Norms",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "6"
     ],
@@ -7925,18 +7935,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 119: Open-In Progress. 117th Congress: The Exemplary Member podcast has covered organizational culture. Language that would fully implement this is included in H.Rept. 117-389.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 119"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -7954,7 +7952,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "167",
+    "id": "166",
     "domains": [
       "information"
     ],
@@ -7962,10 +7960,10 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "technology"
     ],
-    "additionalTags": "Data, Transparency, LOC, In-House Development",
+    "additionalTags": "Data, Transparency, LOC, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "31"
     ],
@@ -7977,18 +7975,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 120: Open-In Progress. 118th Congress: Work is underway. The Library has started tagging bills folded into larger bills and noting them in the Related Bills tab.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 120"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8006,14 +7992,14 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "168",
+    "id": "167",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "committees"
     ],
-    "additionalTags": "Operations, Data, Transparency, In-House Development",
+    "additionalTags": "Operations, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -8029,18 +8015,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 121: Closed-Resolved. 119th Congress: Feedback tools are available through outside vendors and used by some offices. Closed as resolved.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 121"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -8052,17 +8026,17 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "169",
+    "id": "168",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "structure"
     ],
-    "additionalTags": "Organization, Coordination, In-House Development",
+    "additionalTags": "Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "24"
     ],
@@ -8074,18 +8048,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 123: Open-Needs Attention. 117th Congress: Need a formal process, such as a hearing with the Committee on Rules or House Administration, to invite states to testify on lessons from their legislatures.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 123"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8103,7 +8065,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "170",
+    "id": "169",
     "domains": [
       "capacity"
     ],
@@ -8113,7 +8075,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Bipartisanship, LOC, Coordination, Norms",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2022,
     "h1h3Ids": [
       "6"
     ],
@@ -8126,18 +8088,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 124: Closed-Implemented. 117th Congress: The Library of Congress set up a new series entitled Congressional Crossroads featuring discussion themes and speakers.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 124"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -8149,7 +8099,7 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "171",
+    "id": "170",
     "domains": [
       "capacity"
     ],
@@ -8160,7 +8110,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Bipartisanship, Norms, Coordination, Leadership",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
       "6"
     ],
@@ -8172,18 +8122,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 125: Open-Needs Attention. 117th Congress: Need to identify an appropriate office to lead in this area and ensure that this is a nonpartisan responsibility.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 125"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8201,17 +8139,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "172",
+    "id": "171",
     "domains": [
       "technology"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "Coordination, In-House Development, Operations",
+    "additionalTags": "Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2040,
     "h1h3Ids": [
       "19",
       "6"
@@ -8225,18 +8163,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 126: Open-Needs Attention. 117th Congress: H.Rept. 117-389 identifies this as a project that would receive funds through the Modernization Initiatives Account, if enacted.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 126"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -8248,7 +8174,7 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "173",
+    "id": "172",
     "domains": [
       "capacity"
     ],
@@ -8272,18 +8198,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 127: Closed-Implemented. 119th Congress: Subcommittee staff consulted with the Ethics Committee on feasibility and determined members can share resources with each other.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 127"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -8300,17 +8214,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "174",
+    "id": "173",
     "domains": [
       "information"
     ],
     "buckets": [
       "committees"
     ],
-    "additionalTags": "Data, Transparency, Bipartisanship, Organization",
+    "additionalTags": "Data, Transparency, Bipartisanship",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2034,
     "h1h3Ids": [
       "31"
     ],
@@ -8323,18 +8237,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 128: Open-Needs Attention. 117th Congress: Need nonpartisan, largely administrative websites for committees that house committee documents and do not change as the majority changes.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 128"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -8343,10 +8245,15 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       }
     ],
-    "learnMore": []
+    "learnMore": [
+      {
+        "title": "justsecurity.org",
+        "url": "https://www.justsecurity.org/72990/good-governance-paper-no-8-how-to-strengthen-oversight-by-congress/"
+      }
+    ]
   },
   {
-    "id": "175",
+    "id": "174",
     "domains": [
       "capacity"
     ],
@@ -8370,24 +8277,16 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 129: Open-Needs Attention. 117th Congress: Need to develop information and resources for committees, available through a committee retreat or other means.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 129"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
@@ -8398,18 +8297,19 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "176",
+    "id": "175",
     "domains": [
       "staffing"
     ],
     "buckets": [
       "personnel",
-      "house"
+      "house",
+      "capitol"
     ],
-    "additionalTags": "Operations, Coordination, Organization, Bipartisanship",
+    "additionalTags": "Operations, Coordination, Bipartisanship",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "1",
       "6"
@@ -8422,18 +8322,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 130: Closed-Implemented. 118th Congress: CHA established three coworking spaces and an associated feedback form.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 130"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8451,7 +8339,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "177",
+    "id": "176",
     "domains": [
       "capacity"
     ],
@@ -8459,10 +8347,10 @@ export const H2_IDEAS: H2Idea[] = [
       "law",
       "structure"
     ],
-    "additionalTags": "Bipartisanship, Rules, Coordination, Norms",
+    "additionalTags": "Bipartisanship, Rules, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2041,
     "h1h3Ids": [
       "16",
       "6"
@@ -8476,24 +8364,18 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 131: Open-Needs Attention. 117th Congress: Need to convene a bicameral group to discuss changes required to expedite consideration of legislation passed in the originating chamber by unanimous consent.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 131"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -8504,17 +8386,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "178",
+    "id": "177",
     "domains": [
       "information"
     ],
     "buckets": [
       "law"
     ],
-    "additionalTags": "Data, Transparency, Rules, Coordination, Organization",
+    "additionalTags": "Data, Transparency, Rules, Coordination, CRS",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2034,
     "h1h3Ids": [
       "16"
     ],
@@ -8527,18 +8409,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 132: Open-In Progress. 118th Congress: CRS has been experimenting with AI tools and platforms for bill summaries but has not found a solution that is fully accurate.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 132"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -8550,14 +8420,14 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "179",
+    "id": "178",
     "domains": [
       "information"
     ],
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "Data, Transparency, Coordination, Operations, GAO",
+    "additionalTags": "Data, Coordination, Operations, GAO, CBO, CRS",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2027,
@@ -8573,18 +8443,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 133: Open-In Progress. 118th Congress: The House Budget Committee advanced H.R. 7032 to increase CBO's access to data. The House passed H.R. 7593 to increase CRS's access to data.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 133"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8602,17 +8460,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "180",
+    "id": "179",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "CRS, Coordination, Operations, Organization",
+    "additionalTags": "CRS, Coordination, Operations, LOC",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2035,
     "h1h3Ids": [
       "5"
     ],
@@ -8624,18 +8482,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 134: Open-In Progress. 117th Congress: CRS has increased its production of short-form products designed to be more concise; need CRS to assess customer satisfaction.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 134"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8653,7 +8499,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "181",
+    "id": "180",
     "domains": [
       "capacity"
     ],
@@ -8661,10 +8507,10 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "oversight"
     ],
-    "additionalTags": "GAO, Coordination, Operations, Data, Transparency",
+    "additionalTags": "GAO, Coordination, Operations, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "5"
     ],
@@ -8676,18 +8522,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 135: Closed-Implemented. 118th Congress: GAO has developed new, targeted publications for staff, routinely visits House offices, and created an Ambassador Program.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 135"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8705,7 +8539,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "182",
+    "id": "181",
     "domains": [
       "oversight"
     ],
@@ -8713,33 +8547,22 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "supportAgencies"
     ],
-    "additionalTags": "GAO, Data, Transparency, Coordination, Operations",
+    "additionalTags": "GAO, Data, Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2023,
     "h1h3Ids": [
-      "29"
+      "29",
+      "14"
     ],
-    "problemStatement": "Unimplemented GAO recommendations have no tracked cost to Congress",
+    "problemStatement": "GAO's open recommendations reach Congress without cost or legislative context",
     "problemDescription": "GAO issues thousands of open recommendations, many of which would save the government money if implemented, but Congress has no annual accounting of what that unimplemented backlog is actually costing. Without a running estimate, appropriators and authorizers have no simple figure to point to when deciding whether to act on a given recommendation. The savings case for follow through stays diffuse and easy to ignore.",
-    "solutionStatement": "Require an annual GAO report on unimplemented savings",
-    "solutionDescription": "GAO reports annually on the estimated cost savings tied to its recommendations that remain unimplemented, giving Congress a standing figure that quantifies the cost of inaction. The report does not compel any committee to act on a given recommendation.",
+    "solutionStatement": "Require annual GAO reporting on unimplemented savings and legislative options",
+    "solutionDescription": "GAO reports annually to committees on the estimated cost savings tied to recommendations that remain unimplemented, and on legislative options for addressing its open priority recommendations and High-Risk List items. Committees get both a figure quantifying the cost of inaction and a starting point for drafting. Neither report compels a committee to act.",
     "horizonJustification": "The report is a recurring accountability document that informs but does not require action, leaving the decision to implement any given recommendation exactly where it sits today.",
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 136: Closed-Implemented. 118th Congress: The NDAA for FY 2023 included a version of H.R. 7331. GAO is now providing an annual report.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 136"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8747,6 +8570,10 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
       }
     ],
     "learnMore": [
@@ -8757,56 +8584,7 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "govexec.com",
         "url": "https://www.govexec.com/oversight/2025/05/government-watchdog-reports-its-unimplemented-recommendations-could-save-100-billion/405293/"
-      }
-    ]
-  },
-  {
-    "id": "183",
-    "domains": [
-      "oversight"
-    ],
-    "buckets": [
-      "oversight",
-      "supportAgencies"
-    ],
-    "additionalTags": "GAO, Data, Transparency, Coordination, Operations",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2026,
-    "h1h3Ids": [
-      "29",
-      "14"
-    ],
-    "problemStatement": "Open priority GAO recommendations have no legislative path forward",
-    "problemDescription": "Many of GAO's priority recommendations require legislation to implement, not just agency action, but GAO's reporting to Congress does not consistently spell out what that legislation would need to look like. Committees are left to translate a recommendation into a bill on their own, if they take it up at all. Recommendations that need a legislative fix can sit open indefinitely for lack of a drafted starting point.",
-    "solutionStatement": "Require annual GAO reporting on legislative options",
-    "solutionDescription": "GAO reports annually to Congress on legislative options for addressing its open priority recommendations, giving committees a starting point for drafting rather than requiring them to translate agency findings into bill text from scratch. The report is advisory and committees decide whether to act on any option it presents.",
-    "horizonJustification": "The report supplies information committees can use but creates no obligation to introduce or pass anything, so priority recommendations can still sit open indefinitely.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 137: Closed-Implemented. 118th Congress: The NDAA for FY 2023 included a version of H.R. 7331. GAO is now providing an annual report.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
       },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 137"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
       {
         "title": "fedweek.com",
         "url": "https://www.fedweek.com/federal-managers-daily-report/gao-lists-priority-recommendations-needing-action-by-congress/"
@@ -8814,7 +8592,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "184",
+    "id": "182",
     "domains": [
       "capacity"
     ],
@@ -8824,7 +8602,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "CBO, Coordination, Operations, Professional Development",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "5"
     ],
@@ -8836,18 +8614,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 138: Closed-Implemented. 118th Congress: CBO has developed new, targeted publications for staff and now routinely reaches out to and visits House offices.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 138"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8865,40 +8631,28 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "185",
+    "id": "183",
     "domains": [
       "information"
     ],
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "Coordination, Organization, Data, Transparency, CAO",
+    "additionalTags": "Coordination, Data, CAO, Standardization, Information Silos, CBO, GAO, CRS",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "4"
     ],
     "problemStatement": "No shared directory connects staff across Congress and its support agencies",
-    "problemDescription": "Each chamber, committee, and support agency keeps its own staff directory, if it keeps one at all. Finding the right contact at GAO, CRS, or a sister committee often depends on personal networks rather than any published list. Collaboration across offices and agencies slows down because staff cannot locate who to call.",
-    "solutionStatement": "Build a shared Congress-wide staff directory",
-    "solutionDescription": "Congress and the congressional support agencies establish and maintain a shared staff directory covering both chambers, committees, and agencies like GAO, CRS, CBO, and the Law Library. Staff can look up a colleague's role and contact information by office or subject area instead of relying on personal contacts, and new arrivals can find the right person on day one.",
+    "problemDescription": "Each chamber, committee, and support agency keeps its own staff directory, if it keeps one at all, so finding the right contact at GAO, CRS, or a sister committee depends on personal networks. Congress pays for the gap twice: hundreds of offices buy subscriptions to vendors like LegiStorm, Quorum, and Bloomberg Government, which resell contact data drawn largely from Congress's own public disclosures. Because LegiDex stays internal, outside researchers and journalists have no free alternative either.",
+    "solutionStatement": "Congress-wide staff directory should be adopted across all Congressional organizations",
+    "solutionDescription": "Congress and the congressional support agencies establish and maintain a shared staff directory covering both chambers, committees, and agencies like GAO, CRS, CBO, and the Law Library. Staff can look up a colleague's role and contact information by office or subject area instead of relying on personal contacts or a paid vendor subscription, and new arrivals can find the right person on day one. Making the directory public, not just Congress-wide, would also let outside researchers, journalists, and advocacy groups look up the same information directly instead of paying LegiStorm, Quorum, or Bloomberg Government for it.",
     "horizonJustification": "Once built and maintained by the institution, a shared directory becomes standing infrastructure that every office and agency draws on, not a tool any single office has to recreate.",
     "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 139: Open-In Progress. 118th Congress: The House Digital Service has begun scoping and building a House/Senate staff directory that includes congressional support agencies, called LegiDex.",
+    "currentStatus": "LegiDex launched for the House in July 2025. CRS has also since come on board, but the Senate has not: individual Senate offices have taken the position that they must consent before sharing staff data, and implementation there has stalled.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 139"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -8906,17 +8660,40 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/annual-report/fy2026.pdf"
+      },
+      {
+        "title": "americalabs.org",
+        "url": "https://americalabs.org/wp-content/uploads/2026/03/AGI-FY2027-legislative-branch-appropriations-proposals-1.pdf"
+      },
+      {
+        "title": "en.wikipedia.org",
+        "url": "https://en.wikipedia.org/wiki/LegiStorm"
+      },
+      {
+        "title": "congressionaldata.org",
+        "url": "https://congressionaldata.org/congressional-data-task-force-recap-march-11-2025/"
+      },
+      {
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
       {
         "title": "democrats-cha.house.gov",
         "url": "https://democrats-cha.house.gov/media/press-releases/subcommittee-modernization-innovation-announces-new-house-representatives"
+      },
+      {
+        "title": "docs.house.gov",
+        "url": "https://docs.house.gov/meetings/AP/AP24/20240417/117122/HHRG-118-AP24-Wstate-BonetJ-20240417.pdf"
       }
     ]
   },
   {
-    "id": "186",
+    "id": "184",
     "domains": [
       "capacity"
     ],
@@ -8924,7 +8701,7 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "committees"
     ],
-    "additionalTags": "Coordination, Organization, Rules",
+    "additionalTags": "Coordination, Rules, CBO, GAO, CRS",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2027,
@@ -8940,18 +8717,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 140: Open-In Progress. 118th Congress: Progress has been made at the Subcommittee level through hearings with CRS and GAO. The committees of jurisdiction would need to conduct regular oversight.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 140"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -8963,7 +8728,7 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "187",
+    "id": "185",
     "domains": [
       "capacity"
     ],
@@ -8971,10 +8736,10 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "oversight"
     ],
-    "additionalTags": "GAO, In-House Development, Rules, Organization",
+    "additionalTags": "GAO, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2035,
     "h1h3Ids": [
       "18"
     ],
@@ -8987,45 +8752,41 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 141: Open-Needs Attention. 117th Congress: Need the committees of jurisdiction to examine how best to strengthen the support GAO's STAA mission team provides Congress and consider authorizing legislation.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 141"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
       {
         "title": "thefai.org",
         "url": "https://www.thefai.org/posts/recommendations-to-strengthen-gaos-science-technology-assessment-and-analytics-program"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/2618"
       }
     ]
   },
   {
-    "id": "188",
+    "id": "186",
     "domains": [
       "information"
     ],
     "buckets": [
       "structure"
     ],
-    "additionalTags": "Bipartisanship, Data, Transparency, Coordination, Organization",
+    "additionalTags": "Data, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2033,
     "h1h3Ids": [
       "19"
     ],
@@ -9037,18 +8798,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 142: Open-In Progress. 118th Congress: H. Con. Res. 49 was introduced by Rep. Kilmer.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 142"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9066,7 +8815,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "189",
+    "id": "187",
     "domains": [
       "oversight"
     ],
@@ -9074,10 +8823,10 @@ export const H2_IDEAS: H2Idea[] = [
       "oversight",
       "members"
     ],
-    "additionalTags": "Bipartisanship, Professional Development, Norms, Orientation",
+    "additionalTags": "Bipartisanship, Professional Development, Norms, Orientation, GAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "13"
     ],
@@ -9090,35 +8839,31 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 143: Open-In Progress. 117th Congress: GAO's STAA mission team provides a recurring training series with the Congressional Staff Academy; need this to include sessions on bipartisan oversight.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 143"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "justsecurity.org",
+        "url": "https://www.justsecurity.org/72990/good-governance-paper-no-8-how-to-strengthen-oversight-by-congress/"
       }
     ],
     "learnMore": [
       {
         "title": "levin-center.org",
         "url": "https://levin-center.org/congressional-lawmakers/oversightbootcamps/"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
   {
-    "id": "190",
+    "id": "188",
     "domains": [
       "technology"
     ],
@@ -9129,7 +8874,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Procurement, Operations, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "17"
     ],
@@ -9141,18 +8886,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 144: Closed-Implemented. 118th Congress: The House is now making available a chamber-wide eDiscovery platform for committees to use in investigations and other work.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 144"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9166,11 +8899,15 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "levin-center.org",
         "url": "https://levin-center.org/wp-content/uploads/2024/03/5-New-House-eDiscovery-software.pdf"
+      },
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
       }
     ]
   },
   {
-    "id": "191",
+    "id": "189",
     "domains": [
       "technology"
     ],
@@ -9178,10 +8915,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "districtOffices"
     ],
-    "additionalTags": "CAO, Operations, Procurement, In-House Development",
+    "additionalTags": "CAO, Operations, Procurement",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "22"
     ],
@@ -9193,18 +8930,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 145: Closed-Implemented. 118th Congress: CAO now has a process for providing secure WiFi access in every district office.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 145"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9222,7 +8947,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "192",
+    "id": "190",
     "domains": [
       "capacity"
     ],
@@ -9230,10 +8955,10 @@ export const H2_IDEAS: H2Idea[] = [
       "districtOffices",
       "processes"
     ],
-    "additionalTags": "CAO, Coordination, Operations, Organization",
+    "additionalTags": "CAO, Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "22"
     ],
@@ -9245,18 +8970,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 146: Closed-Implemented. 118th Congress: Customer Advocates now fulfill this role as envisioned by the recommendation.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 146"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9274,7 +8987,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "193",
+    "id": "191",
     "domains": [
       "staffing"
     ],
@@ -9282,10 +8995,10 @@ export const H2_IDEAS: H2Idea[] = [
       "districtOffices",
       "personnel"
     ],
-    "additionalTags": "Operations, Coordination, Organization",
+    "additionalTags": "Operations, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2028,
     "h1h3Ids": [
       "22"
     ],
@@ -9297,18 +9010,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 147: Closed-Implemented. 118th Congress: In addition to a transition aide, members-elect can bring a designated aide to New Member Orientation.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 147"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9326,19 +9027,20 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "194",
+    "id": "192",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "districtOffices",
       "community",
-      "casework"
+      "casework",
+      "constituentOutcomes"
     ],
-    "additionalTags": "CAO, Coordination, Norms",
+    "additionalTags": "CAO, Coordination, Norms, Information Silos",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "22",
       "12"
@@ -9352,24 +9054,16 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 148: Closed-Implemented. 118th Congress: CAO supports and facilitates the Caseworkers Teams chat. The CAO Coach program now regularly offers programming for district staff.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 148"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-priorities-signed-into-law"
       }
     ],
     "learnMore": [
@@ -9380,7 +9074,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "195",
+    "id": "193",
     "domains": [
       "capacity"
     ],
@@ -9388,10 +9082,10 @@ export const H2_IDEAS: H2Idea[] = [
       "districtOffices",
       "processes"
     ],
-    "additionalTags": "CAO, Coordination, Operations, Organization",
+    "additionalTags": "CAO, Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "22"
     ],
@@ -9403,18 +9097,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 149: Open-Needs Attention. 117th Congress: Need the House to instruct CAO, through evaluation and expansion of existing authorities, to allow members-elect access once the election is certified.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 149"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9432,7 +9114,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "196",
+    "id": "194",
     "domains": [
       "information"
     ],
@@ -9440,10 +9122,10 @@ export const H2_IDEAS: H2Idea[] = [
       "supportAgencies",
       "casework"
     ],
-    "additionalTags": "CRS, Data, Transparency, Coordination, Operations",
+    "additionalTags": "CRS, Data, Coordination, Operations, Data Privacy",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "4",
       "12"
@@ -9457,24 +9139,20 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 150: Open-In Progress. 118th Congress: CRS has raised feasibility concerns regarding developing and maintaining a contact list. Subcommittee continuing to explore options with CRS.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 150"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "docs.house.gov",
+        "url": "https://docs.house.gov/meetings/AP/AP24/20260317/119053/HHRG-119-AP24-Wstate-MeekerA-20260317.pdf"
       }
     ],
     "learnMore": [
@@ -9489,7 +9167,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "197",
+    "id": "195",
     "domains": [
       "staffing"
     ],
@@ -9497,10 +9175,10 @@ export const H2_IDEAS: H2Idea[] = [
       "districtOffices",
       "personnel"
     ],
-    "additionalTags": "Operations, Coordination",
+    "additionalTags": "Operations, Coordination, Emergency Preparedness, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2035,
     "h1h3Ids": [
       "22"
     ],
@@ -9512,18 +9190,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 151: Open-Needs Attention. 117th Congress: Graves/Kilmer amendment #797 to the FY2023 NDAA contains implementing language. CAO laid out options for increases to the staff cap.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 151"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9541,7 +9207,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "198",
+    "id": "196",
     "domains": [
       "staffing"
     ],
@@ -9566,18 +9232,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 152: Closed-Implemented. 118th Congress: The Office of Employee Assistance developed four training opportunities through their District Webinar Series; the HR Hub has a wide range of resources.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 152"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -9594,7 +9248,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "199",
+    "id": "197",
     "domains": [
       "capacity"
     ],
@@ -9603,10 +9257,10 @@ export const H2_IDEAS: H2Idea[] = [
       "casework",
       "community"
     ],
-    "additionalTags": "Rules, Norms",
+    "additionalTags": "Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2030,
     "h1h3Ids": [
       "12"
     ],
@@ -9618,18 +9272,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 153: Closed-Implemented. 119th Congress: CHA and the Communications Standards Commission have drafted new guidance to allow member offices to maintain and share a Community Resources List.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 153"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9647,7 +9289,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "200",
+    "id": "198",
     "domains": [
       "capacity"
     ],
@@ -9655,10 +9297,10 @@ export const H2_IDEAS: H2Idea[] = [
       "processes",
       "house"
     ],
-    "additionalTags": "Rules, Norms",
+    "additionalTags": "Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "22"
     ],
@@ -9670,18 +9312,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 154: Closed-Implemented. 118th Congress: CHA passed Committee Resolution 118-34 amending the Members' Handbook to allow cosponsored constituent service events.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 154"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9699,7 +9329,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "201",
+    "id": "199",
     "domains": [
       "information"
     ],
@@ -9707,10 +9337,10 @@ export const H2_IDEAS: H2Idea[] = [
       "community",
       "technology"
     ],
-    "additionalTags": "Data, Transparency, Norms",
+    "additionalTags": "Data, CAO, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2030,
     "h1h3Ids": [
       "9"
     ],
@@ -9722,18 +9352,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 155: Closed-Implemented. 118th Congress: Members by statute own constituent data gathered by their offices. The Subcommittee worked with CAO to update the constituent casework policy.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 155"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9751,7 +9369,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "202",
+    "id": "200",
     "domains": [
       "technology"
     ],
@@ -9759,7 +9377,7 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "casework"
     ],
-    "additionalTags": "In-House Development, Procurement, Operations",
+    "additionalTags": "In-House Development, Procurement, Operations, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -9776,36 +9394,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 156: Open-In Progress. 118th Congress: This could be addressed through a new enterprise-wide CMS, which the Subcommittee and CAO have begun exploring.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 64 (tracker Rec 50): Closed-Resolved. 119th Congress: Implementing the full recommendation as drafted would require creating a new, secure document management system for handling constituent communications, particularly when a crisis requires staff to work remotely.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 156"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 64"
       },
       {
         "title": "govinfo.gov",
@@ -9820,20 +9414,21 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "203",
+    "id": "201",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "house",
-      "structure"
+      "structure",
+      "capitol"
     ],
-    "additionalTags": "Operations, Coordination, Procurement",
+    "additionalTags": "Operations, Coordination, Procurement, Accessibility, CAO, SAA, AOC",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2033,
     "h1h3Ids": [
-      "4"
+      "35"
     ],
     "problemStatement": "Visitors cannot find their way through the Capitol campus",
     "problemDescription": "The Capitol complex spans multiple buildings connected by tunnels, elevators, and inconsistent signage, and visitors, including new staff and constituents, regularly get lost finding hearings, offices, or events. No single body owns wayfinding across the campus, so signage and directions vary building to building.",
@@ -9844,17 +9439,85 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 157: Open-In Progress. 117th Congress: Need the Architect of the Capitol, House Sergeant at Arms and Capitol Police to consult a wayfinding expert to review and update directional signage.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
-        "title": "Final Report"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "rollcall.com",
+        "url": "https://rollcall.com/2025/12/10/capitol-hard-to-navigate-does-it-have-to-be/"
       },
       {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
+        "title": "cha.house.gov",
+        "url": "https://cha.house.gov/2026/5/subcommittee-on-modernization-and-innovation-receives-funding-for-house-digital-signage-and-wayfinding-initiative"
+      }
+    ]
+  },
+  {
+    "id": "202",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "house",
+      "personnel"
+    ],
+    "additionalTags": "Operations, Coordination, CAO",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2030,
+    "h1h3Ids": [
+      "1"
+    ],
+    "problemStatement": "The House has no ongoing data on employee telework and space needs",
+    "problemDescription": "Telework and office space policies affect whether the House can compete for and keep staff, but the institution has no regular survey of what employees actually want or use. Decisions about space and telework get made without current data on employee plans.",
+    "solutionStatement": "Conduct regular House employee telework surveys",
+    "solutionDescription": "Have the CAO regularly survey House employees on their telework practices and office space plans, and publish the results to inform space and policy decisions. The survey gives the House current data to plan against instead of relying on assumptions or one-off requests.",
+    "horizonJustification": "The survey produces data on a recurring basis but does not itself set telework policy or reallocate space, so what the House does with the results stays a separate, unresolved decision.",
+    "pathToH2plus": "",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 158: Closed-Not Implemented. 119th Congress: The intent was to assess the future of work on Capitol Hill including remote work. Closed without implementation.",
+    "sources": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
-        "title": "Rec. 157"
-      },
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "203",
+    "domains": [
+      "technology"
+    ],
+    "buckets": [
+      "technology",
+      "house",
+      "capitol"
+    ],
+    "additionalTags": "Operations, Coordination, CAO, AOC, Transparency",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2031,
+    "h1h3Ids": [
+      "35"
+    ],
+    "problemStatement": "Visitors and staff cannot see what hearings or events are happening",
+    "problemDescription": "The Capitol campus has no digital signage showing which hearings or public events are underway or upcoming, so visitors and staff rely on printed schedules or word of mouth to find them. Rooms and hallways give no visual cue to what is happening nearby.",
+    "solutionStatement": "Install digital signage for hearings and events",
+    "solutionDescription": "Have the CAO and Architect of the Capitol install digital displays in high-traffic areas showing current and upcoming public hearings and events, updated automatically from the House calendar. Visitors and staff can check a nearby screen instead of searching separately for a schedule.",
+    "horizonJustification": "The signage displays existing schedule information more visibly but does not change how hearings are scheduled, published, or tracked, so it is a convenience layer on top of an unchanged underlying process.",
+    "pathToH2plus": "",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 159: Open-In Progress. 117th Congress: Need digital displays at the main entrances of House office buildings and outside committee rooms.",
+    "sources": [
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -9878,142 +9541,28 @@ export const H2_IDEAS: H2Idea[] = [
   {
     "id": "204",
     "domains": [
-      "staffing"
-    ],
-    "buckets": [
-      "house",
-      "personnel"
-    ],
-    "additionalTags": "Operations, Coordination, Time Management",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2028,
-    "h1h3Ids": [
-      "1"
-    ],
-    "problemStatement": "The House has no ongoing data on employee telework and space needs",
-    "problemDescription": "Telework and office space policies affect whether the House can compete for and keep staff, but the institution has no regular survey of what employees actually want or use. Decisions about space and telework get made without current data on employee plans.",
-    "solutionStatement": "Conduct regular House employee telework surveys",
-    "solutionDescription": "Have the CAO regularly survey House employees on their telework practices and office space plans, and publish the results to inform space and policy decisions. The survey gives the House current data to plan against instead of relying on assumptions or one-off requests.",
-    "horizonJustification": "The survey produces data on a recurring basis but does not itself set telework policy or reallocate space, so what the House does with the results stays a separate, unresolved decision.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 158: Closed-Not Implemented. 119th Congress: The intent was to assess the future of work on Capitol Hill including remote work. Closed without implementation.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 158"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": []
-  },
-  {
-    "id": "205",
-    "domains": [
-      "technology"
-    ],
-    "buckets": [
-      "technology",
-      "house"
-    ],
-    "additionalTags": "Operations, In-House Development, Coordination",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2028,
-    "h1h3Ids": [
-      "4"
-    ],
-    "problemStatement": "Visitors and staff cannot see what hearings or events are happening",
-    "problemDescription": "The Capitol campus has no digital signage showing which hearings or public events are underway or upcoming, so visitors and staff rely on printed schedules or word of mouth to find them. Rooms and hallways give no visual cue to what is happening nearby.",
-    "solutionStatement": "Install digital signage for hearings and events",
-    "solutionDescription": "Have the CAO and Architect of the Capitol install digital displays in high-traffic areas showing current and upcoming public hearings and events, updated automatically from the House calendar. Visitors and staff can check a nearby screen instead of searching separately for a schedule.",
-    "horizonJustification": "The signage displays existing schedule information more visibly but does not change how hearings are scheduled, published, or tracked, so it is a convenience layer on top of an unchanged underlying process.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 159: Open-In Progress. 117th Congress: Need digital displays at the main entrances of House office buildings and outside committee rooms.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 159"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "rollcall.com",
-        "url": "https://rollcall.com/2025/12/10/capitol-hard-to-navigate-does-it-have-to-be/"
-      },
-      {
-        "title": "cha.house.gov",
-        "url": "https://cha.house.gov/2026/5/subcommittee-on-modernization-and-innovation-receives-funding-for-house-digital-signage-and-wayfinding-initiative"
-      }
-    ]
-  },
-  {
-    "id": "206",
-    "domains": [
       "capacity"
     ],
     "buckets": [
       "house",
-      "structure"
+      "structure",
+      "capitol"
     ],
-    "additionalTags": "Operations, Coordination, Data, Transparency",
+    "additionalTags": "Operations, Coordination, Data, CAO, AOC",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
     "h1h3Ids": [
-      "4"
+      "35"
     ],
     "problemStatement": "No one has inventoried how Capitol campus space is used and managed",
     "problemDescription": "Space across the House and Capitol is assigned, accessed, and managed by different offices and committees with no single inventory of what exists, who controls it, how it is used, or where it could benefit from architectural modernization. Decisions about space, including wayfinding and meeting space, have no baseline data to build on.",
     "solutionStatement": "Study House and Capitol space use and management",
     "solutionDescription": "Direct the CAO or Architect of the Capitol to inventory space across the House and Capitol complex, documenting how each space is used, who controls access, how it is managed, and where it could benefit from architectural modernization. The resulting inventory becomes the baseline other space reforms, including shared meeting space, a reservation portal, and modernization projects, can build on.",
     "horizonJustification": "The recommendation produces a one-time inventory rather than a standing system that keeps the data current as space use changes, so it needs a repeat study to stay accurate.",
-    "pathToH2plus": "",
+    "pathToH2plus": "H2+ #206. An inventory of who controls which rooms and how often they sit empty is the dataset a single reservable-space portal would have to run on.",
     "currentStatus": "BPC tracker (Apr 2026), Rec 160: Closed-Implemented. 117th Congress: Need metrics to understand the extent to which rooms are underutilized and to consider drop-in meeting space that does not require a reservation.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 25 (tracker Rec 93): Open-In Progress. 117th Congress: The Architect of the Capitol laid out future principles in its Vision 2100 plan; need to assess progress made identifying specific projects.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 160"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -10021,18 +9570,6 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 25"
       },
       {
         "title": "govinfo.gov",
@@ -10042,20 +9579,21 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "207",
+    "id": "205",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "house",
-      "structure"
+      "structure",
+      "capitol"
     ],
-    "additionalTags": "Operations, Coordination",
+    "additionalTags": "Operations, Coordination, CAO, AOC",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2029,
     "h1h3Ids": [
-      "4"
+      "35"
     ],
     "problemStatement": "All meeting space in the Capitol complex requires an advance reservation",
     "problemDescription": "Members and staff who need a room for an impromptu meeting have no option but to reserve space in advance through the existing process, even for a short conversation that comes up without notice. The reservation requirement pushes ad hoc meetings into hallways or offices not built for them.",
@@ -10065,18 +9603,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 161: Closed-Implemented. 118th Congress: The Subcommittee considers this implemented by Rec 130. However, staff collaboration spaces are not designed for private drop-in meetings as envisioned.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 161"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -10098,20 +9624,21 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "208",
+    "id": "206",
     "domains": [
       "technology"
     ],
     "buckets": [
       "technology",
-      "house"
+      "house",
+      "capitol"
     ],
-    "additionalTags": "In-House Development, Operations, Coordination, Data, Transparency",
+    "additionalTags": "Operations, Coordination, Data, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
-      "4"
+      "35"
     ],
     "problemStatement": "No single portal covers all reservable space in the Capitol complex",
     "problemDescription": "The current web portal for reserving space covers only some rooms, and separate buildings or space types are booked through separate, sometimes informal channels. Staff who want to book a room have to know which system, or which office, handles that particular space.",
@@ -10122,24 +9649,15 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 162: Open-In Progress. 118th Congress: On March 6, 2023 the CAO unveiled a new room reservation platform providing advance functionality and layout visibility.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 162"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with House staff"
       }
     ],
     "learnMore": [
@@ -10150,42 +9668,31 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "209",
+    "id": "207",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "structure",
-      "house"
+      "house",
+      "capitol"
     ],
-    "additionalTags": "AOC, Coordination, Operations",
+    "additionalTags": "AOC, Coordination, Operations, Standardization",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
-      "22"
+      "35"
     ],
-    "problemStatement": "Members learn about new construction only after plans are set",
+    "problemStatement": "Members and staff learn about construction plans and disruptions too late",
     "problemDescription": "The Architect of the Capitol and the Committee on House Administration plan new construction projects without a standard process for gathering member and staff input beforehand. Projects can proceed to design and construction shaped by assumptions about how a space will be used rather than by the people who will use it.",
-    "solutionStatement": "Joint pre-construction communication procedures",
-    "solutionDescription": "AOC and CHA jointly establish procedures for consulting members and staff before a new construction project begins, so that space design reflects what offices actually need. Members and staff get a defined point at which their input on function and layout is solicited rather than assumed.",
+    "solutionStatement": "Joint construction communication procedures",
+    "solutionDescription": "AOC and CHA jointly establish procedures covering both phases of a project: consulting members and staff before construction begins, so design reflects what offices actually need, and communicating throughout the build about schedule, access changes, and disruptions. Offices get a defined point at which their input is sought and advance notice of changes rather than discovering them on the day they happen.",
     "horizonJustification": "The procedures create a habit of consultation but leave AOC and CHA's underlying authority over facility decisions unchanged, so their effect depends on how consistently each project follows them.",
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 163: Open-In Progress. 119th Congress: The Cannon Renovation Project provided the AOC with lessons learned on proactively communicating with members and staff about construction projects.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 163"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -10202,59 +9709,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "210",
-    "domains": [
-      "capacity"
-    ],
-    "buckets": [
-      "structure",
-      "house"
-    ],
-    "additionalTags": "AOC, Coordination, Operations",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2028,
-    "h1h3Ids": [
-      "22"
-    ],
-    "problemStatement": "Members and staff learn about construction disruptions as they happen",
-    "problemDescription": "Once a construction project begins, the Architect of the Capitol and the Committee on House Administration have no standard procedure for keeping affected members and staff informed of schedule changes, access restrictions, or disruptions. Offices find out about closures, noise, or safety issues as they encounter them rather than in advance.",
-    "solutionStatement": "Joint in-construction communication procedures",
-    "solutionDescription": "AOC and CHA jointly establish procedures for communicating with members and staff for the duration of a construction project, covering schedule updates, access changes, and disruptions. Offices get advance notice instead of discovering changes on the day they occur.",
-    "horizonJustification": "The procedures standardize notice during construction but do not change who controls the schedule or the project itself, so their value depends on consistent follow-through project by project.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 164: Open-In Progress. 119th Congress: The Cannon Renovation Project provided the AOC with lessons learned on communicating with members during construction projects.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 164"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/CHRG-117hhrg48605/html/CHRG-117hhrg48605.htm"
-      }
-    ]
-  },
-  {
-    "id": "211",
+    "id": "208",
     "domains": [
       "capacity"
     ],
@@ -10265,7 +9720,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "CAO, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "22"
     ],
@@ -10278,18 +9733,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 165: Open-Needs Attention. 118th Congress: The CAO provides new members with models of typical offices during NMO, including paint, carpeting, and curtain options.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 165"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -10310,7 +9753,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "212",
+    "id": "209",
     "domains": [
       "capacity"
     ],
@@ -10318,7 +9761,7 @@ export const H2_IDEAS: H2Idea[] = [
       "structure",
       "committees"
     ],
-    "additionalTags": "In-House Development, Operations",
+    "additionalTags": "Operations, Bipartisanship",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -10334,18 +9777,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 166: Open-Needs Attention. 117th Congress: Need flexible space conducive to holding hearings or meetings in nontraditional formats, usable by select committees, task forces, and caucuses.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 73 (tracker Rec 73): Closed-Implemented. 118th Congress: Piloted by the Select Committee, Subcommittee, and the Select Committee on the CCP but would need broader adoption by committees for full implementation.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 166"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -10354,20 +9785,12 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 73"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ],
     "learnMore": [
@@ -10378,7 +9801,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "213",
+    "id": "210",
     "domains": [
       "technology"
     ],
@@ -10386,10 +9809,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "committees"
     ],
-    "additionalTags": "In-House Development, Data, Transparency, Coordination",
+    "additionalTags": "Data, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "19",
       "23"
@@ -10402,18 +9825,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 167: Open-In Progress. 119th Congress: Construction of the Committee Activity Portal has developed its initial three modules: Committee Vote, Committee Referral, and Committee Membership.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 167"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -10431,7 +9842,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "214",
+    "id": "211",
     "domains": [
       "staffing"
     ],
@@ -10442,7 +9853,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2025,
     "h1h3Ids": [
       "2",
       "3"
@@ -10456,18 +9867,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 168: Closed-Implemented. 117th Congress: CHA issued updated regulations for the House Student Loan Repayment Program in June 2022 eliminating the limitation on staff receiving benefits.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 22 (tracker Rec 69): Closed-Implemented. 117th Congress: The Consolidated Appropriations Act of 2021 extended this provision through 2025.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 168"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -10476,20 +9875,14 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 22"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -10500,7 +9893,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "215",
+    "id": "212",
     "domains": [
       "technology"
     ],
@@ -10508,10 +9901,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "law"
     ],
-    "additionalTags": "In-House Development, Coordination, Data, Transparency",
+    "additionalTags": "Coordination, Data",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "19"
     ],
@@ -10524,36 +9917,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 169: Open-In Progress. 117th Congress: The e-Hopper has made it easier to electronically register cosponsors; need to expand this to make it easier to solicit cosponsors.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 48 (tracker Rec 34): Open-In Progress. 117th Congress: Adding cosponsorship electronically was made permanent through the e-Hopper; need House Rules amendments and e-Hopper functionality to permit removal.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 169"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 48"
       },
       {
         "title": "govinfo.gov",
@@ -10572,7 +9941,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "216",
+    "id": "213",
     "domains": [
       "technology"
     ],
@@ -10580,10 +9949,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "law"
     ],
-    "additionalTags": "In-House Development, Coordination, Leadership",
+    "additionalTags": "Coordination, Leadership",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2035,
     "h1h3Ids": [
       "25"
     ],
@@ -10596,36 +9965,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 170: Open-In Progress. 118th Congress: House Office of Legislative Counsel has made an initial request to use Modernization Initiatives Account funds to assess a collaborative drafting tool.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 1 (tracker Rec 1): Open-In Progress. 118th Congress: The U.S. Legislative Markup XML schema is now used for U.S. Code provisions, enrolled bills, and public laws. Work to expand this to include committee reports, hearing records, and other legislative documents is in progress with the Clerk's Office.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 170"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 1"
       },
       {
         "title": "govinfo.gov",
@@ -10640,7 +9985,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "217",
+    "id": "214",
     "domains": [
       "information"
     ],
@@ -10648,7 +9993,7 @@ export const H2_IDEAS: H2Idea[] = [
       "community",
       "technology"
     ],
-    "additionalTags": "Coordination, Data, Transparency, Operations, Information Silos",
+    "additionalTags": "Coordination, Data, Operations, Information Silos, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -10664,36 +10009,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 173: Open-In Progress. 117th Congress: Committee staff have discussed this with CHA; any lists of outside organizations made available to House offices must accord with Committee rules.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 45 (tracker Rec 26): Closed-Implemented. 119th Congress: The Congressional Staff Academy and CAO Coach continue to expand their offerings; CAO has developed resources for caseworkers on a dedicated HouseNet page focused on serving constituents.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 173"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 45"
       },
       {
         "title": "govinfo.gov",
@@ -10708,7 +10029,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "218",
+    "id": "215",
     "domains": [
       "information"
     ],
@@ -10719,30 +10040,19 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Data, Transparency, Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2030,
     "h1h3Ids": [
-      "8"
+      "8",
+      "23"
     ],
-    "problemStatement": "No public platform exists for feedback on pending legislation",
+    "problemStatement": "No platform exists for public input on legislation or committee work",
     "problemDescription": "Constituents who want to comment on a specific bill while it is pending have no dedicated House platform for doing so. Feedback instead arrives through phone calls, email, and social media, none of which is structured for a member or committee to weigh against other input on the same bill.",
-    "solutionStatement": "Study a public feedback platform for pending legislation",
-    "solutionDescription": "The House studies and presents options for a public-facing, interactive platform where constituents can offer opinions and feedback on legislation as it moves through the process. The study lays out what such a platform would require before the House commits to building one.",
+    "solutionStatement": "Study public input platforms for legislation and committees",
+    "solutionDescription": "The House studies and presents options for public-facing platforms covering two uses: constituents offering opinions and feedback on legislation as it moves through the process, and committees soliciting public comment and evidence on topics that may come before them. The study lays out what each would require before the House commits to building either.",
     "horizonJustification": "A study produces options rather than a platform, so it leaves the underlying gap in structured public input unchanged until a specific design is chosen and funded.",
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 174: Open-Needs Attention. 117th Congress: Need development of a new public-facing constituent engagement interactive platform providing methods beyond email and webforms.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 174"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -10756,11 +10066,15 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "participedia.net",
         "url": "https://participedia.net/case/2892"
+      },
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
       }
     ]
   },
   {
-    "id": "219",
+    "id": "216",
     "domains": [
       "technology"
     ],
@@ -10768,7 +10082,7 @@ export const H2_IDEAS: H2Idea[] = [
       "community",
       "technology"
     ],
-    "additionalTags": "In-House Development, Operations, Coordination",
+    "additionalTags": "Operations, Coordination, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -10784,36 +10098,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 175: Open-In Progress. 118th Congress: The Subcommittee prioritized this through vendor roundtable discussions with the CAO, which is exploring enterprise-wide systems.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 57 (tracker Rec 43): Closed-Implemented. 117th Congress: The Communications Standards Commission took several steps to improve dissemination of digital advertisements and disclosure of mass unsolicited emails.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 175"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 57"
       },
       {
         "title": "govinfo.gov",
@@ -10832,72 +10122,21 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "220",
-    "domains": [
-      "information"
-    ],
-    "buckets": [
-      "committees",
-      "stakeholder"
-    ],
-    "additionalTags": "Data, Transparency, Coordination, Operations",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2028,
-    "h1h3Ids": [
-      "8",
-      "23"
-    ],
-    "problemStatement": "Committees have no platform to solicit public comment before action",
-    "problemDescription": "A committee that wants to gather public comment or evidence on a topic before it comes up for action has no dedicated platform for doing so. Committees rely on hearings and ad hoc outreach, which reach a narrower set of voices and happen only after a topic is already on the agenda.",
-    "solutionStatement": "Study a public comment platform for committees",
-    "solutionDescription": "The House studies and presents options for a platform that lets committees solicit public comment and evidence on topics that may come before them, ahead of formal committee action. The study identifies what such a platform would need before the House builds or funds one.",
-    "horizonJustification": "A study produces options rather than a working platform, so committees still lack a channel for pre-hearing public input until a design is chosen and built.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 176: Open-Needs Attention. 117th Congress: Need to study the feasibility and level of committee buy-in for a central website or plug-in to solicit public comments.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 176"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
-      }
-    ]
-  },
-  {
-    "id": "221",
+    "id": "217",
     "domains": [
       "information"
     ],
     "buckets": [
       "otherActivities",
-      "otherServices"
+      "otherServices",
+      "capitol"
     ],
-    "additionalTags": "Coordination, Operations, Data, Transparency",
+    "additionalTags": "Coordination, Operations, Data, Information Silos, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
+      "35",
       "9"
     ],
     "problemStatement": "Constituent tour requests are tracked ad hoc across offices",
@@ -10909,18 +10148,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 177: Open-In Progress. 118th Congress: TourTracker is widely used by member offices but requires offices to purchase it. CHA and CAO are exploring an enterprise-wide solution.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 177"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -10937,7 +10164,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "222",
+    "id": "218",
     "domains": [
       "information"
     ],
@@ -10945,10 +10172,10 @@ export const H2_IDEAS: H2Idea[] = [
       "otherActivities",
       "otherServices"
     ],
-    "additionalTags": "Coordination, Operations, Data, Transparency",
+    "additionalTags": "Coordination, Operations, Data",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "9"
     ],
@@ -10960,18 +10187,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 178: Closed-Implemented. 118th Congress: The FlagTrack program developed by the House Digital Service is now live. 119th Congress: The Subcommittee requested Modernization Initiatives Account funds for additions.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 178"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -10993,11 +10208,15 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "cha.house.gov",
         "url": "https://cha.house.gov/press-releases?ID=B9126FA8-D84C-4A5A-8FDF-2AF9FCF298B6"
+      },
+      {
+        "title": "docs.house.gov",
+        "url": "https://docs.house.gov/meetings/AP/AP24/20240417/117122/HHRG-118-AP24-Wstate-BonetJ-20240417.pdf"
       }
     ]
   },
   {
-    "id": "223",
+    "id": "219",
     "domains": [
       "information"
     ],
@@ -11005,7 +10224,7 @@ export const H2_IDEAS: H2Idea[] = [
       "constituentOutcomes",
       "technology"
     ],
-    "additionalTags": "Data, Transparency, Operations, Coordination",
+    "additionalTags": "Data, Operations, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -11020,18 +10239,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 179: Closed-Resolved. 117th Congress: Need to offer a Customer Experience package that offices can opt into to solicit feedback from constituents at the end of an interaction.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 179"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11053,19 +10260,20 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "224",
+    "id": "220",
     "domains": [
       "information"
     ],
     "buckets": [
-      "community"
+      "community",
+      "capitol"
     ],
-    "additionalTags": "Coordination, Data, Transparency, Organization, Operations",
+    "additionalTags": "Coordination, Data, Transparency, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
-      "31"
+      "35"
     ],
     "problemStatement": "The Capitol Visitor Center tour is generic and impersonal",
     "problemDescription": "Capitol Visitor Center tours are largely generic and group based, and give constituents little sense of who represents them or how their opinions translate into House votes. The tour does not connect a visitor's district or interests to the member who represents them or to specific legislative action. Past exhibit and technology upgrades have not addressed this gap.",
@@ -11075,18 +10283,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 180: Closed-Implemented. 118th Congress: The Capitol Visitor Center now offers a number of interactive displays and educational activities for visitors.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 180"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11104,7 +10300,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "225",
+    "id": "221",
     "domains": [
       "technology"
     ],
@@ -11112,10 +10308,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "culture"
     ],
-    "additionalTags": "In-House Development, Professional Development, Coordination, Operations",
+    "additionalTags": "Professional Development, Coordination, Operations, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2030,
     "h1h3Ids": [
       "18",
       "24"
@@ -11128,18 +10324,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 181: Closed-Implemented. 118th Congress: In September 2023 Speaker McCarthy, Leader Jeffries, and the CAO held the Congressional Hackathon 5.0. CAO participation moved this to fully implemented.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 181"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11161,17 +10345,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "226",
+    "id": "222",
     "domains": [
       "technology"
     ],
     "buckets": [
       "technology"
     ],
-    "additionalTags": "In-House Development, Procurement, Operations, CAO",
+    "additionalTags": "Procurement, Operations, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "17"
     ],
@@ -11184,17 +10368,174 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 182: Open-In Progress. 117th Congress: Need to develop an onboarding process for mature House technology, allowing off-ramping of obsolete technology.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
-        "title": "Final Report"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
+      }
+    ]
+  },
+  {
+    "id": "223",
+    "domains": [
+      "technology"
+    ],
+    "buckets": [
+      "technology"
+    ],
+    "additionalTags": "Data, Transparency, Rules, CAO, Public Records",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2030,
+    "h1h3Ids": [
+      "31"
+    ],
+    "problemStatement": "House-built software is released to the public only case by case",
+    "problemDescription": "The House already requires public release of some tools built on public, non-sensitive congressional data, but release is not the default. Digital applications the House develops for its own use are not systematically opened as source code, so outside developers, researchers, and other legislatures cannot build on House-developed work unless a case is made for each release.",
+    "solutionStatement": "Make House-developed applications open source by default",
+    "solutionDescription": "House-developed digital applications are released as open source by default rather than through case-by-case requests, with exceptions only where security or sensitivity requires them. Outside developers, researchers, and other legislatures can inspect, reuse, and build on House-built code without petitioning for access.",
+    "horizonJustification": "Setting a default changes the institution's standing policy rather than releasing one dataset or tool, and it holds without renewal once written into practice.",
+    "pathToH2plus": "",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 183: Closed-Resolved. 118th Congress: Though the initial intention was to open-source all House-developed digital products, CAO determined this code would have limited value.",
+    "sources": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
       },
       {
-        "title": "Rec. 182"
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/outreach/17592/"
+      }
+    ]
+  },
+  {
+    "id": "224",
+    "domains": [
+      "technology"
+    ],
+    "buckets": [
+      "technology",
+      "senate"
+    ],
+    "additionalTags": "Coordination, Operations, Procurement, Cybersecurity, Standardization",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2024,
+    "h1h3Ids": [
+      "19",
+      "20"
+    ],
+    "problemStatement": "House and Senate technology standards diverge without coordination",
+    "problemDescription": "The House and Senate develop technology standards and processes largely independently, from data formats to procurement practices. This duplication means tools and data built in one chamber often cannot interoperate with the other, and each chamber solves problems the other has already solved. No formal mechanism pushes the two chambers toward common standards.",
+    "solutionStatement": "Align House and Senate technology standards",
+    "solutionDescription": "The House and Senate work together to align their technology standards and processes where it makes sense, from data formats to security review, reducing duplicate effort and improving interoperability. Staff and vendors face fewer chamber-specific requirements for tools meant to serve the whole institution.",
+    "horizonJustification": "Alignment work depends on continued cooperation between two independently governed chambers and can stall without a shared body enforcing it, so it relieves duplication without creating a single owner of the standard.",
+    "pathToH2plus": "",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 184: Closed-Implemented. 118th Congress: The House and Senate have connected Office 365 systems to allow better document sharing. The CIO and CIS counsels meet regularly.",
+    "sources": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with private sector"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
+      }
+    ]
+  },
+  {
+    "id": "225",
+    "domains": [
+      "technology"
+    ],
+    "buckets": [
+      "technology"
+    ],
+    "additionalTags": "Procurement, Coordination, Operations, Data, Transparency, CAO",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2034,
+    "h1h3Ids": [
+      "17"
+    ],
+    "problemStatement": "Vendors lack visibility into how House technology approval works",
+    "problemDescription": "Potential technology vendors have little public information about House requirements, review criteria, or how to begin the approval and onboarding process. Vendors often build products against assumptions about what the House needs and discover actual requirements only after starting review, which wastes vendor effort and slows the pipeline from both directions.",
+    "solutionStatement": "Publish vendor information and streamline approval",
+    "solutionDescription": "The House publishes clearer public information for potential technology vendors, covering requirements, review criteria, and the approval and onboarding process, and streamlines that process so vendors that meet the bar move through faster. Vendors can assess fit before investing in a full proposal, and offices see a wider, better-prepared vendor pool.",
+    "horizonJustification": "It publishes more information and speeds an existing review process rather than creating a new institutional structure to manage vendor relationships going forward.",
+    "pathToH2plus": "",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 185: Open-In Progress. 118th Congress: The Subcommittee held two roundtables during the 118th Congress and is engaged with the CAO on improving the vendor approval process.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 39 (tracker Rec 20): Open-In Progress. 118th Congress: The House has made progress reforming this process for cloud-based vendors. Subcommittee is continuing to work with CAO to examine opportunities to reform the process for all technology vendors.",
+    "sources": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "govinfo.gov",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
+      }
+    ]
+  },
+  {
+    "id": "226",
+    "domains": [
+      "technology"
+    ],
+    "buckets": [
+      "technology"
+    ],
+    "additionalTags": "Procurement, CAO, Operations",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2032,
+    "h1h3Ids": [
+      "17"
+    ],
+    "problemStatement": "The House has no formal program for recurring technology vendors",
+    "problemDescription": "Some technology vendors work with the House repeatedly, but there is no established program that recognizes or streamlines this relationship. Each new engagement with a familiar vendor still runs through the full review process, and the CAO has no structured way to build a bench of pre-vetted delivery partners.",
+    "solutionStatement": "Establish a CAO Established Delivery Partners program",
+    "solutionDescription": "The CAO creates an Established Delivery Partners program for digital solution vendors that work regularly with the House, giving pre-vetted vendors a faster path through future engagements. The CAO builds and maintains a standing bench of trusted vendors rather than re-evaluating the same vendors from scratch each time.",
+    "horizonJustification": "It creates a standing, CAO-owned program with defined criteria for vendor status, so it persists and accumulates value beyond any single procurement.",
+    "pathToH2plus": "",
+    "currentStatus": "BPC tracker (Apr 2026), Rec 186: Open-In Progress. 118th Congress: The Subcommittee is currently engaged with the CAO on developing this program and establishing guidelines.",
+    "sources": [
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11219,233 +10560,7 @@ export const H2_IDEAS: H2Idea[] = [
     "buckets": [
       "technology"
     ],
-    "additionalTags": "In-House Development, Data, Transparency, Rules, CAO",
-    "horizon": "H2+",
-    "horizonKey": "h2pos",
-    "year": 2026,
-    "h1h3Ids": [
-      "31"
-    ],
-    "problemStatement": "House-built software is released to the public only case by case",
-    "problemDescription": "The House already requires public release of some tools built on public, non-sensitive congressional data, but release is not the default. Digital applications the House develops for its own use are not systematically opened as source code, so outside developers, researchers, and other legislatures cannot build on House-developed work unless a case is made for each release.",
-    "solutionStatement": "Make House-developed applications open source by default",
-    "solutionDescription": "House-developed digital applications are released as open source by default rather than through case-by-case requests, with exceptions only where security or sensitivity requires them. Outside developers, researchers, and other legislatures can inspect, reuse, and build on House-built code without petitioning for access.",
-    "horizonJustification": "Setting a default changes the institution's standing policy rather than releasing one dataset or tool, and it holds without renewal once written into practice.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 183: Closed-Resolved. 118th Congress: Though the initial intention was to open-source all House-developed digital products, CAO determined this code would have limited value.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 183"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
-      },
-      {
-        "title": "rstreet.org",
-        "url": "https://www.rstreet.org/outreach/17592/"
-      }
-    ]
-  },
-  {
-    "id": "228",
-    "domains": [
-      "technology"
-    ],
-    "buckets": [
-      "technology",
-      "senate"
-    ],
-    "additionalTags": "Coordination, In-House Development, Operations, Procurement",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2026,
-    "h1h3Ids": [
-      "19",
-      "20"
-    ],
-    "problemStatement": "House and Senate technology standards diverge without coordination",
-    "problemDescription": "The House and Senate develop technology standards and processes largely independently, from data formats to procurement practices. This duplication means tools and data built in one chamber often cannot interoperate with the other, and each chamber solves problems the other has already solved. No formal mechanism pushes the two chambers toward common standards.",
-    "solutionStatement": "Align House and Senate technology standards",
-    "solutionDescription": "The House and Senate work together to align their technology standards and processes where it makes sense, from data formats to security review, reducing duplicate effort and improving interoperability. Staff and vendors face fewer chamber-specific requirements for tools meant to serve the whole institution.",
-    "horizonJustification": "Alignment work depends on continued cooperation between two independently governed chambers and can stall without a shared body enforcing it, so it relieves duplication without creating a single owner of the standard.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 184: Closed-Implemented. 118th Congress: The House and Senate have connected Office 365 systems to allow better document sharing. The CIO and CIS counsels meet regularly.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 184"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
-      }
-    ]
-  },
-  {
-    "id": "229",
-    "domains": [
-      "technology"
-    ],
-    "buckets": [
-      "technology"
-    ],
-    "additionalTags": "Procurement, Coordination, Operations, Data, Transparency",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2028,
-    "h1h3Ids": [
-      "17"
-    ],
-    "problemStatement": "Vendors lack visibility into how House technology approval works",
-    "problemDescription": "Potential technology vendors have little public information about House requirements, review criteria, or how to begin the approval and onboarding process. Vendors often build products against assumptions about what the House needs and discover actual requirements only after starting review, which wastes vendor effort and slows the pipeline from both directions.",
-    "solutionStatement": "Publish vendor information and streamline approval",
-    "solutionDescription": "The House publishes clearer public information for potential technology vendors, covering requirements, review criteria, and the approval and onboarding process, and streamlines that process so vendors that meet the bar move through faster. Vendors can assess fit before investing in a full proposal, and offices see a wider, better-prepared vendor pool.",
-    "horizonJustification": "It publishes more information and speeds an existing review process rather than creating a new institutional structure to manage vendor relationships going forward.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 185: Open-In Progress. 118th Congress: The Subcommittee held two roundtables during the 118th Congress and is engaged with the CAO on improving the vendor approval process.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 39 (tracker Rec 20): Open-In Progress. 118th Congress: The House has made progress reforming this process for cloud-based vendors. Subcommittee is continuing to work with CAO to examine opportunities to reform the process for all technology vendors.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 185"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 39"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
-      }
-    ]
-  },
-  {
-    "id": "230",
-    "domains": [
-      "technology"
-    ],
-    "buckets": [
-      "technology"
-    ],
-    "additionalTags": "Procurement, CAO, In-House Development, Operations",
-    "horizon": "H2+",
-    "horizonKey": "h2pos",
-    "year": 2028,
-    "h1h3Ids": [
-      "17"
-    ],
-    "problemStatement": "The House has no formal program for recurring technology vendors",
-    "problemDescription": "Some technology vendors work with the House repeatedly, but there is no established program that recognizes or streamlines this relationship. Each new engagement with a familiar vendor still runs through the full review process, and the CAO has no structured way to build a bench of pre-vetted delivery partners.",
-    "solutionStatement": "Establish a CAO Established Delivery Partners program",
-    "solutionDescription": "The CAO creates an Established Delivery Partners program for digital solution vendors that work regularly with the House, giving pre-vetted vendors a faster path through future engagements. The CAO builds and maintains a standing bench of trusted vendors rather than re-evaluating the same vendors from scratch each time.",
-    "horizonJustification": "It creates a standing, CAO-owned program with defined criteria for vendor status, so it persists and accumulates value beyond any single procurement.",
-    "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 186: Open-In Progress. 118th Congress: The Subcommittee is currently engaged with the CAO on developing this program and establishing guidelines.",
-    "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 186"
-      },
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      }
-    ],
-    "learnMore": [
-      {
-        "title": "govinfo.gov",
-        "url": "https://www.govinfo.gov/content/pkg/CRPT-117hrpt658/html/CRPT-117hrpt658.htm"
-      }
-    ]
-  },
-  {
-    "id": "231",
-    "domains": [
-      "technology"
-    ],
-    "buckets": [
-      "technology"
-    ],
-    "additionalTags": "In-House Development, Rules, Norms, Procurement",
+    "additionalTags": "Rules, Procurement",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -11460,18 +10575,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 187: Closed-Resolved. 119th Congress: Subcommittee staff consulted the House Ethics Committee on whether accepting open-source code would constitute a gift violation.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 187"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11489,7 +10592,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "232",
+    "id": "228",
     "domains": [
       "technology"
     ],
@@ -11500,7 +10603,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Coordination, Leadership, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2040,
     "h1h3Ids": [
       "17",
       "20"
@@ -11513,18 +10616,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 188: Open-Needs Attention. 117th Congress: Need a coordinated working group of leadership offices, relevant committees, support offices, and outside advisors to prioritize digital infrastructure.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 188"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11542,7 +10633,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "233",
+    "id": "229",
     "domains": [
       "technology"
     ],
@@ -11550,10 +10641,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "structure"
     ],
-    "additionalTags": "Coordination, Organization, Leadership, In-House Development",
+    "additionalTags": "Coordination, Leadership",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "20",
       "17"
@@ -11566,18 +10657,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 189: Closed-Implemented. 118th Congress: The Board and HDS Advisory Group has launched with 358 members. All staff can join regardless of seniority.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 189"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11595,7 +10674,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "234",
+    "id": "230",
     "domains": [
       "technology"
     ],
@@ -11603,10 +10682,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "community"
     ],
-    "additionalTags": "Operations, In-House Development, CAO",
+    "additionalTags": "Operations, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "9"
     ],
@@ -11619,18 +10698,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 190: Closed-Implemented. 118th Congress: The Capitol Switchboard now shares caller ID information across chambers.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 190"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -11642,17 +10709,17 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "235",
+    "id": "231",
     "domains": [
       "information"
     ],
     "buckets": [
       "committees"
     ],
-    "additionalTags": "GPO, Data, Transparency, In-House Development",
+    "additionalTags": "GPO, Data, Transparency, Standardization, Public Records",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "31"
     ],
@@ -11665,24 +10732,15 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 191: Open-In Progress. 118th Congress: This is part of the Clerk's Roadmap for Publishing Legislative Documents in USLM XML Format, which includes 10 stages.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 191"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with GAO staff"
       }
     ],
     "learnMore": [
@@ -11693,7 +10751,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "236",
+    "id": "232",
     "domains": [
       "capacity"
     ],
@@ -11701,10 +10759,10 @@ export const H2_IDEAS: H2Idea[] = [
       "law",
       "personnel"
     ],
-    "additionalTags": "Professional Development, Coordination, In-House Development",
+    "additionalTags": "Professional Development, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "2",
       "25"
@@ -11718,24 +10776,15 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 193: Open-In Progress. 118th Congress: HOLC needs resources to add employees focused on proactive outreach to member and committee offices.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 193"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Interview with lobbyist"
       }
     ],
     "learnMore": [
@@ -11746,7 +10795,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "237",
+    "id": "233",
     "domains": [
       "capacity"
     ],
@@ -11754,10 +10803,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "house"
     ],
-    "additionalTags": "Orientation, Coordination, In-House Development",
+    "additionalTags": "Orientation, Coordination, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "4",
       "2"
@@ -11770,18 +10819,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 194: Closed-Implemented. 118th Congress: A support office open house was included as part of New Member Orientation; the Longworth Main Street Project includes a corridor of public-facing offices.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 194"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11799,17 +10836,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "238",
+    "id": "234",
     "domains": [
       "information"
     ],
     "buckets": [
       "members"
     ],
-    "additionalTags": "Data, Transparency, Norms, Rules",
+    "additionalTags": "Data, Transparency, Rules, Public Records, Time Management",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "16",
       "31"
@@ -11822,18 +10859,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 197: Open-Needs Attention. 117th Congress: Need regular reporting from the electronic voting system noting the total time individual members voted outside the time allotted.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 197"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -11851,7 +10876,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "239",
+    "id": "235",
     "domains": [
       "capacity"
     ],
@@ -11875,18 +10900,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 198: Closed-Implemented. 118th Congress: The Select Committee and CHA have participated in CODELs that included sessions focused on modernization.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 198"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -11903,7 +10916,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "240",
+    "id": "236",
     "domains": [
       "capacity"
     ],
@@ -11914,7 +10927,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Orientation, Bipartisanship, Professional Development",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "2"
     ],
@@ -11927,18 +10940,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 199: Open-Needs Attention. 117th Congress: Need to build on New Member Orientation to provide a follow-up opportunity for new members after having served several months.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 199"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
@@ -11950,17 +10951,17 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "241",
+    "id": "237",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "members"
     ],
-    "additionalTags": "Rules, Operations, Norms",
+    "additionalTags": "Rules, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2031,
     "h1h3Ids": [
       "2"
     ],
@@ -11973,36 +10974,12 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), Rec 200: Closed-Implemented. 118th Congress: CHA updated the Members' Handbook to include language and regulations allowing member reimbursement for travel expenses.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 51 (tracker Rec 38): Closed-Resolved. 117th Congress: Existing travel expenditure policies allow for more modern travel transactions as part of the House Travel Card Program.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 200"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
-      },
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 51"
       },
       {
         "title": "govinfo.gov",
@@ -12017,7 +10994,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "242",
+    "id": "238",
     "domains": [
       "capacity"
     ],
@@ -12025,10 +11002,10 @@ export const H2_IDEAS: H2Idea[] = [
       "committees",
       "house"
     ],
-    "additionalTags": "Organization, Coordination, Leadership",
+    "additionalTags": "Coordination, Leadership",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2022,
     "h1h3Ids": [
       "24"
     ],
@@ -12040,18 +11017,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 201: Closed-Implemented. 117th Congress: The Modernization Subcommittee was formed under CHA at the start of the 118th Congress.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 201"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -12073,7 +11038,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "243",
+    "id": "239",
     "domains": [
       "capacity"
     ],
@@ -12081,10 +11046,10 @@ export const H2_IDEAS: H2Idea[] = [
       "committees",
       "house"
     ],
-    "additionalTags": "Organization, Rules, Coordination",
+    "additionalTags": "Rules, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2037,
     "h1h3Ids": [
       "24"
     ],
@@ -12096,18 +11061,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), Rec 202: Open-Needs Attention. 117th Congress: Need the House, with or without the Senate, to authorize a Select Committee with a mandate to evaluate the institution at more regular intervals.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 117-646 (Dec. 2022)"
-      },
-      {
-        "title": "Rec. 202"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
@@ -12125,7 +11078,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "244",
+    "id": "240",
     "domains": [
       "information"
     ],
@@ -12133,10 +11086,10 @@ export const H2_IDEAS: H2Idea[] = [
       "stakeholder",
       "technology"
     ],
-    "additionalTags": "Data, Transparency, Rules, Organization, Coordination",
+    "additionalTags": "Data, Transparency, Rules, Coordination, Standardization, Information Silos, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "31"
     ],
@@ -12148,18 +11101,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 3 (tracker Rec 3): Open-In Progress. 118th Congress: Acting Clerk McCumber testified before CHA that his office is working with the Senate to develop a new lobbying disclosure system.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 3"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12177,18 +11118,18 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "245",
+    "id": "241",
     "domains": [
       "oversight"
     ],
     "buckets": [
       "oversight",
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Data, Transparency, Organization, Coordination, Rules",
+    "additionalTags": "Data, Coordination, Rules, Information Silos, CBO, CRS",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2030,
     "h1h3Ids": [
       "19"
     ],
@@ -12201,45 +11142,49 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 4 (tracker Rec 4): Closed-Not Implemented. 118th Congress: Both CBO and CRS report challenges to creating a complete, authoritative list. CBO currently produces an annual report covering only expired and expiring authorizations.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 4"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
+      },
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
+      },
+      {
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/research/elements-of-change-building-blocks-for-a-better-budget-2/"
       }
     ],
     "learnMore": [
       {
         "title": "cbo.gov",
         "url": "https://www.cbo.gov/publication/62551"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/congress-is-struggling-to-get-its-work-done-and-a-new-report-argues-for-21st-century-upgrades/"
       }
     ]
   },
   {
-    "id": "246",
+    "id": "242",
     "domains": [
       "information"
     ],
     "buckets": [
       "committees"
     ],
-    "additionalTags": "Data, Transparency, Organization",
+    "additionalTags": "Data, Transparency, Public Records",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "31"
     ],
@@ -12252,24 +11197,18 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 5 (tracker Rec 5): Open-In Progress. 119th Congress: Construction of the Committee Activity Portal has developed its initial three modules: Committee Vote, Committee Referral, and Committee Membership.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 5"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -12280,17 +11219,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "247",
+    "id": "243",
     "domains": [
       "information"
     ],
     "buckets": [
       "members"
     ],
-    "additionalTags": "Data, Transparency, Organization, Rules",
+    "additionalTags": "Data, Transparency, Rules, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2031,
     "h1h3Ids": [
       "31"
     ],
@@ -12302,18 +11241,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 6 (tracker Rec 72): Open-In Progress. 118th Congress: CHA has updated the list of CMOs but has not included a list of ECMOs.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 6"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12335,17 +11262,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "248",
+    "id": "244",
     "domains": [
       "staffing"
     ],
     "buckets": [
       "personnel"
     ],
-    "additionalTags": "CAO, Organization, Operations, In-House Development",
+    "additionalTags": "CAO, Operations, Information Silos",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2021,
     "h1h3Ids": [
       "2",
       "3"
@@ -12358,18 +11285,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 11 (tracker Rec 6): Closed-Implemented. 117th Congress: Pursuant to H. Res. 756, CAO announced in August 2021 the creation of a House Human Resources Hub. It is now live and accessible to congressional staff.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 11"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12387,7 +11302,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "249",
+    "id": "245",
     "domains": [
       "staffing"
     ],
@@ -12395,10 +11310,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "culture"
     ],
-    "additionalTags": "Rules, Organization, Professional Development",
+    "additionalTags": "Rules, Professional Development, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2027,
     "h1h3Ids": [
       "2",
       "1"
@@ -12412,18 +11327,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 12 (tracker Rec 7): Closed-Implemented. 118th Congress: The FY24 Legislative Branch Appropriations Act reduced ODI funding to zero. Many of its duties, responsibilities, and staff were rolled into an office within CAO.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 12"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -12436,21 +11339,29 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "cnn.com",
         "url": "https://www.cnn.com/2024/03/22/politics/house-office-diversity-inclusion-disbanded/index.html"
+      },
+      {
+        "title": "issueone.org",
+        "url": "https://issueone.org/wp-content/uploads/2022/01/Fair-Pay-Why-Congress-Needs-to-Invest-in-Junior-Staff.pdf"
+      },
+      {
+        "title": "democracyjournal.org",
+        "url": "https://democracyjournal.org/magazine/74/how-modernizing-congress-would-heal-dysfunction/"
       }
     ]
   },
   {
-    "id": "250",
+    "id": "246",
     "domains": [
       "staffing"
     ],
     "buckets": [
       "personnel"
     ],
-    "additionalTags": "CAO, Operations, Time Management",
+    "additionalTags": "CAO, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2030,
     "h1h3Ids": [
       "1"
     ],
@@ -12463,24 +11374,16 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 13 (tracker Rec 8): Closed-Not Implemented. 119th Congress: Pursuant to H. Res. 756, CAO completed a suitability review in November 2020 and commissioned a comprehensive study in 2024 on moving the House to semimonthly pay.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 13"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "issueone.org",
+        "url": "https://issueone.org/wp-content/uploads/2022/01/Fair-Pay-Why-Congress-Needs-to-Invest-in-Junior-Staff.pdf"
       }
     ],
     "learnMore": [
@@ -12491,11 +11394,15 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "congressfoundation.org",
         "url": "https://www.congressfoundation.org/news/blog/1981-the-congressional-management-foundation-supports-passage-of-hr-8827-authorizing-the-house-of-representatives-to-pay-staff-twice-per-month"
+      },
+      {
+        "title": "democracyjournal.org",
+        "url": "https://democracyjournal.org/magazine/74/how-modernizing-congress-would-heal-dysfunction/"
       }
     ]
   },
   {
-    "id": "251",
+    "id": "247",
     "domains": [
       "staffing"
     ],
@@ -12506,10 +11413,10 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Operations",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2032,
+    "year": 2036,
     "h1h3Ids": [
-      "1",
-      "2"
+      "37",
+      "1"
     ],
     "problemStatement": "Member office staff caps limit how many people offices can hire",
     "problemDescription": "House rules cap the number of permanent and additional staff a Member office may employ, a limit set decades ago that has not kept pace with the volume of casework, legislative work, and constituent communication offices now handle. Offices that need more capacity cannot add staff even when they have the budget authority to pay them.",
@@ -12520,24 +11427,18 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 14 (tracker Rec 9): Open-Needs Attention. 117th Congress: Pursuant to H. Res. 756, the House Office of Inspector General completed a review in December 2021 and recommended increasing the cap; needs CHA action.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 14"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
       }
     ],
     "learnMore": [
@@ -12548,22 +11449,26 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/R43947.html"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/congress-is-struggling-to-get-its-work-done-and-a-new-report-argues-for-21st-century-upgrades/"
       }
     ]
   },
   {
-    "id": "252",
+    "id": "248",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "members"
     ],
     "additionalTags": "Operations, Coordination, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2031,
+    "year": 2035,
     "h1h3Ids": [
       "1"
     ],
@@ -12575,18 +11480,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 18 (tracker Rec 65): Open-Needs Attention. 117th Congress: Need a policy change, and perhaps a statutory solution, to create a separate account for constituent communications costs.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 18"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12604,7 +11497,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "253",
+    "id": "249",
     "domains": [
       "staffing"
     ],
@@ -12614,7 +11507,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "CAO, Rules, Professional Development",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2027,
     "h1h3Ids": [
       "1"
     ],
@@ -12626,18 +11519,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 21 (tracker Rec 68): Closed-Resolved. 119th Congress: Each Member, Chair, and Leader can designate their staff to either DCHL or FEHB health plans based on their interpretation of the Affordable Care Act.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 21"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12655,17 +11536,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "254",
+    "id": "250",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "districtOffices"
     ],
-    "additionalTags": "CAO, Coordination, Procurement, Operations",
+    "additionalTags": "CAO, Coordination, Procurement, Operations, Standardization",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2040,
     "h1h3Ids": [
       "22"
     ],
@@ -12677,18 +11558,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 26 (tracker Rec 94): Closed-Not Implemented. 117th Congress: Select Committee staff have held discussions with GSA; needs CHA to develop a system for managing district office leases separately from individual offices.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 26"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12706,7 +11575,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "255",
+    "id": "251",
     "domains": [
       "staffing"
     ],
@@ -12717,7 +11586,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Orientation",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2021,
     "h1h3Ids": [
       "2"
     ],
@@ -12729,18 +11598,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 27 (tracker Rec 11): Closed-Implemented. 117th Congress: The Consolidated Appropriations Act, 2021 provided funding for the cost of hiring transition staff.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 27"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12758,7 +11615,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "257",
+    "id": "252",
     "domains": [
       "staffing"
     ],
@@ -12766,10 +11623,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "members"
     ],
-    "additionalTags": "Professional Development, Orientation, Norms, Cybersecurity",
+    "additionalTags": "Professional Development, Orientation, Cybersecurity, Rules",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "2"
     ],
@@ -12781,18 +11638,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 32 (tracker Rec 16): Closed-Implemented. 118th Congress: Cybersecurity training is included in New Member Orientation and is categorized as mandatory.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 32"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12806,21 +11651,25 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "rollcall.com",
         "url": "https://rollcall.com/2019/07/26/modernization-panel-calls-for-staffer-hr-hub-mandatory-cybersecurity-training/"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
       }
     ]
   },
   {
-    "id": "258",
+    "id": "253",
     "domains": [
       "information"
     ],
     "buckets": [
       "house"
     ],
-    "additionalTags": "Data, Transparency, Operations, Rules",
+    "additionalTags": "Data, Transparency, Operations, Rules, Accessibility, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2028,
     "h1h3Ids": [
       "31"
     ],
@@ -12832,18 +11681,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 34 (tracker Rec 28): Closed-Implemented. 118th Congress: Nearly all committees provide some form of closed captioning for official proceedings, and the Clerk provides closed captioning for all floor proceedings.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 34"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12865,20 +11702,19 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "259",
+    "id": "254",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "house",
-      "structure"
+      "capitol"
     ],
-    "additionalTags": "Operations, Coordination, Organization",
+    "additionalTags": "Operations, AOC, Accessibility, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
-      "22"
+      "35"
     ],
     "problemStatement": "The Capitol complex has unmapped accessibility barriers",
     "problemDescription": "No comprehensive review catalogs where the Capitol complex fails visitors, Members, and staff with disabilities, from door hardware to signage to screening procedures. Fixes happen piecemeal, driven by individual complaints rather than a full assessment of where barriers exist.",
@@ -12888,18 +11724,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 35 (tracker Rec 29): Closed-Implemented. 118th Congress: The Architect of the Capitol reports on accessibility barriers pursuant to the Congressional Accountability Act; in May 2024 the AOC issued a physical accessibility report.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 35"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -12917,7 +11741,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "260",
+    "id": "255",
     "domains": [
       "technology"
     ],
@@ -12925,10 +11749,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "supportAgencies"
     ],
-    "additionalTags": "In-House Development, Operations, Coordination, CAO",
+    "additionalTags": "Operations, Coordination, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2029,
     "h1h3Ids": [
       "17",
       "20"
@@ -12942,24 +11766,16 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 37 (tracker Rec 18): Closed-Resolved. 118th Congress: Providing strong IT support requires ongoing attention. The CAO has worked to improve IT services; HIR now offers drop-in support and other channels.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 37"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
       }
     ],
     "learnMore": [
@@ -12970,7 +11786,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "261",
+    "id": "256",
     "domains": [
       "technology"
     ],
@@ -12994,18 +11810,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 38 (tracker Rec 19): Closed-Implemented. 118th Congress: Substantial progress continues on digitizing administrative forms, including expanded e-forms and a new employee onboarding app.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 38"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -13022,7 +11826,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "262",
+    "id": "257",
     "domains": [
       "technology"
     ],
@@ -13030,10 +11834,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "supportAgencies"
     ],
-    "additionalTags": "Coordination, Operations",
+    "additionalTags": "Coordination, Operations, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2027,
     "h1h3Ids": [
       "4"
     ],
@@ -13045,18 +11849,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 41 (tracker Rec 22): Closed-Resolved. 119th Congress: The CAO is addressing this via the Tech Partner Plus, Customer Advocate, and District Office Connect programs.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 41"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13074,7 +11866,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "263",
+    "id": "258",
     "domains": [
       "technology"
     ],
@@ -13082,10 +11874,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "supportAgencies"
     ],
-    "additionalTags": "Data, Transparency, Operations, Procurement",
+    "additionalTags": "Data, Operations, Procurement, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2029,
     "h1h3Ids": [
       "4",
       "5"
@@ -13099,18 +11891,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 42 (tracker Rec 23): Open-In Progress. 117th Congress: CAO has added features to make it easier for customers and support staff to communicate; needs systematic gauging of customer satisfaction.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 42"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -13127,7 +11907,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "264",
+    "id": "259",
     "domains": [
       "technology"
     ],
@@ -13135,10 +11915,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "house"
     ],
-    "additionalTags": "Procurement, CAO, Operations",
+    "additionalTags": "Procurement, CAO, Operations, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2029,
     "h1h3Ids": [
       "17"
     ],
@@ -13151,18 +11931,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 43 (tracker Rec 24): Closed-Implemented. 118th Congress: CAO now bulk purchases technology for incoming members; full implementation would require a policy decision to create an account separate from the MRA.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 43"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -13179,14 +11947,14 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "265",
+    "id": "260",
     "domains": [
       "information"
     ],
     "buckets": [
       "supportAgencies"
     ],
-    "additionalTags": "CRS, Data, Transparency, Coordination",
+    "additionalTags": "CRS, Data, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -13201,18 +11969,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 44 (tracker Rec 25): Closed-Implemented. 118th Congress: CRS continues to increase its publication of short-form products.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 44"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13230,7 +11986,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "266",
+    "id": "261",
     "domains": [
       "technology"
     ],
@@ -13238,10 +11994,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "structure"
     ],
-    "additionalTags": "Coordination, Organization, In-House Development",
+    "additionalTags": "Coordination, In-House Development, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2022,
     "h1h3Ids": [
       "20"
     ],
@@ -13253,18 +12009,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 46 (tracker Rec 95): Closed-Implemented. 117th Congress: CAO has stood up a House Digital Service to fill this function.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 46"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13282,7 +12026,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "267",
+    "id": "262",
     "domains": [
       "technology"
     ],
@@ -13290,10 +12034,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "structure"
     ],
-    "additionalTags": "Data, Transparency, Coordination, Organization, In-House Development",
+    "additionalTags": "Data, Coordination, Standardization",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2022,
     "h1h3Ids": [
       "19"
     ],
@@ -13305,18 +12049,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 47 (tracker Rec 96): Closed-Implemented. 117th Congress: In June 2022, CHA directed the Clerk to make the name change in light of its increased scope, and regular meetings have continued.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 47"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13338,7 +12070,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "268",
+    "id": "263",
     "domains": [
       "staffing"
     ],
@@ -13346,12 +12078,13 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "members"
     ],
-    "additionalTags": "Professional Development, Orientation, Norms",
+    "additionalTags": "Professional Development, Orientation, Security, Emergency Preparedness, Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
-      "2"
+      "38",
+      "39"
     ],
     "problemStatement": "Members have no required emergency preparedness training",
     "problemDescription": "Members face no requirement to train for a crisis that disrupts normal government operations, from a security incident to a mass casualty event at the Capitol. Individual offices and leadership plan informally, but Members themselves are not trained on what to do or where authority sits during an emergency.",
@@ -13362,44 +12095,40 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 49 (tracker Rec 35): Open-Needs Attention. 118th Congress: Needs a change in House Rules to institute a new requirement. The House currently provides training and tools to offices on request.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 49"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
       }
     ],
     "learnMore": [
       {
         "title": "rollcall.com",
         "url": "https://rollcall.com/2021/03/25/emergency-preparedness-training-is-optional-for-lawmakers-staff-but-some-look-for-a-mandate/"
+      },
+      {
+        "title": "rollcall.com",
+        "url": "https://rollcall.com/2026/09/09/congress-still-stalled-on-continuity-25-years-later/"
       }
     ]
   },
   {
-    "id": "269",
+    "id": "264",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "house",
       "senate"
     ],
-    "additionalTags": "Procurement, Coordination, Operations",
+    "additionalTags": "Procurement, Coordination, Operations, Standardization, CAO, SAA",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -13415,18 +12144,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 50 (tracker Rec 36): Closed-Implemented. 118th Congress: House and Senate recently coordinated negotiations with a common infrastructure vendor, which could yield savings for both chambers; the CIOs meet regularly.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 50"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -13438,7 +12155,7 @@ export const H2_IDEAS: H2Idea[] = [
     "learnMore": []
   },
   {
-    "id": "270",
+    "id": "265",
     "domains": [
       "capacity"
     ],
@@ -13449,7 +12166,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Procurement, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2030,
     "h1h3Ids": [
       "17"
     ],
@@ -13461,18 +12178,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 52 (tracker Rec 37): Open-In Progress. 118th Congress: Report language in the FY2023 Legislative Branch Appropriations Act. Most equipment is bulk-purchased and further progress has been made through the tech store.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 52"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13490,7 +12195,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "271",
+    "id": "266",
     "domains": [
       "information"
     ],
@@ -13499,10 +12204,10 @@ export const H2_IDEAS: H2Idea[] = [
       "house",
       "communications"
     ],
-    "additionalTags": "Rules, Organization, Data, Transparency",
+    "additionalTags": "Rules, Data, Information Silos",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2025,
     "h1h3Ids": [
       "4"
     ],
@@ -13514,18 +12219,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 53 (tracker Rec 39): Closed-Implemented. 117th Congress: A revised, consolidated Communications Standards Manual was created in 2020 and updated in 2025.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 53"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13547,17 +12240,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "272",
+    "id": "267",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "house"
     ],
-    "additionalTags": "Rules, Organization, Norms",
+    "additionalTags": "Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2021,
     "h1h3Ids": [
       "4"
     ],
@@ -13569,18 +12262,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 54 (tracker Rec 40): Closed-Implemented. 117th Congress: The Consolidated Appropriations Act, 2021 adopted the name change for the Communications Standards Commission, and new branding has been incorporated.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 54"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13598,17 +12279,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "273",
+    "id": "268",
     "domains": [
       "information"
     ],
     "buckets": [
       "community"
     ],
-    "additionalTags": "Coordination, Organization, Norms",
+    "additionalTags": "Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2022,
     "h1h3Ids": [
       "8"
     ],
@@ -13620,18 +12301,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 55 (tracker Rec 41): Closed-Implemented. 117th Congress: The updated Communications Standards Manual allows constituents to subscribe to all forms of member communications, with notice requirements.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 55"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13649,7 +12318,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "274",
+    "id": "269",
     "domains": [
       "information"
     ],
@@ -13657,7 +12326,7 @@ export const H2_IDEAS: H2Idea[] = [
       "members",
       "house"
     ],
-    "additionalTags": "Rules, Norms, , Coordination",
+    "additionalTags": "Rules, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -13672,18 +12341,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 58 (tracker Rec 44): Closed-Implemented. 119th Congress: Throughout 2024-25 the Subcommittee, the Communications Standards Commission, and House Ethics engaged on a proposal to update social media guidelines.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 58"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13701,7 +12358,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "275",
+    "id": "270",
     "domains": [
       "capacity"
     ],
@@ -13709,12 +12366,12 @@ export const H2_IDEAS: H2Idea[] = [
       "processes",
       "members"
     ],
-    "additionalTags": "Operations, Coordination, Continuity, Norms",
+    "additionalTags": "Operations, Coordination, Continuity, Emergency Preparedness, SAA, Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
     "h1h3Ids": [
-      "5"
+      "39"
     ],
     "problemStatement": "Many House offices lack a documented continuity of operations plan",
     "problemDescription": "Offices vary in whether they have written plans for safety minimums, emergency communications, and how staff keep working for constituents during a disruption. Without a shared plan available to all staff, continuity depends on what an individual office happened to prepare in advance.",
@@ -13724,18 +12381,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 60 (tracker Rec 46): Closed-Implemented. 118th Congress: The House Sergeant at Arms created a COOP Plan Development Guide for the 117th Congress, available on HouseNet; member offices are not required by rule to adopt one.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 60"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13753,7 +12398,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "276",
+    "id": "271",
     "domains": [
       "technology"
     ],
@@ -13761,12 +12406,12 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "personnel"
     ],
-    "additionalTags": "Operations, Procurement, Continuity, Coordination",
+    "additionalTags": "Operations, Procurement, Coordination, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
     "h1h3Ids": [
-      "5"
+      "17"
     ],
     "problemStatement": "Staff technology and equipment lag behind what remote work requires",
     "problemDescription": "Offices differ in how current their laptops, phones, and remote access tools are, and equipment purchases happen on each office's own budget and timeline. When a disruption forces staff to work remotely, offices with older equipment struggle to keep serving constituents at the same level.",
@@ -13776,18 +12421,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 61 (tracker Rec 47): Closed-Implemented. 118th Congress: The CAO uses bulk purchasing of technology for incoming members; COOP plans and contingencies still need to be incorporated.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 61"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13805,7 +12438,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "277",
+    "id": "272",
     "domains": [
       "technology"
     ],
@@ -13813,12 +12446,12 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "processes"
     ],
-    "additionalTags": "Operations, Procurement, Continuity, Coordination",
+    "additionalTags": "Operations, Procurement, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2038,
     "h1h3Ids": [
-      "5"
+      "17"
     ],
     "problemStatement": "Office technology has no routine maintenance schedule",
     "problemDescription": "Equipment needed for remote operations and telework is serviced only when something breaks, not on a set schedule. When a remote period arrives, offices discover failures in equipment that regular maintenance would have caught earlier.",
@@ -13828,18 +12461,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 62 (tracker Rec 48): Closed-Not Implemented. 117th Congress: Existing support offices are not equipped to develop tech maintenance plans for all House offices, though individual offices can do so.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 62"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13861,7 +12482,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "278",
+    "id": "273",
     "domains": [
       "capacity"
     ],
@@ -13871,12 +12492,13 @@ export const H2_IDEAS: H2Idea[] = [
       "constituentOutcomes",
       "communications"
     ],
-    "additionalTags": "Continuity, Coordination, Operations",
+    "additionalTags": "Continuity, Coordination, Operations, Emergency Preparedness",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
     "h1h3Ids": [
-      "5"
+      "39",
+      "12"
     ],
     "problemStatement": "Offices lack shared guidance for constituent communication during a crisis",
     "problemDescription": "When a disruption forces extended telework, offices improvise their own outreach plans for staying in touch with constituents rather than drawing on shared guidelines. Constituents get inconsistent information about office availability and services depending on which office they contact.",
@@ -13886,18 +12508,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 63 (tracker Rec 49): Closed-Implemented. 117th Congress: The Communications Standards Commission took steps to improve dissemination of mass notices and expedite certain communications without Commission approval.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 63"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13915,7 +12525,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "279",
+    "id": "274",
     "domains": [
       "capacity"
     ],
@@ -13923,10 +12533,10 @@ export const H2_IDEAS: H2Idea[] = [
       "committees",
       "processes"
     ],
-    "additionalTags": "Bipartisanship, Coordination, Operations, Norms",
+    "additionalTags": "Bipartisanship, Coordination, Operations, Standardization, Rules",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "23"
     ],
@@ -13938,18 +12548,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 66 (tracker Rec 52): Closed-Not Implemented. 118th Congress: Committees may do this now if they choose. Committees' specific operational policies are outside the Subcommittee's purview.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 66"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -13971,7 +12569,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "280",
+    "id": "275",
     "domains": [
       "technology"
     ],
@@ -13979,10 +12577,10 @@ export const H2_IDEAS: H2Idea[] = [
       "committees",
       "technology"
     ],
-    "additionalTags": "Operations, Rules, Coordination, Data, Transparency",
+    "additionalTags": "Operations, Rules, Coordination, Data, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "25"
     ],
@@ -13995,18 +12593,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 67 (tracker Rec 53): Closed-Implemented. 118th Congress: A provision for electronic committee report submission was included in the rules package for the 117th Congress.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 67"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -14023,7 +12609,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "281",
+    "id": "276",
     "domains": [
       "technology"
     ],
@@ -14031,10 +12617,10 @@ export const H2_IDEAS: H2Idea[] = [
       "technology",
       "processes"
     ],
-    "additionalTags": "Operations, Rules, Coordination, In-House Development",
+    "additionalTags": "Operations, Rules, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
       "25"
     ],
@@ -14047,18 +12633,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 68 (tracker Rec 54): Closed-Implemented. 118th Congress: Digital signatures are accepted on all House documents except member travel reports.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 68"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -14075,7 +12649,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "282",
+    "id": "277",
     "domains": [
       "technology"
     ],
@@ -14083,7 +12657,7 @@ export const H2_IDEAS: H2Idea[] = [
       "committees",
       "technology"
     ],
-    "additionalTags": "Bipartisanship, Coordination, In-House Development",
+    "additionalTags": "Bipartisanship, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2026,
@@ -14098,18 +12672,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 69 (tracker Rec 55): Closed-Implemented. 118th Congress: Several committees have made use of electronic voting; HASC used electronic voting to process amendment votes for the NDAA for the first time.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 69"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -14127,7 +12689,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "283",
+    "id": "278",
     "domains": [
       "capacity"
     ],
@@ -14137,7 +12699,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Operations, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2033,
     "h1h3Ids": [
       "24",
       "23"
@@ -14151,18 +12713,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 76 (tracker Rec 76): Closed-Not Implemented. 118th Congress: Piloted by the Select Committee. The Subcommittee lacks authority to implement the recommendation.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 76"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -14179,7 +12729,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "284",
+    "id": "279",
     "domains": [
       "capacity"
     ],
@@ -14189,7 +12739,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Coordination, Bipartisanship, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2034,
     "h1h3Ids": [
       "30"
     ],
@@ -14202,18 +12752,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 78 (tracker Rec 78): Closed-Not Implemented. 118th Congress: Piloted by the Select Committee. The Subcommittee lacks authority to implement the recommendation.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 78"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -14230,7 +12768,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "285",
+    "id": "280",
     "domains": [
       "capacity"
     ],
@@ -14241,7 +12779,7 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Rules, Norms, Bipartisanship, Coordination",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2027,
+    "year": 2026,
     "h1h3Ids": [
       "16"
     ],
@@ -14253,18 +12791,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 79 (tracker Rec 79): Open-Needs Attention. 117th Congress: Need to coordinate with Leadership on a special order to pilot this.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 79"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -14282,7 +12808,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "286",
+    "id": "281",
     "domains": [
       "staffing"
     ],
@@ -14290,10 +12816,10 @@ export const H2_IDEAS: H2Idea[] = [
       "personnel",
       "members"
     ],
-    "additionalTags": "Professional Development, Norms, Orientation, Bipartisanship",
+    "additionalTags": "Professional Development, Norms, Orientation, CAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2029,
     "h1h3Ids": [
       "16",
       "2"
@@ -14306,18 +12832,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 80 (tracker Rec 80): Open-In Progress. 118th Congress: Despite the broad variety of courses offered by CAO, none specifically focus on debate or deliberation.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 80"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -14335,7 +12849,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "287",
+    "id": "282",
     "domains": [
       "oversight"
     ],
@@ -14346,8 +12860,9 @@ export const H2_IDEAS: H2Idea[] = [
     "additionalTags": "Coordination, GAO, CRS, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2026,
+    "year": 2024,
     "h1h3Ids": [
+      "37",
       "13"
     ],
     "problemStatement": "Congress lacks the legal capacity to check regulatory action",
@@ -14359,24 +12874,21 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 81 (tracker Rec 81): Closed-Implemented. 118th Congress: GAO completed its investigation of options for Enhancing Congressional Oversight of Rulemaking and Establishing an Office of Legal Counsel.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 81"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "Kosar"
+      },
+      {
+        "title": "Staffing Congress to Strengthen Oversight of the Administrative State"
+      },
+      {
+        "title": "C. Boyden Gray Center Policy Brief 24-01 (March 2024)"
       }
     ],
     "learnMore": [
@@ -14395,7 +12907,7 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "288",
+    "id": "283",
     "domains": [
       "oversight"
     ],
@@ -14403,11 +12915,12 @@ export const H2_IDEAS: H2Idea[] = [
       "law",
       "oversight"
     ],
-    "additionalTags": "Coordination, Norms, Operations",
+    "additionalTags": "Coordination, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2029,
+    "year": 2042,
     "h1h3Ids": [
+      "37",
       "13"
     ],
     "problemStatement": "The legislative branch is thinly represented in litigation",
@@ -14418,18 +12931,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 82 (tracker Rec 82): Open-Needs Attention. 117th Congress: Implementing provisions have passed the House as part of the Congressional Subpoena Compliance and Enforcement Act and the Protect Our Democracy Act; needs bicameral action.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 82"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -14447,21 +12948,33 @@ export const H2_IDEAS: H2Idea[] = [
       {
         "title": "everycrsreport.com",
         "url": "https://www.everycrsreport.com/reports/RS22890.html"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/how-congress-became-the-weakest-branch/"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/the-inescapable-answer-to-americas-problems-fix-congress/"
+      },
+      {
+        "title": "justsecurity.org",
+        "url": "https://www.justsecurity.org/72847/good-governance-paper-no-2-the-congressional-subpoena-power/"
       }
     ]
   },
   {
-    "id": "289",
+    "id": "284",
     "domains": [
       "capacity"
     ],
     "buckets": [
       "members"
     ],
-    "additionalTags": "Coordination, Bipartisanship, Operations",
+    "additionalTags": "Coordination, Bipartisanship, Operations, CAO",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2030,
     "h1h3Ids": [
       "6"
     ],
@@ -14473,18 +12986,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 83 (tracker Rec 83): Closed-Resolved. 117th Congress: Existing Members' Congressional Handbook rules allow for this with documented justification.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 83"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -14506,17 +13007,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "290",
+    "id": "285",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Data, Transparency, Coordination, Operations",
+    "additionalTags": "Data, Transparency, Coordination, Operations, Public Records",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2026,
+    "year": 2022,
     "h1h3Ids": [
       "27"
     ],
@@ -14528,18 +13029,6 @@ export const H2_IDEAS: H2Idea[] = [
     "pathToH2plus": "",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 85 (tracker Rec 85): Closed-Implemented. 117th Congress: Beginning with the FY2022 appropriations cycle, the Committee on Appropriations reintroduced earmarks through the Community Project Funding program.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 85"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -14561,18 +13050,18 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "291",
+    "id": "286",
     "domains": [
       "oversight"
     ],
     "buckets": [
-      "funding",
+      "appropriations",
       "oversight"
     ],
     "additionalTags": "Data, Transparency, GAO, Coordination",
     "horizon": "H2+",
     "horizonKey": "h2pos",
-    "year": 2028,
+    "year": 2032,
     "h1h3Ids": [
       "27"
     ],
@@ -14585,24 +13074,20 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 86 (tracker Rec 86): Open-In Progress. 117th Congress: H. Con. Res. 44 provides for this and passed via suspension. It was not taken up in the Senate. 118th Congress: Reintroduced in the House as H.R. 6952.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 86"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
         "title": "bipartisanpolicy.org",
         "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
+      },
+      {
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/research/elements-of-change-building-blocks-for-a-better-budget-2/"
       }
     ],
     "learnMore": [
@@ -14617,17 +13102,17 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "292",
+    "id": "287",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Coordination, Data, Transparency, Operations",
+    "additionalTags": "Coordination, Data, Operations",
     "horizon": "H2-",
     "horizonKey": "h2neg",
-    "year": 2028,
+    "year": 2033,
     "h1h3Ids": [
       "26"
     ],
@@ -14636,21 +13121,9 @@ export const H2_IDEAS: H2Idea[] = [
     "solutionStatement": "Enhance the executive budget submission process",
     "solutionDescription": "Work with the Office of Management and Budget to improve the timeliness, format, and level of detail in the President's budget submission so it aligns more closely with how appropriations and budget committees use it. Congress starts its own budget work sooner and with less translation between formats.",
     "horizonJustification": "The idea calls for enhancing an existing executive branch submission through negotiation rather than establishing a new congressional structure, leaving the underlying process owned by the executive branch.",
-    "pathToH2plus": "",
+    "pathToH2plus": "H2+ #124. A budget submission structured to Congress's own categories gives the redesigned budget resolution process something usable to start from rather than a document Congress has to translate first.",
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 89 (tracker Rec 89): Open-Needs Attention. 117th Congress: Need statutory revisions to the Congressional Budget Act.",
     "sources": [
-      {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 89"
-      },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
@@ -14668,14 +13141,14 @@ export const H2_IDEAS: H2Idea[] = [
     ]
   },
   {
-    "id": "293",
+    "id": "288",
     "domains": [
       "capacity"
     ],
     "buckets": [
-      "funding"
+      "appropriations"
     ],
-    "additionalTags": "Coordination, Data, Transparency, CBO",
+    "additionalTags": "Coordination, Data, CBO, GAO",
     "horizon": "H2-",
     "horizonKey": "h2neg",
     "year": 2027,
@@ -14691,18 +13164,6 @@ export const H2_IDEAS: H2Idea[] = [
     "currentStatus": "BPC tracker (Apr 2026), H. Rept. 116-562 Rec 90 (tracker Rec 90): Open-Needs Attention. 117th Congress: Need a biennial budget requirement through statutory revisions to the Congressional Budget Act.",
     "sources": [
       {
-        "title": "Select Committee on the Modernization of Congress"
-      },
-      {
-        "title": "Final Report"
-      },
-      {
-        "title": "H. Rept. 116-562 (Oct. 2020)"
-      },
-      {
-        "title": "Rec. 90"
-      },
-      {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
@@ -14717,5 +13178,1545 @@ export const H2_IDEAS: H2Idea[] = [
         "url": "https://www.everycrsreport.com/reports/R44732.html"
       }
     ]
+  },
+  {
+    "id": "289",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "house",
+      "senate"
+    ],
+    "additionalTags": "Rules, Leadership, Time Management",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2027,
+    "h1h3Ids": [
+      "16"
+    ],
+    "problemStatement": "Both chambers still waste floor time on non-substantive work",
+    "problemDescription": "House Rule XII and the majority leader's protocols already keep symbolic commemorative and congratulatory resolutions off the floor, but the Senate has no equivalent limit. Naming bills are exempt from both restrictions and still get individual floor time: one recent stretch saw 74 pass or get introduced in the House alone.",
+    "solutionStatement": "Move non-substantive work off the floor in both chambers",
+    "solutionDescription": "Extend the House's restriction on commemorative resolutions to the Senate, and move naming bills in both chambers onto a periodic unanimous-consent list rather than individual suspension motions or ad hoc Senate clearance, following the consent-calendar model already used in 44 state legislatures.",
+    "horizonJustification": "It reclaims floor time in both chambers without shifting control over the amendment process, a narrower step than the floor-access reforms above, but one that still moves toward an H3 where floor time goes to real legislative decisions.",
+    "pathToH2plus": "",
+    "currentStatus": "House rules and leadership protocols already restrict commemorative and congratulatory resolutions; the Senate has none. Naming bills are exempt from both and pass the House under suspension and the Senate via periodic unanimous consent.",
+    "sources": [
+      {
+        "title": "everycrsreport.com",
+        "url": "https://www.everycrsreport.com/reports/R48065.html"
+      },
+      {
+        "title": "everycrsreport.com",
+        "url": "https://www.everycrsreport.com/reports/RS21562.html"
+      },
+      {
+        "title": "news.bgov.com",
+        "url": "https://news.bgov.com/bloomberg-government-news/congress-sees-flurry-of-post-office-dedications-amid-gridlock"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/crs-product/R43539"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/crs-product/IF12656"
+      },
+      {
+        "title": "politifact.com",
+        "url": "https://www.politifact.com/truth-o-meter/promises/gop-pledge-o-meter/promise/696/handle-commemorative-moments-and-special-honors-du/article/1516"
+      }
+    ]
+  },
+  {
+    "id": "290",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "members",
+      "elections"
+    ],
+    "additionalTags": "Rules",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2040,
+    "h1h3Ids": [
+      "33"
+    ],
+    "problemStatement": "Members can serve for as long as they keep winning, with no institutional cap on tenure",
+    "problemDescription": "No constitutional or statutory limit caps how many terms a member may serve; reelection is the only check. States tried imposing their own limits in the 1990s, but the Supreme Court struck them down in U.S. Term Limits v. Thornton (1995), leaving a constitutional amendment as the only route. Term limits poll at 87 percent support.",
+    "solutionStatement": "Constitutional term limit for members of Congress",
+    "solutionDescription": "Enact a constitutional amendment capping the number of terms a member may serve, on the model of the 22nd Amendment's presidential limit. This requires two-thirds of both chambers and ratification by three-fourths of the states, or a convention called by two-thirds of state legislatures, the route advocates favor since sitting members have little incentive to limit themselves.",
+    "horizonJustification": "It changes who may serve rather than how the institution works, and a constitutional amendment is the highest bar in this set, placing it at the far end of the horizon alongside the age limit proposal.",
+    "pathToH2plus": "",
+    "currentStatus": "Multiple term-limit amendments are pending in the 119th Congress, including H.J.Res. 12, but each remains in committee; no such amendment has ever cleared Congress.",
+    "sources": [
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/12"
+      },
+      {
+        "title": "en.wikipedia.org",
+        "url": "https://en.wikipedia.org/wiki/U.S._Term_Limits"
+      },
+      {
+        "title": "_Inc._v._Thornton"
+      },
+      {
+        "title": "house.louisiana.gov",
+        "url": "https://house.louisiana.gov/H_Reps/TermsCmteDocs/NCSL-term%20limits%20final.pdf"
+      },
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/5"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "newsweek.com",
+        "url": "https://www.newsweek.com/term-limits-congress-popular-whats-stopping-them-11925287"
+      },
+      {
+        "title": "mostpolicyinitiative.org",
+        "url": "https://mostpolicyinitiative.org/science-note/term-limits-for-state-legislators-2/"
+      }
+    ]
+  },
+  {
+    "id": "291",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight",
+      "technology"
+    ],
+    "additionalTags": "AI, Data",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2036,
+    "h1h3Ids": [
+      "29"
+    ],
+    "problemStatement": "Congress has no way to see how the executive branch is using AI internally",
+    "problemDescription": "Federal agencies increasingly rely on AI systems to draft, analyze, and decide, but current guidance leaves it to each agency's discretion whether an AI interaction counts as a preservable record, and Congress has no established right to review those interactions. Without preserved logs, oversight committees cannot reconstruct how an AI-assisted decision was made after the fact, and questions about bias, errors, or overreach in agency AI use go unanswered.",
+    "solutionStatement": "Preserve executive AI interaction logs as subpoenable federal records",
+    "solutionDescription": "Amend the Federal Records Act to specify that AI prompts, outputs, and related metadata used in agency decision-making are federal records regardless of the underlying tool, closing the discretion NARA's current guidance leaves open, and clarify that congressional committees may subpoena those logs the same way they can other agency records. Sensitive or classified logs would follow existing classified-information handling procedures rather than being exempted outright.",
+    "horizonJustification": "It requires new statute and touches how the executive branch operates internally, a bigger lift than the information-access reforms above, but it is the only way oversight keeps pace with agencies' own adoption of AI.",
+    "pathToH2plus": "",
+    "currentStatus": "NARA's 2025 guidance leaves it to each agency's discretion whether an AI interaction is a preservable record, with no congressional right of review; the Army has issued its own internal compliance memo but there is no government-wide standard.",
+    "sources": [
+      {
+        "title": "Interview with think tank researcher"
+      },
+      {
+        "title": "govexec.com",
+        "url": "https://www.govexec.com/technology/2026/08/national-archives-says-agencies-ai-use-does-not-automatically-create-federal-records/415714/"
+      },
+      {
+        "title": "co-equal.org",
+        "url": "https://www.co-equal.org/guide-to-congressional-oversight/congressional-oversight-of-executive-branch-records-preservation"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "fedscoop.com",
+        "url": "https://fedscoop.com/national-archives-says-agencies-can-use-some-ai-without-creating-records/"
+      }
+    ]
+  },
+  {
+    "id": "292",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "technology",
+      "structure"
+    ],
+    "additionalTags": "AI",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2033,
+    "h1h3Ids": [
+      "18"
+    ],
+    "problemStatement": "The executive branch is gaining access to frontier AI faster than Congress or the courts",
+    "problemDescription": "Frontier AI developers and vendors have generally prioritized executive branch agencies for early or exclusive access to their most capable models, while Congress and the judiciary have had to wait or been excluded entirely from equivalent tools. Because the executive branch already has more staff, money, and procurement speed than the other two branches, unequal AI access widens an existing power gap rather than closing it.",
+    "solutionStatement": "Guarantee Congress equal access to frontier AI models",
+    "solutionDescription": "Establish a standing requirement, through appropriations language or standing rules, that any frontier AI model made available to executive branch agencies is offered to the legislative and judicial branches on comparable terms and timeline, with a designated office, such as a Congressional Digital Service, responsible for evaluating and deploying it. This does not require Congress to adopt every tool the executive branch does, only that the option exists.",
+    "horizonJustification": "It is a separation-of-powers safeguard rather than an operational fix, and it depends on cooperation from AI vendors as well as Congress's own capacity to absorb new tools, placing it further out.",
+    "pathToH2plus": "",
+    "currentStatus": "At least one frontier model was reportedly withheld from the legislative and judicial branches while available to the executive branch; there is no standing policy requiring parity.",
+    "sources": [
+      {
+        "title": "Interview with think tank researcher"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "293",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight",
+      "technology"
+    ],
+    "additionalTags": "AI, Data Privacy, GAO, Data",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2040,
+    "h1h3Ids": [
+      "29"
+    ],
+    "problemStatement": "Congress learns about executive branch emergency actions only after the fact",
+    "problemDescription": "When the executive branch acts quickly in an emergency, formal notification to Congress typically arrives well after the decision is made, if it arrives in a structured way at all, because current oversight relies on hearings, letters, and briefings rather than continuous data feeds. AI-enabled monitoring could flag status changes as they happen, but no such dashboard exists connecting agency systems to congressional oversight in real time.",
+    "solutionStatement": "Privacy-preserving dashboard for real-time oversight of agency status changes",
+    "solutionDescription": "Stand up a dashboard, maintained jointly by GAO and House and Senate oversight committees, that ingests structured status updates from executive agencies, such as emergency declarations, major contract actions, or classified program milestones, and surfaces them to committees as they occur rather than through periodic manual reporting. Privacy-preserving techniques would let sensitive underlying data stay with the agency while committees see only the status signal they need.",
+    "horizonJustification": "It requires new data-sharing infrastructure and executive branch buy-in on top of any statute, so it sits further out than reforms Congress can do unilaterally.",
+    "pathToH2plus": "",
+    "currentStatus": "No such dashboard exists; oversight of fast-moving executive action still runs through hearings and after-the-fact reporting.",
+    "sources": [
+      {
+        "title": "Interview with think tank researcher"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "294",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "supportAgencies",
+      "oversight"
+    ],
+    "additionalTags": "GAO, Data, Data Privacy",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "5"
+    ],
+    "problemStatement": "GAO cannot retain agency data between investigations, so it starts over every time",
+    "problemDescription": "GAO generally must request data fresh from an agency for each investigation rather than retaining and reusing what it has already received, even when a new inquiry touches the same program or population. This slows every subsequent review, prevents GAO from building durable institutional knowledge about a program over time, and forces agencies to repeat the same data-sharing approval process again and again for closely related requests.",
+    "solutionStatement": "Authorize GAO to retain and reuse agency data across related investigations",
+    "solutionDescription": "Give GAO explicit statutory authority to retain data it receives from an agency for use in future, related investigations, subject to the same security and privacy safeguards that govern the original request, rather than requiring a fresh request and review each time. Agencies would still control what is shared initially, but GAO would not have to re-ask for the same population of data every time a related question comes up.",
+    "horizonJustification": "It is a narrower authorization change within GAO's existing mandate rather than a new structure, so it belongs closer to the achievable end of this list.",
+    "pathToH2plus": "",
+    "currentStatus": "GAO currently must request data from agencies for each investigation individually; there is no standing authority to retain it for reuse.",
+    "sources": [
+      {
+        "title": "Interview with nonprofit staff"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "295",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "members",
+      "processes"
+    ],
+    "additionalTags": "Time Management, Family Support",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2028,
+    "h1h3Ids": [
+      "15"
+    ],
+    "problemStatement": "Members have no standard policy for voting remotely under defined circumstances",
+    "problemDescription": "The House used proxy voting broadly during the COVID-19 pandemic, but there is no standing, narrower policy covering when an individual member may vote remotely for reasons like childbirth, a medical event, or a family emergency. Absent a standard, each case becomes an ad hoc argument, and members with real caregiving or health needs face pressure to either travel anyway or miss votes entirely.",
+    "solutionStatement": "Adopt a standard remote-voting policy for defined personal circumstances",
+    "solutionDescription": "Establish a House rule permitting remote voting for a defined, limited set of circumstances, such as childbirth, serious illness, or a family medical emergency, with a clear request and verification process rather than a blanket policy or none at all. This is narrower than the pandemic-era proxy voting rule, which covered any member unable to travel for public health reasons.",
+    "horizonJustification": "It is a rules change within the House's own control, not a structural or funding fight, so it sits at the more achievable end of this list.",
+    "pathToH2plus": "",
+    "currentStatus": "The broad pandemic-era proxy voting rule has lapsed; there is no standing remote-voting policy for individual circumstances like pregnancy or family medical leave.",
+    "sources": [
+      {
+        "title": "Interview with Senate staff"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "296",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "personnel"
+    ],
+    "additionalTags": "Standardization, Data",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2030,
+    "h1h3Ids": [
+      "1"
+    ],
+    "problemStatement": "Members hire staff from their own networks with no shared, vetted talent pool to draw from",
+    "problemDescription": "Member offices largely hire through personal and campaign networks, so qualifications and Hill-specific readiness vary widely from office to office, and loyalty can outweigh relevant experience. A new staffer arriving straight from a campaign, with no background working with entities like the Office of Legislative Counsel, can struggle to be useful right away, and offices have no shared, pre-screened pool to draw from as an alternative.",
+    "solutionStatement": "Build a shared, pre-vetted staff hiring pool offices can draw from",
+    "solutionDescription": "Expand and formalize existing party conference resume banks into a genuinely pre-vetted, cross-office hiring pool, screened for baseline Hill readiness such as familiarity with legislative process, drafting norms, and institutional structure, that any office can pull from voluntarily. Offices would keep full hiring authority and could still hire from outside the pool, but the pool would give them a faster, higher-confidence option than relying solely on personal networks.",
+    "horizonJustification": "It expands something offices already do voluntarily rather than requiring a rule change, so it is achievable without a fight over hiring authority.",
+    "pathToH2plus": "",
+    "currentStatus": "The House Republican Conference maintains a resume bank of vetted candidates, but use is voluntary and no comparable cross-office standard exists elsewhere.",
+    "sources": [
+      {
+        "title": "Interview with lobbyist"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "issueone.org",
+        "url": "https://issueone.org/wp-content/uploads/2022/01/Fair-Pay-Why-Congress-Needs-to-Invest-in-Junior-Staff.pdf"
+      }
+    ]
+  },
+  {
+    "id": "297",
+    "domains": [
+      "information"
+    ],
+    "buckets": [
+      "supportAgencies"
+    ],
+    "additionalTags": "CRS, Data, Information Silos",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2028,
+    "h1h3Ids": [
+      "5"
+    ],
+    "problemStatement": "Staff have no way to signal which CRS reports and analysts are most useful",
+    "problemDescription": "CRS output quality varies by analyst and by report, but staff have no structured way to flag which reports were actually useful or which analysts reliably deliver strong work, so that feedback never accumulates or informs how CRS staffs future requests. Word of mouth among offices substitutes for any real record, which means a new office has no way to know in advance who or what to ask for.",
+    "solutionStatement": "Create an internal rating system for CRS reports and analyst responsiveness",
+    "solutionDescription": "Build a simple, internal star-rating and comment system that congressional staff can use after receiving a CRS report or a consultation, capturing usefulness and turnaround the way any service-feedback system would. CRS management could use aggregated, anonymized ratings to inform staffing on future requests, without publicizing individual analysts' scores outside the institution.",
+    "horizonJustification": "It is a feedback tool CRS could build and pilot on its own, without new statute or funding, placing it at the more achievable end of this list.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "Interview with Senate staff"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "298",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight",
+      "law"
+    ],
+    "additionalTags": "Rules, Coordination, Operations",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2038,
+    "h1h3Ids": [
+      "36",
+      "13"
+    ],
+    "problemStatement": "Congress has delegated its tariff and trade authority and has no route back",
+    "problemDescription": "Article I gives Congress the power to lay duties, but beginning with the Reciprocal Trade Agreements Act of 1934 Congress handed rate-setting to the president across a stack of overlapping statutes. A president blocked under one authority can usually act under another, and because reversal requires legislation the president would have to sign, the practical check is litigation rather than a congressional vote.",
+    "solutionStatement": "Affirmative congressional approval for major tariff actions",
+    "solutionDescription": "Amend the delegating trade statutes so a major tariff action takes effect only if Congress approves it within a fixed window, consolidate the scattered authorities into a single framework with common findings and procedures, and sunset existing grants on a schedule unless renewed.",
+    "horizonJustification": "It moves a core Article I power back to a congressional vote and sets a template for reclaiming other delegations, rather than contesting individual uses of authority after the fact.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed repeatedly in recent Congresses; not adopted",
+    "sources": [
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/how-congress-became-the-weakest-branch/"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/the-inescapable-answer-to-americas-problems-fix-congress/"
+      },
+      {
+        "title": "aei.org",
+        "url": "https://www.aei.org/commentary/the-missing-branch/"
+      }
+    ]
+  },
+  {
+    "id": "299",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "elections",
+      "members"
+    ],
+    "additionalTags": "Rules",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2041,
+    "h1h3Ids": [
+      "6"
+    ],
+    "problemStatement": "Winner-take-all single-member districts settle most seats before the general election",
+    "problemDescription": "A plurality winner in a single-member district needs only the largest faction, so in a safe seat the primary decides the outcome and the incentive runs toward the party base rather than the district as a whole. Voters outside the winning faction elect no one, and the general election changes nothing about who represents them.",
+    "solutionStatement": "Ranked choice voting in multi-member districts",
+    "solutionDescription": "Require ranked choice voting in House and Senate elections. In states entitled to six or more Representatives, combine seats into districts electing three to five members each, with smaller states electing their delegation at large, and allocate seats within a district proportionally. Winning then means assembling second and third preferences across a wider electorate rather than consolidating one faction in a primary.",
+    "horizonJustification": "It changes what a candidate has to do to win, which sits upstream of every other attempt to make governing rather than position-taking the route to reelection.",
+    "pathToH2plus": "",
+    "currentStatus": "Introduced as the Fair Representation Act in successive Congresses since 2017; not enacted",
+    "sources": [
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/4632"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "protectdemocracy.org",
+        "url": "https://protectdemocracy.org/work/democratize-congress/"
+      },
+      {
+        "title": "amacad.org",
+        "url": "https://www.amacad.org/sites/default/files/publication/downloads/2025_expanding-representation.pdf"
+      },
+      {
+        "title": "amacad.org",
+        "url": "https://www.amacad.org/daedalus/upgrading-congress-to-meet-demands-21st-century"
+      }
+    ]
+  },
+  {
+    "id": "300",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "elections",
+      "members"
+    ],
+    "additionalTags": "Operations, CAO, SAA, AOC",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "37",
+      "12"
+    ],
+    "problemStatement": "Nobody has worked out what expanding the House would actually require",
+    "problemDescription": "The cap has held at 435 since 1929, when the population was 123 million against roughly 346 million now, and the average district is approaching 800,000 constituents. Competing proposals use different methods, the cube root rule, the Wyoming rule, one-time versus recurring expansion, and none of them carries worked-out answers on chamber seating, office space, staffing, support agencies, voting systems, or cost.",
+    "solutionStatement": "House Expansion Commission",
+    "solutionDescription": "Stand up a temporary commission of thirteen people who are not sitting members, appointed by House and Senate leadership of both parties and chosen for expertise in government, mathematics, or statistics, to study expansion methods alongside their logistical and cost implications. It consults the Architect of the Capitol, GSA, the Sergeant at Arms, the Chief Administrative Officer, and the Clerk, and reports to Congress within two years with concrete proposals and solutions to the problems it identifies.",
+    "horizonJustification": "It produces the cost and logistics record an expansion vote would need, which is the missing input rather than another argument for the principle.",
+    "pathToH2plus": "H2+ #110. A commission report turns expansion from a contested principle into a costed plan with a sequence attached, so the vote is on a specific number and a specific transition rather than on the idea.",
+    "currentStatus": "Introduced as the House Expansion Commission Act in the 119th Congress; not enacted",
+    "sources": [
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/2797"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "amacad.org",
+        "url": "https://www.amacad.org/sites/default/files/publication/downloads/2025_expanding-representation.pdf"
+      }
+    ]
+  },
+  {
+    "id": "301",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "appropriations"
+    ],
+    "additionalTags": "Rules, Operations, Members",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2034,
+    "h1h3Ids": [
+      "26"
+    ],
+    "problemStatement": "Missing the appropriations deadline costs members nothing personally",
+    "problemDescription": "The budget resolution and the twelve regular appropriations bills carry statutory deadlines, and nothing happens to the people responsible when those dates pass. The cost of failure lands on agencies, federal employees, contractors, and the public, while members are paid on the same schedule whether the work is finished or not.",
+    "solutionStatement": "Withhold member pay until the budget and appropriations are done",
+    "solutionDescription": "Bar payment of member salaries for any period after October 1 in which Congress has not adopted a budget resolution and passed every regular appropriations bill, with the Budget and Appropriations chairs of each chamber certifying compliance and the period of non-payment, and no retroactive payment once the work is finished.",
+    "horizonJustification": "It attaches a personal cost to missing the deadline without touching the process itself, so it operates as pressure on the existing system rather than as a redesign of it.",
+    "pathToH2plus": "H2+ #124. Sustained personal exposure to the deadline produces both the pressure and the public record of failure that make the case for redesigning the budget resolution process rather than continuing to miss its dates.",
+    "currentStatus": "Introduced in nearly every Congress since 2011; a modified version requiring each chamber to adopt a budget resolution or have member pay held in escrow was enacted in 2013 as part of the debt limit suspension, and has since lapsed",
+    "sources": [
+      {
+        "title": "congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/senate-bill/88"
+      },
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
+      },
+      {
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/research/elements-of-change-building-blocks-for-a-better-budget-2/"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ]
+  },
+  {
+    "id": "302",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "law"
+    ],
+    "additionalTags": "Rules, Coordination, CRS, Standardization",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2035,
+    "h1h3Ids": [
+      "36",
+      "25"
+    ],
+    "problemStatement": "Congress does not tell agencies and courts how to read its statutes",
+    "problemDescription": "Agencies interpret first and courts review afterward, both working from canons of construction that Congress does not write and often does not account for while drafting. Statutorily enacted findings and purposes, which exist precisely to guide interpretation, are frequently stripped out or downgraded by the Office of Law Revision Counsel during codification, so the instructions Congress did write do not survive into the U.S. Code.",
+    "solutionStatement": "Interpretive instructions written into statute and the Code",
+    "solutionDescription": "Include default principles of interpretation in statutes, clarify that definitions written into a bill are the primary reference point, and direct the Office of Law Revision Counsel to codify enacted findings and purposes in the main text of the U.S. Code. Have the Congressional Research Service's American Law Division summarize the canons of construction courts actually use and circulate them to committees and the drafting offices.",
+    "horizonJustification": "It turns interpretation from something Congress hopes for into something it writes down, which is what the drafting standard after Loper Bright requires.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "303",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight"
+    ],
+    "additionalTags": "Rules, Coordination, GAO, Data",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2033,
+    "h1h3Ids": [
+      "29",
+      "36"
+    ],
+    "problemStatement": "Agencies rarely report back on whether their rules worked",
+    "problemDescription": "A rule is analyzed in detail before it is issued and seldom afterward, so Congress has little evidence on whether an authority it delegated produced the outcome it intended. Without that feedback, reauthorizations and amendments rest on the same assumptions that produced the original statute.",
+    "solutionStatement": "Require agencies to conduct retrospective review of regulations",
+    "solutionDescription": "Require agencies to state expected outcomes when they issue a rule, evaluate the rule against those outcomes on a set schedule, and submit evaluation reports to the committees of jurisdiction, so results feed directly into reauthorization and statutory updates.",
+    "horizonJustification": "It builds the evidence loop Congress needs before it can write more precise delegations, though it depends on agencies doing the work and committees using it.",
+    "pathToH2plus": "H2+ #129. A steady flow of outcome evidence gives a Congressional Regulation Office something to assess, turning independent regulatory review from a standing capability in search of inputs into a working feedback loop.",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "304",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "appropriations"
+    ],
+    "additionalTags": "Rules, Bipartisanship, CBO",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2032,
+    "h1h3Ids": [
+      "26"
+    ],
+    "problemStatement": "No process exists to force a vote on the programs driving the debt",
+    "problemDescription": "Social Security's main trust fund and Medicare Part A face depletion on dates that are already known, and the reforms required are unpopular enough that neither party will move first inside the regular process. Committees of jurisdiction can decline to act indefinitely, and anything that does emerge can be amended to death on the floor.",
+    "solutionStatement": "Bipartisan fiscal commission with a guaranteed vote",
+    "solutionDescription": "Establish a commission drawn from both chambers and both parties alongside outside experts, charged with reporting legislation to restore solvency to specified trust funds by a fixed date, and guarantee its recommendations an up-or-down vote under expedited procedures without amendment, on the model used for base closures.",
+    "horizonJustification": "It gives Congress a way to decide questions it currently avoids without asking any member to go first alone, though it produces one package rather than a durable process.",
+    "pathToH2plus": "H2+ #125. A commission that produces an enacted package demonstrates that a binding fiscal target can survive a floor vote, which is the precondition for statutory targets with enforcement triggers.",
+    "currentStatus": "Introduced repeatedly, including the TRUST Act and the Fiscal Commission Act; reported from the House Budget Committee in 2024, not enacted",
+    "sources": [
+      {
+        "title": "bpcaction.org",
+        "url": "https://bpcaction.org/wp-content/uploads/BPCA-Budget-Process-Reform-One-Pager.pdf"
+      },
+      {
+        "title": "rstreet.org",
+        "url": "https://www.rstreet.org/research/elements-of-change-building-blocks-for-a-better-budget-2/"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "305",
+    "domains": [
+      "capacity",
+      "oversight"
+    ],
+    "buckets": [
+      "casework"
+    ],
+    "additionalTags": "Coordination, Operations, Emergency Preparedness",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2030,
+    "h1h3Ids": [
+      "12",
+      "29"
+    ],
+    "problemStatement": "Agency communication freezes cut off casework without warning",
+    "problemDescription": "During presidential transitions and agency reorganizations, offices report bounce-back emails, unanswered phone lines, and longtime liaison contacts disappearing, as agencies pause or add approval requirements to communications with Congress. Nothing obliges an agency to keep the channel open, so the interruption lands on constituents waiting on benefits, tax issues, and immigration cases.",
+    "solutionStatement": "Bar agencies from using funds to restrict casework responsiveness",
+    "solutionDescription": "Include a general provision in appropriations prohibiting executive agencies from using appropriated funds to restrict, delay, or prevent personnel, including congressional liaison staff, from receiving and responding to casework inquiries, paired with a reporting requirement on inquiry volume, response timelines, and liaison staffing.",
+    "horizonJustification": "It protects the channel that every other casework improvement depends on, using a lever Congress already controls each year.",
+    "pathToH2plus": "H2+ #38. A protected and measured channel produces the response-time and volume data a dedicated casework office would need to hold agencies accountable rather than escalate case by case.",
+    "currentStatus": "Requested for FY27; the Administrative Conference of the United States recommended in 2024 that agencies maintain responsiveness through presidential transitions",
+    "sources": [
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "docs.house.gov",
+        "url": "https://docs.house.gov/meetings/AP/AP24/20260317/119053/HHRG-119-AP24-Wstate-MeekerA-20260317.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "306",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "supportAgencies",
+      "technology"
+    ],
+    "additionalTags": "CBO, CRS, AOC, SAA, Procurement, AI",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "5",
+      "17"
+    ],
+    "problemStatement": "Support agencies have no money to try the tools they are asked to assess",
+    "problemDescription": "Executive agencies reach the Technology Modernization Fund, in-house innovation offices, and cross-government AI coordination. The legislative branch support agencies have none of that, so budget analysts, researchers, drafters, and facilities staff form judgments about AI tools from vendor demonstrations and secondhand accounts rather than from use.",
+    "solutionStatement": "Congressional Support Agency Technology Experimentation Fund",
+    "solutionDescription": "Provide roughly $650,000 in one-year funds across eight support agencies, weighted toward CBO and CRS, with each required to evaluate at least two distinct platforms comparatively and to report briefly on what it learned. Experimentation is led by substantive staff rather than technologists, and GAO is excluded because its Innovation Lab already has dedicated resources.",
+    "horizonJustification": "Small one-year money buys informed judgment about tools before the institution commits to any of them, which is cheaper than a procurement decision made on vendor claims.",
+    "pathToH2plus": "H2+ #17. Eight agencies running comparative evaluations generates the evidence base and the internal demand that a standing legislative branch innovation unit would otherwise have to build from nothing.",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "307",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "personnel",
+      "house"
+    ],
+    "additionalTags": "SAA, Professional Development, Security, Emergency Preparedness, Interns",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "34",
+      "2"
+    ],
+    "problemStatement": "Physical security training is optional and inconsistent across offices",
+    "problemDescription": "Cybersecurity training is required annually, but no equivalent exists for physical security. Security awareness briefings must be requested rather than being provided, and new Members receive a briefing at orientation with no follow-up once their offices are staffed. Front-office staff and interns answer the phones and meet walk-ins with no standard toolkit, while the Capitol Police threat assessment caseload has climbed toward 15,000 investigated communications a year.",
+    "solutionStatement": "Require security and emergency preparedness training for Members, staff, and interns",
+    "solutionDescription": "Fund the Sergeant at Arms to deliver mandatory training covering physical security, emergency and disaster response, and threat awareness, including de-escalation techniques for tense encounters and clear reporting paths for concerning behavior. Coverage extends to district and state staff, who handle both local threats and disaster response.",
+    "horizonJustification": "It converts an opt-in resource into an institutional floor, which is what closes the gap between offices that request briefings and offices that do not.",
+    "pathToH2plus": "H2+ #101. Training every office to a common standard produces the incident reporting and demand signal that a restructured congressional security function would need to operate on.",
+    "currentStatus": "Requested for FY27 at $5,000,000 in both chambers; cybersecurity training is already mandatory, physical security training is not",
+    "sources": [
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "308",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "members",
+      "culture"
+    ],
+    "additionalTags": "CAO, Operations, Orientation, Family Support",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "34",
+      "33"
+    ],
+    "problemStatement": "Members' families arrive in Washington with no institutional support",
+    "problemDescription": "Families of incoming Members land in a new city during the busiest weeks of the transition. Arranging House identification for family members falls to official staff whose time is already committed, children have nothing structured to do during swearing-in week, and families relocating with young children have no easy route to information about the House daycare and its waitlist. A record number of retirements in the 119th Congress cited family needs as a factor.",
+    "solutionStatement": "Build family support into the Member transition",
+    "solutionDescription": "Give the Chief Administrative Officer a defined role in Member family onboarding: a route for family identification that does not run through office staff, structured activities for children during swearing-in week, and clear published information on child care options including the House daycare waitlist.",
+    "horizonJustification": "It addresses a retention factor members name directly, at a cost measured in coordination rather than in appropriations.",
+    "pathToH2plus": "No H2+ successor in this database. The natural successor would be expanded institutional child care capacity, but that row is itself H2-; the missing H2+ would be a standing family-support function inside the CAO covering identification, child care placement, and transition logistics as a defined service rather than an ad hoc courtesy.",
+    "currentStatus": "Requested for FY27 in House appropriations testimony",
+    "sources": [
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/senate-appropriations-requests-fy27"
+      },
+      {
+        "title": "popvox.org",
+        "url": "https://www.popvox.org/blog/popvox-foundation-team-submits-public-witness-testimony-for-fy-2027-legislative-branch-appropriations"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "309",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "structure",
+      "house"
+    ],
+    "additionalTags": "CAO, Procurement, Operations",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "37",
+      "20"
+    ],
+    "problemStatement": "Modernization projects depend on an account that has to be defended every year",
+    "problemDescription": "The Modernization Initiatives Account is the only pot of money dedicated to House-wide operational and technology improvements, and it funded Deconflict, LegiDex, and FlagTrack. It rose from $2 million to $10 million for FY2023, then was reduced in FY2026. Because it is an annual discretionary line with no authorization behind it, every project in the pipeline restarts its funding argument each cycle.",
+    "solutionStatement": "Sustain and report on the Modernization Initiatives Account",
+    "solutionDescription": "Hold the account at $10 million and attach reporting requirements covering which projects were funded, what they delivered, and what they cost, so the Legislative Branch Appropriations Subcommittee and the Committee on House Administration's Modernization and Innovation Subcommittee can judge results rather than re-litigate the premise.",
+    "horizonJustification": "A stable account with a track record is what lets multi-year technology projects be planned as multi-year projects rather than as annual gambles.",
+    "pathToH2plus": "H2+ #8. Demonstrated delivery from a stable account builds the case that a dedicated capacity and technology office is worth standing up, rather than funding the same capability one project at a time.",
+    "currentStatus": "Funded at $10 million in FY2023 through FY2025 and reduced in FY2026; level funding requested for FY2025 and FY2027",
+    "sources": [
+      {
+        "title": "docs.house.gov",
+        "url": "https://docs.house.gov/meetings/AP/AP24/20240417/117122/HHRG-118-AP24-Wstate-BonetJ-20240417.pdf"
+      },
+      {
+        "title": "news.gallup.com",
+        "url": "https://news.gallup.com/poll/512651/americans-trust-local-government-congress-least.aspx"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "310",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight"
+    ],
+    "additionalTags": "Rules, Coordination, Bipartisanship",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2031,
+    "h1h3Ids": [
+      "29",
+      "36"
+    ],
+    "problemStatement": "Only the executive branch writes the rules for oversight disputes",
+    "problemDescription": "The Justice Department's Office of Legal Counsel issues opinions telling agencies how to answer congressional requests and telling courts how to read interbranch disputes, and those opinions consistently favor the executive. Neither chamber has an equivalent, so Congress enters each dispute, and each courtroom, with no authoritative statement of its own position.",
+    "solutionStatement": "Bipartisan congressional legal opinions on oversight",
+    "solutionDescription": "Establish a bipartisan, bicameral process for issuing written legal opinions on oversight questions, suitable for citation in court, that set out congressional expectations for agencies, guide committees toward consistent practice, and give judges a legislative-branch counterweight to OLC. Start with a task force to design the process.",
+    "horizonJustification": "It gives Congress a standing institutional voice on its own powers, which consistent oversight practice and credible litigation both depend on.",
+    "pathToH2plus": "No H2+ successor in this database. Strengthened court representation is the closest candidate but is itself H2-; the missing H2+ would be a permanent bicameral office of congressional legal counsel with standing authority to issue opinions and appear in interbranch litigation on Congress's behalf.",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "justsecurity.org",
+        "url": "https://www.justsecurity.org/72990/good-governance-paper-no-8-how-to-strengthen-oversight-by-congress/"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "311",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "committees"
+    ],
+    "additionalTags": "Rules, Operations, Bipartisanship",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "29",
+      "23"
+    ],
+    "problemStatement": "Five-minute questioning makes oversight hearings incoherent",
+    "problemDescription": "The five-minute rule forces abrupt topic changes, lets evasive witnesses run out the clock, and leaves members unable to follow a line of questioning to its end. The resulting record is thin, and the spectacle reads to the public as rude rather than rigorous.",
+    "solutionStatement": "Extended questioning periods in oversight hearings",
+    "solutionDescription": "Amend House rule XI, clause 2(j)(2)(A) so a committee holding an oversight hearing may give the chair and ranking member equal opening periods of at least fifteen minutes per witness panel, then revert to the five-minute rule until every member has had a turn, and permit members to delegate their five minutes to a colleague.",
+    "horizonJustification": "It is a rules change with no budget implication that directly improves what a hearing produces, and the precedent already exists in confirmation and impeachment practice.",
+    "pathToH2plus": "H2+ #120. Hearings that actually establish facts create demand for the subject-matter expertise that would let committees use the extra time well.",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "justsecurity.org",
+        "url": "https://www.justsecurity.org/72990/good-governance-paper-no-8-how-to-strengthen-oversight-by-congress/"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "312",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "committees"
+    ],
+    "additionalTags": "Rules, Bipartisanship",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2030,
+    "h1h3Ids": [
+      "23",
+      "37"
+    ],
+    "problemStatement": "Committee funding is split two-thirds to one-third regardless of the margin",
+    "problemDescription": "The House allocates two-thirds of committee funds to the majority and one-third to the minority, so a 53 percent majority controls 67 percent of the money. When control flips, funding and staffing swing sharply and committees lose the people who hold their oversight expertise.",
+    "solutionStatement": "Allocate committee funding closer to chamber composition",
+    "solutionDescription": "Replace the fixed two-thirds to one-third split with an allocation process tied more closely to the actual party division in the chamber, on the Senate model, so minority committee capacity does not collapse and majority capacity does not lurch upward with each change of control.",
+    "horizonJustification": "It stabilises the staffing base on which committee expertise accumulates, which no amount of training or tooling substitutes for.",
+    "pathToH2plus": "H2+ #86. Predictable minority funding is what makes dedicated committee policy staff viable for every member rather than only for the majority.",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "justsecurity.org",
+        "url": "https://www.justsecurity.org/72990/good-governance-paper-no-8-how-to-strengthen-oversight-by-congress/"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "313",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "structure"
+    ],
+    "additionalTags": "Rules, Continuity, Emergency Preparedness",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2032,
+    "h1h3Ids": [
+      "38",
+      "29"
+    ],
+    "problemStatement": "The presidential line of succession has not been reviewed since 1947",
+    "problemDescription": "Everyone in the line is based in Washington, so an attack on the capital could leave no one clearly in place. Congressional leaders sit near the top despite unresolved questions about whether legislators are Officers under the Succession Clause, and the 1947 Act lets a later-arriving Speaker displace whoever has already assumed the office. Cabinet members are chosen for policy expertise rather than readiness to govern.",
+    "solutionStatement": "Modernize the Presidential Succession Act",
+    "solutionDescription": "Remove congressional leaders from the line, limit the cabinet officers in it to State, Justice, Defense, and Treasury, and add a small number of senior figures nominated by the president and confirmed by the Senate, based outside Washington and briefed in advance. Eliminate the bumping provision so the office does not change hands twice during a crisis.",
+    "horizonJustification": "It requires only legislation rather than a constitutional amendment, and it removes the scenario in which Congress supplies an unelected president under contested authority.",
+    "pathToH2plus": "H2+ #91. Settling who governs while Congress reconstitutes itself removes the argument that a rapid replacement amendment would leave a dangerous gap, one of the objections that has stalled it.",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "contrariannews.org",
+        "url": "https://www.contrariannews.org/p/25-year-later-we-still-havent-dealt"
+      },
+      {
+        "title": "rollcall.com",
+        "url": "https://rollcall.com/2026/09/09/congress-still-stalled-on-continuity-25-years-later/"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "314",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "appropriations"
+    ],
+    "additionalTags": "GAO, Data, Coordination, Rules",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2031,
+    "h1h3Ids": [
+      "29",
+      "26"
+    ],
+    "problemStatement": "Congress cannot see how its appropriations are actually spent",
+    "problemDescription": "Apportionment footnotes, expenditures made during a funding lapse, transfers and reprogrammings, and the fees and penalties agencies collect and spend are each recorded somewhere but assembled nowhere Congress can use. Appropriators learn about a questionable execution decision when someone happens to notice it, often long after the money has moved.",
+    "solutionStatement": "Standing disclosure regime for spending execution",
+    "solutionDescription": "Build a usable apportionment database with semiannual GAO reporting, require program-by-program reporting of expenditures during any lapse in appropriations and agency notice to Congress when GAO finds an Antideficiency Act violation, require public disclosure of transfers and reprogrammings, and require accounting for the use of agency-generated fees, fines, and penalties.",
+    "horizonJustification": "It produces the record Congress needs before any faster review mechanism is worth having, since fast-track review of a decision nobody saw is not review.",
+    "pathToH2plus": "H2+ #109. Continuous visibility into execution is the input a reformed Impoundment Control Act would act on, turning fast-track review from a theoretical power into a usable one.",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "spia.princeton.edu",
+        "url": "https://spia.princeton.edu/news/new-report-how-congress-can-recapture-constitutional-powers-it-ceded-executive-branch"
+      }
+    ],
+    "learnMore": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ]
+  },
+  {
+    "id": "315",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "processes"
+    ],
+    "additionalTags": "Rules, Leadership",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2030,
+    "h1h3Ids": [
+      "16",
+      "23"
+    ],
+    "problemStatement": "Every route to the floor around leadership has been closed off",
+    "problemDescription": "The discharge petition survives but is weighed down by layover requirements and signature procedures that make it a bargaining chip rather than a path. Calendar Wednesday is defunct. A bill with clear majority support can sit indefinitely because leadership does not want the vote.",
+    "solutionStatement": "Restore working routes to the floor outside leadership",
+    "solutionDescription": "Reform the discharge petition's layover and signature procedures so a demonstrated majority produces a scheduled vote, and consider automatic calendaring on the model used in thirty-five state legislative chambers, under which any bill reported by a committee is placed on the calendar for floor consideration.",
+    "horizonJustification": "A functioning discharge route establishes that majority support can reach the floor, which is the premise a guaranteed regular order procedure formalises.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "protectdemocracy.org",
+        "url": "https://protectdemocracy.org/work/democratize-congress/"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "316",
+    "domains": [
+      "staffing"
+    ],
+    "buckets": [
+      "members"
+    ],
+    "additionalTags": "Rules, Bipartisanship",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "14",
+      "23"
+    ],
+    "problemStatement": "Member organizations are barred from having the staff to do policy work",
+    "problemDescription": "More than 400 Congressional Member Organizations are registered in the House, and none may hire its own staff, hold office space, or accept outside resources. Legislative service organizations, which let members pool resources for shared policy work, were abolished in 1994. The effect is that serious policy development happens only through party leadership, committees, or individual offices.",
+    "solutionStatement": "Let member organizations hold shared policy resources",
+    "solutionDescription": "Amend the Members' Congressional Handbook and House rules so registered member organizations may employ shared staff and hold modest dedicated resources, with disclosure requirements and limits designed to prevent the abuses that ended legislative service organizations.",
+    "horizonJustification": "It gives groups of members a way to develop policy together outside leadership, which is where both cross-party and intra-party coalitions would have to form.",
+    "pathToH2plus": "H2+ #86. Shared organisational staff demonstrates demand for member-controlled policy capacity, which committee staff designees would then extend to every member.",
+    "currentStatus": "Proposed; Modernization Committee Recommendation 24 would let member organizations hire one intern",
+    "sources": [
+      {
+        "title": "protectdemocracy.org",
+        "url": "https://protectdemocracy.org/work/democratize-congress/"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "317",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "structure",
+      "house",
+      "senate"
+    ],
+    "additionalTags": "Coordination, Operations",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2038,
+    "h1h3Ids": [
+      "32",
+      "26"
+    ],
+    "problemStatement": "No committee owns legislative branch operations as a whole",
+    "problemDescription": "Internal legislative branch questions, technology, budgets, staffing, facilities, and modernization, span both chambers but are handled in fragments by House Administration, Senate Rules, the two Appropriations subcommittees, and the narrow Joint Committees on Printing and on the Library. Nothing looks at the branch as a single operating institution.",
+    "solutionStatement": "Establish a Joint Committee on the Legislative Branch",
+    "solutionDescription": "Create a joint committee with equal House and Senate membership, absorbing the Joint Committee on Printing and the Joint Committee on the Library, with jurisdiction over legislative branch operations, technology, staffing, and facilities, oversight of legislative budgets and modernization, and authority to report joint resolutions to both floors.",
+    "horizonJustification": "It creates the first standing body whose subject is the institution itself, which is what turns modernization from a series of select committees into continuous work.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed; the Joint Committees on Printing and on the Library both still exist with narrow mandates",
+    "sources": [
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "318",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "committees",
+      "house"
+    ],
+    "additionalTags": "Coordination",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2035,
+    "h1h3Ids": [
+      "32"
+    ],
+    "problemStatement": "Federal election oversight sits in a six-member subcommittee",
+    "problemDescription": "Oversight of how states administer federal elections, election integrity, voter access, contested elections, and campaign finance disclosure runs through the House Administration Subcommittee on Elections, which has six members. The same committee also carries House internal operations, legislative branch agency oversight, member resources, and modernization, and its scope has grown with each new responsibility.",
+    "solutionStatement": "Establish a standing Committee on the Administration of Federal Elections",
+    "solutionDescription": "Create a standing committee with jurisdiction over federal election administration, resourced and staffed for it, and refocus the Committee on House Administration on internal House operations, legislative branch agency oversight, member and staff resources, and institutional modernization, with its responsibilities codified.",
+    "horizonJustification": "It gives both functions a committee sized to them, and it protects the modernization work that currently competes with elections for the same six members' attention.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "POPVOX Foundation"
+      },
+      {
+        "title": "119th House Rules Recommendations (2025)"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "319",
+    "domains": [
+      "capacity",
+      "oversight"
+    ],
+    "buckets": [
+      "technology",
+      "communications"
+    ],
+    "additionalTags": "Encryption, Security, Cybersecurity",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2032,
+    "h1h3Ids": [
+      "40"
+    ],
+    "problemStatement": "Staff and member communications are not end-to-end encrypted by default",
+    "problemDescription": "Everyday communication among staff and members runs on commercial email, consumer messaging apps, and vendor-managed conferencing (Microsoft Teams, Zoom, Cisco Webex) whose encryption settings are inconsistent, frequently not end-to-end encrypted by default, and governed by contracts negotiated without the confidentiality of legislative work as a priority. Sensitive deliberations are exposed to vendors, to the executive branch where it manages the underlying channels, and to anyone who compromises a platform Congress does not control.",
+    "solutionStatement": "Make end-to-end encryption the default for all staff and member communications",
+    "solutionDescription": "Guarantee end-to-end encryption for all staff and member communications, either by adopting new software or by renegotiating existing vendor contracts. Options include developing a Congress-owned Signal-equivalent messaging service; adopting the encrypted platform the French government uses for official communications, Tchap, which is built on the open Matrix protocol; and requiring that every end-to-end encryption and security option already available in existing tools such as Microsoft Teams, Zoom, and Cisco Webex be turned on by default across the institution.",
+    "horizonJustification": "Moving Congress onto communications it encrypts end-to-end changes who can see legislative deliberations as a matter of infrastructure rather than policy, protecting legislative privilege permanently instead of relying on vendor defaults or executive-branch goodwill.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "Interview with Senate staffer"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "320",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "processes",
+      "law"
+    ],
+    "additionalTags": "Bipartisanship, Rules, Coordination",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2032,
+    "h1h3Ids": [
+      "21",
+      "16"
+    ],
+    "problemStatement": "Chronic gridlock keeps Congress from acting on the nation's top priorities",
+    "problemDescription": "The filibuster, committee gatekeeping, and amendment obstruction let a determined minority block legislation on major national issues even when it has broad majority support, so pressing problems go unaddressed for decades.",
+    "solutionStatement": "Bipartisan priority-issue commissions with guaranteed fast-track consideration",
+    "solutionDescription": "Enact a Bipartisan Priority Reform Commission Act: each session, stand up 16-member bicameral commissions of legislators and independent experts for one or two rotating priority issues, each producing an implementing bill that gets expedited, filibuster-exempt floor consideration under strict deadlines, backed by an independent oversight board, a member amendment window, fallback fast-tracking if a commission stalls, and a sunset that auto-renews.",
+    "horizonJustification": "It builds a durable, self-executing mechanism for bringing priority national issues to a decision rather than relying on leadership goodwill, so the change to how Congress acts persists across sessions.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "makecongressworkagain.org",
+        "url": "https://makecongressworkagain.org/wp-content/uploads/2026/02/2026-02-07-White-Paper.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "321",
+    "domains": [
+      "capacity",
+      "oversight"
+    ],
+    "buckets": [
+      "confirmations",
+      "senate"
+    ],
+    "additionalTags": "Rules",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2028,
+    "h1h3Ids": [
+      "28"
+    ],
+    "problemStatement": "Acting officials fill top jobs indefinitely, sidelining Senate confirmation",
+    "problemDescription": "Easy resort to acting officials and delegations of duties lets the White House avoid nominating and the Senate avoid confirming agency leaders, and ambiguities in the Federal Vacancies Reform Act have generated repeated litigation over who may serve and for how long.",
+    "solutionStatement": "Tighten the Federal Vacancies Reform Act",
+    "solutionDescription": "Modify the Vacancies Act on the model of the Accountability for Acting Officials Act: cut the permitted tenure for acting officials in principal offices (from 210 to 120 days), resolve the ambiguities that spawn litigation over succession statutes and post-firing service, and let officials already Senate-confirmed to another position keep an acting title while nominated to the vacant one.",
+    "horizonJustification": "Statutory limits on acting service push the administration to nominate and the Senate to confirm, restoring the confirmation function without wholesale change to the process.",
+    "pathToH2plus": "",
+    "currentStatus": "The House passed a version (the Accountability for Acting Officials Act) in December 2021.",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "322",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "confirmations",
+      "senate"
+    ],
+    "additionalTags": "Rules",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2028,
+    "h1h3Ids": [
+      "28"
+    ],
+    "problemStatement": "Nominations stall in committee with no way to force a vote",
+    "problemDescription": "A committee of jurisdiction can sit on a presidential nomination indefinitely, and each new session the Senate returns pending nominations unless held over by unanimous consent, forcing nominees to redo paperwork and lengthening an already slow process.",
+    "solutionStatement": "Create a Rule XIV-style discharge for stalled nominations",
+    "solutionDescription": "Amend Senate Rule XXXI to let an individual senator place a nomination directly on the Executive Calendar once the committee has failed to act for a set number of days (shorter for national-security posts and agency leaders), mirroring the Rule XIV mechanism for bills, and amend paragraph 6 to stop the routine first-year return of nominations.",
+    "horizonJustification": "It preserves each senator's leverage while removing a pure choke point, so confirmation delay falls without changing vote thresholds or information demands.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "323",
+    "domains": [
+      "capacity"
+    ],
+    "buckets": [
+      "confirmations"
+    ],
+    "additionalTags": "Standardization, Operations",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2028,
+    "h1h3Ids": [
+      "28"
+    ],
+    "problemStatement": "The vetting burden deters and delays qualified nominees",
+    "problemDescription": "Providing the financial, travel, and background information the White House and Senate require is invasive, expensive, and duplicative, so nominees spend thousands of dollars and weeks digging up records instead of preparing to serve, and some qualified people decline altogether.",
+    "solutionStatement": "Stand up nominee support and standardize vetting",
+    "solutionDescription": "Create an office in the General Services Administration or OPM to give nominees accounting, legal, and relocation help and to keep reusable records across appointments, and convene a group to agree on a common, streamlined set of White House and Senate vetting questions so nominees are not buried in overlapping disclosure demands.",
+    "horizonJustification": "Lowering the personal cost of the process widens the pool of people willing to serve and speeds nominations without weakening the Senate's vetting role.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "324",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "committees",
+      "oversight"
+    ],
+    "additionalTags": "Rules, Standardization",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2028,
+    "h1h3Ids": [
+      "29"
+    ],
+    "problemStatement": "Committee staff deposition authority is piecemeal",
+    "problemDescription": "Only some committees can authorize staff to take depositions from witnesses, and where the authority exists it has been used to good effect, but the inconsistency leaves many investigations dependent on member-only questioning that does not scale.",
+    "solutionStatement": "Standardize deposition authority across all committees",
+    "solutionDescription": "Give the staffs of every committee across-the-board authority to take depositions from witnesses, including depositions taken remotely by video, standardizing an investigative tool that today exists only piecemeal.",
+    "horizonJustification": "It equips every committee to build a real evidentiary record, strengthening routine oversight without depending on which committee a matter lands in.",
+    "pathToH2plus": "",
+    "currentStatus": "Authority exists piecemeal today",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "325",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "committees"
+    ],
+    "additionalTags": "Security, Cybersecurity, Coordination",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2030,
+    "h1h3Ids": [
+      "29"
+    ],
+    "problemStatement": "Members and staff lack the clearances and facilities to oversee classified programs",
+    "problemDescription": "Too few committee and personal-office staff hold security clearances, SCIF capacity is limited, and members are not reliably told when classified information has been transmitted, so Congress cannot effectively oversee security-cooperation and other classified programs.",
+    "solutionStatement": "Expand classified access, clearances, and SCIF capacity",
+    "solutionDescription": "Build additional SCIFs and classification infrastructure, increase the number of committee and personal-office staff eligible for security clearances, and add unclassified notification that classified information has been transmitted, so members and staff have the access they need to do oversight.",
+    "horizonJustification": "Access to classified information is the precondition for classified oversight, so expanding it changes what Congress can actually see rather than only how it asks.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "326",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight",
+      "appropriations"
+    ],
+    "additionalTags": "Rules, Transparency",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "29",
+      "36"
+    ],
+    "problemStatement": "Congress cannot compel executive officials to hand over information",
+    "problemDescription": "When administrations refuse congressional information demands, Congress has leaned on the courts, where subpoena-enforcement suits routinely drag past the end of the administration they were meant to oversee, leaving oversight toothless.",
+    "solutionStatement": "Use oversight riders with automatic funding cutoffs",
+    "solutionDescription": "Attach appropriations riders that require named officials to provide specified information to Congress, with automatic cuts to the underlying appropriation or to the officials' salaries for noncompliance, paired with non-severability clauses so the executive cannot strike the enforcement while keeping the funds.",
+    "horizonJustification": "It moves enforcement from the courts to Congress's own power of the purse, changing the executive's incentive to stonewall as a structural matter.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "327",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight"
+    ],
+    "additionalTags": "Transparency",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "29"
+    ],
+    "problemStatement": "Congress does not systematically oversee the federal judiciary",
+    "problemDescription": "The federal courts, and the Supreme Court in particular, operate with little congressional scrutiny even as the Court leans more on unsigned emergency 'shadow docket' rulings and nationwide injunctions and faces questions about the enforceability of its own ethics standards.",
+    "solutionStatement": "Use oversight hearings to scrutinize the courts",
+    "solutionDescription": "Hold regular oversight hearings that press the Supreme Court to adopt and adhere to a binding code of ethics, highlight the rise and dangers of nationwide injunctions and consequential shadow-docket decisions, and push the Court to make its workings more open to the public.",
+    "horizonJustification": "Sustained hearings put congressional attention and public pressure on judicial practices that currently answer to no one, without touching the courts' independence in deciding cases.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "328",
+    "domains": [
+      "oversight",
+      "information"
+    ],
+    "buckets": [
+      "appropriations",
+      "oversight"
+    ],
+    "additionalTags": "Transparency, Data, Public Records",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2028,
+    "h1h3Ids": [
+      "27",
+      "29"
+    ],
+    "problemStatement": "Executive fund shifting and backdoor spending happen out of Congress's view",
+    "problemDescription": "Agencies move money through transfers and reprogramming and raise and spend fees, fines, and penalties largely outside the appropriations process, with notice reaching only a few committees, so most members and the public cannot see how funds are actually redirected.",
+    "solutionStatement": "Require disclosure of transfers, reprogramming, and agency fees",
+    "solutionDescription": "Require agencies to post their transfer and reprogramming actions publicly, as the Defense Department already does, and to disclose and account for the fees, fines, and penalties they collect and spend, so this 'backdoor spending' is visible to all of Congress and to civil society rather than buried in committee notifications.",
+    "horizonJustification": "Making fund shifting transparent by default is a durable change to what Congress and the public can see, and it does not alter notification thresholds or burden agencies beyond posting existing reports.",
+    "pathToH2plus": "",
+    "currentStatus": "Some agencies (e.g., DoD) already post this",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "329",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight",
+      "law",
+      "otherActivities"
+    ],
+    "additionalTags": "War Powers",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2033,
+    "h1h3Ids": [
+      "36",
+      "13"
+    ],
+    "problemStatement": "The War Powers Resolution no longer constrains modern uses of force",
+    "problemDescription": "Because the Resolution's key term 'hostilities' is undefined, its 60-day clock rarely starts, and light-footprint and remote operations let presidents wage sustained conflict without congressional authorization; Congress has not approved a use of force since 2002.",
+    "solutionStatement": "Modernize the War Powers Resolution",
+    "solutionDescription": "Amend the Resolution to define 'hostilities' so its clock actually runs, shorten the 60-day window for unauthorized military action to 20 days, and back the limit with an automatic cutoff of funding for any use of force Congress has not authorized.",
+    "horizonJustification": "It rewrites the core statute governing the war power so the constraint binds by its own terms rather than depending on a president choosing to invoke it.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "330",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "oversight",
+      "otherActivities"
+    ],
+    "additionalTags": "Coordination, War Powers",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2034,
+    "h1h3Ids": [
+      "36"
+    ],
+    "problemStatement": "Courts duck war-powers disputes, leaving the executive unchecked",
+    "problemDescription": "When Congress tries to challenge executive uses of force in court, cases stall on standing and justiciability and can take years, so the judiciary's silence has let executive-branch legal opinions become the last word on the war power.",
+    "solutionStatement": "Create expedited judicial review for war-powers disputes",
+    "solutionDescription": "Create a streamlined process of judicial review, including a special court, for Congress to challenge executive encroachments on its war powers, and let a chamber authorize a committee or a member by resolution to bring suit on the whole body's behalf so the case has standing.",
+    "horizonJustification": "A dedicated, expedited forum plus a clear route to standing gives Congress a real judicial check on the war power that currently exists only in theory.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "331",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "committees"
+    ],
+    "additionalTags": "Coordination, Information Silos",
+    "horizon": "H2-",
+    "horizonKey": "h2neg",
+    "year": 2029,
+    "h1h3Ids": [
+      "32",
+      "36"
+    ],
+    "problemStatement": "National-security jurisdiction is split across committees that do not share",
+    "problemDescription": "Armed services, foreign affairs, and intelligence committees hold overlapping pieces of national-security oversight but sit in separate silos, and some authorities require reporting only to one committee even when others hold jurisdiction, so no committee sees the whole picture.",
+    "solutionStatement": "Cross-seat the national-security committees and formalize joint briefings",
+    "solutionDescription": "Require the armed services, foreign affairs, and intelligence committees each to seat at least two members (one from each party) from each of the other two, with their chairs and ranking members serving as ex-officio members, and expand and formalize joint briefings and hearings for cross-cutting, high-stakes national-security matters.",
+    "horizonJustification": "Shared membership and standing joint briefings dissolve the information silos structurally rather than relying on ad hoc cooperation.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "332",
+    "domains": [
+      "oversight"
+    ],
+    "buckets": [
+      "committees",
+      "structure"
+    ],
+    "additionalTags": "Coordination, Information Silos",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2033,
+    "h1h3Ids": [
+      "36",
+      "32"
+    ],
+    "problemStatement": "Congress has no counterpart to the NSC to coordinate national security",
+    "problemDescription": "Modern warfare cuts across committees with distinct but overlapping jurisdictions, and unlike the executive branch, which created the National Security Council to coordinate its agencies, Congress has no standing structure to coordinate its own national-security committees.",
+    "solutionStatement": "Create a Congressional National Security Council",
+    "solutionDescription": "Stand up a coordinating body, modeled on the executive NSC and on the Joint Economic and Joint Taxation committees, that brings together the chairs and ranking members of the national-security committees to brief one another on cross-cutting matters, supported by dedicated staff, with the express purpose of informing each committee's own work rather than extending anyone's oversight.",
+    "horizonJustification": "A permanent coordinating structure changes how Congress organizes itself around national security, mirroring the institutional fix the executive adopted in 1947.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
+  },
+  {
+    "id": "333",
+    "domains": [
+      "oversight",
+      "capacity"
+    ],
+    "buckets": [
+      "supportAgencies",
+      "otherActivities"
+    ],
+    "additionalTags": "Coordination",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2033,
+    "h1h3Ids": [
+      "36",
+      "18"
+    ],
+    "problemStatement": "Executive-branch lawyers are the only authoritative voice on interbranch law",
+    "problemDescription": "With the courts largely silent, the executive's Office of Legal Counsel has become the predominant voice on war powers and interbranch questions, and it consistently reads the law to favor executive authority, at Congress's expense, with no institutional counterweight centering congressional interests.",
+    "solutionStatement": "Create a Congressional Office of Legal Counsel",
+    "solutionDescription": "Create a nonpartisan office, on the model of the Congressional Research Service or housed within it, that gives Congress real-time expert legal analysis on war powers, constitutional questions, and interbranch disputes, files amicus briefs, and where appropriate represents Congress's institutional interests in court, so executive legal opinions are no longer the only interpretation on the table.",
+    "horizonJustification": "A standing in-house legal voice for the institution durably shifts who gets to interpret the law in interbranch fights, rather than leaving Congress to react case by case.",
+    "pathToH2plus": "",
+    "currentStatus": "Proposed",
+    "sources": [
+      {
+        "title": "understandingcongress.org",
+        "url": "https://www.understandingcongress.org/wp-content/uploads/2025/08/Compilation_Princeton_Reports_on_Article_One_Authorities_July-10-2025_0.pdf"
+      }
+    ],
+    "learnMore": []
   }
 ];

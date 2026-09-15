@@ -40,12 +40,12 @@ export default function H3SimpleFooter() {
             <h3>Explore</h3>
             <Link href="/">Overview</Link>
             <Link href="/what-is-h3">What is Horizon 3?</Link>
-            <Link href="/#reform-map">Reform Map</Link>
+            <Link href="/reform-map">Reform Map</Link>
           </div>
           <div>
             <h3>Get involved</h3>
             <p>
-              Help make the map more accurate. <Link href="/#involved">Share input</Link> as the
+              Help make the map more accurate. <Link href="/get-involved">Share input</Link> as the
               work develops.
             </p>
           </div>

@@ -40,7 +40,7 @@ const NODES: SystemNode[] = [
     title: "The Institution",
     blurb:
       "The bicameral institution — its culture, its technology, its people, and its capacity to oversee.",
-    buckets: ["culture", "technology", "oversight", "personnel", "funding"]
+    buckets: ["culture", "technology", "oversight", "personnel"]
   },
   {
     id: "output",
@@ -77,12 +77,6 @@ export const BUCKETS: Record<string, Bucket> = {
     node: "institution",
     blurb:
       "The permanent, in-house technical and professional talent Congress can hire and retain."
-  },
-  funding: {
-    label: "Funding",
-    node: "institution",
-    blurb:
-      "How the legislative branch and its offices are resourced — the budgets and appropriations that fund Congress's own capacity."
   },
   law: {
     label: "Legislation",
@@ -153,8 +147,8 @@ export const BUCKETS: Record<string, Bucket> = {
     node: "institution",
     blurb: "District and state offices delivering local service."
   },
-  dcOffices: {
-    label: "DC Offices",
+  capitol: {
+    label: "Capitol",
     node: "institution",
     blurb: "The Washington offices where members and their staff do the work of legislating."
   },
@@ -187,7 +181,7 @@ export const BUCKETS: Record<string, Bucket> = {
   communications: {
     label: "Communications",
     node: "output",
-    blurb: "How Congress communicates its work to the public and the press."
+    blurb: "How Congress communicates its work within itself, the public or the press."
   }
 };
 
