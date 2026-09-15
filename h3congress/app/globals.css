@@ -1490,6 +1490,45 @@ textarea:focus-visible {
   transform: translateX(4px);
 }
 
+/* Implemented ideas: faded, with a "Complete" badge. Hover restores full
+   opacity so the row stays readable when explored. */
+.h3-domain-list-item[data-complete] {
+  opacity: 0.55;
+}
+
+.h3-domain-list-item[data-complete]:hover,
+.h3-domain-list-item[data-complete]:focus-visible {
+  opacity: 1;
+}
+
+.h3-domain-list-item[data-complete] .h3-domain-list-title {
+  text-decoration: line-through;
+  text-decoration-color: var(--line);
+}
+
+.h3-domain-list-complete {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--h2pos);
+  color: var(--h2pos);
+  background: color-mix(in srgb, var(--h2pos) 12%, transparent);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.h3-domain-list-complete::before {
+  content: "✓";
+  font-size: 11px;
+  line-height: 1;
+}
+
 /* Horizon badge ------------------------------------------------------------ */
 .h3-domain-horizon {
   flex-shrink: 0;

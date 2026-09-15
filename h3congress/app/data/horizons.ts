@@ -37,6 +37,14 @@ export function horizonChip(key: string): { label: string; className: string } {
   return h ? { label: h.label, className: h.className } : { label: key, className: "is-h1" };
 }
 
+// An H2 idea whose target year has already passed is treated as implemented and
+// shown as "Complete". Bump this as years roll over (ideas dated through this
+// year are done). Ideas with no year are never marked complete.
+export const COMPLETE_THROUGH_YEAR = 2025;
+export function isIdeaComplete(year: number | null): boolean {
+  return year != null && year <= COMPLETE_THROUGH_YEAR;
+}
+
 // Domain display names live in the generated module (the sheet is authoritative);
 // re-exported so consumers import domain + horizon metadata from one place.
 export { DOMAIN_LABELS, type DomainKey };
