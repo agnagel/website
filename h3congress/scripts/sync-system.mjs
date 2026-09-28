@@ -139,31 +139,19 @@ function hostTitle(url) {
   }
 }
 
-// Parse a Sources / Learn More cell into [{ title, url? }] link items. Prefers the
-// sheet's hyperlink runs (from fetch-sheet's linkCells) so linked text keeps its
-// title; a bare URL is titled by its host. Falls back to splitting the plain
-// string on commas/newlines when no link runs are present. Plain (unlinked) text
-// like "Interview with House staff" is kept as a title-only item.
-function parseLinks(raw, segments) {
+// Parse a Sources / Learn More cell into [{ title, url? }] link items from the
+// cell's PLAIN TEXT only. The sheet's hyperlink formatting is intentionally
+// ignored: a single link run could span several pasted URLs and collapse them
+// into one link, silently dropping the rest. Splitting the raw text on
+// commas/newlines is unambiguous — each URL becomes a link titled by its host,
+// and any non-URL text (e.g. "Interview with House staff") is kept as a
+// title-only item. Enter one URL per line/comma in the sheet.
+function parseLinks(raw) {
   const items = [];
-  const push = (text, url) => {
-    const t = str(text);
-    if (url) {
-      const title = t && !/^https?:\/\//i.test(t) ? t : hostTitle(url);
-      items.push({ title, url });
-    } else if (/^https?:\/\//i.test(t)) {
-      items.push({ title: hostTitle(t), url: t });
-    } else if (t) {
-      items.push({ title: t });
-    }
-  };
-  if (segments && segments.length) {
-    for (const seg of segments) {
-      if (seg.url) push(seg.text, seg.url);
-      else for (const tok of str(seg.text).split(/[\n,]+/)) push(tok);
-    }
-  } else {
-    for (const tok of str(raw).split(/[\n,]+/)) push(tok);
+  for (const tok of str(raw).split(/[\n,]+/)) {
+    const t = str(tok);
+    if (/^https?:\/\//i.test(t)) items.push({ title: hostTitle(t), url: t });
+    else if (t) items.push({ title: t });
   }
   return items;
 }
@@ -233,7 +221,6 @@ function buildData(tabs) {
   }
   const areaById = new Map(problemAreas.map((a) => [a.id, a]));
 
-  const h2LinkCells = (tabs[H2_TAB] && tabs[H2_TAB].linkCells) || {};
   const h2Ideas = [];
   for (const r of ideaRows) {
     const id = str(r.ID);
@@ -244,7 +231,6 @@ function buildData(tabs) {
     for (const linkId of h1h3Ids) {
       if (!areaById.has(linkId)) warnings.push(`H2 row ${id}: links to H1/H3 ID "${linkId}" which has no row in "${H1H3_TAB}"`);
     }
-    const rowLinks = h2LinkCells[r._row] || {};
     h2Ideas.push({
       id,
       domainsRaw: str(r.Domain),
@@ -263,8 +249,8 @@ function buildData(tabs) {
       horizonJustification: str(r["Horizon Justification"]),
       pathToH2plus: str(r["Path to H2+"]),
       currentStatus: str(r["Current Status (Optional)"]),
-      sources: parseLinks(r.Sources, rowLinks["Sources"]),
-      learnMore: parseLinks(r["Learn More"], rowLinks["Learn More"]),
+      sources: parseLinks(r.Sources),
+      learnMore: parseLinks(r["Learn More"]),
     });
   }
 

@@ -253,7 +253,8 @@ export const PROBLEM_AREAS: ProblemArea[] = [
       "capacity"
     ],
     "buckets": [
-      "members"
+      "members",
+      "culture"
     ],
     "h1Time": 2024,
     "h1Statement": "Members are not incentivized to care about institutional power",
@@ -269,7 +270,8 @@ export const PROBLEM_AREAS: ProblemArea[] = [
       "capacity"
     ],
     "buckets": [
-      "members"
+      "members",
+      "culture"
     ],
     "h1Time": 2019,
     "h1Statement": "Members are not incentivized to care about effective policymaking",
@@ -9759,44 +9761,50 @@ export const H2_IDEAS: H2Idea[] = [
     ],
     "buckets": [
       "structure",
-      "committees"
+      "committees",
+      "culture"
     ],
-    "additionalTags": "Operations, Bipartisanship",
-    "horizon": "H2-",
-    "horizonKey": "h2neg",
-    "year": 2026,
+    "additionalTags": "Operations, Bipartisanship, AOC, Coordination, Norms",
+    "horizon": "H2+",
+    "horizonKey": "h2pos",
+    "year": 2029,
     "h1h3Ids": [
-      "23"
+      "23",
+      "14"
     ],
-    "problemStatement": "The House has no hearing room built for non-panel formats",
-    "problemDescription": "House hearing rooms are built around a fixed dais and witness table layout, which sets the format for every hearing regardless of subject or purpose. Committees that want a roundtable style conversation, better suited to some oversight or member-driven sessions, have no dedicated space configured for it and no incentive to experiment with alternative formats.",
-    "solutionStatement": "Build a flexible hearing space and incentivize alternative formats",
-    "solutionDescription": "The House identifies and builds out a hearing space that supports alternative seating arrangements, including roundtable style formats, alongside the traditional dais layout, and creates incentives for committees to experiment with these formats to encourage more bipartisan participation. Committees gain both the option to hold a hearing in a format suited to the topic and a reason to use it instead of defaulting to the traditional layout.",
-    "horizonJustification": "The room and incentive together give committees an alternative venue and a reason to use it, but they do not change hearing rules or the default format used in every other room, so they function as an added option rather than a shift in how hearings are run generally.",
+    "problemStatement": "Congressional hearings are mostly unproductive theater",
+    "problemDescription": "Nearly every hearing follows the same script: opening statements, a witness panel, and five-minute rounds of member questions alternating by party, held in a room with a raised dais facing a witness table. The format and the room reinforce each other, and neither is conducive to information gathering, idea generation, deliberation, or bipartisan problem-solving.",
+    "solutionStatement": "Experiment with alternative hearing formats and build flexible rooms to host them",
+    "solutionDescription": "Experiment with formats beyond the five-minute rule, drawing on the Select Committee's practice. Options include roundtable discussions, longer questioning blocks shared across parties, bipartisan seating, and member-driven sessions with experts. House or Senate Rules could expressly permit these formats and could track results and share guidance with other committees. Alongside this, the House and Senate build out at least one hearing space with movable furniture and technology that works for both roundtable and traditional dais layouts, so the room can fit whatever format a committee chooses.",
+    "horizonJustification": "Once flexible rooms exist and alternative formats are expressly permitted, committees can continue to choose formats to fit each hearing's purpose, making incremental improvements over time.",
     "pathToH2plus": "",
-    "currentStatus": "BPC tracker (Apr 2026), Rec 166: Open-Needs Attention. 117th Congress: Need flexible space conducive to holding hearings or meetings in nontraditional formats, usable by select committees, task forces, and caucuses.\nBPC tracker (Apr 2026), H. Rept. 116-562 Rec 73 (tracker Rec 73): Closed-Implemented. 118th Congress: Piloted by the Select Committee, Subcommittee, and the Select Committee on the CCP but would need broader adoption by committees for full implementation.",
+    "currentStatus": "According to BPC (April 2026), a couple committees have piloted alternative hearing formats but few others have adopted them. The recommendation for flexible hearing spaces is still open.",
     "sources": [
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/modernization-ideas-continued-to-spread-in-the-118th-congress/"
+      }
+    ],
+    "learnMore": [
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-117hrpt646/pdf/GPO-CRPT-117hrpt646.pdf"
-      },
-      {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
       },
       {
         "title": "govinfo.gov",
         "url": "https://www.govinfo.gov/content/pkg/GPO-CRPT-116hrpt562/pdf/GPO-CRPT-116hrpt562.pdf"
       },
       {
-        "title": "bipartisanpolicy.org",
-        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
-      }
-    ],
-    "learnMore": [
-      {
         "title": "archpaper.com",
         "url": "https://www.archpaper.com/2022/07/aia-champions-approved-recommendations-modernize-congressional-facilities-practices/"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/article/monitoring-the-implementation-of-congressional-modernization-recommendations/"
+      },
+      {
+        "title": "bipartisanpolicy.org",
+        "url": "https://bipartisanpolicy.org/wp-content/uploads/2025/03/BPC_Working-Group-Report.pdf"
       }
     ]
   },
