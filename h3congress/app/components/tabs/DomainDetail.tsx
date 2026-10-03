@@ -160,6 +160,7 @@ export function DomainItemDetail({
           onOpenIdea={onOpenIdea}
         />
         <DetailRow label="Current status" value={item.currentStatus} />
+        <DetailRow label="Concerns" value={item.concerns} />
         <LinkRow label="Sources" items={item.sources} />
         <LinkRow label="Learn more" items={item.learnMore} />
       </dl>

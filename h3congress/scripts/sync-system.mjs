@@ -249,6 +249,7 @@ function buildData(tabs) {
       horizonJustification: str(r["Horizon Justification"]),
       pathToH2plus: str(r["Path to H2+"]),
       currentStatus: str(r["Current Status (Optional)"]),
+      concerns: str(r.Concerns),
       sources: parseLinks(r.Sources),
       learnMore: parseLinks(r["Learn More"]),
     });
@@ -294,6 +295,7 @@ function emitProblemSpace({ problemAreas, h2Ideas }) {
     horizonJustification: i.horizonJustification,
     pathToH2plus: i.pathToH2plus,
     currentStatus: i.currentStatus,
+    concerns: i.concerns,
     sources: i.sources,
     learnMore: i.learnMore,
   }));
@@ -345,6 +347,7 @@ export type H2Idea = {
   horizonJustification: string;
   pathToH2plus: string;
   currentStatus: string;
+  concerns: string;
   sources: SourceLink[];
   learnMore: SourceLink[];
 };

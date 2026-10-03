@@ -110,6 +110,7 @@ Rows without a numeric `ID` are skipped.
 | `Horizon Justification` | |
 | `Path to H2+` | |
 | `Current Status (Optional)` | |
+| `Concerns` | Shown on the idea card, just above Sources. |
 | `Sources` | |
 
 ### Scaffolding that is NOT in the sheet
