@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every clause of the U.S. Constitution that involves Congress, redlined for later amendments, with notes on which powers are obsolete, rarely used, shifted to the executive or shaped by the courts.">
+<title>Congress in the Constitution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+html, body { margin: 0; }
+/* Layout: one parchment scroll between two wooden rollers on a tan desk; clauses fold open inside it. Single deliberate light look. */
+:root {
+  color-scheme: light;
+  --desk: #c9b48c; --desk-dark: #a88f63;
+  --parchment: #f0e2c0; --parchment-hi: #f7ecd3; --parchment-edge: #d9c08f;
+  --ink: #3a2a1a; --muted: #7a6044; --rule: #cbb284; --accent: #7b2d1c; --accent-soft: #ead3b0;
+  --wood: #5b3a20; --wood-hi: #93633a; --wood-dark: #3c2513;
+  --del: #9a2716; --del-bg: rgba(154, 39, 22, .10); --ins: #2e5a2a; --ins-bg: rgba(46, 90, 42, .12); --exp: #8a7860; --exp-bg: rgba(122, 100, 68, .10);
+  --f-obsolete: #6a5d4b; --f-dormant: #87560f; --f-executive: #5f3a6c; --f-courts: #2d5c60;
+  --f-obsolete-bg: #e2d4b6; --f-dormant-bg: #efd8ac; --f-executive-bg: #e5d3d8; --f-courts-bg: #d3dcc8;
+  --font-title: "IM Fell English", "Libre Caslon Text", "Georgia", serif;
+  --font-caps: "IM Fell English SC", "Libre Caslon Text", "Georgia", serif;
+  --font-display: "Libre Caslon Text", "Baskerville", "Georgia", serif;
+  --font-body: "EB Garamond", "Garamond", "Georgia", serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  background-color: var(--desk); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(255, 240, 210, .45), transparent 60%), radial-gradient(ellipse at 50% 100%, rgba(80, 50, 20, .25), transparent 70%);
+  background-attachment: fixed;
+}
+.scroll { max-width: 940px; margin: 0 auto; padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.rod { position: relative; height: 22px; margin: 0 -6px; border-radius: 11px; background: linear-gradient(180deg, var(--wood-hi) 0%, var(--wood) 45%, var(--wood-dark) 100%); box-shadow: 0 3px 6px rgba(50, 30, 10, .35); z-index: 2; }
+.rod::before, .rod::after { content: ""; position: absolute; top: -5px; width: 22px; height: 32px; border-radius: 9px; background: linear-gradient(180deg, var(--wood-hi), var(--wood-dark)); box-shadow: 0 2px 4px rgba(50, 30, 10, .4); }
+.rod::before { left: -14px; } .rod::after { right: -14px; }
+.sheet {
+  position: relative; margin: -6px 10px; padding-block: 40px 48px; padding-inline: clamp(18px, 5vw, 56px);
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .32  0 0 0 0 .15  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+    radial-gradient(ellipse at 30% 20%, var(--parchment-hi), transparent 55%),
+    radial-gradient(ellipse at 75% 80%, rgba(200, 165, 105, .25), transparent 60%);
+  box-shadow: inset 0 0 70px rgba(150, 105, 45, .35), inset 0 0 14px rgba(120, 80, 30, .25), 0 10px 30px rgba(60, 35, 10, .3);
+}
+.sheet::before, .sheet::after { content: ""; position: absolute; left: 0; right: 0; height: 26px; pointer-events: none; }
+.sheet::before { top: 0; background: linear-gradient(180deg, rgba(110, 70, 25, .28), transparent); }
+.sheet::after { bottom: 0; background: linear-gradient(0deg, rgba(110, 70, 25, .28), transparent); }
+
+header.top { display: grid; gap: 8px; justify-items: center; text-align: center; margin-bottom: 18px; }
+.eyebrow { font-family: var(--font-caps); font-size: 15px; letter-spacing: .12em; color: var(--muted); }
+h1 { font-family: var(--font-title); font-weight: 400; font-size: clamp(36px, 6.5vw, 58px); line-height: 1.02; margin: 0; text-wrap: balance; color: var(--ink); }
+.orn { display: flex; align-items: center; gap: 12px; color: var(--accent); width: min(320px, 80%); font-size: 20px; }
+.orn::before, .orn::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--accent)); }
+.orn::after { background: linear-gradient(270deg, transparent, var(--accent)); }
+.lead { margin: 0; color: var(--muted); max-width: 58ch; font-style: italic; font-size: 18px; }
+
+.controls { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(240, 226, 192, .94); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); padding-block: 12px; border-bottom: 3px double var(--rule); display: grid; gap: 10px; margin-bottom: 8px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--desk); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--ink); border-radius: 3px; overflow: hidden; }
+.seg button { font: 500 15px var(--font-body); font-variant: small-caps; letter-spacing: .04em; padding: 5px 14px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--parchment-hi); }
+.btn { font: 500 15px var(--font-body); font-variant: small-caps; letter-spacing: .04em; padding: 5px 12px; border: 1px solid var(--ink); border-radius: 3px; background: transparent; color: var(--ink); cursor: pointer; }
+.btn:hover, .seg button:hover { color: var(--accent); }
+.seg button[aria-pressed="true"]:hover { color: var(--parchment-hi); }
+input#q { flex: 1 1 200px; min-width: 0; font: italic 16px var(--font-body); padding: 5px 4px; border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; background: transparent; color: var(--ink); }
+input#q::placeholder { color: var(--muted); }
+input#q:focus { outline: none; border-bottom-color: var(--accent); box-shadow: 0 1px 0 var(--accent); }
+.btn:focus-visible, .seg button:focus-visible, .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.spacer { flex: 1 1 auto; }
+.chip { font: 500 14px var(--font-body); padding: 2px 10px; border-radius: 3px; border: 1px solid transparent; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.chip .n { font-variant-numeric: oldstyle-nums; opacity: .8; }
+.chip[aria-pressed="true"] { border-color: currentColor; box-shadow: inset 0 0 0 1px currentColor; }
+.chip.all { background: var(--accent-soft); color: var(--accent); }
+.chip.amended { background: rgba(154, 39, 22, .12); color: var(--del); }
+.f-obsolete { background: var(--f-obsolete-bg); color: var(--f-obsolete); }
+.f-dormant { background: var(--f-dormant-bg); color: var(--f-dormant); }
+.f-executive { background: var(--f-executive-bg); color: var(--f-executive); }
+.f-courts { background: var(--f-courts-bg); color: var(--f-courts); }
+.count { font-size: 15px; font-style: italic; color: var(--muted); margin: 4px 0 0; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; color: var(--muted); margin: 14px 0 6px; }
+.legend del, .legend ins, .legend .exp { font-family: var(--font-display); }
+
+details.group { border-bottom: 1px solid var(--rule); }
+details.group:first-child { border-top: 1px solid var(--rule); margin-top: 12px; }
+details.group > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; padding: 16px 4px; align-items: start; }
+details.group > summary::-webkit-details-marker { display: none; }
+details.group > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+details.group > summary .chev { width: 18px; height: 18px; margin-top: 8px; }
+details.group > summary:hover h2 { color: var(--accent); }
+details.group h2 { font-family: var(--font-title); font-weight: 400; font-size: 28px; line-height: 1.15; margin: 0; text-wrap: balance; }
+details.group p.gsub { margin: 2px 0 0; color: var(--muted); font-size: 15px; font-style: italic; }
+details.group > .list { margin: 0 0 18px 28px; }
+@media (max-width: 520px) { details.group > .list { margin-left: 0; } }
+.list { border-top: 1px dotted var(--rule); }
+
+details.clause { border-bottom: 1px dotted var(--rule); }
+details.clause > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 10px; padding: 10px 4px; align-items: start; }
+details.clause > summary::-webkit-details-marker { display: none; }
+details.clause > summary:hover .ttl { color: var(--accent); }
+details.clause > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.chev { width: 16px; height: 16px; margin-top: 5px; color: var(--accent); transition: transform .15s ease; }
+details[open] > summary .chev { transform: rotate(90deg); }
+.sumline { display: flex; flex-wrap: wrap; gap: 2px 12px; align-items: baseline; min-width: 0; }
+.cite { font-family: var(--font-caps); font-size: 15px; letter-spacing: .03em; color: var(--muted); white-space: nowrap; }
+.ttl { font-weight: 600; font-size: 17.5px; }
+.badges { display: inline-flex; flex-wrap: wrap; gap: 5px; }
+.badge { font-size: 13px; font-weight: 500; padding: 0 8px; border-radius: 3px; white-space: nowrap; }
+.badge.amended { background: rgba(154, 39, 22, .12); color: var(--del); }
+.badge.passing, .chip.passing { background: transparent; color: var(--muted); border: 1px dashed currentColor; }
+.why { border-left: 3px solid var(--muted); padding: 2px 0 2px 12px; }
+.why p { margin: 0; font-style: italic; }
+
+.body { padding: 2px 4px 20px 30px; display: grid; gap: 14px; min-width: 0; }
+blockquote.text { margin: 0; padding: 16px 18px; background: rgba(255, 249, 232, .55); border: 1px solid var(--rule); border-left: 3px double var(--accent); border-radius: 2px; font-family: var(--font-display); font-size: 16px; line-height: 1.75; overflow-wrap: anywhere; }
+del { color: var(--del); background: var(--del-bg); text-decoration-thickness: 1.5px; }
+ins { color: var(--ins); background: var(--ins-bg); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.exp { color: var(--exp); background: var(--exp-bg); font-style: italic; }
+.ann { font-family: var(--font-body); font-style: italic; font-size: 15px; color: var(--accent); background: var(--accent-soft); padding: 0 6px; border-radius: 2px; }
+[data-by]::after { content: attr(data-by); font-family: var(--font-body); font-size: 12.5px; font-style: italic; text-decoration: none; display: inline-block; margin-left: 5px; padding: 0 5px; border-radius: 2px; border: 1px solid currentColor; vertical-align: 1px; line-height: 1.4; }
+.by { font-family: var(--font-body); font-size: 12.5px; font-style: italic; display: inline-block; margin-left: 5px; padding: 0 5px; border-radius: 2px; border: 1px solid currentColor; vertical-align: 1px; line-height: 1.4; text-decoration: none; }
+.by-del { color: var(--del); } .by-ins { color: var(--ins); } .by-exp { color: var(--exp); }
+a.by { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 2px; } a.by:hover, a.by:focus-visible { background: var(--accent-soft); outline: none; }
+a.by[target]::after { content: " \2197"; font-style: normal; }
+a.xref { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
+a.xref:hover, a.xref:focus-visible { text-decoration-style: solid; }
+.amends { border: 1px dashed var(--rule); border-radius: 2px; padding: 8px 12px; display: grid; gap: 2px; }
+ul.backlist { margin: 0 0 4px; padding-left: 20px; display: grid; gap: 2px; }
+ul.backlist li::marker { content: "\21B3  "; color: var(--accent); }
+ul.backlist .bt { color: var(--muted); font-style: italic; }
+.h3 { font-family: var(--font-caps); font-size: 15px; letter-spacing: .06em; color: var(--muted); margin: 0 0 2px; }
+ul.sum { margin: 0; padding-left: 20px; display: grid; gap: 3px; }
+ul.sum li::marker { color: var(--accent); }
+mark { background: rgba(214, 168, 52, .5); color: inherit; padding: 0 1px; border-radius: 2px; }
+.permalink { justify-self: start; font-size: 14px; font-style: italic; color: var(--muted); text-decoration: none; border-bottom: 1px dotted currentColor; }
+.permalink:hover, .permalink:focus-visible { color: var(--accent); }
+.empty .btn { margin-left: 8px; }
+details.clause:target > summary, details.clause.flash > summary { background: rgba(214, 168, 52, .22); border-radius: 3px; }
+.badge { white-space: normal; }
+@media (pointer: coarse) { .chip { min-height: 32px; } .btn, .seg button { min-height: 38px; } }
+@media (max-width: 600px) {
+  .controls { gap: 8px; padding-block: 8px; }
+  input#q { order: -1; flex-basis: 100%; font-size: 16px; }
+  .wide { display: none; }
+  .btn, .seg button { padding-inline: 10px; font-size: 14px; }
+  .seg button { text-transform: capitalize; }
+  #filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  #filters::-webkit-scrollbar { display: none; }
+  #filters .chip { flex: 0 0 auto; }
+}
+@media print {
+  body { background: #fff; font-size: 11pt; }
+  .rod, .controls, .permalink, .chev, body::before { display: none !important; }
+  .scroll { max-width: none; padding: 0; }
+  .sheet { margin: 0; padding: 0; background: #fff; box-shadow: none; }
+  .sheet::before, .sheet::after { display: none; }
+  details.clause, .note, blockquote.text { break-inside: avoid; }
+  details.group > .list, .body { margin-left: 0; padding-left: 0; }
+}
+.practice { display: grid; gap: 8px; }
+.note { border-radius: 2px; padding: 10px 12px; font-size: 16px; }
+.note b { display: block; font-family: var(--font-caps); font-weight: 400; font-size: 15px; letter-spacing: .04em; margin-bottom: 2px; }
+.note p { margin: 0; color: var(--ink); }
+.empty { padding: 24px 4px; color: var(--muted); font-style: italic; }
+footer { margin-top: 40px; padding-top: 16px; border-top: 3px double var(--rule); font-size: 15px; color: var(--muted); display: grid; gap: 6px; }
+footer a, .lead a { color: var(--accent); }
+@media (max-width: 520px) { .body { padding-left: 4px; } .spacer { display: none; } .sheet { margin-inline: 4px; } .rod { margin-inline: 2px; } .rod::before { left: -6px; width: 14px; } .rod::after { right: -6px; width: 14px; } }
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+</style>
+</head>
+<body>
+<div class="scroll">
+<div class="rod" aria-hidden="true"></div>
+<div class="sheet">
+  <header class="top">
+    <div class="eyebrow">The Constitution of the United States</div>
+    <h1>Congress in the Constitution</h1>
+    <div class="orn" aria-hidden="true">&#10087;</div>
+    <p class="lead">Every clause that gives Congress a power, a duty or a limit, plus the passages that mention Congress only in passing, each with a note on why it is here. Open a clause to see its original text redlined with later amendments, a plain summary, and how much Congress actually uses it today.</p>
+  </header>
+
+  <main>
+  <div class="controls" role="search" aria-label="Search and filter clauses">
+    <div class="row">
+      <div class="seg" role="group" aria-label="Order">
+        <button id="v-article" type="button" aria-pressed="true"><span class="wide">By </span>article</button>
+        <button id="v-category" type="button" aria-pressed="false"><span class="wide">By </span>category</button>
+      </div>
+      <input id="q" type="search" placeholder="Search (e.g. impeach, art 1 sec 8)" aria-label="Search clauses" autocomplete="off" spellcheck="false">
+      <button class="btn" id="toggleAll" type="button">Expand all</button>
+    </div>
+    <div class="row" id="filters" role="group" aria-label="Filter by type"></div>
+  </div>
+
+  <div class="legend">
+    <span><del>Struck</del> text changed or repealed by amendment</span>
+    <span><ins>Underlined</ins> wording from the amendment, or [in brackets] when summarized</span>
+    <span><span class="exp">Faded italic</span> no longer in effect because its date or one-time purpose has passed</span>
+    <span><span class="ann">Boxed</span> editor's note</span>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+
+  <div id="out"><noscript><p class="empty">This page needs JavaScript turned on to show the clauses.</p></noscript></div>
+  </main>
+
+  <footer>
+    <div>Amendments never edit the original text. The redlines show how later amendments change its effect. Practice notes describe how each clause is used as of October 2026.</div>
+    <div>Sources: <a href="https://www.archives.gov/founding-docs/constitution-transcript">Constitution transcription</a>, <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript">Bill of Rights</a> and <a href="https://www.archives.gov/founding-docs/amendments-11-27">Amendments 11&ndash;27</a> (National Archives); <a href="https://constitution.congress.gov/">Constitution Annotated</a> (Library of Congress); <a href="https://www.ropesgray.com/en/insights/alerts/2026/02/supreme-court-strikes-down-ieepa-tariffs-key-takeaways-and-implications-for-importers">Learning Resources v. Trump</a>; <a href="https://www.venable.com/insights/publications/2026/06/supreme-court-overrules-humphreys-executor">Trump v. Slaughter</a>; <a href="https://www.faegredrinker.com/en/insights/publications/2026/4/supreme-court-decides-louisiana-v-callais">Louisiana v. Callais</a>; <a href="https://www.govinfo.gov/content/pkg/PLAW-119publ78/html/PLAW-119publ78.htm">Pub. L. 119-78</a>; <a href="https://www.scotusblog.com/?p=532940">Trump v. Illinois</a>; <a href="https://www.everycrsreport.com/reports/R42329.html">CRS on recess appointments</a>; <a href="https://www.pewresearch.org/short-reads/2025/10/01/congress-has-long-struggled-to-pass-spending-bills-on-time/">Pew on appropriations</a>.</div>
+  </footer>
+</div>
+<div class="rod" aria-hidden="true"></div>
+</div>
+
+<script>
+const FLAGS = {
+  obsolete: "Obsolete",
+  dormant: "Rarely used",
+  executive: "Shifted to the executive",
+  courts: "Shaped by the courts"
+};
+const CATS = [
+  ["structure", "Structure and membership", "How the House and Senate are built and who can serve."],
+  ["elections", "Representation and voting", "Apportionment, election rules and the right to vote."],
+  ["rules", "Sessions, rules and members", "Leadership, internal procedure, pay and privileges."],
+  ["lawmaking", "Lawmaking process", "How bills become law and how far federal law reaches."],
+  ["money", "Taxing, spending and money", "The power of the purse."],
+  ["commerce", "Commerce and the economy", "Trade, citizenship, bankruptcy, mail and intellectual property."],
+  ["war", "War, military and foreign affairs", "Armed forces, the militia and foreign influence."],
+  ["oversight", "Impeachment, appointments and treaties", "Checks on the executive and judicial branches."],
+  ["president", "Presidential elections and succession", "Counting electoral votes and filling vacancies."],
+  ["courts", "Courts and individual rights", "Federal courts and limits that protect individuals."],
+  ["states", "States, territories and D.C.", "Federalism and federal property."],
+  ["amend", "Amendments and civil rights enforcement", "Changing the Constitution and enforcing the Reconstruction amendments."]
+];
+const ARTS = {
+  "I": ["Article I", "The legislative branch"],
+  "II": ["Article II", "The executive branch"],
+  "III": ["Article III", "The judicial branch"],
+  "IV": ["Article IV", "The states"],
+  "V": ["Article V", "The amendment process"],
+  "VI": ["Article VI", "Supremacy and oaths"],
+  "AM": ["Amendments", "Bill of Rights through the 27th Amendment"]
+};
+const D = [];
+function e(art, cat, cite, title, text, sum, flags, why) { D.push({ art, cat, cite, title, text, sum, flags: flags || [], why: why || "" }); }
+
+/* ---------- ARTICLE I ---------- */
+e("I","structure","Art. I, § 1","Legislative power",
+`All legislative Powers herein granted shall be vested in a Congress of the United States, which shall consist of a Senate and House of Representatives.`,
+["Gives all federal lawmaking power granted in the Constitution to Congress.","Creates a two-chamber legislature."]);
+
+e("I","structure","Art. I, § 2, cl. 1","House elections",
+`The House of Representatives shall be composed of Members chosen every second Year by the People of the several States, and the Electors in each State shall have the Qualifications requisite for Electors of the most numerous Branch of the State Legislature. <span class="ann">Later amendments bar denying the vote based on race (<a class="xref" href="#amend15-s2">XV</a>), sex (<a class="xref" href="#amend19">XIX</a>), failure to pay a poll tax (<a class="xref" href="#amend24">XXIV</a>) or age for those 18 and older (<a class="xref" href="#amend26">XXVI</a>). <a class="xref" href="#amend20-s1">Amend. XX, § 1</a> sets House terms to begin and end at noon on January 3.</span>`,
+["House members serve two-year terms and are elected directly by the people.","Anyone qualified to vote for the larger chamber of their state legislature may vote for the House."]);
+
+e("I","structure","Art. I, § 2, cl. 2","House qualifications",
+`No Person shall be a Representative who shall not have attained to the Age of twenty five Years, and been seven Years a Citizen of the United States, and who shall not, when elected, be an Inhabitant of that State in which he shall be chosen. <span class="ann"><a class="xref" href="#amend14-s3">Amend. XIV, § 3</a> adds a disqualification: anyone who swore an oath to support the Constitution and then engaged in insurrection cannot serve unless two thirds of each chamber removes the bar.</span>`,
+["Representatives must be at least 25, a citizen for 7 years, and live in the state they represent when elected."]);
+
+e("I","elections","Art. I, § 2, cl. 3","Apportionment and the census",
+`Representatives and direct Taxes<ins data-by="Amend. XVI"> [other than taxes on incomes]</ins> shall be apportioned among the several States which may be included within this Union, according to their respective Numbers, <del>which shall be determined by adding to the whole Number of free Persons, including those bound to Service for a Term of Years, and excluding Indians not taxed, three fifths of all other Persons.</del> <ins data-by="Amend. XIV, § 2">counting the whole number of persons in each State, excluding Indians not taxed.</ins> The actual Enumeration shall be made within three Years after the first Meeting of the Congress of the United States, and within every subsequent Term of ten Years, in such Manner as they shall by Law direct. The Number of Representatives shall not exceed one for every thirty Thousand, but each State shall have at Least one Representative; <span class="exp" data-by="Applied until the 1790 census">and until such enumeration shall be made, the State of New Hampshire shall be entitled to chuse three, Massachusetts eight, Rhode-Island and Providence Plantations one, Connecticut five, New-York six, New Jersey four, Pennsylvania eight, Delaware one, Maryland six, Virginia ten, North Carolina five, South Carolina five, and Georgia three.</span>`,
+["House seats are divided among states by population, counted in a census every 10 years that Congress directs by law.","Each state gets at least one Representative; no more than one per 30,000 people."],
+[["dormant","Apart from a temporary increase to 437 (1959–63) after Alaska and Hawaii joined, the House has had 435 seats since 1913. The Permanent Apportionment Act of 1929 locked in that size and made reapportionment automatic, so Congress no longer votes on House size. Each member now represents about 761,000 people. The census and reapportionment still happen every decade.","House size"]]);
+
+e("I","structure","Art. I, § 2, cl. 4","House vacancies",
+`When vacancies happen in the Representation from any State, the Executive Authority thereof shall issue Writs of Election to fill such Vacancies.`,
+["When a House seat opens, the governor calls a special election. House seats are never filled by appointment."]);
+
+e("I","oversight","Art. I, § 2, cl. 5","Speaker; sole power of impeachment",
+`The House of Representatives shall chuse their Speaker and other Officers; and shall have the sole Power of Impeachment.`,
+["The House elects its own Speaker and officers.","Only the House can impeach (formally charge) federal officials."]);
+
+e("I","structure","Art. I, § 3, cl. 1","Senate composition",
+`The Senate of the United States shall be composed of two Senators from each State, <del>chosen by the Legislature thereof,</del> <ins data-by="Amend. XVII" data-to="amend17-c1">elected by the people thereof,</ins> for six Years; and each Senator shall have one Vote. <span class="ann"><a class="xref" href="#amend20-s1">Amend. XX, § 1</a> sets Senate terms to begin and end at noon on January 3.</span>`,
+["Each state gets two Senators serving six-year terms, each with one vote.","Senators were chosen by state legislatures until the 17th Amendment (1913)."]);
+
+e("I","structure","Art. I, § 3, cl. 2","Staggered terms and vacancies",
+`<span class="exp" data-by="One-time step, 1789">Immediately after they shall be assembled in Consequence of the first Election, they shall be divided as equally as may be into three Classes.</span> The Seats of the Senators of the first Class shall be vacated at the Expiration of the second Year, of the second Class at the Expiration of the fourth Year, and of the third Class at the Expiration of the sixth Year, so that one third may be chosen every second Year; <del>and if Vacancies happen by Resignation, or otherwise, during the Recess of the Legislature of any State, the Executive thereof may make temporary Appointments until the next Meeting of the Legislature, which shall then fill such Vacancies.</del> <ins data-by="Amend. XVII" data-to="amend17-c2">When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall issue writs of election to fill such vacancies: Provided, That the legislature of any State may empower the executive thereof to make temporary appointments until the people fill the vacancies by election as the legislature may direct.</ins>`,
+["Senators are split into three classes so about one third of the Senate is up for election every two years.","Vacancies are now filled by special election, with temporary appointment by the governor if state law allows."]);
+
+e("I","structure","Art. I, § 3, cl. 3","Senate qualifications",
+`No Person shall be a Senator who shall not have attained to the Age of thirty Years, and been nine Years a Citizen of the United States, and who shall not, when elected, be an Inhabitant of that State for which he shall be chosen. <span class="ann"><a class="xref" href="#amend14-s3">Amend. XIV, § 3</a> adds a disqualification: anyone who swore an oath to support the Constitution and then engaged in insurrection cannot serve unless two thirds of each chamber removes the bar.</span>`,
+["Senators must be at least 30, a citizen for 9 years, and live in the state they represent when elected."]);
+
+e("I","rules","Art. I, § 3, cl. 4","Vice President as President of the Senate",
+`The Vice President of the United States shall be President of the Senate, but shall have no Vote, unless they be equally divided.`,
+["The Vice President presides over the Senate and votes only to break a tie."]);
+
+e("I","rules","Art. I, § 3, cl. 5","Senate officers",
+`The Senate shall chuse their other Officers, and also a President pro tempore, in the Absence of the Vice President, or when he shall exercise the Office of President of the United States.`,
+["The Senate elects its own officers, including a President pro tempore who presides when the Vice President is absent."]);
+
+e("I","oversight","Art. I, § 3, cl. 6","Impeachment trials",
+`The Senate shall have the sole Power to try all Impeachments. When sitting for that Purpose, they shall be on Oath or Affirmation. When the President of the United States is tried, the Chief Justice shall preside: And no Person shall be convicted without the Concurrence of two thirds of the Members present.`,
+["The Senate holds the trial after the House impeaches; Senators sit under oath.","The Chief Justice presides when the President is on trial.","Conviction requires a two-thirds vote of Senators present."]);
+
+e("I","oversight","Art. I, § 3, cl. 7","Impeachment penalties",
+`Judgment in Cases of Impeachment shall not extend further than to removal from Office, and disqualification to hold and enjoy any Office of honor, Trust or Profit under the United States: but the Party convicted shall nevertheless be liable and subject to Indictment, Trial, Judgment and Punishment, according to Law.`,
+["Punishment is limited to removal from office and, optionally, a bar from future federal office.","A convicted official can still face criminal prosecution in the courts."]);
+
+e("I","elections","Art. I, § 4, cl. 1","Elections Clause",
+`The Times, Places and Manner of holding Elections for Senators and Representatives, shall be prescribed in each State by the Legislature thereof; but the Congress may at any time by Law make or alter such Regulations, <del data-by="Moot after Amend. XVII" data-to="amend17-c1">except as to the Places of chusing Senators.</del>`,
+["States set the rules for congressional elections.","Congress can override or add to those rules by law, the basis for federal election laws such as a uniform Election Day.","The exception for the places of choosing Senators protected where state legislatures met. It became moot once voters, not legislatures, elected Senators under the 17th Amendment."]);
+
+e("I","rules","Art. I, § 4, cl. 2","Annual meeting",
+`The Congress shall assemble at least once in every Year, and such Meeting shall <del>be on the first Monday in December,</del> <ins data-by="Amend. XX, § 2">begin at noon on the 3d day of January,</ins> unless they shall by Law appoint a different Day.`,
+["Congress must meet at least once a year, now starting January 3."]);
+
+e("I","rules","Art. I, § 5, cl. 1","Judging elections; quorum",
+`Each House shall be the Judge of the Elections, Returns and Qualifications of its own Members, and a Majority of each shall constitute a Quorum to do Business; but a smaller Number may adjourn from day to day, and may be authorized to compel the Attendance of absent Members, in such Manner, and under such Penalties as each House may provide.`,
+["Each chamber decides disputed elections and whether its members meet the constitutional qualifications.","A majority of members is needed to conduct business; a smaller group can adjourn or compel absent members to attend."]);
+
+e("I","rules","Art. I, § 5, cl. 2","Rules and discipline",
+`Each House may determine the Rules of its Proceedings, punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member.`,
+["Each chamber writes its own rules (the source of the filibuster, the committee system and House Rules).","Each chamber can discipline its members and expel one by a two-thirds vote."]);
+
+e("I","rules","Art. I, § 5, cl. 3","Journal and recorded votes",
+`Each House shall keep a Journal of its Proceedings, and from time to time publish the same, excepting such Parts as may in their Judgment require Secrecy; and the Yeas and Nays of the Members of either House on any question shall, at the Desire of one fifth of those Present, be entered on the Journal.`,
+["Each chamber must keep and publish a record of its proceedings, except parts it judges need secrecy.","One fifth of members present can demand a recorded (roll call) vote."]);
+
+e("I","rules","Art. I, § 5, cl. 4","Adjournment",
+`Neither House, during the Session of Congress, shall, without the Consent of the other, adjourn for more than three days, nor to any other Place than that in which the two Houses shall be sitting.`,
+["Neither chamber can adjourn for more than three days, or move elsewhere, without the other's consent."]);
+
+e("I","rules","Art. I, § 6, cl. 1","Pay, arrest privilege, Speech or Debate",
+`The Senators and Representatives shall receive a Compensation for their Services, to be ascertained by Law, and paid out of the Treasury of the United States. <span class="ann">Under <a class="xref" href="#amend27">Amend. XXVII</a>, a change in pay cannot take effect until after the next House election.</span> They shall in all Cases, except Treason, Felony and Breach of the Peace, be privileged from Arrest during their Attendance at the Session of their respective Houses, and in going to and returning from the same; and for any Speech or Debate in either House, they shall not be questioned in any other Place.`,
+["Members are paid from the federal Treasury at a rate set by law.","Members are shielded from civil arrest while attending or traveling to sessions (not from criminal arrest).","The Speech or Debate Clause protects members from being sued or prosecuted for their legislative acts."],
+[["obsolete","The arrest privilege covers only civil arrest, a practice that has largely disappeared, so that part is effectively obsolete. Speech or Debate protection is still invoked regularly.","arrest privilege"]]);
+
+e("I","rules","Art. I, § 6, cl. 2","Incompatibility and Ineligibility Clauses",
+`No Senator or Representative shall, during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created, or the Emoluments whereof shall have been encreased during such time; and no Person holding any Office under the United States, shall be a Member of either House during his Continuance in Office.`,
+["Members cannot be appointed to a federal office that was created, or got a pay raise, during their term.","No one can serve in Congress and hold an executive or judicial office at the same time."]);
+
+e("I","lawmaking","Art. I, § 7, cl. 1","Origination Clause",
+`All Bills for raising Revenue shall originate in the House of Representatives; but the Senate may propose or concur with Amendments as on other Bills.`,
+["Tax bills must start in the House; the Senate may amend them.","The House enforces this by returning Senate-originated revenue bills (blue-slipping). The Senate often works around it by using a House-passed bill as a shell for its own text, and courts have never struck down a law under this clause."]);
+
+e("I","lawmaking","Art. I, § 7, cl. 2","Presentment and veto",
+`Every Bill which shall have passed the House of Representatives and the Senate, shall, before it become a Law, be presented to the President of the United States; If he approve he shall sign it, but if not he shall return it, with his Objections to that House in which it shall have originated, who shall enter the Objections at large on their Journal, and proceed to reconsider it. If after such Reconsideration two thirds of that House shall agree to pass the Bill, it shall be sent, together with the Objections, to the other House, by which it shall likewise be reconsidered, and if approved by two thirds of that House, it shall become a Law. But in all such Cases the Votes of both Houses shall be determined by yeas and Nays, and the Names of the Persons voting for and against the Bill shall be entered on the Journal of each House respectively. If any Bill shall not be returned by the President within ten Days (Sundays excepted) after it shall have been presented to him, the Same shall be a Law, in like Manner as if he had signed it, unless the Congress by their Adjournment prevent its Return, in which Case it shall not be a Law.`,
+["A bill passed by both chambers goes to the President to sign or veto.","Congress can override a veto with a two-thirds recorded vote in each chamber.","An unsigned bill becomes law after 10 days (Sundays excepted), unless Congress has adjourned and prevented its return (a pocket veto)."]);
+
+e("I","lawmaking","Art. I, § 7, cl. 3","Orders, resolutions and votes",
+`Every Order, Resolution, or Vote to which the Concurrence of the Senate and House of Representatives may be necessary (except on a question of Adjournment) shall be presented to the President of the United States; and before the Same shall take Effect, shall be approved by him, or being disapproved by him, shall be repassed by two thirds of the Senate and House of Representatives, according to the Rules and Limitations prescribed in the Case of a Bill.`,
+["Joint resolutions and similar measures needing both chambers also go to the President, so Congress cannot avoid a veto by relabeling a bill.","Adjournment votes and proposed constitutional amendments are exempt."],
+[["courts","In INS v. Chadha (1983) the Supreme Court relied on this clause to strike down the legislative veto, a device Congress had written into nearly 200 laws to overturn agency actions without the President's signature."]]);
+
+e("I","money","Art. I, § 8, cl. 1","Taxing and Spending Clause",
+`The Congress shall have Power To lay and collect Taxes, Duties, Imposts and Excises, to pay the Debts and provide for the common Defence and general Welfare of the United States; but all Duties, Imposts and Excises shall be uniform throughout the United States;`,
+["Congress can tax to pay debts and fund the common defense and general welfare.","This is also the basis of Congress's broad spending power. Duties and excises must be uniform nationwide."],
+[["executive","Congress has delegated much of its tariff (duty) power to the President through laws such as Section 232 of the Trade Expansion Act (1962) and Section 301 of the Trade Act (1974). In Learning Resources v. Trump (February 2026) the Supreme Court held that the International Emergency Economic Powers Act does not authorize tariffs."]]);
+
+e("I","money","Art. I, § 8, cl. 2","Borrowing",
+`To borrow Money on the credit of the United States;`,
+["Congress can borrow money, the constitutional basis for federal debt.","Since 1917 Congress has left the timing and terms of borrowing to the Treasury, and since 1939 it has set an overall statutory debt limit, which it still votes to raise or suspend."]);
+
+e("I","commerce","Art. I, § 8, cl. 3","Commerce Clause",
+`To regulate Commerce with foreign Nations, and among the several States, and with the Indian Tribes;`,
+["Congress regulates foreign trade, interstate commerce and commerce with tribal nations.","One of the most frequently used sources of federal legislative power."]);
+
+e("I","commerce","Art. I, § 8, cl. 4","Naturalization and bankruptcy",
+`To establish an uniform Rule of Naturalization, and uniform Laws on the subject of Bankruptcies throughout the United States;`,
+["Congress sets national rules for becoming a citizen and for bankruptcy."],
+[["executive","Naturalization rules are still set by statute, but Congress has not passed a comprehensive immigration overhaul since the 1990s. Broader immigration policy, which rests on several powers beyond this clause, is now largely set through executive actions and enforcement priorities. Bankruptcy law is still actively legislated.","immigration"]]);
+
+e("I","money","Art. I, § 8, cl. 5","Money, weights and measures",
+`To coin Money, regulate the Value thereof, and of foreign Coin, and fix the Standard of Weights and Measures;`,
+["Congress controls the currency and sets standard units of measurement.","Congress assigned monetary policy to the Federal Reserve (1913), an independent agency, and measurement standards to the National Bureau of Standards (1901), now NIST."]);
+
+e("I","money","Art. I, § 8, cl. 6","Counterfeiting",
+`To provide for the Punishment of counterfeiting the Securities and current Coin of the United States;`,
+["Congress can make counterfeiting federal money and securities a crime."]);
+
+e("I","commerce","Art. I, § 8, cl. 7","Postal Clause",
+`To establish Post Offices and post Roads;`,
+["Congress creates and runs the postal system."]);
+
+e("I","commerce","Art. I, § 8, cl. 8","Intellectual Property Clause",
+`To promote the Progress of Science and useful Arts, by securing for limited Times to Authors and Inventors the exclusive Right to their respective Writings and Discoveries;`,
+["Congress can grant copyrights and patents for limited periods."]);
+
+e("I","courts","Art. I, § 8, cl. 9","Lower federal courts",
+`To constitute Tribunals inferior to the supreme Court;`,
+["Congress creates the federal courts below the Supreme Court."]);
+
+e("I","war","Art. I, § 8, cl. 10","Piracy and international law",
+`To define and punish Piracies and Felonies committed on the high Seas, and Offences against the Law of Nations;`,
+["Congress defines and punishes crimes at sea and violations of international law."]);
+
+e("I","war","Art. I, § 8, cl. 11","War Powers Clause",
+`To declare War, grant Letters of Marque and Reprisal, and make Rules concerning Captures on Land and Water;`,
+["Only Congress can declare war.","Congress can authorize private parties to attack enemy ships (letters of marque) and set rules on captured property."],
+[["executive","Congress last declared war in June 1942. Since then presidents have started or joined major conflicts under broad authorizations for use of military force or with no congressional approval, and the War Powers Resolution of 1973 has done little to change that.","declaring war"],
+ ["obsolete","The United States has not issued letters of marque since the War of 1812. Congress last authorized them in 1863, and none were issued.","letters of marque"]]);
+
+e("I","war","Art. I, § 8, cl. 12","Army",
+`To raise and support Armies, but no Appropriation of Money to that Use shall be for a longer Term than two Years;`,
+["Congress raises and funds the Army, but Army funding can last no more than two years at a time."]);
+
+e("I","war","Art. I, § 8, cl. 13","Navy",
+`To provide and maintain a Navy;`,
+["Congress creates and funds the Navy, with no two-year limit."]);
+
+e("I","war","Art. I, § 8, cl. 14","Military regulation",
+`To make Rules for the Government and Regulation of the land and naval Forces;`,
+["Congress writes the rules governing the armed forces, such as the Uniform Code of Military Justice."]);
+
+e("I","war","Art. I, § 8, cl. 15","Calling forth the militia",
+`To provide for calling forth the Militia to execute the Laws of the Union, suppress Insurrections and repel Invasions;`,
+["Congress decides when state militias (today, the National Guard) can be called into federal service."],
+[["executive","Congress handed this decision to the President in standing laws, chiefly the Insurrection Act and 10 U.S.C. § 12406, which let the President federalize the National Guard without a new vote. The delegation dates to the Militia Acts of 1792 and 1795."],
+ ["courts","In Trump v. Illinois (December 2025) the Supreme Court declined to let the administration deploy federalized Guard troops in Illinois, reading the ‘regular forces’ condition in § 12406 to mean the regular military."]]);
+
+e("I","war","Art. I, § 8, cl. 16","Organizing the militia",
+`To provide for organizing, arming, and disciplining, the Militia, and for governing such Part of them as may be employed in the Service of the United States, reserving to the States respectively, the Appointment of the Officers, and the Authority of training the Militia according to the discipline prescribed by Congress;`,
+["Congress sets standards for organizing, arming and disciplining the militia.","States appoint militia officers and conduct training under Congress's standards."]);
+
+e("I","states","Art. I, § 8, cl. 17","Enclave Clause (District of Columbia)",
+`To exercise exclusive Legislation in all Cases whatsoever, over such District (not exceeding ten Miles square) as may, by Cession of particular States, and the Acceptance of Congress, become the Seat of the Government of the United States, and to exercise like Authority over all Places purchased by the Consent of the Legislature of the State in which the Same shall be, for the Erection of Forts, Magazines, Arsenals, dock-Yards, and other needful Buildings;—And`,
+["Congress has full legislative authority over the national capital (Washington, D.C.).","Congress has the same authority over land the federal government buys within a state, with the state legislature's consent, for forts, arsenals and similar buildings.","Since the Home Rule Act of 1973, D.C.'s elected government makes most local laws. Congress keeps a veto and has used it to overturn D.C. laws five times, twice recently (a 2023 criminal code revision and a 2026 tax law)."]);
+
+e("I","lawmaking","Art. I, § 8, cl. 18","Necessary and Proper Clause",
+`To make all Laws which shall be necessary and proper for carrying into Execution the foregoing Powers, and all other Powers vested by this Constitution in the Government of the United States, or in any Department or Officer thereof.`,
+["Congress can pass laws needed to carry out its own powers and those of the other branches.","Often called the Elastic Clause; it underpins implied powers such as creating federal agencies."],
+[["executive","Congress routinely passes broad laws and leaves the details to agencies, which issue far more binding rules each year than Congress passes laws."],
+ ["courts","Loper Bright v. Raimondo (2024) ended court deference to agencies' readings of ambiguous laws, and the major questions doctrine (West Virginia v. EPA, 2022) requires clear authorization for major policies. Gaps Congress leaves are increasingly filled by judges."]]);
+
+e("I","amend","Art. I, § 9, cl. 1","Slave trade",
+`<span class="exp" data-by="Applied until 1808">The Migration or Importation of such Persons as any of the States now existing shall think proper to admit, shall not be prohibited by the Congress prior to the Year one thousand eight hundred and eight, but a Tax or duty may be imposed on such Importation, not exceeding ten dollars for each Person.</span>`,
+["Barred Congress from banning the international slave trade before 1808, while allowing a tax of up to $10 per person.","Congress banned the trade effective 1808; the 13th Amendment later abolished slavery."],
+[["obsolete","Its 1808 date has passed, so it no longer has any effect."]]);
+
+e("I","courts","Art. I, § 9, cl. 2","Habeas corpus",
+`The Privilege of the Writ of Habeas Corpus shall not be suspended, unless when in Cases of Rebellion or Invasion the public Safety may require it.`,
+["The right to challenge unlawful detention in court cannot be suspended except during rebellion or invasion."]);
+
+e("I","courts","Art. I, § 9, cl. 3","Bills of attainder and ex post facto laws",
+`No Bill of Attainder or ex post facto Law shall be passed.`,
+["Congress cannot punish specific people by legislation without a trial.","Congress cannot criminalize conduct after the fact."]);
+
+e("I","money","Art. I, § 9, cl. 4","Direct taxes",
+`No Capitation, or other direct, Tax shall be laid, unless in Proportion to the Census or enumeration herein before directed to be taken.<ins data-by="Amend. XVI"> [Taxes on incomes are exempt from this rule.]</ins>`,
+["Direct taxes (such as a head tax) must be divided among states by population.","The 16th Amendment exempts income taxes."]);
+
+e("I","money","Art. I, § 9, cl. 5","No export taxes",
+`No Tax or Duty shall be laid on Articles exported from any State.`,
+["Congress cannot tax exports."]);
+
+e("I","commerce","Art. I, § 9, cl. 6","Port Preference Clause",
+`No Preference shall be given by any Regulation of Commerce or Revenue to the Ports of one State over those of another: nor shall Vessels bound to, or from, one State, be obliged to enter, clear, or pay Duties in another.`,
+["Congress cannot favor one state's ports over another's in trade or tax law."]);
+
+e("I","money","Art. I, § 9, cl. 7","Appropriations Clause",
+`No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law; and a regular Statement and Account of the Receipts and Expenditures of all public Money shall be published from time to time.`,
+["No federal money can be spent without an appropriation passed by Congress, the core of the power of the purse.","The government must regularly publish its receipts and spending."],
+[["executive","Congress has not enacted all regular appropriations bills on time since fiscal year 1997 (13 bills at the time) and relies on stopgap continuing resolutions and omnibus packages. Presidents have also increasingly withheld or redirected appropriated funds, testing the Impoundment Control Act of 1974."]]);
+
+e("I","war","Art. I, § 9, cl. 8","Titles of nobility; Foreign Emoluments Clause",
+`No Title of Nobility shall be granted by the United States: And no Person holding any Office of Profit or Trust under them, shall, without the Consent of the Congress, accept of any present, Emolument, Office, or Title, of any kind whatever, from any King, Prince, or foreign State.`,
+["The federal government cannot grant titles of nobility.","Federal officeholders cannot accept gifts, payments, offices or titles from foreign governments unless Congress consents."],
+[["dormant","Congress gave standing consent for minor gifts in the Foreign Gifts and Decorations Act (1966), leaving administration to each employing agency, and rarely votes on individual cases.","Emoluments Clause"]]);
+
+e("I","states","Art. I, § 10, cl. 1","Powers denied to the states",
+`No State shall enter into any Treaty, Alliance, or Confederation; grant Letters of Marque and Reprisal; coin Money; emit Bills of Credit; make any Thing but gold and silver Coin a Tender in Payment of Debts; pass any Bill of Attainder, ex post facto Law, or Law impairing the Obligation of Contracts, or grant any Title of Nobility.`,
+["States cannot make treaties, issue letters of marque, coin money or issue paper money.","States cannot pass bills of attainder, ex post facto laws or laws impairing contracts, or grant titles of nobility.","Unlike clauses 2 and 3, these bans are absolute: Congress cannot consent to lift them."],
+[], "It does not name Congress. It is here because it reserves to the national government powers that Congress (or the Senate) exercises, such as treaties, letters of marque and coining money, and because its bans on bills of attainder and ex post facto laws mirror the limits placed on Congress itself in Section 9.");
+
+e("I","commerce","Art. I, § 10, cl. 2","State import and export duties",
+`No State shall, without the Consent of the Congress, lay any Imposts or Duties on Imports or Exports, except what may be absolutely necessary for executing it's inspection Laws: and the net Produce of all Duties and Imposts, laid by any State on Imports or Exports, shall be for the Use of the Treasury of the United States; and all such Laws shall be subject to the Revision and Controul of the Congress.`,
+["States cannot tax imports or exports without Congress's consent, except for inspection costs.","Any net revenue goes to the U.S. Treasury, and Congress can revise such state laws."],
+[["dormant","There is no modern record of states seeking consent to tax imports or exports. The clause's reach has been defined mainly by court decisions rather than by Congress."]]);
+
+e("I","states","Art. I, § 10, cl. 3","Compact Clause and state military",
+`No State shall, without the Consent of Congress, lay any Duty of Tonnage, keep Troops, or Ships of War in time of Peace, enter into any Agreement or Compact with another State, or with a foreign Power, or engage in War, unless actually invaded, or in such imminent Danger as will not admit of delay.`,
+["Without Congress's consent, states cannot tax ships by tonnage, keep peacetime troops or warships, or make agreements with other states or foreign nations.","States cannot wage war unless invaded or in immediate danger.","The basis for congressional approval of interstate compacts."]);
+
+/* ---------- ARTICLE II ---------- */
+e("II","president","Art. II, § 1, cl. 2","Number of electors",
+`Each State shall appoint, in such Manner as the Legislature thereof may direct, a Number of Electors, equal to the whole Number of Senators and Representatives to which the State may be entitled in the Congress: but no Senator or Representative, or Person holding an Office of Trust or Profit under the United States, shall be appointed an Elector. <span class="ann"><a class="xref" href="#amend23">Amend. XXIII</a> adds electors for the District of Columbia.</span>`,
+["Each state's electoral votes equal its total seats in Congress (House plus Senate).","Members of Congress and federal officeholders cannot serve as electors."]);
+
+e("II","president","Art. II, § 1, cl. 3","Counting electoral votes; contingent election",
+`<del data-by="Replaced by Amend. XII">The Electors shall meet in their respective States, and vote by Ballot for two Persons, of whom one at least shall not be an Inhabitant of the same State with themselves. And they shall make a List of all the Persons voted for, and of the Number of Votes for each; which List they shall sign and certify, and transmit sealed to the Seat of the Government of the United States, directed to the President of the Senate. The President of the Senate shall, in the Presence of the Senate and House of Representatives, open all the Certificates, and the Votes shall then be counted. The Person having the greatest Number of Votes shall be the President, if such Number be a Majority of the whole Number of Electors appointed; and if there be more than one who have such Majority, and have an equal Number of Votes, then the House of Representatives shall immediately chuse by Ballot one of them for President; and if no Person have a Majority, then from the five highest on the List the said House shall in like Manner chuse the President. But in chusing the President, the Votes shall be taken by States, the Representation from each State having one Vote; A quorum for this Purpose shall consist of a Member or Members from two thirds of the States, and a Majority of all the States shall be necessary to a Choice. In every Case, after the Choice of the President, the Person having the greatest Number of Votes of the Electors shall be the Vice President. But if there should remain two or more who have equal Votes, the Senate shall chuse from them by Ballot the Vice President.</del>`,
+["Originally, electors cast two votes and the runner-up became Vice President.","The House picked the President if no one had a majority; the Senate broke Vice Presidential ties."],
+[["obsolete","Replaced in full by the 12th Amendment (1804) after the tied election of 1800."]]);
+
+e("II","president","Art. II, § 1, cl. 4","Timing of the electoral vote",
+`The Congress may determine the Time of chusing the Electors, and the Day on which they shall give their Votes; which Day shall be the same throughout the United States.`,
+["Congress sets Election Day for choosing electors and the day electors vote, which must be uniform nationwide."]);
+
+e("II","president","Art. II, § 1, cl. 6","Presidential succession",
+`In Case of the Removal of the President from Office, or of his Death, Resignation, or Inability to discharge the Powers and Duties of the said Office, <del>the Same shall devolve on the Vice President,</del> <ins data-by="Amend. XXV, §§ 1, 3, 4">[the Vice President becomes President, or Acting President in case of inability],</ins> and the Congress may by Law provide for the Case of Removal, Death, Resignation or Inability, both of the President and Vice President, declaring what Officer shall then act as President, and such Officer shall act accordingly, until the Disability be removed, or a President shall be elected.`,
+["Congress decides by law who acts as President if both the President and Vice President are unavailable (the Presidential Succession Act).","The 25th Amendment clarifies succession and disability."]);
+
+e("II","money","Art. II, § 1, cl. 7","President's compensation",
+`The President shall, at stated Times, receive for his Services, a Compensation, which shall neither be encreased nor diminished during the Period for which he shall have been elected, and he shall not receive within that Period any other Emolument from the United States, or any of them.`,
+["The President is paid a salary that cannot be raised or cut during the term.","The President cannot receive any other payment from the federal government or the states."],
+[], "It does not name Congress, but the salary is set by a law Congress passes (now $400,000 a year, set in 1999 and effective in 2001). Because the amount cannot change mid-term, Congress can only change it for the next term, which keeps it from rewarding or punishing a sitting President.");
+
+e("II","war","Art. II, § 2, cl. 1","Militia in federal service; no pardons for impeachment",
+`The President shall be Commander in Chief of the Army and Navy of the United States, and of the Militia of the several States, when called into the actual Service of the United States; he may require the Opinion, in writing, of the principal Officer in each of the executive Departments, upon any Subject relating to the Duties of their respective Offices, and he shall have Power to grant Reprieves and Pardons for Offences against the United States, except in Cases of Impeachment.`,
+["The President commands the armed forces Congress raises, and the militia once called into federal service.","The President cannot pardon someone to undo an impeachment."]);
+
+e("II","oversight","Art. II, § 2, cl. 2","Treaties and appointments (Advice and Consent)",
+`He shall have Power, by and with the Advice and Consent of the Senate, to make Treaties, provided two thirds of the Senators present concur; and he shall nominate, and by and with the Advice and Consent of the Senate, shall appoint Ambassadors, other public Ministers and Consuls, Judges of the supreme Court, and all other Officers of the United States, whose Appointments are not herein otherwise provided for, and which shall be established by Law: but the Congress may by Law vest the Appointment of such inferior Officers, as they think proper, in the President alone, in the Courts of Law, or in the Heads of Departments.`,
+["Treaties require approval by two thirds of Senators present.","Ambassadors, Supreme Court justices and other senior officers require Senate confirmation.","Congress creates federal offices by law and can let the President, courts or department heads appoint inferior officers without Senate confirmation."],
+[["executive","More than 90% of U.S. international agreements are executive agreements made without the Senate's two-thirds approval; most rest on authority Congress gave in earlier statutes. Presidents also lean on acting officials to fill senior posts, which narrows the reach of Senate confirmation.","treaties, appointments"],
+ ["courts","In Trump v. Slaughter (June 2026) the Supreme Court overruled Humphrey's Executor, limiting Congress's power to protect the heads of the agencies it creates from removal by the President.","removal"]]);
+
+e("II","oversight","Art. II, § 2, cl. 3","Recess appointments",
+`The President shall have Power to fill up all Vacancies that may happen during the Recess of the Senate, by granting Commissions which shall expire at the End of their next Session.`,
+["During a Senate recess, the President can fill vacancies temporarily; the appointment ends at the close of the Senate's next session."],
+[["dormant","None since January 2012. NLRB v. Noel Canning (2014) held that a recess generally must last 10 days or more and that pro forma sessions count as sessions, so the Senate can block recess appointments by holding them."]]);
+
+e("II","lawmaking","Art. II, § 3","State of the Union; convening and adjourning Congress",
+`He shall from time to time give to the Congress Information of the State of the Union, and recommend to their Consideration such Measures as he shall judge necessary and expedient; he may, on extraordinary Occasions, convene both Houses, or either of them, and in Case of Disagreement between them, with Respect to the Time of Adjournment, he may adjourn them to such Time as he shall think proper; he shall receive Ambassadors and other public Ministers; he shall take Care that the Laws be faithfully executed, and shall Commission all the Officers of the United States.`,
+["The President must periodically report to Congress on the State of the Union and may recommend legislation.","The President can call Congress into special session and can adjourn it if the chambers disagree on when to adjourn.","The President must faithfully execute the laws Congress passes."],
+[["dormant","The State of the Union happens every year (in a new President's first year, a similar address to a joint session usually takes its place). A President last called Congress into special session in 1948, and no President has ever used the power to adjourn Congress.","convening, adjourning"]]);
+
+e("II","oversight","Art. II, § 4","Grounds for impeachment",
+`The President, Vice President and all civil Officers of the United States, shall be removed from Office on Impeachment for, and Conviction of, Treason, Bribery, or other high Crimes and Misdemeanors.`,
+["Sets the standard Congress applies in impeachment: treason, bribery, or other high crimes and misdemeanors.","Conviction by the Senate results in removal from office."]);
+
+/* ---------- ARTICLE III ---------- */
+e("III","courts","Art. III, § 1","Creating federal courts",
+`The judicial Power of the United States, shall be vested in one supreme Court, and in such inferior Courts as the Congress may from time to time ordain and establish. The Judges, both of the supreme and inferior Courts, shall hold their Offices during good Behaviour, and shall, at stated Times, receive for their Services, a Compensation, which shall not be diminished during their Continuance in Office.`,
+["Congress decides whether to create lower federal courts and how they are structured.","Federal judges serve during good behaviour and Congress cannot cut their pay while they serve."]);
+
+e("III","courts","Art. III, § 2, cl. 2","Exceptions Clause",
+`In all Cases affecting Ambassadors, other public Ministers and Consuls, and those in which a State shall be Party, the supreme Court shall have original Jurisdiction. In all the other Cases before mentioned, the supreme Court shall have appellate Jurisdiction, both as to Law and Fact, with such Exceptions, and under such Regulations as the Congress shall make.`,
+["Congress can make exceptions to and regulate the Supreme Court's appellate jurisdiction."],
+[["dormant","Congress routinely sets the Supreme Court's appellate jurisdiction by statute, but targeted removals of whole subjects are rare. The best-known, upheld in Ex parte McCardle (1869), dates to Reconstruction; a modern example is the 1996 limit on review of repeat habeas petitions (Felker v. Turpin).","jurisdiction stripping"]]);
+
+e("III","courts","Art. III, § 2, cl. 3","Place of trial",
+`The Trial of all Crimes, except in Cases of Impeachment, shall be by Jury; and such Trial shall be held in the State where the said Crimes shall have been committed; but when not committed within any State, the Trial shall be at such Place or Places as the Congress may by Law have directed.`,
+["Impeachment trials are excluded from the right to a jury.","Congress decides where to try crimes committed outside any state."]);
+
+e("III","courts","Art. III, § 3, cl. 2","Punishment of treason",
+`The Congress shall have Power to declare the Punishment of Treason, but no Attainder of Treason shall work Corruption of Blood, or Forfeiture except during the Life of the Person attainted.`,
+["Congress sets the penalty for treason but cannot punish the traitor's family or heirs."]);
+
+/* ---------- ARTICLE IV ---------- */
+e("IV","states","Art. IV, § 1","Full Faith and Credit",
+`Full Faith and Credit shall be given in each State to the public Acts, Records, and judicial Proceedings of every other State. And the Congress may by general Laws prescribe the Manner in which such Acts, Records and Proceedings shall be proved, and the Effect thereof.`,
+["States must honor each other's laws, records and court judgments.","Congress can pass laws on how those records are proven and what effect they have."]);
+
+e("IV","states","Art. IV, § 3, cl. 1","Admission of new states",
+`New States may be admitted by the Congress into this Union; but no new State shall be formed or erected within the Jurisdiction of any other State; nor any State be formed by the Junction of two or more States, or Parts of States, without the Consent of the Legislatures of the States concerned as well as of the Congress.`,
+["Congress admits new states.","Splitting or merging existing states requires consent of both Congress and the affected state legislatures."],
+[["dormant","No state has been admitted since Hawaii in 1959."]]);
+
+e("IV","states","Art. IV, § 3, cl. 2","Property Clause",
+`The Congress shall have Power to dispose of and make all needful Rules and Regulations respecting the Territory or other Property belonging to the United States; and nothing in this Constitution shall be so construed as to Prejudice any Claims of the United States, or of any particular State.`,
+["Congress governs federal lands and U.S. territories (such as Puerto Rico and Guam) and can sell federal property."]);
+
+e("IV","states","Art. IV, § 4","Guarantee Clause",
+`The United States shall guarantee to every State in this Union a Republican Form of Government, and shall protect each of them against Invasion; and on Application of the Legislature, or of the Executive (when the Legislature cannot be convened) against domestic Violence.`,
+["The federal government guarantees each state a representative government and protects states from invasion and, on request, domestic violence."],
+[["dormant","Courts treat claims under this clause as political questions for Congress (Luther v. Borden, 1849; Rucho v. Common Cause, 2019), and Congress rarely invokes it. Protection against domestic violence runs mainly through the President under the Insurrection Act."]]);
+
+/* ---------- ARTICLE V ---------- */
+e("V","amend","Art. V","Amending the Constitution",
+`The Congress, whenever two thirds of both Houses shall deem it necessary, shall propose Amendments to this Constitution, or, on the Application of the Legislatures of two thirds of the several States, shall call a Convention for proposing Amendments, which, in either Case, shall be valid to all Intents and Purposes, as Part of this Constitution, when ratified by the Legislatures of three fourths of the several States, or by Conventions in three fourths thereof, as the one or the other Mode of Ratification may be proposed by the Congress; <span class="exp" data-by="Applied until 1808">Provided that no Amendment which may be made prior to the Year One thousand eight hundred and eight shall in any Manner affect the first and fourth Clauses in the Ninth Section of the first Article; and</span> that no State, without its Consent, shall be deprived of its equal Suffrage in the Senate.`,
+["Congress can propose amendments by a two-thirds vote of both chambers.","Congress must call a convention if two thirds of state legislatures apply.","Congress chooses whether ratification is by state legislatures or state conventions; three fourths of states must ratify.","No state can lose its equal vote in the Senate without its consent."],
+[["dormant","Congress has not sent an amendment to the states since the D.C. Voting Rights Amendment in 1978, and a convention of the states has never been called."]]);
+
+/* ---------- ARTICLE VI ---------- */
+e("VI","money","Art. VI, cl. 1","Debts of the Confederation",
+`All Debts contracted and Engagements entered into, before the Adoption of this Constitution, shall be as valid against the United States under this Constitution, as under the Confederation.`,
+["Debts and commitments made under the Articles of Confederation remained binding on the new government."],
+[["obsolete","Congress refinanced the Confederation's debts in the Funding Act of 1790, and they were later paid off."]],
+"It does not name Congress, but it bound the new government, and so the new Congress, to honor the debts of the Confederation Congress that came before it. The First Congress carried this out in Alexander Hamilton's Funding Act of 1790.");
+
+e("VI","lawmaking","Art. VI, cl. 2","Supremacy Clause",
+`This Constitution, and the Laws of the United States which shall be made in Pursuance thereof; and all Treaties made, or which shall be made, under the Authority of the United States, shall be the supreme Law of the Land; and the Judges in every State shall be bound thereby, any Thing in the Constitution or Laws of any State to the Contrary notwithstanding.`,
+["Federal laws Congress passes under the Constitution override conflicting state laws."]);
+
+e("VI","rules","Art. VI, cl. 3","Oath; no religious test",
+`The Senators and Representatives before mentioned, and the Members of the several State Legislatures, and all executive and judicial Officers, both of the United States and of the several States, shall be bound by Oath or Affirmation, to support this Constitution; but no religious Test shall ever be required as a Qualification to any Office or public Trust under the United States.`,
+["Members of Congress must swear or affirm to support the Constitution.","No religious test can be required for federal office."]);
+
+/* ---------- AMENDMENTS ---------- */
+e("AM","courts","Amend. I","Limits on Congress: religion, speech, press, assembly, petition",
+`Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.`,
+["Addressed directly to Congress: it cannot establish a religion or restrict religious exercise, speech, the press, assembly or petitioning.","The Petition Clause protects the public's right to lobby and contact Congress."]);
+
+e("AM","war","Amend. III","Quartering soldiers",
+`No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.`,
+["Soldiers cannot be housed in private homes without consent in peacetime; in wartime, only as Congress provides by law."],
+[["dormant","Almost never invoked; the Supreme Court has never decided a case turning on it."]]);
+
+e("AM","courts","Amend. VI","Trial in a district set by law",
+`In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.`,
+["Guarantees a speedy, public jury trial, notice of the charges, the right to confront witnesses, the power to call witnesses, and a lawyer.","The jury comes from the state and district where the crime happened."],
+[], "It does not name Congress, but \"previously ascertained by law\" means a federal statute: Congress draws the judicial districts where federal crimes are tried, and today there are 94. It is included for the same reason as the Third Amendment, which also hands a decision to Congress through the words \"by law.\"");
+
+e("AM","president","Amend. XII","Electoral College procedure",
+`The Electors shall meet in their respective states and vote by ballot for President and Vice-President, one of whom, at least, shall not be an inhabitant of the same state with themselves; they shall name in their ballots the person voted for as President, and in distinct ballots the person voted for as Vice-President, and they shall make distinct lists of all persons voted for as President, and of all persons voted for as Vice-President, and of the number of votes for each, which lists they shall sign and certify, and transmit sealed to the seat of the government of the United States, directed to the President of the Senate;—the President of the Senate shall, in the presence of the Senate and House of Representatives, open all the certificates and the votes shall then be counted;—The person having the greatest number of votes for President, shall be the President, if such number be a majority of the whole number of Electors appointed; and if no person have such majority, then from the persons having the highest numbers not exceeding three on the list of those voted for as President, the House of Representatives shall choose immediately, by ballot, the President. But in choosing the President, the votes shall be taken by states, the representation from each state having one vote; a quorum for this purpose shall consist of a member or members from two-thirds of the states, and a majority of all the states shall be necessary to a choice. <del>And if the House of Representatives shall not choose a President whenever the right of choice shall devolve upon them, before the fourth day of March next following, then the Vice-President shall act as President, as in the case of the death or other constitutional disability of the President.—</del> <ins data-by="Amend. XX, § 3">[If no President has been chosen by noon on January 20, the Vice President elect acts as President until one qualifies.]</ins> The person having the greatest number of votes as Vice-President, shall be the Vice-President, if such number be a majority of the whole number of Electors appointed, and if no person have a majority, then from the two highest numbers on the list, the Senate shall choose the Vice-President; a quorum for the purpose shall consist of two-thirds of the whole number of Senators, and a majority of the whole number shall be necessary to a choice. But no person constitutionally ineligible to the office of President shall be eligible to that of Vice-President of the United States.`,
+["Electors cast separate votes for President and Vice President, counted before a joint session of Congress.","If no presidential candidate has a majority, the House chooses among the top three, one vote per state.","If no Vice Presidential candidate has a majority, the Senate chooses between the top two."],
+[["dormant","The joint session count happens every four years and was updated by the Electoral Count Reform Act of 2022. The contingent election is rare: the House last chose a President in 1825 and the Senate last chose a Vice President in 1837.","contingent election"]]);
+
+e("AM","amend","Amend. XIII, § 2","Enforcing the abolition of slavery",
+`Congress shall have power to enforce this article by appropriate legislation.`,
+["Congress can pass laws to enforce Section 1's ban on slavery and involuntary servitude."]);
+
+e("AM","elections","Amend. XIV, § 2","Apportionment of Representatives",
+`Representatives shall be apportioned among the several States according to their respective numbers, counting the whole number of persons in each State, excluding Indians not taxed. But when the right to vote at any election for the choice of electors for President and Vice-President of the United States, Representatives in Congress, the Executive and Judicial officers of a State, or the members of the Legislature thereof, is denied to any of the male inhabitants of such State, being <del>twenty-one</del> <ins data-by="Amend. XXVI">eighteen</ins> years of age, and citizens of the United States, or in any way abridged, except for participation in rebellion, or other crime, the basis of representation therein shall be reduced in the proportion which the number of such male citizens shall bear to the whole number of male citizens <del>twenty-one</del> <ins data-by="Amend. XXVI">eighteen</ins> years of age in such State. <span class="ann">The <a class="xref" href="#amend19">19th Amendment</a> separately bars sex discrimination in voting; it did not change this section's text.</span>`,
+["Replaces the three-fifths clause: House seats are based on the whole number of persons in each state.","A state that denies eligible citizens the vote is supposed to lose House seats in proportion."],
+[["dormant","The penalty for denying the vote has never been enforced."]]);
+
+e("AM","amend","Amend. XIV, § 3","Insurrection disqualification",
+`No person shall be a Senator or Representative in Congress, or elector of President and Vice-President, or hold any office, civil or military, under the United States, or under any State, who, having previously taken an oath, as a member of Congress, or as an officer of the United States, or as a member of any State legislature, or as an executive or judicial officer of any State, to support the Constitution of the United States, shall have engaged in insurrection or rebellion against the same, or given aid or comfort to the enemies thereof. But Congress may by a vote of two-thirds of each House, remove such disability.`,
+["Officials who took an oath to the Constitution and then engaged in insurrection cannot serve in Congress or other offices.","Congress can lift the bar by a two-thirds vote of each chamber."],
+[["dormant","In Trump v. Anderson (2024) the Supreme Court held that states cannot enforce this section against federal officeholders or candidates; that power rests with Congress, which has passed no new enforcement law beyond existing statutes such as 18 U.S.C. § 2383."]]);
+
+e("AM","money","Amend. XIV, § 4","Public debt",
+`The validity of the public debt of the United States, authorized by law, including debts incurred for payment of pensions and bounties for services in suppressing insurrection or rebellion, shall not be questioned. But neither the United States nor any State shall assume or pay any debt or obligation incurred in aid of insurrection or rebellion against the United States, or any claim for the loss or emancipation of any slave; but all such debts, obligations and claims shall be held illegal and void.`,
+["Federal debt authorized by Congress cannot be questioned.","Confederate debts and claims for compensation for emancipated slaves are void."],
+[["dormant","Rarely invoked, though it comes up in debt-limit standoffs as a possible bar on default."]]);
+
+e("AM","amend","Amend. XIV, § 5","Enforcing the 14th Amendment",
+`The Congress shall have power to enforce, by appropriate legislation, the provisions of this article.`,
+["Congress can pass laws to enforce citizenship, due process and equal protection; the basis for many civil rights laws."],
+[["courts","City of Boerne v. Flores (1997) requires enforcement laws to be \"congruent and proportional\" to the harm they target, which narrows what Congress can do under this section."]]);
+
+e("AM","elections","Amend. XV, § 2","Enforcing the right to vote regardless of race",
+`The Congress shall have power to enforce this article by appropriate legislation.`,
+["Congress can enforce the ban on denying the vote based on race, color or previous condition of servitude; the basis for the Voting Rights Act of 1965."],
+[["courts","Shelby County v. Holder (2013) struck down the Voting Rights Act's preclearance coverage formula, and Congress has not enacted a replacement. Louisiana v. Callais (April 2026) then narrowed Section 2 of the Act, making vote-dilution claims much harder to bring."]]);
+
+e("AM","money","Amend. XVI","Income tax",
+`The Congress shall have power to lay and collect taxes on incomes, from whatever source derived, without apportionment among the several States, and without regard to any census or enumeration.`,
+["Congress can levy an income tax without dividing it among states by population."]);
+
+e("AM","structure","Amend. XVII, cl. 1","Direct election of Senators",
+`The Senate of the United States shall be composed of two Senators from each State, elected by the people thereof, for six years; and each Senator shall have one vote. The electors in each State shall have the qualifications requisite for electors of the most numerous branch of the State legislatures.`,
+["Senators are elected by the voters of each state rather than by state legislatures."]);
+
+e("AM","structure","Amend. XVII, cl. 2","Senate vacancies",
+`When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall issue writs of election to fill such vacancies: Provided, That the legislature of any State may empower the executive thereof to make temporary appointments until the people fill the vacancies by election as the legislature may direct.`,
+["Senate vacancies are filled by special election.","A state legislature can let the governor appoint a temporary Senator until the election."]);
+
+e("AM","structure","Amend. XVII, cl. 3","Senators already in office",
+`This amendment shall not be so construed as to affect the election or term of any Senator chosen before it becomes valid as part of the Constitution.`,
+["Senators chosen by state legislatures before 1913 kept their seats for the rest of their terms."],
+[["obsolete","Every Senator chosen by a state legislature had finished that term by 1919."]],
+"It names Senators directly. It is a transition rule for the switch to direct election of the Senate.");
+
+e("AM","amend","Amend. XVIII, § 2","Prohibition enforcement",
+`<del data-by="Repealed by Amend. XXI, 1933" data-to="amend21-s1">The Congress and the several States shall have concurrent power to enforce this article by appropriate legislation.</del>`,
+["Gave Congress and the states joint power to enforce the ban on alcohol."],
+[["obsolete","Repealed by the 21st Amendment in 1933."]]);
+
+e("AM","amend","Amend. XVIII, § 3","Ratification deadline (Prohibition)",
+`<del data-by="Repealed by Amend. XXI, 1933" data-to="amend21-s1">This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the legislatures of the several States, as provided in the Constitution, within seven years from the date of the submission hereof to the States by the Congress.</del>`,
+["The 18th Amendment would fail unless the states ratified it within seven years of Congress sending it to them."],
+[["obsolete","Ratified in 1919 and repealed with the rest of the amendment in 1933."]],
+"It names Congress as the body that proposed the amendment and sent it to the states under Article V. It was the first amendment with a ratification deadline, which the Supreme Court upheld in Dillon v. Gloss (1921). Congress later began putting deadlines in the resolution that proposes an amendment instead of in its text.");
+
+e("AM","elections","Amend. XIX","Women's suffrage",
+`The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex.<br><br>Congress shall have power to enforce this article by appropriate legislation.`,
+["The vote cannot be denied based on sex, and Congress can enforce this by law."]);
+
+e("AM","rules","Amend. XX, § 1","Start of terms",
+`The terms of the President and Vice President shall end at noon on the 20th day of January, and the terms of Senators and Representatives at noon on the 3d day of January, of the years in which such terms would have ended if this article had not been ratified; and the terms of their successors shall then begin.`,
+["Congressional terms begin and end at noon on January 3; presidential terms on January 20."]);
+
+e("AM","rules","Amend. XX, § 2","Congress's annual meeting",
+`The Congress shall assemble at least once in every year, and such meeting shall begin at noon on the 3d day of January, unless they shall by law appoint a different day.`,
+["Congress convenes each year at noon on January 3 unless it sets a different day by law, which shortened the lame duck period."]);
+
+e("AM","president","Amend. XX, § 3","President-elect succession",
+`If, at the time fixed for the beginning of the term of the President, the President elect shall have died, the Vice President elect shall become President. If a President shall not have been chosen before the time fixed for the beginning of his term, or if the President elect shall have failed to qualify, then the Vice President elect shall act as President until a President shall have qualified; and the Congress may by law provide for the case wherein neither a President elect nor a Vice President elect shall have qualified, declaring who shall then act as President, or the manner in which one who is to act shall be selected, and such person shall act accordingly until a President or Vice President shall have qualified.`,
+["If the President-elect dies, the Vice President-elect becomes President.","Congress decides by law who acts as President if neither the President-elect nor Vice President-elect has qualified."]);
+
+e("AM","president","Amend. XX, § 4","Death of a contingent-election candidate",
+`The Congress may by law provide for the case of the death of any of the persons from whom the House of Representatives may choose a President whenever the right of choice shall have devolved upon them, and for the case of the death of any of the persons from whom the Senate may choose a Vice President whenever the right of choice shall have devolved upon them.`,
+["Congress can legislate for the case where a candidate dies while the House or Senate is choosing the President or Vice President."],
+[["dormant","Congress has never passed the law this section invites."]]);
+
+e("AM","amend","Amend. XXI, § 1","Repeal of Prohibition",
+`The eighteenth article of amendment to the Constitution of the United States is hereby repealed.`,
+["Repealed the 18th Amendment, ending national Prohibition in 1933.","With it went Congress's power under the 18th Amendment, § 2 to enforce Prohibition."],
+[], "It does not name Congress, but it took away a power Congress held: the 18th Amendment, § 2 gave Congress (with the states) the power to enforce Prohibition, and this section repealed it. It is the provision the page's \"Repealed by\" redlines refer to.");
+
+e("AM","amend","Amend. XXI, § 3","Ratification deadline (repeal of Prohibition)",
+`This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by conventions in the several States, as provided in the Constitution, within seven years from the date of the submission hereof to the States by the Congress.`,
+["The 21st Amendment would fail unless state ratifying conventions approved it within seven years of Congress sending it to them."],
+[["obsolete","Ratified in 1933, within the deadline."]],
+"It names Congress as the body that proposed the amendment. It is also the only amendment Congress chose to send to state ratifying conventions instead of state legislatures, a choice Article V gives Congress.");
+
+e("AM","president","Amend. XXII, § 1","Presidential term limit",
+`No person shall be elected to the office of the President more than twice, and no person who has held the office of President, or acted as President, for more than two years of a term to which some other person was elected President shall be elected to the office of the President more than once. <span class="exp" data-by="Applied only to Truman">But this Article shall not apply to any person holding the office of President when this Article was proposed by the Congress, and shall not prevent any person who may be holding the office of President, or acting as President, during the term within which this Article becomes operative from holding the office of President or acting as President during the remainder of such term.</span>`,
+["No one can be elected President more than twice.","Someone who served more than two years of another President's term can be elected only once."],
+[["obsolete","The exemption covered only Harry Truman, who was President when Congress proposed the amendment in 1947.","Truman exemption"]],
+"It names Congress to fix when the term limit began: it exempted whoever was President when Congress proposed it. The amendment itself limits the presidency, not Congress.");
+
+e("AM","amend","Amend. XXII, § 2","Ratification deadline (term limit)",
+`This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the legislatures of three-fourths of the several States within seven years from the date of its submission to the States by the Congress.`,
+["The 22nd Amendment would fail unless three fourths of state legislatures ratified it within seven years of Congress sending it to them."],
+[["obsolete","Ratified in 1951, within the deadline."]],
+"It names Congress as the body that proposed the amendment and sent it to the states under Article V.");
+
+e("AM","elections","Amend. XXIII","Electoral votes for the District of Columbia",
+`Section 1. The District constituting the seat of Government of the United States shall appoint in such manner as the Congress may direct: A number of electors of President and Vice President equal to the whole number of Senators and Representatives in Congress to which the District would be entitled if it were a State, but in no event more than the least populous State; they shall be in addition to those appointed by the States, but they shall be considered, for the purposes of the election of President and Vice President, to be electors appointed by a State; and they shall meet in the District and perform such duties as provided by the twelfth article of amendment.<br><br>Section 2. The Congress shall have power to enforce this article by appropriate legislation.`,
+["D.C. gets presidential electors (currently 3), chosen as Congress directs, capped at the number of the least populous state.","D.C. still has no voting seats in Congress."]);
+
+e("AM","elections","Amend. XXIV","Poll taxes banned in federal elections",
+`Section 1. The right of citizens of the United States to vote in any primary or other election for President or Vice President, for electors for President or Vice President, or for Senator or Representative in Congress, shall not be denied or abridged by the United States or any State by reason of failure to pay any poll tax or other tax.<br><br>Section 2. The Congress shall have power to enforce this article by appropriate legislation.`,
+["No poll tax or other tax can be a condition for voting in federal elections, including for Congress.","Congress can enforce this by law."]);
+
+e("AM","president","Amend. XXV, § 2","Vice Presidential vacancy",
+`Whenever there is a vacancy in the office of the Vice President, the President shall nominate a Vice President who shall take office upon confirmation by a majority vote of both Houses of Congress.`,
+["When the vice presidency is vacant, the President nominates a replacement who must be confirmed by a majority of both the House and Senate.","Used twice: Gerald Ford (1973) and Nelson Rockefeller (1974)."]);
+
+e("AM","president","Amend. XXV, § 3","President declares own inability",
+`Whenever the President transmits to the President pro tempore of the Senate and the Speaker of the House of Representatives his written declaration that he is unable to discharge the powers and duties of his office, and until he transmits to them a written declaration to the contrary, such powers and duties shall be discharged by the Vice President as Acting President.`,
+["The President can temporarily hand power to the Vice President by notifying the Senate President pro tempore and the Speaker in writing."]);
+
+e("AM","president","Amend. XXV, § 4","Involuntary transfer of power",
+`Whenever the Vice President and a majority of either the principal officers of the executive departments or of such other body as Congress may by law provide, transmit to the President pro tempore of the Senate and the Speaker of the House of Representatives their written declaration that the President is unable to discharge the powers and duties of his office, the Vice President shall immediately assume the powers and duties of the office as Acting President.<br><br>Thereafter, when the President transmits to the President pro tempore of the Senate and the Speaker of the House of Representatives his written declaration that no inability exists, he shall resume the powers and duties of his office unless the Vice President and a majority of either the principal officers of the executive department or of such other body as Congress may by law provide, transmit within four days to the President pro tempore of the Senate and the Speaker of the House of Representatives their written declaration that the President is unable to discharge the powers and duties of his office. Thereupon Congress shall decide the issue, assembling within forty-eight hours for that purpose if not in session. If the Congress, within twenty-one days after receipt of the latter written declaration, or, if Congress is not in session, within twenty-one days after Congress is required to assemble, determines by two-thirds vote of both Houses that the President is unable to discharge the powers and duties of his office, the Vice President shall continue to discharge the same as Acting President; otherwise, the President shall resume the powers and duties of his office.`,
+["The Vice President and a majority of the Cabinet (or another body Congress creates by law) can declare the President unable to serve.","If the President disputes it and the Vice President and Cabinet reaffirm within four days, Congress decides within 21 days; keeping the Vice President in charge takes a two-thirds vote of both chambers."],
+[["dormant","Never invoked, and Congress has never created the alternative body this section allows."]]);
+
+e("AM","elections","Amend. XXVI","Voting age of 18",
+`Section 1. The right of citizens of the United States, who are eighteen years of age or older, to vote shall not be denied or abridged by the United States or by any State on account of age.<br><br>Section 2. The Congress shall have power to enforce this article by appropriate legislation.`,
+["Citizens 18 and older cannot be denied the vote because of age, and Congress can enforce this by law."]);
+
+e("AM","rules","Amend. XXVII","Congressional pay changes",
+`No law, varying the compensation for the services of the Senators and Representatives, shall take effect, until an election of Representatives shall have intervened.`,
+["A change to congressional pay cannot take effect until after the next House election.","Proposed in 1789 and ratified in 1992."]);
+
+/* ---------- RENDER ---------- */
+/* ---------- SEARCH INDEX ---------- */
+// Old spellings in the text, indexed with their modern forms so either one finds the clause.
+const SPELL = { chuse: "choose", chusing: "choosing", encreased: "increased", controul: "control", behaviour: "behavior", defence: "defense", offences: "offenses", offence: "offense" };
+const ORD = ["", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth", "twenty first", "twenty second", "twenty third", "twenty fourth", "twenty fifth", "twenty sixth", "twenty seventh"];
+function roman(r) { const V = { I: 1, V: 5, X: 10 }; let n = 0; for (let k = 0; k < r.length; k++) { const a = V[r[k]], b = V[r[k + 1]] || 0; n += a < b ? -a : a; } return n; }
+function ordn(n) { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); }
+function norm(s) { return " " + String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/§/g, " section ").replace(/[^a-z0-9]+/g, " ").trim() + " "; }
+function terms(q) { return norm(q).trim().split(" ").filter(Boolean); }
+function citeAliases(c) {
+  let out = c.replace(/§§?/g, "section").replace(/\bcl\./g, "clause");
+  const m = c.match(/^(Art|Amend)\. ([IVX]+)/);
+  if (m) { const n = roman(m[2]); out += m[1] === "Art" ? ` article ${n} article ${m[2]}` : ` amendment ${n} amendment ${m[2]} ${ordn(n)} amendment ${ORD[n]} amendment`; }
+  return out;
+}
+D.forEach((d, i) => {
+  d.i = i; d.amended = /<del|<ins/.test(d.text);
+  const raw = [d.cite, citeAliases(d.cite), d.title, d.text.replace(/<[^>]+>/g, " "), (d.text.match(/data-by="[^"]+"/g) || []).join(" ").replace(/data-by=/g, " "),
+    d.sum.join(" "), d.flags.map(f => FLAGS[f[0]] + " " + (f[2] || "") + " " + f[1]).join(" "), d.amended ? "amended" : "", d.why ? "passing mention why it is here " + d.why : ""].join(" ");
+  let h = norm(raw);
+  for (const [o, m] of Object.entries(SPELL)) h = h.split(" " + o + " ").join(" " + o + " " + m + " ");
+  d.plain = h;
+  const c = d.cite.match(/^(Art|Amend)\. ([IVX]+)(?:, §§? (\d+))?(?:, cl\. (\d+))?/);
+  d.ref = c ? { kind: c[1] === "Art" ? "art" : "amend", num: roman(c[2]), sec: c[3] ? +c[3] : null, cl: c[4] ? +c[4] : null } : {};
+  d.id = d.ref.kind + d.ref.num + (d.ref.sec ? "-s" + d.ref.sec : "") + (d.ref.cl ? "-c" + d.ref.cl : "");
+});
+// Each clause's page in the Constitution Annotated (Library of Congress), e.g. /browse/article-1/section-8/clause-11/
+function conan(d) {
+  const r = d.ref;
+  let u = "https://constitution.congress.gov/browse/" + (r.kind === "art" ? "article-" : "amendment-") + r.num + "/";
+  if (r.sec) u += "section-" + r.sec + "/";
+  if (r.cl && r.kind === "art") u += "clause-" + r.cl + "/";
+  return u;
+}
+// Turn each redline label ("Amend. XIV, § 2") into a link: to that amendment's entry on this page when it is here,
+// otherwise to its page in the Constitution Annotated. Labels that name no amendment stay plain text.
+function byTarget(label, to) {
+  if (to) return /^https?:/.test(to) ? to : "#" + to;
+  const m = label.match(/Amend\. ([IVX]+)(?:, §§? ([\d, ]+))?/);
+  if (!m) return null;
+  const n = roman(m[1]), secs = m[2] ? m[2].split(/[ ,]+/).filter(Boolean).map(Number) : [];
+  for (const sec of secs) if (D.some(x => x.id === "amend" + n + "-s" + sec)) return "#amend" + n + "-s" + sec;
+  if (!secs.length) { const hitD = D.find(x => x.ref.kind === "amend" && x.ref.num === n); if (hitD) return "#" + hitD.id; }
+  return "https://constitution.congress.gov/browse/amendment-" + n + "/" + (secs.length ? "section-" + secs[0] + "/" : "");
+}
+// A label naming several sections ("Amend. XXV, §§ 1, 3, 4") becomes one link per section.
+function byTargets(label, to) {
+  const m = !to && label.match(/^Amend\. ([IVX]+), §§ ([\d, ]+)$/);
+  if (!m) return [{ label, href: byTarget(label, to) }];
+  const n = roman(m[1]);
+  return m[2].split(/[ ,]+/).filter(Boolean).map(sec => ({
+    label: "Amend. " + m[1] + ", § " + sec,
+    href: D.some(x => x.id === "amend" + n + "-s" + sec) ? "#amend" + n + "-s" + sec : "https://constitution.congress.gov/browse/amendment-" + n + "/section-" + sec + "/"
+  }));
+}
+function addByLinks() {
+  document.querySelectorAll("#out [data-by]").forEach(el => {
+    const kind = el.tagName === "DEL" ? "del" : el.tagName === "INS" ? "ins" : "exp";
+    let at = el;
+    byTargets(el.getAttribute("data-by"), el.getAttribute("data-to")).forEach(({ label, href }) => {
+      const tag = document.createElement(href ? "a" : "span");
+      tag.className = "by by-" + kind; tag.textContent = label;
+      if (href) {
+        tag.href = href;
+        if (href[0] === "#") tag.title = "Go to " + label.slice(label.indexOf("Amend."));
+        else { tag.target = "_blank"; tag.rel = "noopener"; tag.title = "Open in the Constitution Annotated"; }
+      }
+      at.after(tag); at = tag;
+    });
+    el.removeAttribute("data-by");
+  });
+}
+// Citation words in a query ("art 1", "amendment XIV", "section 8", "cl 3") are matched against the clause's citation.
+function parseQuery(ts) {
+  const ref = {}, rest = [], num = s => /^\d+$/.test(s) ? +s : (/^[ivx]+$/.test(s) ? roman(s.toUpperCase()) : null);
+  for (let k = 0; k < ts.length; k++) {
+    const a = ts[k], n = k + 1 < ts.length ? num(ts[k + 1]) : null;
+    if (n !== null && /^(art|arts|article)$/.test(a)) { ref.kind = "art"; ref.num = n; k++; }
+    else if (n !== null && /^(amend|amendment|amdt)$/.test(a)) { ref.kind = "amend"; ref.num = n; k++; }
+    else if (n !== null && /^(section|sec)$/.test(a)) { ref.sec = n; k++; }
+    else if (n !== null && /^(clause|cl)$/.test(a)) { ref.cl = n; k++; }
+    else rest.push(a);
+  }
+  return { ref, rest };
+}
+// Every other word must appear. Words match from their start ("impeach" finds "impeachment"); one-letter words and numbers must match whole.
+function hit(d, query) {
+  const r = query.ref;
+  if (r.kind && (d.ref.kind !== r.kind || d.ref.num !== r.num)) return false;
+  if (r.sec != null && d.ref.sec !== r.sec) return false;
+  if (r.cl != null && d.ref.cl !== r.cl) return false;
+  return query.rest.every(t => (t.length < 2 || /^\d+$/.test(t)) ? d.plain.includes(" " + t + " ") : d.plain.includes(" " + t));
+}
+
+const state = { view: "article", filter: "all", q: "", terms: [], query: { ref: {}, rest: [] }, saved: null };
+try { const v = localStorage.getItem("cc-view"); if (v === "article" || v === "category") state.view = v; } catch (_) {}
+const h = location.hash.replace("#", ""); if (h === "article" || h === "category") state.view = h;
+
+const chev = '<svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+function item(d) {
+  const badges = (d.why ? '<span class="badge passing">Passing mention</span>' : "") + (d.amended ? '<span class="badge amended">Amended</span>' : "") + d.flags.map(f => `<span class="badge f-${f[0]}">${FLAGS[f[0]]}${f[2] ? ": " + f[2] : ""}</span>`).join("");
+  const notes = d.flags.length ? `<div class="practice"><div class="h3">In practice</div>${d.flags.map(f => `<div class="note f-${f[0]}"><b>${FLAGS[f[0]]}${f[2] ? ": " + f[2] : ""}</b><p>${f[1]}</p></div>`).join("")}</div>` : "";
+  return `<details class="clause" id="${d.id}" data-i="${d.i}"><summary>${chev}<span class="sumline"><span class="cite">${d.cite}</span><span class="ttl">${d.title}</span><span class="badges">${badges}</span></span></summary>
+  <div class="body">${d.why ? `<div class="why"><div class="h3">Why it's here</div><p>${d.why}</p></div>` : ""}<blockquote class="text">${d.text}</blockquote>${backLinks(d)}<div><div class="h3">What it does</div><ul class="sum">${d.sum.map(s => `<li>${s}</li>`).join("")}</ul></div>${notes}<a class="permalink" href="${conan(d)}" target="_blank" rel="noopener">Read ${d.cite} in the Constitution Annotated (Library of Congress) &#8599;</a></div></details>`;
+}
+function backLinks(d) {
+  const list = REV[d.id];
+  if (!list || !list.length) return "";
+  const block = (kind, head) => {
+    const rows = list.filter(r => r.kind === kind);
+    return rows.length ? `<div class="h3">${head}</div><ul class="backlist">${rows.map(r => `<li><a class="xref" href="#${r.d.id}">${r.d.cite}</a> <span class="bt">${r.d.title}</span></li>`).join("")}</ul>` : "";
+  };
+  return `<div class="amends">${block("repeals", "Repeals")}${block("amends", "Amends")}${block("affects", "Also affects")}</div>`;
+}
+function match(d) {
+  if (state.filter === "amended" && !d.amended) return false;
+  if (state.filter === "passing" && !d.why) return false;
+  if (FLAGS[state.filter] && !d.flags.some(f => f[0] === state.filter)) return false;
+  if (state.terms.length && !hit(d, state.query)) return false;
+  return true;
+}
+function render() {
+  const out = document.getElementById("out");
+  let open = new Set([...out.querySelectorAll("details.clause[open]")].map(x => x.dataset.i));
+  let openG = new Set([...out.querySelectorAll("details.group[open]")].map(x => x.dataset.g));
+  const filtering = state.terms.length > 0 || state.filter !== "all";
+  // Remember what was open before a search or filter, and restore it when the search is cleared.
+  if (filtering && !state.saved) state.saved = { open, openG };
+  if (!filtering && state.saved) { open = state.saved.open; openG = state.saved.openG; state.saved = null; }
+  const items = D.filter(match);
+  let groups;
+  if (state.view === "article") {
+    groups = Object.keys(ARTS).map(k => ({ k: "a-" + k, t: ARTS[k][0], s: ARTS[k][1], list: items.filter(d => d.art === k) }));
+  } else {
+    groups = CATS.map(c => ({ k: "c-" + c[0], t: c[1], s: c[2], list: items.filter(d => d.cat === c[0]) }));
+  }
+  groups = groups.filter(g => g.list.length);
+  out.innerHTML = groups.length ? groups.map(g => `<details class="group" data-g="${g.k}"${(filtering || openG.has(g.k)) ? " open" : ""}><summary>${chev}<span><h2>${g.t}</h2><p class="gsub">${g.s} &middot; ${g.list.length} ${g.list.length === 1 ? "clause" : "clauses"}</p></span></summary><div class="list">${g.list.map(item).join("")}</div></details>`).join("")
+    : '<p class="empty">No clauses match. Try fewer or different words.<button class="btn" type="button" id="reset">Clear search and filters</button></p>';
+  const reset = document.getElementById("reset");
+  if (reset) reset.addEventListener("click", () => { clearTimeout(t); qEl.value = ""; state.q = ""; state.terms = []; state.query = { ref: {}, rest: [] }; state.filter = "all"; render(); qEl.focus(); });
+  out.querySelectorAll("details.clause").forEach(x => { if (open.has(x.dataset.i) || (state.terms.length && items.length <= 8)) x.open = true; });
+  document.getElementById("count").textContent = `Showing ${items.length} of ${D.length} clauses` + (state.terms.length ? ` matching “${state.q}”` : "");
+  addByLinks();
+  highlight();
+  if (typeof syncToggle === "function") syncToggle();
+  document.getElementById("v-article").setAttribute("aria-pressed", state.view === "article");
+  document.getElementById("v-category").setAttribute("aria-pressed", state.view === "category");
+  document.querySelectorAll("#filters .chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.f === state.filter));
+}
+function buildFilters() {
+  const n = k => k === "all" ? D.length : k === "amended" ? D.filter(d => d.amended).length : k === "passing" ? D.filter(d => d.why).length : D.filter(d => d.flags.some(f => f[0] === k)).length;
+  const opts = [["all", "All clauses", "all"], ["amended", "Changed by amendment", "amended"], ["passing", "Passing mentions", "passing"]].concat(Object.keys(FLAGS).map(k => [k, FLAGS[k], "f-" + k]));
+  document.getElementById("filters").innerHTML = opts.map(o => `<button type="button" class="chip ${o[2]}" data-f="${o[0]}" aria-pressed="false">${o[1]} <span class="n">${n(o[0])}</span></button>`).join("");
+  // Clicking the active filter again returns to all clauses.
+  document.querySelectorAll("#filters .chip").forEach(c => c.addEventListener("click", () => { state.filter = (state.filter === c.dataset.f) ? "all" : c.dataset.f; render(); }));
+}
+function toListTop() {
+  const top = document.getElementById("out").getBoundingClientRect().top + window.scrollY - document.querySelector(".controls").offsetHeight - 8;
+  if (window.scrollY > top) window.scrollTo({ top, behavior: "auto" });
+}
+function setView(v) { state.view = v; try { localStorage.setItem("cc-view", v); } catch (_) {} try { history.replaceState(null, "", "#" + v); } catch (_) {} render(); toListTop(); }
+// Deep links: #art1-s8-c11 opens and scrolls to that clause; #article or #category picks the view.
+function openFromHash(target) {
+  const id = target || decodeURIComponent(location.hash.slice(1));
+  if (!id || id === "article" || id === "category") return;
+  const d = D.find(x => x.id === id);
+  if (!d) return;
+  if (!D.filter(match).includes(d)) { clearTimeout(t); qEl.value = ""; state.q = ""; state.terms = []; state.query = { ref: {}, rest: [] }; state.filter = "all"; render(); }
+  const el = document.getElementById(id);
+  if (!el) return;
+  const g = el.closest("details.group"); if (g) g.open = true;
+  el.open = true;
+  el.classList.add("flash"); setTimeout(() => el.classList.remove("flash"), 2000);
+  el.scrollIntoView({ block: "start" });
+  window.scrollBy(0, -(document.querySelector(".controls").offsetHeight + 8));
+}
+window.addEventListener("hashchange", () => openFromHash());
+// In-page links (redline labels and notes) jump to the clause, open it, and leave a history entry for Back.
+document.getElementById("out").addEventListener("click", ev => {
+  const a = ev.target.closest('a[href^="#"]');
+  if (!a) return;
+  const id = a.getAttribute("href").slice(1);
+  if (!D.some(x => x.id === id)) return;
+  ev.preventDefault();
+  try { if (location.hash.slice(1) !== id) history.pushState(null, "", "#" + id); } catch (_) {}
+  openFromHash(id);
+});
+// Printing: open every visible clause so its text prints, then restore.
+let printSnap = null;
+window.addEventListener("beforeprint", () => { printSnap = [...document.querySelectorAll("#out details")].map(x => [x, x.open]); printSnap.forEach(([x]) => x.open = true); });
+window.addEventListener("afterprint", () => { if (printSnap) printSnap.forEach(([x, o]) => x.open = o); printSnap = null; });
+document.getElementById("v-article").addEventListener("click", () => setView("article"));
+document.getElementById("v-category").addEventListener("click", () => setView("category"));
+// One button: collapses everything if anything is open, otherwise expands everything.
+const tog = document.getElementById("toggleAll");
+function syncToggle() { tog.textContent = document.querySelector("#out details[open]") ? "Collapse all" : "Expand all"; }
+tog.addEventListener("click", () => { const any = !!document.querySelector("#out details[open]"); document.querySelectorAll("#out details").forEach(x => x.open = !any); syncToggle(); });
+document.getElementById("out").addEventListener("toggle", syncToggle, true);
+function highlight() {
+  if (!state.terms.length) return;
+  const alts = new Set();
+  state.query.rest.forEach(t => { if (t.length < 2) return; alts.add(t); for (const [o, m] of Object.entries(SPELL)) if (m.startsWith(t)) alts.add(o); });
+  if (!alts.size) return;
+  let re;
+  try { re = new RegExp("(?<![a-z0-9])(" + [...alts].join("|") + ")", "gi"); } catch (_) { return; }
+  document.querySelectorAll("#out .ttl, #out blockquote.text, #out ul.sum, #out .note p").forEach(root => {
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), nodes = [];
+    while (w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(n => {
+      const s = n.nodeValue; re.lastIndex = 0;
+      if (!re.test(s)) return;
+      re.lastIndex = 0;
+      const f = document.createDocumentFragment(); let last = 0, m;
+      while ((m = re.exec(s))) { f.append(s.slice(last, m.index)); const mk = document.createElement("mark"); mk.textContent = m[0]; f.append(mk); last = m.index + m[0].length; }
+      f.append(s.slice(last)); n.replaceWith(f);
+    });
+  });
+}
+const qEl = document.getElementById("q");
+let t; qEl.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { state.q = qEl.value.trim(); state.terms = terms(qEl.value); state.query = parseQuery(state.terms); render(); }, 120); });
+qEl.addEventListener("keydown", ev => { if (ev.key === "Escape" && qEl.value) { clearTimeout(t); qEl.value = ""; state.q = ""; state.terms = []; state.query = { ref: {}, rest: [] }; render(); } });
+// Reverse links: for each amendment on the page, the clauses whose redlines (amends) or notes (affects) point to it.
+const REV = {};
+D.forEach(src => {
+  const add = (href, kind) => {
+    if (!href || href[0] !== "#") return;
+    const id = href.slice(1);
+    if (id === src.id || !D.some(x => x.id === id)) return;
+    const list = REV[id] || (REV[id] = []);
+    const have = list.find(r => r.d === src);
+    if (have) { if (kind !== "affects") have.kind = kind; } else list.push({ d: src, kind });
+  };
+  for (const m of src.text.matchAll(/<(?:del|ins)\b[^>]*?data-by="([^"]*)"(?:[^>]*?data-to="([^"]*)")?/g)) byTargets(m[1], m[2]).forEach(x => add(x.href, /^Repealed/.test(m[1]) ? "repeals" : "amends"));
+  for (const m of src.text.matchAll(/<a class="xref" href="(#[^"]+)"/g)) add(m[1], "affects");
+});
+if (!document.documentElement.lang) document.documentElement.lang = "en";
+buildFilters(); render(); openFromHash();
+</script>
+</body>
+</html>
