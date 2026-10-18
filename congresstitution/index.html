@@ -129,6 +129,19 @@ a.by { cursor: pointer; text-decoration: underline dotted; text-underline-offset
 a.by[target]::after { content: " \2197"; font-style: normal; }
 a.xref { color: inherit; text-decoration: underline dotted; text-underline-offset: 2px; }
 a.xref:hover, a.xref:focus-visible { text-decoration-style: solid; }
+.amdinfo { background: rgba(255, 249, 232, .45); border-left: 3px solid var(--accent); padding: 6px 12px; }
+.amdinfo p { margin: 0; }
+details.fulltext > summary { cursor: pointer; font-style: italic; color: var(--accent); width: fit-content; }
+details.fulltext > summary:hover { text-decoration: underline; }
+details.fulltext > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+ol.ftlist { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+ol.ftlist li { padding: 8px 12px; border: 1px solid var(--rule); border-radius: 2px; }
+ol.ftlist li.cur { background: rgba(214, 168, 52, .14); border-color: var(--accent); }
+.ft-head { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: 15px; }
+.ft-head b { font-family: var(--font-caps); font-weight: 400; letter-spacing: .04em; }
+.ft-here { font-size: 13px; font-style: italic; color: var(--accent); }
+.ft-off { font-size: 13px; font-style: italic; color: var(--muted); }
+.ft { font-family: var(--font-display); font-size: 15px; line-height: 1.65; margin-top: 2px; overflow-wrap: anywhere; }
 .amends { border: 1px dashed var(--rule); border-radius: 2px; padding: 8px 12px; display: grid; gap: 2px; }
 ul.backlist { margin: 0 0 4px; padding-left: 20px; display: grid; gap: 2px; }
 ul.backlist li::marker { content: "\21B3  "; color: var(--accent); }
@@ -735,7 +748,58 @@ e("AM","rules","Amend. XXVII","Congressional pay changes",
 ["A change to congressional pay cannot take effect until after the next House election.","Proposed in 1789 and ratified in 1992."]);
 
 /* ---------- RENDER ---------- */
+/* ---------- AMENDMENT CONTEXT ---------- */
+// What each amendment does, when it was ratified, and (for amendments split across entries) how many parts it has.
+// Text of parts that have no entry of their own on this page, from the National Archives transcription.
+const AMD = {
+  1: { year: 1791, about: "Protects freedom of religion, speech, the press, assembly and petition by barring Congress from making laws that restrict them." },
+  3: { year: 1791, about: "Bars the government from housing soldiers in private homes without the owner's consent." },
+  6: { year: 1791, about: "Guarantees the rights of people accused of crimes: a speedy, public jury trial, notice of the charges, the chance to confront witnesses, and a lawyer." },
+  12: { year: 1804, about: "Changed the Electoral College so electors cast separate votes for President and Vice President, after the tied election of 1800." },
+  13: { year: 1865, about: "Abolished slavery and involuntary servitude, except as punishment for a crime, and gave Congress the power to enforce the ban.", parts: 2, extra: {
+    1: "Neither slavery nor involuntary servitude, except as a punishment for crime whereof the party shall have been duly convicted, shall exist within the United States, or any place subject to their jurisdiction." } },
+  14: { year: 1868, about: "Made everyone born or naturalized in the United States a citizen and barred states from denying due process or equal protection of the laws. It also changed how House seats are apportioned, disqualified officials who joined an insurrection, settled Civil War debts, and gave Congress the power to enforce all of it.", parts: 5, extra: {
+    1: "All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside. No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws." } },
+  15: { year: 1870, about: "Bars denying the vote based on race, color or previous condition of servitude, and gives Congress the power to enforce that ban.", parts: 2, extra: {
+    1: "The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of race, color, or previous condition of servitude—" } },
+  16: { year: 1913, about: "Allows Congress to tax incomes without dividing the tax among the states by population." },
+  17: { year: 1913, about: "Moved the election of Senators from state legislatures to the voters of each state, and set rules for filling Senate vacancies.", parts: 3, unit: "cl" },
+  18: { year: 1919, about: "Banned making, selling and transporting alcohol nationwide (Prohibition). Repealed by the 21st Amendment in 1933.", parts: 3, extra: {
+    1: "After one year from the ratification of this article the manufacture, sale, or transportation of intoxicating liquors within, the importation thereof into, or the exportation thereof from the United States and all territory subject to the jurisdiction thereof for beverage purposes is hereby prohibited." } },
+  19: { year: 1920, about: "Bars denying the vote based on sex, guaranteeing women the right to vote." },
+  20: { year: 1933, about: "Moved the start of congressional terms to January 3 and presidential terms to January 20, shortening the lame duck period, and set rules for when a President-elect dies or has not qualified.", parts: 6, extra: {
+    5: "Sections 1 and 2 shall take effect on the 15th day of October following the ratification of this article.",
+    6: "This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the legislatures of three-fourths of the several States within seven years from the date of its submission." } },
+  21: { year: 1933, about: "Repealed Prohibition and left the regulation of alcohol largely to the states.", parts: 3, extra: {
+    2: "The transportation or importation into any State, Territory, or possession of the United States for delivery or use therein of intoxicating liquors, in violation of the laws thereof, is hereby prohibited." } },
+  22: { year: 1951, about: "Limits a President to two elected terms.", parts: 2 },
+  23: { year: 1961, about: "Gives the District of Columbia electors in presidential elections." },
+  24: { year: 1964, about: "Bans poll taxes and other taxes as a condition of voting in federal elections." },
+  25: { year: 1967, about: "Sets rules for filling a vacancy in the presidency or vice presidency and for transferring power when the President cannot serve.", parts: 4, extra: {
+    1: "In case of the removal of the President from office or of his death or resignation, the Vice President shall become President." } },
+  26: { year: 1971, about: "Lowers the voting age to 18 by barring age-based denial of the vote for citizens 18 and older." },
+  27: { year: 1992, about: "Delays any change in congressional pay until after the next House election. Proposed in 1789." }
+};
+// The original wording of an entry's text: keeps struck text, drops replacements and editor's notes.
+function originalText(html) { return html.replace(/<ins\b[^>]*>[\s\S]*?<\/ins>/g, "").replace(/<span class="ann">[\s\S]*?<\/span>/g, "").replace(/<br\s*\/?>/g, " ").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim(); }
+// Every part of an amendment, in order: [{ k, label, id, text, entry }]
+function amdParts(n) {
+  const a = AMD[n]; if (!a || !a.parts) return null;
+  const unit = a.unit || "s", out = [];
+  for (let k = 1; k <= a.parts; k++) {
+    const id = "amend" + n + "-" + (unit === "cl" ? "c" : "s") + k, entry = D.find(x => x.id === id);
+    out.push({ k, id, entry, label: (unit === "cl" ? "Clause " : "Section ") + k, text: entry ? originalText(entry.text) : (a.extra && a.extra[k]) || "" });
+  }
+  return out;
+}
+
 /* ---------- SEARCH INDEX ---------- */
+function amdContext(d) {
+  const m = d.cite.match(/^Amend\. ([IVX]+)/); if (!m) return "";
+  const n = roman(m[1]), a = AMD[n]; if (!a) return "";
+  const parts = amdParts(n);
+  return a.about + " " + (parts ? parts.filter(x => !x.entry).map(x => x.text).join(" ") : "");
+}
 // Old spellings in the text, indexed with their modern forms so either one finds the clause.
 const SPELL = { chuse: "choose", chusing: "choosing", encreased: "increased", controul: "control", behaviour: "behavior", defence: "defense", offences: "offenses", offence: "offense" };
 const ORD = ["", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth", "twenty first", "twenty second", "twenty third", "twenty fourth", "twenty fifth", "twenty sixth", "twenty seventh"];
@@ -752,7 +816,7 @@ function citeAliases(c) {
 D.forEach((d, i) => {
   d.i = i; d.amended = /<del|<ins/.test(d.text);
   const raw = [d.cite, citeAliases(d.cite), d.title, d.text.replace(/<[^>]+>/g, " "), (d.text.match(/data-by="[^"]+"/g) || []).join(" ").replace(/data-by=/g, " "),
-    d.sum.join(" "), d.flags.map(f => FLAGS[f[0]] + " " + (f[2] || "") + " " + f[1]).join(" "), d.amended ? "amended" : "", d.why ? "passing mention why it is here " + d.why : ""].join(" ");
+    d.sum.join(" "), d.flags.map(f => FLAGS[f[0]] + " " + (f[2] || "") + " " + f[1]).join(" "), d.amended ? "amended" : "", d.why ? "passing mention why it is here " + d.why : "", amdContext(d)].join(" ");
   let h = norm(raw);
   for (const [o, m] of Object.entries(SPELL)) h = h.split(" " + o + " ").join(" " + o + " " + m + " ");
   d.plain = h;
@@ -838,7 +902,23 @@ function item(d) {
   const badges = (d.why ? '<span class="badge passing">Passing mention</span>' : "") + (d.amended ? '<span class="badge amended">Amended</span>' : "") + d.flags.map(f => `<span class="badge f-${f[0]}">${FLAGS[f[0]]}${f[2] ? ": " + f[2] : ""}</span>`).join("");
   const notes = d.flags.length ? `<div class="practice"><div class="h3">In practice</div>${d.flags.map(f => `<div class="note f-${f[0]}"><b>${FLAGS[f[0]]}${f[2] ? ": " + f[2] : ""}</b><p>${f[1]}</p></div>`).join("")}</div>` : "";
   return `<details class="clause" id="${d.id}" data-i="${d.i}"><summary>${chev}<span class="sumline"><span class="cite">${d.cite}</span><span class="ttl">${d.title}</span><span class="badges">${badges}</span></span></summary>
-  <div class="body">${d.why ? `<div class="why"><div class="h3">Why it's here</div><p>${d.why}</p></div>` : ""}<blockquote class="text">${d.text}</blockquote>${backLinks(d)}<div><div class="h3">What it does</div><ul class="sum">${d.sum.map(s => `<li>${s}</li>`).join("")}</ul></div>${notes}<a class="permalink" href="${conan(d)}" target="_blank" rel="noopener">Read ${d.cite} in the Constitution Annotated (Library of Congress) &#8599;</a></div></details>`;
+  <div class="body">${amdBlocks(d)[0]}${d.why ? `<div class="why"><div class="h3">Why it's here</div><p>${d.why}</p></div>` : ""}<blockquote class="text">${d.text}</blockquote>${amdBlocks(d)[1]}${backLinks(d)}<div><div class="h3">What it does</div><ul class="sum">${d.sum.map(s => `<li>${s}</li>`).join("")}</ul></div>${notes}<a class="permalink" href="${conan(d)}" target="_blank" rel="noopener">Read ${d.cite} in the Constitution Annotated (Library of Congress) &#8599;</a></div></details>`;
+}
+function amdBlocks(d) {
+  const m = d.cite.match(/^Amend\. ([IVX]+)/); if (!m) return ["", ""];
+  const n = roman(m[1]), a = AMD[n]; if (!a) return ["", ""];
+  const about = `<div class="amdinfo"><div class="h3">About the ${ordn(n)} Amendment &middot; ratified ${a.year}</div><p>${a.about}</p></div>`;
+  const parts = amdParts(n);
+  if (!parts) return [about, ""];
+  const cur = d.ref.sec || d.ref.cl;
+  const rows = parts.map(x => {
+    const here = x.k === cur;
+    const tag = here ? '<span class="ft-here">This entry</span>' : x.entry ? `<a class="xref" href="#${x.id}">Go to its entry</a>` : '<span class="ft-off">Not on this page; it does not involve Congress</span>';
+    return `<li class="${here ? "cur" : ""}"><div class="ft-head"><b>${x.label}</b> ${tag}</div><div class="ft">${x.text}</div></li>`;
+  }).join("");
+  const unitWord = (a.unit === "cl" ? "clauses" : "sections");
+  const full = `<details class="fulltext"><summary>Read the full ${ordn(n)} Amendment (${parts.length} ${unitWord})</summary><ol class="ftlist">${rows}</ol></details>`;
+  return [about, full];
 }
 function backLinks(d) {
   const list = REV[d.id];
@@ -941,7 +1021,7 @@ function highlight() {
   if (!alts.size) return;
   let re;
   try { re = new RegExp("(?<![a-z0-9])(" + [...alts].join("|") + ")", "gi"); } catch (_) { return; }
-  document.querySelectorAll("#out .ttl, #out blockquote.text, #out ul.sum, #out .note p").forEach(root => {
+  document.querySelectorAll("#out .ttl, #out blockquote.text, #out ul.sum, #out .note p, #out .amdinfo p, #out .ft").forEach(root => {
     const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), nodes = [];
     while (w.nextNode()) nodes.push(w.currentNode);
     nodes.forEach(n => {
