@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lightning Talk Timer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #22e06b;
+    --glow: rgba(34, 224, 107, 0.45);
+    --bg1: #04140a;
+    --bg2: #0a2a15;
+  }
+  body.yellow { --accent: #ffd60a; --glow: rgba(255, 214, 10, 0.5); --bg1: #171200; --bg2: #2e2500; }
+  body.red    { --accent: #ff3b3b; --glow: rgba(255, 59, 59, 0.55); --bg1: #1a0303; --bg2: #3a0808; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: radial-gradient(ellipse at center, var(--bg2) 0%, var(--bg1) 70%);
+    color: #fff;
+    font-family: 'Inter', system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.6s ease;
+  }
+
+  /* Faint lightning streaks in the background */
+  .streaks {
+    position: fixed; inset: 0; pointer-events: none; opacity: 0.08;
+    background:
+      linear-gradient(115deg, transparent 48%, var(--accent) 49%, transparent 50%),
+      linear-gradient(65deg, transparent 70%, var(--accent) 70.5%, transparent 71%),
+      linear-gradient(100deg, transparent 20%, var(--accent) 20.4%, transparent 21%);
+    transition: opacity 0.6s;
+  }
+
+  .label {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: clamp(28px, 6vw, 72px);
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--glow);
+    display: flex; align-items: center; gap: 0.3em;
+    transition: color 0.6s;
+  }
+
+  .bolt { width: 0.9em; height: 1.2em; fill: var(--accent); filter: drop-shadow(0 0 12px var(--glow)); transition: fill 0.6s; }
+
+  .time {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: clamp(120px, 34vw, 480px);
+    line-height: 0.9;
+    font-variant-numeric: tabular-nums;
+    color: #fff;
+    text-shadow: 0 0 30px var(--glow), 0 0 80px var(--glow);
+    margin: 0.05em 0;
+  }
+
+  .hint {
+    font-size: clamp(13px, 1.6vw, 18px);
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .track {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    height: 44px;              /* generous grab area */
+    display: flex; align-items: flex-end;
+    cursor: ew-resize;
+    touch-action: none;
+  }
+  .track-bg {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 20px;
+    background: rgba(255,255,255,0.08);
+  }
+  .progress {
+    position: relative; height: 20px;
+    background: var(--accent);
+    box-shadow: 0 0 20px var(--glow);
+    transition: background 0.6s;
+  }
+  .knob {
+    position: absolute; right: -9px; top: 50%;
+    width: 18px; height: 34px; transform: translateY(-50%);
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 0 14px var(--glow);
+    opacity: 0.85;
+  }
+  .track:hover .knob, .track.dragging .knob { opacity: 1; }
+  .track:hover .track-bg, .track.dragging .track-bg { background: rgba(255,255,255,0.14); }
+
+  /* Red phase: lightning flicker */
+  body.red .bolt, body.red .time { animation: flicker 1s infinite; }
+  body.red .streaks { opacity: 0.18; animation: strike 1s infinite; }
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0.35; }
+    55% { opacity: 1; }
+  }
+  @keyframes strike {
+    0%, 100% { opacity: 0.08; }
+    50% { opacity: 0.3; }
+  }
+
+  /* Finished: slow pulse */
+  body.done .time { animation: pulse 1.2s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: 0.3; } }
+</style>
+</head>
+<body class="green">
+  <div class="streaks"></div>
+
+  <div class="label">
+    <svg class="bolt" viewBox="0 0 24 32" aria-hidden="true"><path d="M14 0 L2 18 h8 l-3 14 L22 12 h-8 z"/></svg>
+    <span id="label">Speech</span>
+    <svg class="bolt" viewBox="0 0 24 32" aria-hidden="true"><path d="M14 0 L2 18 h8 l-3 14 L22 12 h-8 z"/></svg>
+  </div>
+
+  <div class="time" id="time">6:00</div>
+  <div class="hint" id="hint">Click anywhere or press Space to start</div>
+  <div class="track" id="track" title="Drag to adjust time">
+    <div class="track-bg"></div>
+    <div class="progress" id="progress" style="width:100%"><div class="knob"></div></div>
+  </div>
+
+<script>
+  const SPEECH = 6 * 60;   // seconds
+  const QA = 4 * 60;
+  const YELLOW_AT = 60;
+  const RED_AT = 10;
+
+  const timeEl = document.getElementById('time');
+  const labelEl = document.getElementById('label');
+  const hintEl = document.getElementById('hint');
+  const progressEl = document.getElementById('progress');
+
+  const trackEl = document.getElementById('track');
+  const SNAP = 5; // drag snaps to 5 second steps
+
+  const HINTS = {
+    ready: 'Click anywhere or press Space to start',
+    speech: 'Click or press Space to start Q&A',
+    qa: 'Click or press Space to reset',
+  };
+
+  // States: 'ready' -> 'speech' -> 'qa' -> back to 'ready'
+  let state = 'ready';
+  let duration = SPEECH;
+  let endTime = null;
+  let tick = null;
+  let readyRemaining = SPEECH; // starting value if adjusted before starting
+
+  function format(sec) {
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return m + ':' + String(s).padStart(2, '0');
+  }
+
+  function setTheme(remaining) {
+    const theme = remaining <= RED_AT ? 'red' : remaining <= YELLOW_AT ? 'yellow' : 'green';
+    document.body.classList.remove('green', 'yellow', 'red');
+    document.body.classList.add(theme);
+    document.body.classList.toggle('done', remaining <= 0 && state !== 'ready');
+  }
+
+  function render(remaining) {
+    timeEl.textContent = format(remaining);
+    progressEl.style.width = (remaining / duration * 100) + '%';
+    setTheme(remaining);
+  }
+
+  function update() {
+    const remaining = Math.max(0, Math.ceil((endTime - Date.now()) / 1000));
+    render(remaining);
+    if (remaining <= 0) {
+      clearInterval(tick);
+      tick = null;
+      hintEl.textContent = state === 'speech'
+        ? "Time's up! Click or press Space for Q&A"
+        : "Q&A over. Click or press Space to reset";
+    }
+  }
+
+  function start(total, remaining, label, hint) {
+    clearInterval(tick);
+    duration = total;
+    endTime = Date.now() + remaining * 1000;
+    labelEl.textContent = label;
+    hintEl.textContent = hint;
+    update();
+    tick = setInterval(update, 200);
+  }
+
+  function reset() {
+    clearInterval(tick);
+    tick = null;
+    state = 'ready';
+    duration = SPEECH;
+    readyRemaining = SPEECH;
+    labelEl.textContent = 'Speech';
+    hintEl.textContent = HINTS.ready;
+    render(SPEECH);
+  }
+
+  function advance() {
+    if (state === 'ready') {
+      state = 'speech';
+      start(SPEECH, readyRemaining, 'Speech', HINTS.speech);
+    } else if (state === 'speech') {
+      state = 'qa';
+      start(QA, QA, 'Q&A', HINTS.qa);
+    } else {
+      reset();
+    }
+  }
+
+  // ---- Draggable bar ----
+  let dragging = false;
+
+  function setFromPointer(clientX) {
+    const rect = trackEl.getBoundingClientRect();
+    const frac = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+    const remaining = Math.round((frac * duration) / SNAP) * SNAP;
+
+    if (state === 'ready') {
+      readyRemaining = remaining;
+      render(remaining);
+      return;
+    }
+    endTime = Date.now() + remaining * 1000;
+    if (!tick && remaining > 0) {           // was finished; resume counting
+      hintEl.textContent = HINTS[state];
+      tick = setInterval(update, 200);
+    }
+    update();
+  }
+
+  trackEl.addEventListener('pointerdown', (e) => {
+    e.stopPropagation();
+    dragging = true;
+    trackEl.classList.add('dragging');
+    trackEl.setPointerCapture(e.pointerId);
+    setFromPointer(e.clientX);
+  });
+  trackEl.addEventListener('pointermove', (e) => { if (dragging) setFromPointer(e.clientX); });
+  const endDrag = () => { dragging = false; trackEl.classList.remove('dragging'); };
+  trackEl.addEventListener('pointerup', endDrag);
+  trackEl.addEventListener('pointercancel', endDrag);
+  // Clicking the bar should never advance the timer
+  trackEl.addEventListener('click', (e) => e.stopPropagation());
+
+  document.addEventListener('click', advance);
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') { e.preventDefault(); advance(); }
+    if (e.key === 'r' || e.key === 'R') reset();
+    if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+      else document.exitFullscreen?.();
+    }
+  });
+
+  reset();
+</script>
+</body>
+</html>
