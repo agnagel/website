@@ -59,6 +59,7 @@ export default function SiteFooter() {
         <nav className="h3-footer-col">
           <h3>Explore</h3>
           <Link href="/about">About</Link>
+          <Link href="/visions">Visions</Link>
           <Link href="/reform-map">Reform Map</Link>
           <Link href="/domains">Domains</Link>
           <Link href="/system-diagram">System Diagram</Link>

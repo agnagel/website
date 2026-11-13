@@ -4329,3 +4329,342 @@ textarea:focus-visible {
   letter-spacing: 2px;
   font-weight: 500;
 }
+
+/* ============================================================
+   Visions tab — the "Congress 2037" end-state essay.
+   A dark hero opens the piece; numbered themed sections pair a
+   scene-setting vignette with the list of changes it promises.
+   ============================================================ */
+
+/* Dark hero, consistent with the dark horizons band. Overrides --ink tokens
+   locally so eyebrow/heading/body color helpers read light on the dark field. */
+.h3-vision-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(96px, 20vh, 220px) clamp(20px, 7vw, 120px)
+    clamp(72px, 12vh, 150px);
+  background: #060f22;
+  color: #eaf6f5;
+  --ink: #eaf6f5;
+  --ink-soft: #a7d3d4;
+  --muted: #6f97a4;
+}
+
+/* Soft cyan/gold aura bleeding up from the lower-left, so the dark panel is not
+   flat. Purely decorative. */
+.h3-vision-hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      60% 50% at 12% 115%,
+      color-mix(in srgb, var(--h3) 26%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      45% 40% at 88% -10%,
+      color-mix(in srgb, var(--h1) 20%, transparent),
+      transparent 70%
+    );
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.h3-vision-hero-inner {
+  position: relative;
+}
+
+.h3-vision-hero-eyebrow {
+  color: var(--h3);
+}
+
+.h3-vision-hero h1 {
+  max-width: 14ch;
+  margin: 0 0 18px;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(44px, 7vw, 104px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  background: linear-gradient(
+    96deg,
+    #f4efe6 0%,
+    var(--h3-glow) 48%,
+    var(--h3) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.h3-vision-hero-byline {
+  margin: 0 0 40px;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.h3-vision-hero-lede {
+  max-width: 88ch;
+  border-left: 2px solid color-mix(in srgb, var(--h3) 60%, transparent);
+  padding-left: clamp(18px, 2.4vw, 30px);
+}
+
+.h3-vision-hero-lede p {
+  margin: 0 0 20px;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(19px, 1.9vw, 27px);
+  line-height: 1.5;
+  color: #eaf6f5;
+  text-wrap: pretty;
+}
+
+.h3-vision-hero-lede p:last-child {
+  margin-bottom: 0;
+}
+
+/* Intro band — the two framing paragraphs on beige. */
+.h3-vision-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(28px, 4vw, 56px);
+  max-width: 1100px;
+}
+
+.h3-vision-intro-grid p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.62;
+}
+
+.h3-vision-intro-grid p:first-child {
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(19px, 1.7vw, 24px);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* Each themed section. Alternating panels get a faintly warmer backdrop so the
+   long read is easy to track. */
+.h3-vision-section {
+  border-top: 1px solid var(--line);
+  padding: clamp(56px, 9vh, 104px) clamp(20px, 6vw, 96px);
+}
+
+.h3-vision-section.is-alt {
+  background: var(--paper-2);
+}
+
+.h3-vision-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: clamp(28px, 5vw, 80px);
+  align-items: start;
+}
+
+/* Left rail: big outlined number, glyph, eyebrow, heading. Sticks while the
+   list on the right scrolls past it on tall viewports. */
+.h3-vision-head {
+  position: sticky;
+  top: 125px;
+}
+
+.h3-vision-number {
+  display: block;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 500;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--h1) 72%, var(--line));
+  margin-bottom: 14px;
+}
+
+.h3-vision-glyph {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+  color: #a87718;
+}
+
+.h3-vision-head .h3-statement {
+  margin-top: 10px;
+  max-width: 18ch;
+  font-size: clamp(23px, 2.5vw, 34px);
+  line-height: 1.22;
+}
+
+/* Right column: the vignette lede plus the list of changes. */
+.h3-vision-scene {
+  margin: 0 0 clamp(26px, 3.2vw, 40px);
+  padding: clamp(18px, 2.4vw, 26px) clamp(20px, 2.6vw, 30px);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--ink) 4%, var(--paper));
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.55;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.is-alt .h3-vision-scene {
+  background: color-mix(in srgb, var(--ink) 4%, var(--paper-2));
+}
+
+.h3-vision-scene a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--accent);
+}
+
+.h3-vision-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.h3-vision-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: clamp(16px, 1.8vw, 22px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.h3-vision-list li:first-child {
+  border-top: 0;
+}
+
+/* Small cyan square marker, echoing the atlas / end-vision motif. */
+.h3-vision-marker {
+  margin-top: 8px;
+  width: 11px;
+  height: 11px;
+  flex: 0 0 auto;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--h3) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--h3) 75%, var(--ink));
+}
+
+.h3-vision-item-text {
+  font-size: clamp(15px, 1.25vw, 17px);
+  line-height: 1.62;
+  color: var(--ink-soft);
+}
+
+.h3-vision-item-text strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Closing band — dark again to bookend the dark hero, with a gradient accent. */
+.h3-vision-closing {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(72px, 13vh, 160px) clamp(20px, 7vw, 120px);
+  background: #060f22;
+  color: #eaf6f5;
+  --ink: #eaf6f5;
+  --ink-soft: #a7d3d4;
+  --muted: #6f97a4;
+  border-top: 1px solid color-mix(in srgb, var(--h3) 30%, transparent);
+}
+
+.h3-vision-closing-inner {
+  max-width: 920px;
+}
+
+.h3-vision-closing-lede {
+  margin: 0 0 24px;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(22px, 2.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.32;
+  color: #eaf6f5;
+  text-wrap: pretty;
+}
+
+.h3-vision-closing-copy {
+  margin: 0;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.64;
+  color: var(--ink-soft);
+}
+
+.h3-vision-cta {
+  margin-top: clamp(32px, 4vw, 48px);
+  padding: clamp(22px, 2.8vw, 32px) clamp(24px, 3vw, 36px);
+  border-radius: 4px;
+  background: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--h3) 16%, transparent),
+    color-mix(in srgb, var(--h1) 12%, transparent)
+  );
+  border: 1px solid color-mix(in srgb, var(--h3) 38%, transparent);
+}
+
+.h3-vision-cta p {
+  margin: 0;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(18px, 1.7vw, 24px);
+  line-height: 1.45;
+  color: #f4efe6;
+  text-wrap: pretty;
+}
+
+/* Sources — a tidy mono list on the dotted beige panel. */
+.h3-vision-source-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.h3-vision-source-list li {
+  padding-left: 18px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.h3-vision-source-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--h1) 70%, transparent);
+}
+
+.h3-vision-source-list a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .h3-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .h3-vision-head {
+    position: static;
+  }
+
+  .h3-vision-head .h3-statement {
+    max-width: none;
+  }
+}

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 const TABS: Array<{ href: string; label: string }> = [
   { href: "/about", label: "About" },
+  { href: "/visions", label: "Visions" },
   { href: "/reform-map", label: "Reform Map" },
   { href: "/domains", label: "Domains" },
   { href: "/system-diagram", label: "System Diagram" },
